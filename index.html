@@ -993,6 +993,98 @@
             transition: color 0.2s;
         }
         .chat-header .close-btn:hover { color: #fff; }
+        .chat-header .settings-btn {
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+            margin-right: 4px;
+        }
+        .chat-header .settings-btn:hover { color: #e2e8f0; }
+
+        .chat-settings {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .chat-settings.open { display: flex; }
+        .chat-settings label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .chat-settings .input-row {
+            display: flex;
+            gap: 6px;
+        }
+        .chat-settings input {
+            flex: 1;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.82rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .chat-settings input:focus { border-color: #6366f1; }
+        .chat-settings .save-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .chat-settings .save-btn:hover { opacity: 0.85; }
+        .chat-settings .clear-btn {
+            background: #fee2e2;
+            color: #dc2626;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .chat-settings .clear-btn:hover { opacity: 0.8; }
+        .chat-settings .status {
+            font-size: 0.72rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .chat-settings .status .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .chat-settings .status .dot.online { background: #22c55e; }
+        .chat-settings .status .dot.offline { background: #94a3b8; }
+        .chat-settings .get-key {
+            font-size: 0.72rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .chat-settings .get-key:hover { text-decoration: underline; }
 
         .chat-messages {
             flex: 1;
@@ -1224,6 +1316,46 @@
             <button class="btn-cancel" onclick="closePasswordModal()">Cancel</button>
         </div>
         <div class="error" id="passwordError">Incorrect password. Try again.</div>
+    </div>
+</div>
+
+<button class="chat-bubble" id="chatBubble" onclick="toggleChat()">
+    💬
+    <span class="badge">AI</span>
+</button>
+
+<div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+        <div class="avatar">🤖</div>
+        <div class="info">
+            <strong>Study Bot</strong>
+            <span id="chatStatus">Searches lesson content for answers</span>
+        </div>
+        <button class="settings-btn" onclick="toggleChatSettings()" title="API Settings">⚙️</button>
+        <button class="close-btn" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-settings" id="chatSettings">
+        <label>Google Gemini API Key</label>
+        <div class="input-row">
+            <input type="password" id="apiKeyInput" placeholder="Paste your API key here..." />
+            <button class="save-btn" onclick="saveApiKey()">Save</button>
+            <button class="clear-btn" onclick="clearApiKey()">Clear</button>
+        </div>
+        <div class="status">
+            <span class="dot" id="apiStatusDot"></span>
+            <span id="apiStatusText">No API key set — using search mode</span>
+        </div>
+        <a class="get-key" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Get a free API key →</a>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="msg bot">
+            <div class="label">Study Bot</div>
+            Hi! Ask me anything about your lessons.<br>Example: <em>"What is a computer?"</em> or <em>"Explain APIs"</em>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask about your lessons..." />
+        <button onclick="sendChat()">➤</button>
     </div>
 </div>
 
@@ -6001,6 +6133,38 @@ function buildLessonIndex() {
 
 const lessonIndex = buildLessonIndex();
 
+function findBestParagraph(text, queryWords) {
+    const paragraphs = text.split(/\n{2,}|(?:\]\s*\[)/);
+    let best = null, bestScore = 0;
+    for (const para of paragraphs) {
+        const lower = para.toLowerCase();
+        let score = 0;
+        for (const word of queryWords) {
+            if (word.length < 3) continue;
+            const regex = new RegExp('\\b' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+            score += (lower.match(regex) || []).length;
+        }
+        if (score > bestScore) {
+            bestScore = score;
+            best = para;
+        }
+    }
+    return best || text;
+}
+
+function capitalizeFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function cleanText(text) {
+    return text
+        .replace(/\s+/g, ' ')
+        .replace(/\s*\.\.\.\s*/g, '...')
+        .replace(/\s*,\s*/g, ', ')
+        .replace(/\s*;\s*/g, '; ')
+        .trim();
+}
+
 function searchLessons(query) {
     const qWords = query.toLowerCase().split(/\W+/).filter(Boolean);
     if (!qWords.length) return null;
@@ -6013,7 +6177,7 @@ function searchLessons(query) {
             const regex = new RegExp('\\b' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
             const matches = (textLower.match(regex) || []).length;
             score += matches;
-            if (textLower.includes(word)) score += 0.5;
+            if (textLower.includes(word)) score += 0.3;
         }
         return { ...entry, score };
     });
@@ -6022,15 +6186,18 @@ function searchLessons(query) {
     const best = scored[0];
     if (!best || best.score < 1) return null;
 
-    let snippet = best.text;
-    const idx = snippet.toLowerCase().indexOf(qWords[0]);
-    if (idx > 100) snippet = '...' + snippet.slice(Math.max(0, idx - 80));
-    if (snippet.length > 400) snippet = snippet.slice(0, 380) + '...';
+    let paragraph = findBestParagraph(best.text, qWords);
+    paragraph = cleanText(paragraph);
+    if (paragraph.length > 600) {
+        const idx = paragraph.toLowerCase().indexOf(qWords[0]);
+        if (idx > 150) paragraph = '...' + paragraph.slice(idx - 100);
+        if (paragraph.length > 600) paragraph = paragraph.slice(0, 580) + '...';
+    }
 
     return {
         subject: best.subject,
         title: best.title,
-        snippet: snippet
+        answer: capitalizeFirst(paragraph)
     };
 }
 
@@ -6059,7 +6226,7 @@ function addMessage(text, role, source) {
     if (source) {
         const s = document.createElement('div');
         s.className = 'source';
-        s.textContent = 'Source: ' + source;
+        s.innerHTML = '📖 ' + source;
         div.appendChild(s);
     }
     document.getElementById('chatMessages').appendChild(div);
@@ -6083,6 +6250,102 @@ function hideTyping() {
     if (el) el.remove();
 }
 
+function toggleChatSettings() {
+    document.getElementById('chatSettings').classList.toggle('open');
+}
+
+function updateApiStatus() {
+    const key = localStorage.getItem('geminiApiKey');
+    const dot = document.getElementById('apiStatusDot');
+    const text = document.getElementById('apiStatusText');
+    const status = document.getElementById('chatStatus');
+    if (key) {
+        dot.className = 'dot online';
+        text.textContent = 'AI mode active — using Gemini API';
+        status.textContent = 'Powered by Gemini AI';
+    } else {
+        dot.className = 'dot offline';
+        text.textContent = 'No API key set — using search mode';
+        status.textContent = 'Searches lesson content for answers';
+    }
+}
+
+function saveApiKey() {
+    const input = document.getElementById('apiKeyInput');
+    const key = input.value.trim();
+    if (!key) return;
+    localStorage.setItem('geminiApiKey', key);
+    input.value = '';
+    updateApiStatus();
+    document.getElementById('chatSettings').classList.remove('open');
+}
+
+function clearApiKey() {
+    localStorage.removeItem('geminiApiKey');
+    document.getElementById('apiKeyInput').value = '';
+    updateApiStatus();
+}
+
+function getRelevantContext(query) {
+    const qWords = query.toLowerCase().split(/\W+/).filter(Boolean);
+    if (!qWords.length) return null;
+
+    const scored = lessonIndex.map(entry => {
+        let score = 0;
+        const textLower = entry.text.toLowerCase();
+        for (const word of qWords) {
+            if (word.length < 3) continue;
+            const regex = new RegExp('\\b' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+            score += (textLower.match(regex) || []).length;
+            if (textLower.includes(word)) score += 0.3;
+        }
+        return { ...entry, score };
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    const top3 = scored.filter(e => e.score > 0).slice(0, 3);
+    if (!top3.length) return null;
+
+    return top3.map(e => {
+        let paragraph = findBestParagraph(e.text, qWords);
+        paragraph = cleanText(paragraph);
+        if (paragraph.length > 800) paragraph = paragraph.slice(0, 780) + '...';
+        return { subject: e.subject, title: e.title, text: capitalizeFirst(paragraph) };
+    });
+}
+
+async function askGemini(query, context) {
+    const apiKey = localStorage.getItem('geminiApiKey');
+    if (!apiKey) return null;
+
+    const contextText = context.map(c =>
+        `[${c.subject} — ${c.title}]\n${c.text}`
+    ).join('\n\n');
+
+    const systemPrompt = `You are a precise study assistant. Answer the user's question using ONLY the lesson content provided below. If the content does not contain enough information, say so. Do not add external knowledge. Keep answers clear and factual.`;
+
+    const payload = {
+        contents: [{
+            parts: [{
+                text: `${systemPrompt}\n\nLESSON CONTENT:\n${contextText}\n\nUSER QUESTION: ${query}\n\nAnswer based only on the lesson content above:`
+            }]
+        }]
+    };
+
+    try {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        return data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
+    } catch {
+        return null;
+    }
+}
+
 function sendChat() {
     const input = document.getElementById('chatInput');
     const q = input.value.trim();
@@ -6092,56 +6355,59 @@ function sendChat() {
     input.value = '';
     showTyping();
 
-    setTimeout(() => {
-        hideTyping();
-        const result = searchLessons(q);
-        if (result) {
-            addMessage(result.snippet, 'bot', result.subject + ' — ' + result.title);
-        } else {
-            const suggestions = [
-                'Try asking about: <em>"What is a computer?"</em>',
-                'Try: <em>"Explain APIs"</em>',
-                'Try: <em>"Internet threats"</em>',
-                'Try: <em>"What is blockchain?"</em>'
-            ];
-            addMessage(
-                "I couldn't find that in your lessons. " + suggestions[Math.floor(Math.random() * suggestions.length)],
-                'bot'
-            );
-        }
-    }, 600);
+    const apiKey = localStorage.getItem('geminiApiKey');
+
+    if (apiKey) {
+        setTimeout(async () => {
+            const context = getRelevantContext(q);
+            if (!context) {
+                hideTyping();
+                addMessage('I could not find relevant lesson content for your question. Please try asking about a topic covered in your lessons.', 'bot');
+                return;
+            }
+            const answer = await askGemini(q, context);
+            hideTyping();
+            if (answer) {
+                const sources = context.map(c => c.subject + ' \u2014 ' + c.title).join('<br>');
+                addMessage(answer, 'bot', sources);
+            } else {
+                addMessage('The AI service did not respond. Please check your API key or try again later.', 'bot');
+            }
+        }, 100);
+    } else {
+        setTimeout(() => {
+            hideTyping();
+            const result = searchLessons(q);
+            if (result) {
+                const intro = 'Here is what I found in your <strong>' + result.subject + '</strong> lesson <em>"' + result.title + '"</em>:<br><br>';
+                addMessage(intro + result.answer, 'bot', result.subject + ' \u2014 ' + result.title);
+            } else {
+                const suggestions = [
+                    '<strong>What is a computer?</strong>',
+                    '<strong>Explain APIs</strong>',
+                    '<strong>Internet threats</strong>',
+                    '<strong>What is blockchain?</strong>',
+                    '<strong>Types of hackers</strong>'
+                ];
+                addMessage(
+                    'I could not find a matching answer in your lessons. ' +
+                    'Please try rephrasing your question or ask about a specific topic.<br><br>' +
+                    'Suggestions: ' + suggestions[Math.floor(Math.random() * suggestions.length)],
+                    'bot'
+                );
+            }
+        }, 600);
+    }
 }
+
+// Init chat status
+updateApiStatus();
 
 document.getElementById('chatInput').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') sendChat();
 });
 </script>
 
-<button class="chat-bubble" id="chatBubble" onclick="toggleChat()">
-    💬
-    <span class="badge">AI</span>
-</button>
-
-<div class="chat-window" id="chatWindow">
-    <div class="chat-header">
-        <div class="avatar">🤖</div>
-        <div class="info">
-            <strong>Study Bot</strong>
-            <span>Searches lesson content for answers</span>
-        </div>
-        <button class="close-btn" onclick="toggleChat()">✕</button>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-        <div class="msg bot">
-            <div class="label">Study Bot</div>
-            Hi! Ask me anything about your lessons.<br>Example: <em>"What is a computer?"</em> or <em>"Explain APIs"</em>
-        </div>
-    </div>
-    <div class="chat-input">
-        <input type="text" id="chatInput" placeholder="Ask about your lessons..." />
-        <button onclick="sendChat()">➤</button>
-    </div>
-</div>
 
 </body>
 </html>
