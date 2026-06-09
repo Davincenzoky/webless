@@ -95,17 +95,16 @@
 
         .subject-tabs {
             display: flex;
-            flex-wrap: wrap;
-            padding: 12px 12px 6px;
+            flex-direction: column;
+            padding: 12px 12px 8px;
             gap: 4px;
             flex-shrink: 0;
         }
         .subject-tab {
-            flex: 1;
-            min-width: 48px;
-            padding: 6px 4px;
-            font-size: 0.65rem;
-            text-align: center;
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 0.72rem;
+            text-align: left;
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 6px;
             cursor: pointer;
@@ -114,7 +113,7 @@
             transition: all 0.2s ease;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
         }
         .subject-tab:hover {
             background: rgba(255,255,255,0.06);
@@ -653,8 +652,8 @@
                 padding: 16px 14px 10px;
             }
             .subject-tab {
-                font-size: 0.6rem;
-                padding: 5px 3px;
+                font-size: 0.68rem;
+                padding: 6px 8px;
             }
             .sidebar a {
                 padding: 6px 16px 6px 22px;
@@ -754,8 +753,7 @@
             }
             .subject-tab {
                 font-size: 0.6rem;
-                padding: 5px 3px;
-                min-width: 40px;
+                padding: 6px 8px;
             }
             .sidebar a {
                 padding: 7px 16px 7px 22px;
@@ -888,8 +886,7 @@
             }
             .subject-tab {
                 font-size: 0.5rem;
-                padding: 3px 2px;
-                min-width: 32px;
+                padding: 5px 6px;
             }
             .sidebar a {
                 font-size: 0.72rem;
@@ -978,8 +975,15 @@
 
 <div class="modal-overlay" id="passwordModal" style="display:none;">
     <div class="modal-box">
-        <h3>🔒 Subject Locked</h3>
-        <p>Enter the password to access this subject's lessons.</p>
+        <div id="modalSubjectInfo" style="margin-bottom:22px;">
+            <div style="font-size:2.8rem;margin-bottom:8px;" id="modalSubjectIcon"></div>
+            <div style="font-size:0.75rem;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;" id="modalSubjectCode"></div>
+            <h3 id="modalSubjectName" style="margin:0 0 6px;font-size:1.2rem;font-weight:700;color:#0f172a;"></h3>
+            <p id="modalSubjectDesc" style="margin:0 0 10px;color:#64748b;font-size:0.88rem;line-height:1.5;"></p>
+            <div id="modalSubjectPeriods" style="display:flex;justify-content:center;gap:10px;font-size:0.78rem;color:#94a3b8;"></div>
+        </div>
+        <hr style="border:none;border-top:1px solid #e2e8f0;margin:0 0 20px;">
+        <p style="margin:0 0 14px;color:#64748b;font-size:0.9rem;font-weight:500;">Enter password to access lessons</p>
         <input type="password" id="passwordInput" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()" />
         <div>
             <button class="btn-unlock" onclick="checkPassword()">Unlock</button>
@@ -994,6 +998,8 @@ const subjects = {
     genel1: {
         code: "GENEL1",
         name: "Living in the IT Era",
+        icon: "💻",
+        desc: "Explore the foundations of information technology — from computer history and hardware to the modern web, internet ethics, cybersecurity, and emerging digital threats.",
         password: "GE2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
@@ -1017,6 +1023,8 @@ const subjects = {
     gened7: {
         code: "GENED7",
         name: "Science, Technology & Society",
+        icon: "🔬",
+        desc: "Examine the interplay between science, technology, and society — covering historical revolutions, human flourishing, the information age, biodiversity, and climate change.",
         password: "ST2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
@@ -1043,6 +1051,8 @@ const subjects = {
     inform: {
         code: "INFORM",
         name: "Information Management",
+        icon: "🗄️",
+        desc: "Learn how data is stored, managed, secured, and analyzed — covering databases, CMS, ERP, governance, compliance, and emerging trends like Big Data and AI.",
         password: "IM2025",
         periods: ["PRELIM", "MIDTERM"],
         lessons: {
@@ -1062,6 +1072,8 @@ const subjects = {
     quanti: {
         code: "QUANTI",
         name: "Quantitative Methods",
+        icon: "📊",
+        desc: "Apply quantitative methods to real-world IT problems — from scheduling and resource allocation to predictive modeling, optimization, and data-driven decision making.",
         password: "QM2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
@@ -1091,6 +1103,8 @@ const subjects = {
     websys: {
         code: "WEBSYS",
         name: "Web Systems and Technologies",
+        icon: "🌐",
+        desc: "Master the full stack of web development — from front-end design and back-end logic to databases, APIs, security, and the latest emerging web technologies.",
         password: "WS2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
@@ -5621,10 +5635,7 @@ function switchSubject(subject) {
 
     if (!unlockedSubjects.has(subject)) {
         if (document.getElementById('passwordModal').style.display === 'flex') return;
-        pendingSubject = subject;
-        document.getElementById('passwordInput').value = '';
-        document.getElementById('passwordError').style.display = 'none';
-        document.getElementById('passwordModal').style.display = 'flex';
+        showSubjectModal(subject);
         return;
     }
 
@@ -5637,6 +5648,27 @@ function switchSubject(subject) {
 
     document.getElementById('homeView').style.display = 'block';
     document.getElementById('lessonView').style.display = 'none';
+}
+
+function showSubjectModal(subject) {
+    const data = subjects[subject];
+    pendingSubject = subject;
+
+    document.getElementById('modalSubjectIcon').textContent = data.icon || '📖';
+    document.getElementById('modalSubjectCode').textContent = data.code;
+    document.getElementById('modalSubjectName').textContent = data.name;
+    document.getElementById('modalSubjectDesc').textContent = data.desc || '';
+
+    const periodsHtml = data.periods.map(p => {
+        const key = p.toLowerCase();
+        const count = (data.lessons[key] || []).length;
+        return `<span>📁 ${p} (${count})</span>`;
+    }).join('');
+    document.getElementById('modalSubjectPeriods').innerHTML = periodsHtml;
+
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('passwordError').style.display = 'none';
+    document.getElementById('passwordModal').style.display = 'flex';
 }
 
 function checkPassword() {
