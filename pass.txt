@@ -3,7 +3,7 @@
 Subject                     Password
 ───────────────             ─────────
 GENEL1 - Living in IT Era   GE2025
-GENED7 - Science & Society  ST2025
+GENED7 - Science & Society  OCE
 INFORM - Info Management    IM2025
 QUANTI - Quantitative Meth  QM2025
 WEBSYS - Web Systems        WS2025
