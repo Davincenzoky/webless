@@ -46,30 +46,51 @@
             top: 0;
             left: 0;
             height: 100vh;
-            overflow-y: auto;
+            overflow: hidden;
             z-index: 100;
             transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
         }
         .sidebar-header {
-            padding: 24px 20px 16px;
+            padding: 24px 20px 14px;
             border-bottom: 1px solid rgba(255,255,255,0.06);
             flex-shrink: 0;
         }
         .sidebar-header h1 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .sidebar-header h1 span {
-            display: block;
-            font-size: 0.7rem;
+        .sidebar-header h1 .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .sidebar-header h1 .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header h1 .logo-text span:first-child {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .sidebar-header h1 .logo-text span:last-child {
+            font-size: 0.65rem;
             color: #94a3b8;
             font-weight: 500;
-            margin-top: 3px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            margin-top: 1px;
         }
 
         .subject-tabs {
@@ -110,8 +131,22 @@
         #sidebarLinks {
             flex: 1;
             overflow-y: auto;
+            overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 20px;
+        }
+        #sidebarLinks::-webkit-scrollbar {
+            width: 4px;
+        }
+        #sidebarLinks::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #sidebarLinks::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+        #sidebarLinks::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.2);
         }
         .sidebar .period {
             padding: 16px 20px 4px;
@@ -603,11 +638,19 @@
             .subject-card {
                 padding: 20px 18px;
             }
-            .sidebar-header h1 {
-                font-size: 1rem;
+            .sidebar-header h1 .logo-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 0.85rem;
+            }
+            .sidebar-header h1 .logo-text span:first-child {
+                font-size: 0.9rem;
+            }
+            .sidebar-header h1 .logo-text span:last-child {
+                font-size: 0.6rem;
             }
             .sidebar-header {
-                padding: 18px 16px 12px;
+                padding: 16px 14px 10px;
             }
             .subject-tab {
                 font-size: 0.6rem;
@@ -691,11 +734,19 @@
                 padding: 11px 22px;
                 font-size: 0.9rem;
             }
-            .sidebar-header h1 {
-                font-size: 1rem;
+            .sidebar-header h1 .logo-icon {
+                width: 26px;
+                height: 26px;
+                font-size: 0.8rem;
+            }
+            .sidebar-header h1 .logo-text span:first-child {
+                font-size: 0.85rem;
+            }
+            .sidebar-header h1 .logo-text span:last-child {
+                font-size: 0.58rem;
             }
             .sidebar-header {
-                padding: 18px 16px 12px;
+                padding: 14px 14px 10px;
             }
             .subject-tabs {
                 padding: 8px 10px 4px;
@@ -868,7 +919,13 @@
 
 <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <h1>📚 Study Notes <span>College FBC</span></h1>
+        <h1>
+            <span class="logo-icon">📘</span>
+            <span class="logo-text">
+                <span>Study Notes</span>
+                <span>College FBC</span>
+            </span>
+        </h1>
     </div>
 
     <div class="subject-tabs">
