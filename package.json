@@ -1,0 +1,16 @@
+{
+  "name": "webless",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WebLess study notes with AI chatbot backend proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

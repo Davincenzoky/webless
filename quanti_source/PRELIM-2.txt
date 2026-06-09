@@ -1,0 +1,68 @@
+DATA ANALYSIS (Core of Information Technology)
+📌 Definition
+Data Analysis is the process of collecting, organizing, processing, and interpreting data to extract useful information and support decision-making.
+In IT, data analysis helps systems become smart, efficient, and predictive.
+🎯 Why Data Analysis is Core to IT
+Modern IT systems run on data:
+Websites track users
+Apps track behavior
+Networks track traffic
+Security systems track activity
+Without data analysis → systems are blind.
+With data analysis → systems become intelligent.
+🔄 Steps in Data Analysis
+🧮 Quantitative Methods Used in Data Analysis
+📊 1. Descriptive Statistics
+Summarizes data.
+Mean (average)
+Median
+Mode
+Standard deviation
+Variance
+💡 Example: Average time users spend on a website.
+🎲 2. Probability
+Measures uncertainty.
+Used in:
+Spam detection
+Fraud detection
+Risk prediction
+📈 3. Regression Analysis
+Shows relationships between variables.
+Example:
+Predicting sales based on website traffic.
+🔍 4. Hypothesis Testing
+Helps decide if results are significant.
+Example:
+“Did the new app design increase user engagement?”
+📉 5. Data Visualization
+Turning numbers into charts.
+Bar charts
+Line graphs
+Pie charts
+Dashboards
+Helps humans understand data faster.
+💻 Data Analysis in IT Fields
+🧠 Real Example
+Netflix Recommendation System
+Data collected:
+Watch history
+Ratings
+Search history
+Analysis:
+Statistical similarity
+Probability models
+Result:
+Personalized movie suggestions.
+🛠 Tools Used in IT Data Analysis
+Python (Pandas, NumPy)
+R
+SQL
+Excel
+Power BI / Tableau
+Machine Learning libraries
+🚀 Benefits of Data Analysis in IT
+✅ Better decision-making
+✅ Improved system performance
+✅ Personalized user experience
+✅ Risk detection
+✅ Business growth

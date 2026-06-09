@@ -1,0 +1,194 @@
+Historical Antecedents in which Social Considerations Changed the Course of Science and Technology
+a. In the World
+1. Ancient Times: Mesoamerican Period (Inca, Aztec, and Mayan Civilizations)
+Social Considerations:
+Religious beliefs, agricultural demands, and social hierarchies drove technological innovation.
+Examples of Work:
+Inca:
+Terrace farming (to maximize agriculture on mountain slopes).
+Quipu (a knotted string system used for record-keeping and communication — a precursor to writing for administrative purposes).
+Aztec:
+Chinampas ("floating gardens") - artificial islands used for farming to meet the growing food demands of dense urban populations like Tenochtitlán.
+Calendar Stone (Aztec Sun Stone) - an astronomical and religious artifact that aligned religious ceremonies with astronomical events.
+Mayan:
+Maya Calendar Systems (e.g., Tzolk'in and Haab') - advanced understanding of astronomy influenced by religious rituals.
+Pyramids and temples (like Chichen Itza) - architectural feats aligned with astronomical observations for religious p
+2. Middle Ages (5th–15th Century Europe)
+Social Considerations:
+Feudalism, religious authority (especially the Catholic Church), and the need for survival during war and plague strongly influenced science and technology.
+Examples of Work:
+Watermills and windmills - innovations to enhance food production and reduce manual labor on feudal estates.
+Gutenberg Printing Press (c. 1440) - revolutionized access to information, breaking the Church's monopoly over written texts and promoting wider education.
+Islamic Golden Age (8th–14th century) - advancements in mathematics (Algebra by Al-Khwarizmi), medicine (Avicenna’s The Canon of Medicine), and optics (Ibn al-Haytham), all driven by the Islamic emphasis on knowledge as a religious duty.
+3. Modern Ages (16th Century to Present)
+Social Considerations:
+Industrialization, democratization, world wars, and global health crises accelerated technological progress.
+Examples of Work:
+Industrial Revolution Technologies (18th-19th century):
+Steam Engine by James Watt - mass urban migration and need for efficient transport and production.
+Spinning Jenny (textile industry) - driven by the demand for mass clothing production.
+World War I and II Technologies:
+Radar, Penicillin, and Nuclear Technology - military needs drove rapid scientific advancements.
+Digital Revolution:
+Internet (ARPANET, 1969) - initially military-focused (U.S. Department of Defense) but transformed global communication and society.
+COVID-19 Vaccines (Pfizer-BioNTech, Moderna mRNA vaccines) - pandemic urgency accelerated medical innovation.
+
+b. In the Philippines
+Social Considerations:
+Colonization, indigenous practices, liberation movements, and modern nation-building significantly shaped science and technology.
+Examples of Work:
+Pre-colonial Technology:
+Banaue Rice Terraces - engineered by the Ifugao people over 2,000 years ago; sophisticated water irrigation and agricultural knowledge driven by food sustainability needs.
+Spanish Colonization Period:
+Galleon Shipbuilding (Manila-Acapulco Galleon Trade) - driven by trade needs; Filipinos were skilled in ship construction.
+Establishment of hospitals and schools (e.g., San Juan de Dios Hospital, founded 1596) - blending Spanish health practices with native healing traditions.
+American Period (early 20th century):
+Introduction of public education system - spread of science literacy through Thomasites (American teachers).
+Philippine General Hospital (PGH) founded in 1907 - advancement of Western medical practices in the country.
+Modern Period:
+Philippine Atmospheric, Geophysical and Astronomical Services Administration (PAGASA) - developed for disaster preparedness (especially typhoons and earthquakes).
+Rice Research at IRRI (International Rice Research Institute, Los Baños) - Green Revolution led to improved rice varieties like IR8 ("Miracle Rice") to address food security.
+
+Intellectual Revolutions that Defined Society
+a. Copernican Revolution
+Overview:
+Initiated by Nicolaus Copernicus in the 16th century.
+Proposed the heliocentric model (Sun at the center) over the long-accepted geocentric model (Earth at the center).
+Impact on Society:
+Challenged the authority of the Church and ancient scholars (like Aristotle and Ptolemy).
+Marked the beginning of the Scientific Revolution.
+Changed humanity’s self-perception — Earth was no longer the center of the universe.
+Example of Work:
+"De Revolutionibus Orbium Coelestium" (On the Revolutions of the Celestial Spheres) by Copernicus (1543)
+b. Darwinian Revolution
+Overview:
+Led by Charles Darwin in the 19th century.
+Introduced the theory of evolution by natural selection.
+Impact on Society:
+Shattered traditional religious beliefs about creation.
+Influenced biology, anthropology, and even social sciences (e.g., social Darwinism, although controversially).
+Example of Work:
+"On the Origin of Species" by Charles Darwin (1859).
+c. Freudian Revolution
+Overview:
+Initiated by Sigmund Freud in the late 19th and early 20th centuries.
+Developed psychoanalysis and emphasized the role of the unconscious mind in shaping behavior.
+Impact on Society:
+Changed the way society understood human behavior, sexuality, childhood development, and mental illness.
+Influenced literature, art, and modern psychology.
+Example of Work:
+"The Interpretation of Dreams" by Sigmund Freud (1900).
+d. Information Revolution
+Overview:
+Refers to the late 20th and 21st-century shift caused by advances in information and communication technology (ICT).
+Impact on Society:
+Transformed economies into information-based economies.
+Changed communication, education, business, and governance (e.g., e-governance, online banking, remote work).
+Example of Work:
+Development of the Internet (ARPANET in 1969 to World Wide Web in 1991 by Tim Berners-Lee).
+Invention of the personal computer (e.g., Apple II, 1977).
+e. Mesoamerican Intellectual Contributions
+Overview:
+Includes the knowledge systems of Maya, Aztec, and Inca civilizations.
+Impact on Society:
+Advanced understanding of astronomy, mathematics, agriculture, and architecture.
+Societies were deeply scientific and religious at the same time.
+Example of Work:
+Mayan Calendar Systems (Long Count Calendar).
+Aztec Medicine and Surgery -herbal remedies, skull surgeries (trepanation).
+
+f. Asian Intellectual Contributions
+Overview:
+Intellectual achievements from China, India, Japan, and other Asian civilizations.
+Impact on Society:
+Major contributions in philosophy, mathematics, medicine, and technology.
+Spread of philosophies like Confucianism, Buddhism, Hinduism, and Taoism shaped not just governments but social norms.
+Example of Work:
+Invention of Paper (Cai Lun, China, 2nd century CE).
+Decimal Number System and Zero (India - Aryabhata and Brahmagupta).
+
+g. Middle Eastern Intellectual Contributions
+Overview:
+Mainly from the Islamic Golden Age (8th to 14th centuries).
+Impact on Society:
+Major advancements in science, medicine, astronomy, mathematics, and philosophy preserved and built upon Greek, Persian, and Indian knowledge.
+Example of Work:
+"The Book of Healing" and "The Canon of Medicine" by Avicenna (Ibn Sina).
+Development of Algebra by Al-Khwarizmi.
+
+h. African Intellectual Contributions
+Overview:
+Includes the intellectual systems of ancient African civilizations (e.g., Egypt, Mali Empire, Great Zimbabwe).
+Impact on Society:
+Pioneered in architecture, astronomy, mathematics, and metallurgy.
+Built complex social structures based on oral traditions and practical sciences.
+Example of Work:
+Great Library of Alexandria (Egypt — although multicultural, much African intellectual contribution).
+Mathematical systems in ancient Egypt (pyramids aligned with astronomical points).
+Timbuktu Manuscripts (Mali) — preserved works on astronomy, law, and medicine.
+
+
+Science and Technology and Nation Building
+a. The Philippine Government S&T Agenda
+Overview:
+The Philippine government recognizes that science, technology, and innovation are critical for national development, economic competitiveness, and social progress.
+Key Programs and Strategies:
+DOST (Department of Science and Technology) S&T Agenda:
+Strengthen research and development (R&D) in key areas: health, agriculture, industry, energy, and emerging technologies (AI, nanotech, space tech).
+Science for the People Program — bringing R&D outputs to marginalized communities.
+Harmonized National Research and Development Agenda (HNRDA) — align research efforts to national priorities (2017-2022, updated for 2023+).
+Philippine Development Plan (PDP) 2023-2028:
+Focuses on building resilient infrastructure, digitalization, innovation-driven industries, and enhancing climate resilience through science.
+Balik Scientist Program:
+Encourage Filipino scientists abroad to return and contribute to national scientific and technological development.
+
+b. Major Development Programs and Personalities in S&T in the Philippines
+Major Development Programs:
+PAGASA Modernization Program:
+Improved disaster forecasting and management (especially for typhoons and earthquakes).
+Advanced Science and Technology Institute (ASTI):
+Leading projects like Diwata-1 (the first Philippine microsatellite) and PhilSA (Philippine Space Agency).
+OneLab Network:
+Integrated laboratory testing services to support industries (especially SMEs).
+SETUP (Small Enterprise Technology Upgrading Program):
+Helped micro, small, and medium enterprises (MSMEs) adopt technological innovations.
+
+List of Notable Filipinos in Science and Technology
+
+Other Notable Mentions:
+Dr. Maria Orosa - Invented food technologies like Soyalac (soybean drink) and banana ketchup.
+Dr. Abelardo Aguilar - Helped discover erythromycin, a widely used antibiotic.
+Dr. Josefino Comiso - Filipino physicist at NASA specializing in climate change and sea ice studies.
+
+
+
+c. Science Education in the Philippines
+Overview:
+Education has been a primary channel for promoting scientific thinking and technological literacy.
+Key Developments:
+Special Science High Schools:
+Philippine Science High School (PSHS) System - premier institution developing future scientists.
+Curriculum Enhancement:
+K-12 Science Curriculum: Emphasis on inquiry-based learning, STEM (Science, Technology, Engineering, Mathematics) integration.
+Scholarship Programs:
+DOST-SEI Scholarships: Encourage students to pursue careers in science and engineering fields.
+Higher Education Initiatives:
+Centers of Excellence (COEs) in science and engineering designated by CHED (Commission on Higher Education).
+Challenges:
+Unequal access between rural and urban areas.
+Need for more research funding and infrastructure support.
+d. Selected Indigenous Science and Technologies
+Overview:
+Before colonization, Filipinos developed native technologies based on environmental adaptation, cultural needs, and community cooperation.
+Examples of Indigenous Technologies:
+Banaue Rice Terraces (Ifugao):
+Sophisticated irrigation and farming techniques adapted to mountainous terrains.
+Traditional Shipbuilding (Balangay boats):
+Early seafaring technology enabling trade and migration across Southeast Asia.
+Herbal Medicine Practices:
+Use of plants like lagundi, sambong, and tawa-tawa for healing purposes.
+Bamboo and Rattan Engineering:
+Crafting houses, furniture, and tools using sustainable native materials.
+T'nalak Weaving (T'boli people):
+Traditional fiber weaving from abaca; integration of mathematical patterning and cultural storytelling.
+

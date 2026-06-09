@@ -1,0 +1,144 @@
+The Internet
+The Internet is a vast global network that connects millions of private, public, academic, business, and government networks. It allows individuals and organizations to share information, communicate, and access various resources across the world. 
+Brief History of the Internet
+The Internet has evolved from a military-funded research project into a global system that connects billions of people and devices. Below is a brief history highlighting key moments in the development of the Internet:
+
+1. ARPANET (1969)
+Date: January 2, 1969
+Event: The Advanced Research Projects Agency (ARPA), a division of the U.S. Department of Defense, initiated the first experimental computer network, known as ARPANET.
+Concept: The goal was to create a network that did not rely on a central server but instead allowed every computer on the network to have equal importance. This design was meant to ensure that if one or two nodes (computers) were destroyed, the overall network would remain functional, making the system robust and fault-tolerant.
+Impact: ARPANET became the first operational packet-switching network, and it laid the foundation for modern networking protocols.
+
+2. The Birth of the Term "Internet" (1982)
+Date: 1982
+Event: The word "Internet" was first introduced to describe the growing interconnection of computer networks.
+Impact: The use of standardized protocols (such as TCP/IP) allowed different networks to communicate with each other, resulting in a more unified system—this was the beginning of what we now call the Internet.
+
+3. The First "Free Net" (1986)
+Date: 1986
+Event: The first "free net" was created at Case Western Reserve University in Cleveland. This was a significant milestone because it allowed users outside of the military and research institutions to connect to the network.
+Impact: This early experiment in public access to the Internet paved the way for wider adoption and helped demonstrate its potential as a tool for communication and education.
+
+4. Government Expansion and Public Access (1991)
+Date: 1991
+Event: The U.S. government lifted restrictions, allowing private businesses to connect to the Internet.
+Impact: This decision opened the door for commercialization of the Internet. From this point, businesses and individuals could use the network to exchange information, conduct commerce, and communicate globally, which contributed to the rapid growth of the Internet.
+
+5. Modern Internet Growth
+Impact: The release of the World Wide Web (WWW) by Tim Berners-Lee in 1991, combined with the commercialization and expansion of the Internet, sparked a revolution in how people interacted with digital content. This period saw the rise of web browsers, search engines, and e-commerce platforms.
+
+6. The Role of Vinton Cerf and Bob Kahn
+Vinton Gray Cerf and Bob Kahn are credited as the "fathers of the Internet" for their pioneering work in the development of the Transmission Control Protocol/Internet Protocol (TCP/IP).
+Impact: Their work on TCP/IP, which became the standard networking protocol, was crucial to the Internet's development. It enabled different kinds of computer networks to connect to each other, forming the backbone of the modern Internet.
+Recognition: Vinton Cerf has received numerous awards and honors for his work, including being named a ForMemRS (Foreign Member of the Royal Society).
+
+Summary of Key Events in Internet History:
+The Internet today has become an essential part of modern life, supporting everything from communication and entertainment to commerce and education, transforming the way we live and work.
+Major Components of the Internet
+The Internet consists of various key components that work together to provide users with seamless access to information, communication, and services. Below are the major components:
+
+1. Servers
+A server is a computer program or device that provides services or resources to another computer or device (called a "client") over a network. Servers play a central role in managing and distributing data on the Internet.
+Types of Servers:
+Application Server:
+An application server provides the business logic for an application, managing the functions and processes needed by the application. It supports the execution of dynamic content or programs, such as running databases or handling transactions.
+Example: A server running a customer relationship management (CRM) application.
+Web Server:
+A web server serves requested web pages (HTML, CSS, JavaScript, images, etc.) or files to clients (usually browsers). It hosts websites and delivers web content when users visit a site.
+Example: Apache HTTP Server, Nginx.
+Proxy Server:
+A proxy server acts as an intermediary between a user's device (e.g., a computer) and another server (such as a web server). It helps improve security, privacy, and network performance by caching data or filtering requests.
+Example: A corporate network might use a proxy server to block access to certain websites.
+Mail Server:
+A mail server is responsible for handling email transmission, both sending and receiving emails. It stores incoming email from remote senders and forwards outgoing emails for delivery.
+Example: Microsoft Exchange, Gmail mail servers.
+File Server:
+A file server is responsible for the central storage and management of data files, making them accessible to other computers within the same network. It enables sharing of documents, applications, and other files.
+Example: A company server where employees access shared documents.
+Policy Server:
+A policy server is a security component in a policy-based network that provides authorization services, tracks file usage, and enforces access controls.
+Example: Used in corporate networks to enforce security policies on employee devices.
+
+2. IP Address (Internet Protocol)
+An IP address is a numerical label assigned to each device (such as computers, smartphones, or routers) connected to the Internet. It serves as a unique identifier for each device, ensuring that data is routed to the correct destination. There are two types of IP addresses:
+IPv4: The traditional format, such as 192.168.1.0
+IPv6: A newer format to accommodate the growing number of devices, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
+
+3. Browser
+A browser is an application program that enables users to view and interact with websites on the World Wide Web. It retrieves content from web servers and displays it for the user.
+Examples of Browsers:
+Google Chrome
+Safari 
+Internet Explorer
+Opera
+Mozilla Firefox 
+
+4. Domain Name System (DNS)
+The Domain Name System (DNS) is like the "phonebook" of the Internet. It translates human-readable domain names (like www.google.com) into IP addresses (like 172.217.14.206) so computers can locate and communicate with each other.
+Examples of DNS:
+www.facebook.com
+www.pup.edu.ph
+www.academia.edu
+
+
+Segovia cillele  - Domain
+0909123456789 -Ip addresss
+
+Top-Level Domain (TLD) Examples:
+.com: Commercial organizations
+.org: Non-profit organizations
+.net: Network services
+.edu: Educational institutions
+.gov: U.S. Government agencies
+.ph: Philippines
+.au: Australia
+
+5. Internet Service Provider (ISP)
+An Internet Service Provider (ISP) is an organization that provides individuals and businesses with access to the Internet. ISPs offer services such as broadband connectivity, email, web hosting, and sometimes content delivery.
+Types of ISPs:
+National ISP: Provides Internet access across a large geographical area, such as a country.
+Example: PLDT (Philippines), Sky Broadband (UK). 
+Regional ISP: Provides Internet access within specific cities, towns, or smaller regions.
+Example: Converge (Philippines), Cox Communications (USA).
+Examples of ISPs:
+Sky Broadband
+PLDT
+Converge
+
+Summary of Key Components:
+These components work together to form the foundation of the Internet, enabling global communication, data sharing, and access to services.
+Parts of a URL:
+A URL (Uniform Resource Locator) is the address used to access resources on the World Wide Web. It is made up of several parts that help identify the location of a resource and how to retrieve it. Here is a breakdown of the parts of a URL:
+
+Scheme/Protocol
+The scheme or protocol defines how the data is transferred between the user and the server. It specifies the communication method used to access the resource.
+Common schemes include HTTP, HTTPS, FTP, and others.
+Example: https://, ftp://
+Example URL: https://www.example.com
+Subdomain
+A subdomain is a part of the larger domain that is used to organize and navigate different sections of a website. Subdomains are often used to separate distinct services or sections.
+Example: blog.example.com, where blog is the subdomain.
+Example URL: https://blog.example.com
+Second-Level Domain (2LD)
+The second-level domain is the main part of the domain name. It typically represents the organization's name or the website's purpose. It comes immediately before the top-level domain (TLD).
+Example: In example.com, "example" is the second-level domain.
+Example URL: https://www.example.com where example is the second-level domain.
+Top-Level Domain (TLD)
+The top-level domain is the last part of the domain name and follows the second-level domain. It typically indicates the type or geographical origin of the website.
+Common TLDs include .com, .org, .net, and country-specific ones like .uk, .ph.
+Example: In example.com, .com is the top-level domain (TLD).
+Example URL: https://www.example.com, where .com is the TLD.
+Directory
+A directory is a path in the URL that points to a specific location or file on the server. It is often used to navigate through folders on a website. Directories are separated by slashes (/).
+Example: In the URL https://www.example.com/products/, /products/ is a directory that indicates the location of a specific page or resource within the website.
+Example URL: https://blog.example.com/products/electronics/ can be understood as:
+Protocol: https
+Subdomain: blog
+Second-Level Domain: example
+Top-Level Domain: .com
+Directory: /products/electronics/
+
+Internet Uses:
+
+
+

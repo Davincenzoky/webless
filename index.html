@@ -1219,6 +1219,30 @@
             .chat-messages { padding: 12px 12px 6px; }
             .chat-input { padding: 10px 12px; }
         }
+        .chat-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 6px 12px 10px;
+            border-top: 1px solid #1e293b;
+            background: #0f172a;
+        }
+        .chat-chips button {
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            background: transparent;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .chat-chips button:hover {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-color: #6366f1;
+        }
     </style>
 </head>
 <body>
@@ -1329,34 +1353,21 @@
         <div class="avatar">🤖</div>
         <div class="info">
             <strong>Study Bot</strong>
-            <span id="chatStatus">Searches lesson content for answers</span>
+            <span id="chatStatus">Powered by Groq AI</span>
         </div>
-        <button class="settings-btn" onclick="toggleChatSettings()" title="API Settings">⚙️</button>
         <button class="close-btn" onclick="toggleChat()">✕</button>
-    </div>
-    <div class="chat-settings" id="chatSettings">
-        <label>Google Gemini API Key</label>
-        <div class="input-row">
-            <input type="password" id="apiKeyInput" placeholder="Paste your API key here..." />
-            <button class="save-btn" onclick="saveApiKey()">Save</button>
-            <button class="clear-btn" onclick="clearApiKey()">Clear</button>
-        </div>
-        <div class="status">
-            <span class="dot" id="apiStatusDot"></span>
-            <span id="apiStatusText">No API key set — using search mode</span>
-        </div>
-        <a class="get-key" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Get a free API key →</a>
     </div>
     <div class="chat-messages" id="chatMessages">
         <div class="msg bot">
             <div class="label">Study Bot</div>
-            Hi! Ask me anything about your lessons.<br>Example: <em>"What is a computer?"</em> or <em>"Explain APIs"</em>
+            Hi! Ask me anything about your lessons. Try the suggestions below.
         </div>
     </div>
     <div class="chat-input">
         <input type="text" id="chatInput" placeholder="Ask about your lessons..." />
         <button onclick="sendChat()">➤</button>
     </div>
+    <div class="chat-chips" id="chatChips"></div>
 </div>
 
 <script>
@@ -6250,42 +6261,6 @@ function hideTyping() {
     if (el) el.remove();
 }
 
-function toggleChatSettings() {
-    document.getElementById('chatSettings').classList.toggle('open');
-}
-
-function updateApiStatus() {
-    const key = localStorage.getItem('geminiApiKey');
-    const dot = document.getElementById('apiStatusDot');
-    const text = document.getElementById('apiStatusText');
-    const status = document.getElementById('chatStatus');
-    if (key) {
-        dot.className = 'dot online';
-        text.textContent = 'AI mode active — using Gemini API';
-        status.textContent = 'Powered by Gemini AI';
-    } else {
-        dot.className = 'dot offline';
-        text.textContent = 'No API key set — using search mode';
-        status.textContent = 'Searches lesson content for answers';
-    }
-}
-
-function saveApiKey() {
-    const input = document.getElementById('apiKeyInput');
-    const key = input.value.trim();
-    if (!key) return;
-    localStorage.setItem('geminiApiKey', key);
-    input.value = '';
-    updateApiStatus();
-    document.getElementById('chatSettings').classList.remove('open');
-}
-
-function clearApiKey() {
-    localStorage.removeItem('geminiApiKey');
-    document.getElementById('apiKeyInput').value = '';
-    updateApiStatus();
-}
-
 function getRelevantContext(query) {
     const qWords = query.toLowerCase().split(/\W+/).filter(Boolean);
     if (!qWords.length) return null;
@@ -6314,33 +6289,35 @@ function getRelevantContext(query) {
     });
 }
 
-async function askGemini(query, context) {
-    const apiKey = localStorage.getItem('geminiApiKey');
-    if (!apiKey) return null;
+async function askGroq(query, context) {
+    let userMessage;
+    if (context && context.length) {
+        const contextText = context.map(c =>
+            `[${c.subject} — ${c.title}]\n${c.text}`
+        ).join('\n\n');
+        userMessage = `LESSON CONTENT (use as reference if relevant):\n${contextText}\n\nSTUDENT QUESTION: ${query}`;
+    } else {
+        userMessage = `STUDENT QUESTION: ${query}`;
+    }
 
-    const contextText = context.map(c =>
-        `[${c.subject} — ${c.title}]\n${c.text}`
-    ).join('\n\n');
-
-    const systemPrompt = `You are a precise study assistant. Answer the user's question using ONLY the lesson content provided below. If the content does not contain enough information, say so. Do not add external knowledge. Keep answers clear and factual.`;
-
-    const payload = {
-        contents: [{
-            parts: [{
-                text: `${systemPrompt}\n\nLESSON CONTENT:\n${contextText}\n\nUSER QUESTION: ${query}\n\nAnswer based only on the lesson content above:`
-            }]
-        }]
-    };
+    const systemPrompt = `You are a friendly study assistant for college students. Answer any question clearly in exactly one sentence. If relevant lesson content is provided below, use it as reference. Otherwise, use your general knowledge. Keep it helpful and concise.`;
 
     try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+        const res = await fetch('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: userMessage }
+                ]
+            })
         });
-        if (!res.ok) return null;
-        const data = await res.json();
-        return data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
+        if (res.ok) {
+            const data = await res.json();
+            return data?.choices?.[0]?.message?.content || null;
+        }
+        return null;
     } catch {
         return null;
     }
@@ -6355,28 +6332,16 @@ function sendChat() {
     input.value = '';
     showTyping();
 
-    const apiKey = localStorage.getItem('geminiApiKey');
-
-    if (apiKey) {
-        setTimeout(async () => {
-            const context = getRelevantContext(q);
-            if (!context) {
-                hideTyping();
-                addMessage('I could not find relevant lesson content for your question. Please try asking about a topic covered in your lessons.', 'bot');
-                return;
-            }
-            const answer = await askGemini(q, context);
-            hideTyping();
-            if (answer) {
-                const sources = context.map(c => c.subject + ' \u2014 ' + c.title).join('<br>');
-                addMessage(answer, 'bot', sources);
-            } else {
-                addMessage('The AI service did not respond. Please check your API key or try again later.', 'bot');
-            }
-        }, 100);
-    } else {
-        setTimeout(() => {
-            hideTyping();
+    setTimeout(async () => {
+        const context = getRelevantContext(q);
+        const answer = await askGroq(q, context);
+        hideTyping();
+        if (answer) {
+            const sources = context && context.length
+                ? context.map(c => c.subject + ' \u2014 ' + c.title).join('<br>')
+                : null;
+            addMessage(answer, 'bot', sources);
+        } else {
             const result = searchLessons(q);
             if (result) {
                 const intro = 'Here is what I found in your <strong>' + result.subject + '</strong> lesson <em>"' + result.title + '"</em>:<br><br>';
@@ -6396,12 +6361,33 @@ function sendChat() {
                     'bot'
                 );
             }
-        }, 600);
-    }
+        }
+    }, 100);
 }
 
 // Init chat status
-updateApiStatus();
+const examples = [
+    'What is a computer?',
+    'Explain APIs',
+    'Internet threats',
+    'What is blockchain?'
+];
+
+function renderChips() {
+    const container = document.getElementById('chatChips');
+    container.innerHTML = '';
+    examples.forEach(text => {
+        const btn = document.createElement('button');
+        btn.textContent = text;
+        btn.onclick = () => {
+            document.getElementById('chatInput').value = text;
+            sendChat();
+        };
+        container.appendChild(btn);
+    });
+}
+
+renderChips();
 
 document.getElementById('chatInput').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') sendChat();

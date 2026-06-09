@@ -1,0 +1,51 @@
+What Are Quantitative Methods?
+Quantitative methods = using numbers, math, and statistics to analyze problems and make decisions.
+It’s all about:
+✔ Measuring things
+✔ Turning data into numbers
+✔ Finding patterns
+✔ Making predictions
+✔ Supporting decisions with evidence
+If it can be counted, calculated, or modeled → it’s quantitative.
+ Where It’s Used
+Main Areas Inside Quantitative Methods
+Think of it as a toolbox.
+ Statistics
+Deals with data.
+Mean, median, variance
+Probability
+Regression
+Hypothesis testing
+Correlation
+Used to analyze past data
+Mathematics
+The foundation.
+Algebra
+Calculus
+Matrices
+Functions
+Used to build models
+ Operations Research (OR)
+Optimizing decisions.
+Linear programming
+Transportation models
+Assignment models
+Network models
+ Used to find the best solution under constraints
+Example:
+“What's the cheapest way to ship goods to 5 cities?”
+Decision Theory
+Making smart choices under uncertainty.
+Payoff tables
+Decision trees
+Expected value
+Forecasting
+Predicting the future using data.
+Time series analysis
+Moving averages
+Exponential smoothing
+ Quantitative Modeling
+Turning real-world problems into equations.
+Example:
+Profit = Revenue − Cost
+Demand = f(Price, Income)

@@ -1,0 +1,107 @@
+Data Storage and Retrieval Systems 
+“Where do your photos, school files, and social media posts actually live and how do you find them instantly?”
+What Are Data Storage and Retrieval Systems?
+Data storage and retrieval systems are technologies and methods used to store data securely and retrieve it efficiently when needed.
+They ensure:
+Data is available
+Data is accurate
+Data is protected
+
+Databases and Data Warehouses
+“Why can banks retrieve your transaction history in seconds—even from years ago?”
+
+What is a Database?
+A database is an organized collection of structured data stored electronically and managed by a Database Management System (DBMS).
+Examples of database use:
+Student records
+Bank accounts
+Online shopping systems
+Common DBMS: MySQL, Oracle, PostgreSQL, SQL Server
+What is a Data Warehouse?
+A data warehouse stores large amounts of historical data from multiple sources for analysis and reporting, not daily transactions.
+Database vs. Data Warehouse
+
+File Systems and Cloud Storage
+“What happens if your laptop breaks, do you lose everything?”
+File Systems
+A file system organizes data into files and folders on storage devices like:
+Hard drives
+USB flash drives
+Local computers
+Examples: NTFS, FAT32, ext4
+Cloud Storage
+Cloud storage allows data to be stored on remote servers and accessed over the internet.
+Examples: Google Drive, OneDrive, Dropbox, iCloud
+
+File Systems vs. Cloud Storage
+
+Data Retrieval Techniques
+What is Data Retrieval?
+Data retrieval is the process of accessing stored data quickly and accurately.
+Common Data Retrieval Techniques
+Search queries (keywords, filters)
+Indexes (speed up searches)
+SQL queries (SELECT statements)
+Metadata-based retrieval
+Sorting and filtering
+
+
+
+Information Security and Privacy
+“Have you ever received a message saying your account was hacked?”
+
+What is Information Security?
+Information security protects data from:
+Unauthorized access
+Loss
+Damage
+Cyberattacks
+
+Core Principles of Information Security (CIA Triad)
+
+Data Protection Measures
+“Why do websites ask for passwords, OTPs, and fingerprints?”
+
+Common Data Protection Measures
+Passwords & authentication
+Encryption
+Firewalls
+Antivirus software
+Access control
+Regular backups
+Example
+Encrypted data = unreadable without a key
+Backup = recovery after system failure
+
+Legal and Ethical Considerations
+“Is it okay for a company to sell your personal data without telling you?”
+
+Legal vs. Ethical Issues
+
+Ethical Principles in Information Management
+Transparency
+Consent
+Accountability
+Fair use
+
+
+Privacy Laws (GDPR, HIPAA, and Others)
+“Why do websites ask you to accept cookies?”
+
+- Cookies are files created by websites you visit. By saving information about your visit, they make your online experience easier. For example, sites can keep you signed in, remember your site preferences, and give you locally relevant content.
+
+-Cache refers to a storage layer that saves copies of web resources, such as HTML pages, images, JavaScript, and CSS files, to improve website performance. By storing these resources locally, the cache reduces the time it takes to load frequently visited pages and decreases the amount of data that needs to be retrieved from the server. This means that upon revisiting a site, the browser can quickly load these resources from the cache rather than downloading them again.
+
+What Are Privacy Laws?
+Privacy laws regulate how organizations collect, store, and use personal data.
+Key Privacy Laws
+
+Core Rights Under Privacy Laws
+Right to know
+Right to access
+Right to correct
+Right to delete
+
+
+
+

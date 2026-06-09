@@ -1,0 +1,47 @@
+Internet Threats
+1. Malware
+Description: Malware (short for "malicious software") refers to any software specifically designed to disrupt, damage, or gain unauthorized access to computer systems. This category includes viruses, worms, ransomware, spyware, and more.
+What it can do: Malware can corrupt files, steal personal information, damage computer systems, or allow unauthorized access to sensitive data.
+
+2. Pharming
+Description: Pharming involves redirecting the legitimate website’s traffic to fraudulent websites. This is typically done by altering DNS settings, making it difficult for users to realize they are being redirected.
+What it can do: It can lead to identity theft, financial fraud, and the installation of additional malicious software on the victim’s computer by tricking users into entering sensitive information on fake websites.
+
+3. Phishing
+Description: Phishing is a type of cyber-attack where attackers attempt to trick individuals into revealing sensitive information (like usernames, passwords, or credit card numbers) by masquerading as a trustworthy entity, often via email or fake websites.
+What it can do: Phishing can result in identity theft, unauthorized access to accounts, financial loss, and the compromise of personal or corporate data.
+
+4. Ransomware
+Description: Ransomware is a type of malware that encrypts a user's files or locks them out of their system, demanding payment (usually in cryptocurrency) for decryption or access.
+What it can do: Ransomware can cause severe financial loss, data loss, and significant disruptions to businesses and individuals, as files and systems become inaccessible until a ransom is paid.
+
+5. Spam
+Description: Spam refers to unsolicited, usually irrelevant, or inappropriate messages, typically sent in bulk via email. It is often used to promote products or services or as a vehicle for spreading malware.
+What it can do: Spam clutters inboxes, wastes resources, and can potentially carry malware or phishing links. It also contributes to internet fraud and scams.
+
+6. Spyware
+Description: Spyware is a type of malware that secretly monitors and collects personal information about a user without their knowledge or consent. It can track browsing habits, capture keystrokes, or gather sensitive data.
+What it can do: Spyware can invade privacy, steal personal information, monitor online activity, and often leads to identity theft or financial fraud.
+
+7. Adware
+Description: Adware is software that automatically displays or downloads advertising material (like pop-ups or banners) when the user is online. While it is sometimes bundled with free software, it can also be installed without the user’s consent.
+What it can do: Adware can slow down system performance, annoy users with persistent ads, track user behavior for targeted advertising, and sometimes lead to more harmful malware.
+
+8. Trojan Horse
+Description: A Trojan Horse is a type of malicious software that disguises itself as a legitimate program or file, tricking users into downloading and executing it. Once activated, it can give cybercriminals access to the victim’s system.
+What it can do: Trojans can allow hackers to steal personal information, install additional malicious software, create backdoors for continued access, and damage or delete files.
+
+9. Viruses
+Description: A virus is a type of malware that attaches itself to a legitimate program or file. When the infected program is executed, the virus spreads to other programs and files on the system.
+What it can do: Viruses can corrupt or delete data, slow down system performance, spread to other computers, and cause system failures.
+
+10. Wi-Fi Eavesdropping
+Description: Wi-Fi eavesdropping occurs when cybercriminals intercept the data being transmitted over an unsecured Wi-Fi network. This can happen in public places like coffee shops, airports, or libraries where unsecured Wi-Fi is available.
+What it can do: Eavesdropping can lead to the theft of sensitive information, such as login credentials, financial data, and personal communications, all without the user’s knowledge.
+
+11. Worms
+Description: Worms are self-replicating malicious programs that spread over networks without needing to attach to a host file. They often exploit security vulnerabilities in the system to propagate.
+What it can do: Worms can cause network congestion, slow down system performance, delete files, and sometimes create backdoors for further attacks or installations of additional malware.
+
+Summary of Internet Threats:
+Understanding these threats and their potential consequences is essential for protecting yourself and your devices from cyber attacks. Using strong passwords, keeping software up to date, and practicing caution when clicking on links or downloading files are crucial steps in safeguarding against these threats.

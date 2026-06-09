@@ -1,0 +1,214 @@
+INFORMATION MANAGEMENT 1
+BADUA,VICENTE S.
+2025-2026 2nd Semester
+Midterm
+Tools for Information Management (Overview)
+“How do companies manage thousands of documents, employees, and transactions every day without getting lost?”
+What Are Information Management Tools?
+Definition:
+Information management tools are software systems that help organizations collect, store, organize, analyze, and share information efficiently.
+They help:
+Reduce manual work
+Improve accuracy
+Support decision-making
+
+Main Categories of Tools
+Content Management Systems (CMS)
+Enterprise Resource Planning (ERP)
+Data Analytics Tools
+
+Content Management Systems (CMS)
+	A Content Management System (CMS) is software that allows users to create, manage, and publish digital content without needing advanced technical skills.
+Common CMS Examples;
+WordPress
+Joomla
+Drupal
+Google Sites
+
+Features of a CMS
+Content creation and editing
+User roles and permissions
+Version control
+Media management
+Publishing workflows
+Features of a CMS
+Content creation and editing
+User roles and permissions
+Version control
+Media management
+Publishing workflows
+CMS in Practice
+School websites
+Company intranet
+Online news platforms
+
+Enterprise Resource Planning (ERP)
+An Enterprise Resource Planning (ERP) system integrates multiple business processes into one centralized system.
+Functions of ERP Systems:
+Human resources
+Accounting and finance
+Inventory management
+Sales and procurement
+
+Examples of ERP Systems
+SAP
+Oracle ERP
+Microsoft Dynamics
+
+Benefits of ERP
+Centralized data
+Reduced duplication
+Better coordination across departments
+
+ERP vs. Standalone Systems
+
+Data Analytics Tools
+	Data analytics tools help organizations analyze data to discover patterns, trends, and insights.
+Examples of Data Analytics Tools
+Microsoft Power BI
+Tableau
+Google Analytics
+Excel (advanced analytics)
+Uses of Data Analytics
+Performance monitoring
+Decision support
+Forecasting
+Risk detection
+
+
+Information Governance and Compliance
+	Information governance refers to the policies, processes, and controls that ensure information is managed responsibly, legally, and ethically.
+Goals of Information Governance
+Ensure data quality
+Protect sensitive information
+Meet legal requirements
+Reduce risks
+
+Data Governance Frameworks
+	Data governance defines who can access data, how it is used, and how it is protected.
+Key Components of Data Governance
+Policies and standards
+Data ownership and stewardship
+Access controls
+Data quality management
+
+Example Frameworks
+COBIT
+DAMA-DMBOK
+ISO standards
+
+Compliance Standards
+“What happens if a company ignores data protection rules?”
+What is Compliance?
+Compliance means following laws, regulations, and standards related to information management.
+Common Compliance Standards
+ISO/IEC 27001 (Information Security)
+GDPR (Data protection)
+HIPAA (Healthcare data)
+Why Compliance Matters
+Avoids legal penalties
+Builds trust
+Protects organizational reputation
+
+Risk Management in Information Management
+“What risks come with storing large amounts of data?”
+What is Risk Management?
+Risk management involves identifying, analyzing, and reducing risks related to information systems.
+Common Information Risks
+Data breaches
+System failure
+Human error
+Cyberattacks
+Risk Management Steps
+Identify risks
+Assess impact
+Implement controls
+Monitor and review
+
+Emerging Trends in Information Management 
+“How will information management change in the next 5–10 years?”
+Why Emerging Trends Matter
+Increase data volume and speed
+Introduce new risks and opportunities
+Transform decision-making
+
+Key Emerging Trends
+Big Data and Analytics
+Artificial Intelligence (AI) and Machine Learning (ML)
+Blockchain Technology
+
+Big Data and Advanced Analytics
+What is Big Data?
+Big Data refers to extremely large datasets that are difficult to process using traditional tools.
+The 5 V’s of Big Data
+1. Volume
+Refers to the amount of data generated and stored. Big Data involves massive datasets (terabytes, petabytes, or more) from sources like social media, sensors, transactions, and logs.
+2. Velocity
+Describes the speed at which data is generated, collected, and processed. Examples include real-time data from stock markets, IoT devices, or live user interactions.
+3. Variety
+Indicates the different types of data. This includes:
+Structured (tables, databases)
+Semi-structured (JSON, XML)
+Unstructured (text, images, videos, audio)
+4. Veracity
+Refers to the quality and reliability of data. Big Data can be incomplete, inconsistent, or noisy, so ensuring accuracy and trustworthiness is a key challenge.
+5. Value
+Focuses on the usefulness of data. The goal of Big Data is to extract meaningful insights that support better decisions, innovation, and business outcomes.
+Applications of Big Data
+1. Recommendation Systems
+Big Data is used to analyze user behavior, preferences, and past interactions to suggest relevant products or content.
+📌 Examples: Netflix movie recommendations, Amazon product suggestions, Spotify playlists.
+2. Fraud Detection
+Large volumes of transaction data are analyzed in real time to identify unusual patterns and prevent fraudulent activities.
+📌 Examples: Credit card fraud detection, online banking security, insurance fraud analysis.
+3. Smart Cities
+Big Data helps manage and optimize city operations by analyzing data from sensors, traffic systems, and public services.
+📌 Examples: Traffic congestion control, energy management, waste management, and public safety monitoring
+Applications of Big Data
+1. Recommendation Systems
+Big Data is used to analyze user behavior, preferences, and past interactions to suggest relevant products or content.
+Examples: Netflix movie recommendations, Amazon product suggestions, Spotify playlists.
+2. Fraud Detection
+Large volumes of transaction data are analyzed in real time to identify unusual patterns and prevent fraudulent activities.
+Examples: Credit card fraud detection, online banking security, insurance fraud analysis.
+3. Smart Cities
+Big Data helps manage and optimize city operations by analyzing data from sensors, traffic systems, and public services.
+Examples: Traffic congestion control, energy management, waste management, and public safety monitoring
+
+Artificial Intelligence and Machine Learning in Information Management
+AI and ML Explained
+Artificial Intelligence (AI): Machines performing tasks that require human intelligence
+Machine Learning (ML): Systems that learn from data and improve over time
+
+Uses of Big Data in Information Management
+1. Automated Data Classification
+Big Data tools automatically organize and categorize large volumes of data based on content, patterns, and metadata, improving efficiency and reducing manual effort.
+2. Intelligent Search
+Advanced analytics and machine learning enable faster and more accurate search results by understanding user intent, relevance, and context across massive datasets.
+3. Chatbots and Virtual Assistants
+Big Data helps chatbots analyze user queries, learn from interactions, and provide personalized, real-time responses.
+Examples: Customer support bots, virtual assistants like Siri or Alexa.
+4. Predictive Analytics
+Historical and real-time data are analyzed to predict future trends, behaviors, and outcomes, supporting better decision-making.
+
+Blockchain for Secure Data Storage
+What is Blockchain?
+Blockchain is a decentralized and distributed digital ledger that records transactions across multiple computers in a secure, transparent, and tamper-resistant manner.
+Key Features of Blockchain
+Decentralization
+There is no central authority. Data is shared and maintained across a network of nodes, reducing the risk of single-point failure.
+Transparency
+All transactions are visible to authorized participants, ensuring trust and accountability within the network.
+ Immutability
+Once data is recorded on the blockchain, it cannot be altered or deleted, ensuring data integrity.
+Enhanced Security
+Blockchain uses cryptographic techniques and consensus mechanisms to protect data from unauthorized access and fraud.
+
+
+Uses of Blockchain in Information Management
+Secure Records
+Blockchain provides a tamper-proof system for storing records, ensuring high security for sensitive information such as financial, medical, and legal data.
+Identity Management
+Blockchain enables secure digital identities by allowing users to control and verify their personal information, reducing identity theft and unauthorized access.
+Data Integrity Verification
+Blockchain ensures that stored data remains accurate and unchanged over time. Any attempt to alter data is easily detected, maintaining trust and reliability.

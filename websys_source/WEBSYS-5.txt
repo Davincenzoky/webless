@@ -1,0 +1,94 @@
+  3. Core Technologies (Detailed Discussion)
+A. APIs & Microservices
+APIs (Application Programming Interfaces) and Microservices are key to building scalable and modular web systems.
+Concept of APIs
+An API is a set of rules that allows different software components to communicate.
+It defines how    requests and responses are structured, enabling interaction between the frontend (user interface) and the backend (server/database).
+Example: When you use a mobile banking app, an API sends your login request to the bank’s server and returns your account balance securely.
+REST APIs (Representational State Transfer)
+REST is the most common API style for web systems.
+Uses standard HTTP methods:
+GET – Retrieve data (e.g., get a list of products).
+POST – Send new data (e.g., create a new user).
+PUT/PATCH – Update existing data (e.g., update a profile).
+DELETE – Remove data (e.g., delete an item from a cart).
+Advantage: Stateless, meaning each request is independent, making it easier to scale.
+GraphQL
+A more flexible alternative to REST.
+Allows clients to request exactly the data they need, reducing unnecessary data transfer.
+Example: Instead of making multiple REST calls to get a user’s name, profile picture, and email, a single GraphQL query can return all three at once.
+Microservices Architecture
+Breaks a large application into independent services (e.g., Payments, Notifications, Scheduling).
+Each service:
+Runs on its own server or container.
+Has its own database (if needed).
+Communicates with other services through APIs.
+Benefits:
+Easier maintenance—fix or update one service without affecting the others.
+Better scalability—scale specific services based on demand (e.g., scale the payment service during enrollment season).
+Real Example: Netflix uses microservices for different features like recommendations, video streaming, and billing.
+B. Databases
+Databases store, organize, and manage the data that web systems process.
+There are two main categories: SQL (relational) and NoSQL (non-relational).
+SQL Databases (Structured Query Language)
+Examples: MySQL, PostgreSQL, MariaDB.
+Store data in tables with rows and columns, similar to a spreadsheet.
+Use relationships (foreign keys) to connect data across multiple tables.
+Ideal for:
+Financial transactions.
+Student records.
+Inventory systems.
+Advantage: Enforces data integrity through strict schemas.
+Example Query:
+SELECT * FROM Students WHERE Course = 'Computer Science';
+NoSQL Databases (Not Only SQL)
+Examples: MongoDB, Firebase Realtime Database, CouchDB.
+Store data in flexible formats like documents (JSON), key-value pairs, or graphs.
+Best for:
+Real-time applications (e.g., chat apps).
+Large, unstructured data (e.g., social media posts, IoT data).
+Advantage: Can scale horizontally across multiple servers.
+Example Use: Firebase allows live updates, so when a teacher uploads a new class schedule, students see the change instantly.
+Choosing Between SQL and NoSQL
+SQL when data requires strict structure and relationships.
+NoSQL when data is unstructured or when the system requires real-time updates and rapid scalability.
+C. Security
+Security ensures that web systems protect data integrity, user privacy, and system reliability.
+SSL/TLS Encryption
+Secure Sockets Layer (SSL) and Transport Layer Security (TLS) encrypt data transmitted between a client (browser) and a server.
+Prevents attackers from reading sensitive information like passwords or credit card numbers.
+Indicator: Websites with HTTPS use SSL/TLS.
+Example: Online banking transactions are encrypted to avoid interception.
+Multi-Factor Authentication (MFA)
+Adds an extra layer of protection beyond just a password.
+Requires two or more verification methods, such as:
+Password + SMS code.
+Password + fingerprint.
+Reduces the risk of unauthorized access even if a password is stolen.
+OAuth 2.0 Authorization
+A secure protocol for granting access without sharing passwords.
+Example: Logging into a website using your Google or Facebook account.
+Process:
+User grants permission.
+Website receives a token to access limited data (like email or profile picture) without exposing the full account. 
+Protection Against Common Threats
+SQL Injection
+Attackers inject malicious SQL commands into input fields to access or manipulate database data.
+Prevention: Use prepared statements and input validation.
+Cross-Site Scripting (XSS)
+Attackers inject malicious scripts into web pages to steal cookies or session data.
+Prevention: Sanitize user input and use Content Security Policy (CSP).
+Cross-Site Request Forgery (CSRF)
+Tricks users into performing actions without their knowledge (e.g., changing passwords).
+Prevention: Use anti-CSRF tokens.
+Data Privacy Compliance
+Web systems must follow laws like:
+GDPR (Europe) – General Data Protection Regulation.
+Philippine Data Privacy Act (RA 10173).
+Ensures user data is collected, stored, and processed responsibly.
+✅ Summary Table
+Key Takeaway
+A strong web system depends on:
+APIs & Microservices for scalability and modular design,
+Databases for reliable data management,
+Security protocols to protect users and maintain trust.

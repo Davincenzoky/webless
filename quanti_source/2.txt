@@ -1,0 +1,38 @@
+💻 Project 2: Smart Computer Lab Management System
+1️⃣ Purpose / Problem Statement
+College computer labs are often underutilized at some times and overcrowded at others. This system analyzes lab usage, predicts busy hours, and allocates computers efficiently to reduce student waiting time and optimize resources.
+2️⃣ Input / Data Required
+List of labs (name, number of computers, type: lab/general)
+Lab usage logs (student check-ins/check-outs, timestamps)
+Courses or class schedules (which classes require lab access)
+Student data (optional for advanced features)
+3️⃣ Modules / Features
+Lab Registration Module: Add or edit labs and capacities
+Student Check-in/Check-out Module: Track usage in real-time
+Usage Analytics Module:
+Calculate average usage per hour/day
+Identify peak and idle times
+Prediction Module:
+Estimate waiting time for students
+Forecast busy hours using probability/statistics
+Optimization Module: Suggest lab allocations or open extra labs to reduce waiting
+4️⃣ Quantitative Methods Used
+Statistics: Mean, median, standard deviation of lab usage
+Probability: Predict peak hours and chances of overcrowding
+Queuing Theory: Calculate average waiting times and queue lengths
+Optimization: Assign students to labs in a way that maximizes utilization
+5️⃣ Output / Result
+Lab usage dashboard (graphical representation of usage trends)
+Predicted waiting times for different hours
+Recommendations for lab allocations
+Reports showing underutilized and overcrowded labs
+6️⃣ Suggested Technology Stack
+Backend: Python (Pandas, NumPy for calculations) or Java
+Database: MySQL / SQLite
+Frontend: HTML/CSS/React or simple web forms
+Graphs & Charts: Matplotlib / Chart.js
+7️⃣ Optional Enhancements
+Real-time student lab availability notifications
+Mobile app interface for students to check lab status
+Automatic lab assignment based on course requirements
+Integration with attendance or course registration system

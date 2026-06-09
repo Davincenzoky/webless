@@ -1,0 +1,78 @@
+
+ Starting Point — UNNORMALIZED Table (The Mess)
+Imagine a college system:
+Problems:
+Multiple values in one cell (Courses, Instructor, Phone)
+Repeating instructor data
+Hard to update (change Dr. Rao's phone? Update everywhere 😩)
+
+🧹 Step 1 — First Normal Form (1NF)
+Rule: No multiple values in a single cell. Each row = one fact.
+Convert to:
+✅ Atomic values
+❌ Still repeating instructor info
+
+🧩 Step 2 — Second Normal Form (2NF)
+Rule: Must be in 1NF + no partial dependency
+(Non-key column should depend on the whole primary key)
+Primary Key here = (StudentID, Course)
+But:
+StudentName, Dept → depend only on StudentID
+InstructorPhone → depends only on Instructor
+Split tables:
+Students Table
+Enrollments Table
+Instructor Table
+✅ No partial dependency now
+
+🔗 Step 3 — Third Normal Form (3NF)
+Rule: No transitive dependency
+(A non-key attribute depends on another non-key attribute)
+Suppose we had:
+| StudentID | StudentName | DeptID | DeptName |
+DeptName depends on DeptID, not StudentID → transitive dependency
+Fix:
+Department Table
+Students Table
+
+🧠 Step 4 — BCNF (Boyce–Codd Normal Form)
+Rule: Every determinant must be a candidate key
+Suppose:
+| Course | Instructor | Room |
+If Instructor → Room (each instructor has fixed room)
+But Course → Instructor is PK
+Instructor is not a key → violates BCNF
+Split:
+CourseInstructor
+| Course | Instructor |
+InstructorRoom
+| Instructor | Room |
+
+🧮 Step 5 — Fourth Normal Form (4NF)
+Rule: No multi-valued dependencies
+Hobby and Language are independent multi-values
+Split:
+StudentHobby
+| Student | Hobby |
+StudentLanguage
+| Student | Language |
+
+🧬 Step 6 — Fifth Normal Form (5NF)
+Rule: No join dependency
+| Supplier | Part | Project |
+If info can be reconstructed from smaller tables:
+Split into:
+SupplierPart
+SupplierProject
+PartProject
+
+🎯 SUMMARY TABLE
+
+💡 In Simple Words
+Normalization =
+1NF → Make cells simple
+2NF → Make data depend on full key
+3NF → Remove indirect dependency
+BCNF → Stronger 3NF
+4NF → One independent multi-value per table
+5NF → Break complex joins

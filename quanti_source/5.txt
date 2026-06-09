@@ -1,0 +1,38 @@
+💻 Project 5: Cloud Resource & Task Scheduling System
+1️⃣ Purpose / Problem Statement
+In cloud computing, servers and resources are limited, and multiple tasks/users compete for them. This system efficiently allocates cloud resources to tasks, prevents server overload, and optimizes utilization.
+2️⃣ Input / Data Required
+List of servers/cloud resources (CPU, RAM, storage, availability)
+List of tasks (task ID, resource requirements, priority, estimated duration)
+User/task requests with time of submission
+Resource constraints (max load per server, maintenance schedule)
+3️⃣ Modules / Features
+Resource Registration Module: Add/edit cloud servers with specifications
+Task Submission Module: Users submit tasks with resource needs
+Resource Allocation Module:
+Assign tasks to servers based on availability, priority, and load
+Prevent overloads
+Analytics Dashboard:
+Server utilization charts
+Task completion time analysis
+Prediction Module (Optional): Forecast future server load based on past usage
+4️⃣ Quantitative Methods Used
+Linear Programming & Optimization: Assign tasks to servers in an optimal way
+Queuing Theory: Model task waiting time and server utilization
+Probability: Predict peak load times
+Statistics: Analyze resource utilization, task completion times
+5️⃣ Output / Result
+Task-to-server assignment table
+Server utilization report (CPU, RAM, storage usage)
+Predicted peak usage hours
+Reduced waiting time for tasks and better load distribution
+6️⃣ Suggested Technology Stack
+Backend: Python (with PuLP / OR-Tools for optimization) or Java
+Database: MySQL / MongoDB
+Frontend: HTML/CSS/React
+Charts/Graphs: Matplotlib / Plotly / Chart.js
+7️⃣ Optional Enhancements
+Implement dynamic scaling: spin up new virtual machines when load is high
+Integrate with cloud APIs (AWS, Azure, GCP) for real deployment
+Include priority-based scheduling for critical tasks
+Real-time monitoring dashboard for server status

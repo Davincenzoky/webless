@@ -1,0 +1,89 @@
+INFORMATION MANAGEMENT 1
+BADUA,VICENTE S.
+2025-2026 2nd Semester
+Prelim
+
+Lesson I – Introduction to Information Management
+“Why does Google always know what you’re looking for, and how do businesses make sense of all their data?”
+Short discussion: Ask students to share examples of information they use daily (like weather apps, online shopping suggestions, or school portals). Discuss how this information helps them make decisions.
+
+What is Information Management?
+Definition:
+Information Management (IM) is the discipline of collecting, organizing, storing, and using information efficiently so that individuals and organizations can make informed decisions.
+In practice, information management involves:
+Collecting data from multiple sources
+Organizing data into meaningful categories
+Storing information securely for easy access
+Sharing information with the right people
+Maintaining accuracy and relevance of information
+Ensuring compliance with laws and policies
+Significance:
+Supports better decision-making
+Improves efficiency and productivity
+Protects sensitive data
+Enhances knowledge sharing in organizations
+
+
+The Role of an Information Manager
+While everyone in an organization uses information, some roles focus on managing it:
+
+The Information Lifecycle
+ “Think about your school reports, social media posts, or bank statements. How long do you think they ‘exist’ before they are deleted or archived?”
+What is the Information Lifecycle?
+The Information Lifecycle is the series of stages through which information passes, from creation to disposal. Managing this lifecycle ensures information remains accurate, relevant, and secure.
+Stages of the Information Lifecycle:
+Creation/Collection – Data is created or collected (e.g., survey results, sensor readings).
+Storage – Information is stored in databases, files, or cloud systems.
+Use – Accessed for decision-making or daily tasks.
+Sharing/Distribution – Shared with relevant people or departments.
+Archival – Stored long-term for reference or legal reasons.
+Disposal/Deletion – Removed when no longer needed or obsolete.
+Example:
+A school collects student grades → stores them digitally → teachers analyze grades → reports shared with parents → archived after graduation → deleted after 10 years per policy.
+
+Types of Data (Structured vs. Unstructured)
+“Look at your phone: your contacts list vs. your photos. Which is easier for a computer to process?”
+Types of Data
+
+
+Methods of Data Collection
+
+“How do companies like Netflix or Shopee know what you like to watch or buy?”
+Data Collection Methods
+
+Choosing a method: Consider reliability, cost, time, and purpose.
+
+Data Organization: Classification and Categorization
+
+“When your music app sorts songs into playlists, how does it know where to put them?”
+Classification and Categorization
+
+Benefits:
+Easier retrieval
+Faster analysis
+Better decision-making
+
+Metadata and Its Importance
+“Have you ever wondered why your photos show the date and location automatically?”
+What is Metadata?
+Metadata is “data about data.” It provides context, structure, and meaning to information.
+Types of Metadata:
+Descriptive: Author, title, date (helps find data)
+Structural: File type, size, format (helps store/manage data)
+Administrative: Permissions, version, retention (helps control data use)
+Example:
+A photo:
+Descriptive → Title: “Beach Trip”
+Structural → File type: JPEG, Size: 2 MB
+Administrative → Created by user X, Permissions: private
+Importance:
+Makes searching and organizing easier
+Ensures data quality and compliance
+Helps maintain security
+
+
+
+
+
+
+

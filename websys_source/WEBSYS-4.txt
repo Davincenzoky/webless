@@ -1,0 +1,72 @@
+WEBSYS – Elective 3: Web Systems and Technologies
+WEBSYS (Web Systems and Technologies) is a comprehensive course focused on the design, development, and deployment of dynamic and responsive web applications. It explores both client-side and server-side web technologies, database integration, RESTful APIs, and modern frameworks. The course encourages students to build full-stack applications while following best practices in usability, accessibility, security, and performance optimization.
+Database Integration
+ 1. Connecting Web Apps to Databases (MySQL / PostgreSQL / MongoDB)
+ Why Database Integration?
+Databases allow web apps to store, retrieve, and manage data dynamically — such as user info, messages, products, and more.
+ Common Database Types
+ How to Connect (Examples)
+ PHP + MySQL
+$conn = new mysqli("localhost", "root", "", "mydb");
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+✅ Node.js + MongoDB
+const { MongoClient } = require('mongodb');
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+await client.connect();
+const db = client.db("mydb");
+✅ Python Flask + PostgreSQL (via psycopg2)
+import psycopg2
+conn = psycopg2.connect("dbname='mydb' user='postgres' password='1234'")
+cursor = conn.cursor()
+ 2. CRUD Operations
+CRUD = Create, Read, Update, Delete — the four basic operations apps perform with databases.
+ CRUD Example in PHP (MySQL)
+// Insert
+$sql = "INSERT INTO users (name, email) VALUES ('John', 'john@email.com')";
+$conn->query($sql);
+// Read
+$result = $conn->query("SELECT * FROM users");
+// Update
+$conn->query("UPDATE users SET name='Jane' WHERE id=1");
+// Delete
+$conn->query("DELETE FROM users WHERE id=1");
+ 3. Data Validation and Sanitization
+Why It Matters:
+Prevents SQL Injection, XSS, and data corruption.
+Ensures only clean, correct, and secure data is saved.
+ Validation
+Validation checks if the input is correct in format and type.
+Examples:
+Required fields not empty
+Valid email format
+Number ranges
+Example in JavaScript (client-side):
+if (!email.includes("@")) {
+  alert("Invalid email");
+}
+Example in PHP (server-side):
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  echo "Invalid email format";
+}
+Sanitization
+Sanitization cleans the input by removing potentially harmful characters.
+PHP Example:
+$name = htmlspecialchars($_POST['name']);
+Node.js Example using Express and validator:
+const validator = require('validator');
+if (!validator.isEmail(req.body.email)) {
+  return res.send("Invalid Email");
+}
+SQL Injection Prevention
+Always use prepared statements or ORM tools to prevent malicious code execution.
+PHP (MySQLi Prepared Statement):
+$stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+Node.js (MongoDB safe usage):
+Avoid building queries with user input directly; use parameters instead:
+db.collection("users").findOne({ email: req.body.email });
+ Summary

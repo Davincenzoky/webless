@@ -1,0 +1,65 @@
+WEBSYS – Elective 3: Web Systems and Technologies
+WEBSYS (Web Systems and Technologies) is a comprehensive course focused on the design, development, and deployment of dynamic and responsive web applications. It explores both client-side and server-side web technologies, database integration, RESTful APIs, and modern frameworks. The course encourages students to build full-stack applications while following best practices in usability, accessibility, security, and performance optimization.
+Fundamentals of Web Systems
+ 1. Internet, Web, HTTP/HTTPS Protocols
+ The Internet vs. The Web
+Internet: A global network of interconnected computers and devices that communicate using standardized protocols (e.g., TCP/IP). It is the infrastructure.
+World Wide Web (WWW): A service that runs on the Internet. It consists of websites and web pages accessible through browsers. It uses HTTP and HTTPS to transfer information.
+ HTTP & HTTPS Protocols
+HTTP (Hypertext Transfer Protocol):
+An application-layer protocol used to transmit hypertext (HTML) over the web.
+Works on a request-response model: A client (browser) sends a request, and a server responds with the content.
+Default port: 80
+HTTPS (HTTP Secure):
+A secure version of HTTP using SSL/TLS encryption.
+Ensures confidentiality, integrity, and authentication of data.
+Default port: 443
+Used for secure data transfers (e.g., online banking, e-commerce).
+🔹 2. Web Browsers, Servers, and Request-Response Cycle
+Web Browsers
+Software applications used to access, retrieve, and display content from the Web.
+Examples: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
+They interpret HTML, CSS, and JavaScript and display formatted content to the user.
+Act as clients in the client-server model.
+Web Servers
+Software or hardware that serves web content (HTML pages, images, scripts) to clients.
+Common servers: Apache, Nginx, IIS
+Listens for requests on ports (e.g., 80, 443) and sends back appropriate responses.
+The Request-Response Cycle
+User enters URL in the browser.
+Browser sends HTTP request to the web server.
+Server processes the request and returns an HTTP response (with HTML content).
+Browser renders the response and displays the web page.
+Example:
+GET /index.html HTTP/1.1
+Host: www.example.com
+Server response:
+HTTP/1.1 200 OK
+Content-Type: text/html
+3. Domain Names, DNS, and Hosting
+Domain Names
+Human-readable names used to identify websites.
+Example: www.openai.com
+Easier to remember than IP addresses (e.g., 192.168.0.1)
+Comprised of:
+Top-Level Domain (TLD): .com, .org, .edu
+Second-Level Domain: openai
+Subdomain (optional): www
+ DNS (Domain Name System)
+Translates domain names into IP addresses.
+Works like a phonebook of the Internet.
+When you visit a website, DNS:
+Receives the domain name.
+Resolves it to the corresponding IP address.
+Directs your browser to the correct server.
+ Web Hosting
+A service that provides storage space and access to websites on the Internet.
+Hosts store:
+HTML/CSS/JS files
+Databases
+Media assets (images, videos)
+Types of hosting:
+Shared Hosting: Cost-effective, resources are shared.
+VPS (Virtual Private Server): More control and resources.
+Dedicated Hosting: Full control over a physical server.
+Cloud Hosting: Scalable, pay-as-you-go (e.g., AWS, Azure).

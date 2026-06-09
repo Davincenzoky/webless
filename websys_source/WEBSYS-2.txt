@@ -1,0 +1,102 @@
+WEBSYS – Elective 3: Web Systems and Technologies
+WEBSYS (Web Systems and Technologies) is a comprehensive course focused on the design, development, and deployment of dynamic and responsive web applications. It explores both client-side and server-side web technologies, database integration, RESTful APIs, and modern frameworks. The course encourages students to build full-stack applications while following best practices in usability, accessibility, security, and performance optimization.
+Front-End Web Development
+1. HTML5 Semantic Structure
+What is HTML5?
+HTML5 is the latest version of Hypertext Markup Language used to structure content on the web. It introduces semantic tags that describe the meaning of content clearly.
+ Semantic Elements
+Semantic tags improve:
+Readability (for developers)
+Accessibility (for screen readers)
+SEO (search engine optimization)
+Common HTML5 Semantic Tags:
+Example:
+<main>
+  <section>
+    <article>
+      <h2>News Title</h2>
+      <p>This is a news article.</p>
+    </article>
+  </section>
+</main>
+ 2. CSS3 Styling and Animations (Flexbox, Grid)
+ CSS3 Overview
+CSS (Cascading Style Sheets) is used for styling web content. CSS3 introduced transitions, animations, and layout modules like Flexbox and Grid.
+Flexbox
+A 1-dimensional layout system for aligning items along a row or column
+Key properties:
+display: flex;
+justify-content: space-between;
+align-items: center;
+CSS Grid
+A 2-dimensional system used to create complex layouts with rows and columns.
+Example:
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 20px;
+CSS Animations
+Used to animate changes in CSS properties.
+Example:
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.element {
+  animation: fadeIn 2s ease-in;
+}
+ 3. JavaScript Basics (DOM Manipulation, Events, Functions)
+ What is JavaScript?
+JavaScript is a client-side scripting language used to add interactivity to web pages.
+ DOM (Document Object Model)
+JavaScript can access and modify HTML content via the DOM.
+Example:
+document.getElementById("title").innerText = "Hello World!";
+ Events
+JavaScript can react to user actions like clicks, scrolls, and key presses.
+Example:
+document.getElementById("btn").addEventListener("click", function() {
+  alert("Button Clicked!");
+});
+Functions
+Functions are reusable blocks of code.
+Example:
+function greet(name) {
+  console.log("Hello, " + name);
+}
+greet("Vincent");
+ 4. Responsive Web Design (Media Queries, Mobile-First Design)
+What is Responsive Design?
+Responsive design makes websites look good on all screen sizes: mobile, tablet, desktop.
+ Media Queries
+Used to apply styles based on screen size.
+Example:
+@media (max-width: 768px) {
+  body {
+    background-color: lightgray;
+  }
+}
+Mobile-First Design
+Design starts with mobile screens first, then scales up to larger devices using media queries.
+Steps:
+Design for small screens (default styles).
+Add styles for larger screens using media queries.
+ 5. UI Frameworks (Bootstrap, Tailwind CSS)
+ Bootstrap
+A CSS framework by Twitter for building responsive, mobile-first sites quickly.
+Features:
+Grid system (12 columns)
+Prebuilt components (buttons, navbars, modals)
+Utility classes
+Example:
+<div class="container" >
+  <button class="btn btn-primary">Click Me</button>
+</div>
+Tailwind CSS
+A utility-first CSS framework that provides low-level utility classes to build custom designs.
+Example:
+<button class="bg-blue-500 text-white px-4 py-2 rounded">Click</button>
+Advantages:
+Faster styling workflow
+Fully customizable
+Encourages reusable components
+Summary

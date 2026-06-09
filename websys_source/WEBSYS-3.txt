@@ -1,0 +1,97 @@
+WEBSYS – Elective 3: Web Systems and Technologies
+WEBSYS (Web Systems and Technologies) is a comprehensive course focused on the design, development, and deployment of dynamic and responsive web applications. It explores both client-side and server-side web technologies, database integration, RESTful APIs, and modern frameworks. The course encourages students to build full-stack applications while following best practices in usability, accessibility, security, and performance optimization.
+Back-End Web Development
+1. Introduction to Server-Side Scripting (PHP, Node.js, Python Flask)
+What is Server-Side Scripting?
+Server-side scripting is the processing of web requests on the server.
+It allows for dynamic content generation, database access, session management, and authentication.
+When a user submits a form, the data is processed server-side, and the server sends back the result.
+ Popular Server-Side Languages & Frameworks:
+PHP
+A widely-used open-source scripting language embedded within HTML.
+Processes data before it's sent to the browser.
+Example:
+<?php
+echo "Welcome, " . $_POST["username"];
+?>
+ Node.js
+JavaScript runtime environment that executes JavaScript cod0e outside the browser.
+Used with frameworks like Express.js to build scalable server-side applications.
+Example:
+app.post('/login', (req, res) => {
+  res.send("Welcome " + req.body.username);
+});
+ Python Flask
+Lightweight Python web framework ideal for beginners.
+Clean and readable syntax.
+Example:
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    return f"Welcome {username}"
+ 2. Web Servers (Apache, Nginx, Express.js)
+What is a Web Server?
+A web server:
+Listens for requests from clients (browsers)
+Processes those requests
+Responds with HTML, JSON, or files
+Common Web Servers:
+ Apache
+Open-source HTTP server.
+Works well with PHP.
+Uses .htaccess for configuration.
+ Nginx
+High-performance web server and reverse proxy.
+Efficient at serving static files and handling many concurrent connections.
+Often used as a load balancer or reverse proxy in production.
+ Express.js (Node.js framework)
+Minimal and flexible framework for Node.js.
+Used to build APIs and web apps quickly.
+Handles routing, middleware, and request parsing.
+Example:
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Hello World'));
+3. Handling Form Submissions and Sessions
+ Form Submissions
+Web forms collect data via HTML, and server-side scripts process the input.
+Data is sent using POST or GET methods.
+Example in PHP:
+<form method="POST" action="process.php">
+  <input type="text" name="username">
+</form>
+// process.php
+echo $_POST['username'];
+ Sessions
+Sessions store data across multiple pages. They help track users (e.g., during login).
+Example in PHP:
+session_start();
+$_SESSION['user'] = 'Vincent';
+echo $_SESSION['user'];
+Example in Express.js:
+const session = require('express-session');
+app.use(session({ secret: 'secretkey', resave: false, saveUninitialized: true }));
+req.session.user = "Vincent";
+ 4. File Handling and Authentication Basics
+File Handling
+Back-end scripts can upload, read, write, and delete files on the server.
+PHP Example:
+$file = fopen("data.txt", "w");
+fwrite($file, "Hello World");
+fclose($file);
+Node.js Example:
+const fs = require('fs');
+fs.writeFileSync('data.txt', 'Hello World');
+ Authentication Basics
+Authentication ensures only authorized users access protected areas.
+Common Steps:
+User submits login form
+Server verifies credentials (username + password)
+If valid, server starts a session or generates a token
+Example in PHP:
+if ($_POST['username'] == 'admin' && $_POST['password'] == '1234') {
+  $_SESSION['auth'] = true;
+}
+In Express.js:
+Use bcrypt for hashing, express-session or JWT for session/token management.
+Summary
