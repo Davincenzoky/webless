@@ -24,6 +24,7 @@ app.post('/api/chat', async (req, res) => {
 
   const body = JSON.stringify({
     model: 'llama-3.3-70b-versatile',
+    temperature: 0.3,
     messages
   });
 

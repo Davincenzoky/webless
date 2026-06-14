@@ -6300,7 +6300,7 @@ async function askGroq(query, context) {
         userMessage = `STUDENT QUESTION: ${query}`;
     }
 
-    const systemPrompt = `You are a friendly study assistant for college students. Answer any question clearly in exactly one sentence. If relevant lesson content is provided below, use it as reference. Otherwise, use your general knowledge. Keep it helpful and concise.`;
+    const systemPrompt = `You are a casual, friendly study buddy with a human touch -- not a robot. Answer in exactly one precise sentence. If lesson content is provided below, use it naturally as reference. If the user greets you or asks something casual (like "hello", "how are you", "what's up"), respond warmly like a normal person would. If they ask about their lessons, answer concisely using the material. Always sound natural and human, never robotic or stiff.`;
 
     try {
         const res = await fetch('/api/chat', {
@@ -6347,17 +6347,8 @@ function sendChat() {
                 const intro = 'Here is what I found in your <strong>' + result.subject + '</strong> lesson <em>"' + result.title + '"</em>:<br><br>';
                 addMessage(intro + result.answer, 'bot', result.subject + ' \u2014 ' + result.title);
             } else {
-                const suggestions = [
-                    '<strong>What is a computer?</strong>',
-                    '<strong>Explain APIs</strong>',
-                    '<strong>Internet threats</strong>',
-                    '<strong>What is blockchain?</strong>',
-                    '<strong>Types of hackers</strong>'
-                ];
                 addMessage(
-                    'I could not find a matching answer in your lessons. ' +
-                    'Please try rephrasing your question or ask about a specific topic.<br><br>' +
-                    'Suggestions: ' + suggestions[Math.floor(Math.random() * suggestions.length)],
+                    "Hmm, I couldn't find anything about that in your notes. Mind rephrasing or asking about a different topic?",
                     'bot'
                 );
             }
