@@ -177,6 +177,20 @@
             border-left-color: #818cf8;
             font-weight: 600;
         }
+        .sidebar a.final-link {
+            border-left-color: #8b5cf6;
+            font-weight: 600;
+            font-size: 0.78rem;
+            background: rgba(139,92,246,0.06);
+        }
+        .sidebar a.final-link:hover {
+            background: rgba(139,92,246,0.12);
+            border-left-color: #a78bfa;
+        }
+        .sidebar a.final-link.active {
+            background: rgba(139,92,246,0.18);
+            border-left-color: #a78bfa;
+        }
 
         /* ===== MAIN CONTENT ===== */
         .main {
@@ -324,6 +338,221 @@
             line-height: 1.6;
             margin: 12px 0 18px;
             font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        /* ===== ACTIVITIES ===== */
+        .activity-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #e2e8f0;
+        }
+        .activity-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        .activity-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .activity-card:hover {
+            box-shadow: 0 2px 12px rgba(99,102,241,0.08);
+        }
+        .activity-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+        .activity-card h4 .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .badge-quiz {
+            background: #fef3c7;
+            color: #b45309;
+        }
+        .badge-assignment {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .badge-final {
+            background: #ede9fe;
+            color: #6d28d9;
+        }
+        .activity-card p {
+            color: #475569;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 8px 0 12px;
+        }
+        .quiz-question {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .quiz-question .q-text {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .quiz-question label {
+            display: block;
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #334155;
+            transition: background 0.15s;
+        }
+        .quiz-question label:hover {
+            background: #eef2ff;
+        }
+        .quiz-question input[type="radio"] {
+            margin-right: 8px;
+        }
+        .quiz-result {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: none;
+        }
+        .quiz-result.correct {
+            display: block;
+            color: #16a34a;
+            background: #f0fdf4;
+        }
+        .quiz-result.wrong {
+            display: block;
+            color: #dc2626;
+            background: #fef2f2;
+        }
+        .quiz-submit-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+            margin-top: 8px;
+        }
+        .quiz-submit-btn:hover {
+            opacity: 0.9;
+        }
+        .quiz-unlock-area {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 2px dashed #c7d2fe;
+        }
+        .quiz-unlock-area p {
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        .quiz-unlock-area input {
+            padding: 10px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 220px;
+            max-width: 80%;
+            margin-right: 8px;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .quiz-unlock-area input:focus {
+            border-color: #6366f1;
+        }
+        .quiz-unlock-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+        .quiz-unlock-btn:hover {
+            opacity: 0.9;
+        }
+        .quiz-unlock-error {
+            color: #dc2626;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 8px;
+            display: none;
+        }
+        .quiz-content {
+            display: none;
+        }
+        .quiz-content.show {
+            display: block;
+        }
+        .activity-card .btn-outline {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid #6366f1;
+            color: #6366f1;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .activity-card .btn-outline:hover {
+            background: #eef2ff;
+        }
+        .final-output-banner {
+            background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+            border: 1px solid #c7d2fe;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+        }
+        .final-output-banner h3 {
+            margin: 0 0 8px;
+        }
+        .final-output-banner p {
+            color: #475569;
+            margin: 0 0 16px;
+        }
+        .final-output-banner .btn-primary {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .final-output-banner .btn-primary:hover {
+            opacity: 0.9;
         }
 
         /* ===== HOME CARDS ===== */
@@ -1289,6 +1518,10 @@
         <div class="subject-tab" onclick="switchSubject('inform')" id="tab-inform">INFORM 🔒</div>
         <div class="subject-tab" onclick="switchSubject('quanti')" id="tab-quanti">QUANTI 🔒</div>
         <div class="subject-tab" onclick="switchSubject('websys')" id="tab-websys">WEBSYS 🔒</div>
+        <div class="subject-tab" onclick="switchSubject('adbms')" id="tab-adbms">ADBMS 🔒</div>
+        <div class="subject-tab" onclick="switchSubject('cprog1')" id="tab-cprog1">CPROG1 🔒</div>
+        <div class="subject-tab" onclick="switchSubject('ooprog')" id="tab-ooprog">OOPROG 🔒</div>
+        <div class="subject-tab" onclick="switchSubject('csele1')" id="tab-csele1">CSELE1 🔒</div>
     </div>
 
     <div id="sidebarLinks"></div>
@@ -1324,6 +1557,26 @@
                 <div class="code">WEBSYS <span class="lock-badge" data-subject="websys">🔒</span></div>
                 <div class="title">Web Systems and Technologies</div>
                 <div class="count">6 lessons (PRELIM · MIDTERM · FINALS)</div>
+            </div>
+            <div class="subject-card" onclick="switchSubject('adbms')">
+                <div class="code">ADBMS <span class="lock-badge" data-subject="adbms">🔒</span></div>
+                <div class="title">Advanced Database Management System</div>
+                <div class="count">9 lessons (PRELIM · MIDTERM · FINALS)</div>
+            </div>
+            <div class="subject-card" onclick="switchSubject('cprog1')">
+                <div class="code">CPROG1 <span class="lock-badge" data-subject="cprog1">🔒</span></div>
+                <div class="title">Computer Programming 1</div>
+                <div class="count">9 lessons (PRELIM · MIDTERM · FINALS)</div>
+            </div>
+            <div class="subject-card" onclick="switchSubject('ooprog')">
+                <div class="code">OOPROG <span class="lock-badge" data-subject="ooprog">🔒</span></div>
+                <div class="title">Object-Oriented Programming</div>
+                <div class="count">9 lessons (PRELIM · MIDTERM · FINALS)</div>
+            </div>
+            <div class="subject-card" onclick="switchSubject('csele1')">
+                <div class="code">CSELE1 <span class="lock-badge" data-subject="csele1">🔒</span></div>
+                <div class="title">Graphics and Visual Computing</div>
+                <div class="count">9 lessons (PRELIM · MIDTERM · FINALS)</div>
             </div>
         </div>
     </div>
@@ -1504,6 +1757,106 @@ const subjects = {
             finals: [
                 { id: "f1", label: "1. APIs, Microservices & Security" },
                 { id: "f2", label: "2. Emerging Trends" }
+            ]
+        }
+    },
+    adbms: {
+        code: "ADBMS",
+        name: "Advanced Database Management System",
+        icon: "🗃️",
+        desc: "Master advanced database concepts — from relational models and SQL optimization to transaction management, NoSQL, data warehousing, and distributed databases.",
+        password: "ADBMS2025",
+        periods: ["PRELIM", "MIDTERM", "FINALS"],
+        lessons: {
+            prelim: [
+                { id: "p1", label: "1. Database Concepts & Architecture" },
+                { id: "p2", label: "2. Relational Model & SQL" },
+                { id: "p3", label: "3. Normalization & ER Diagrams" }
+            ],
+            midterm: [
+                { id: "m1", label: "1. Transaction Management & Concurrency" },
+                { id: "m2", label: "2. Query Optimization & Indexing" },
+                { id: "m3", label: "3. Database Security & Authorization" }
+            ],
+            finals: [
+                { id: "f1", label: "1. NoSQL & Big Data" },
+                { id: "f2", label: "2. Data Warehousing & Mining" },
+                { id: "f3", label: "3. Distributed Databases" }
+            ]
+        }
+    },
+    cprog1: {
+        code: "CPROG1",
+        name: "Computer Programming 1",
+        icon: "💻",
+        desc: "Learn the fundamentals of programming — from algorithms and variables to control structures, functions, arrays, and file handling using the C programming language.",
+        password: "CPROG2025",
+        periods: ["PRELIM", "MIDTERM", "FINALS"],
+        lessons: {
+            prelim: [
+                { id: "p1", label: "1. Introduction to Programming" },
+                { id: "p2", label: "2. Variables & Data Types" },
+                { id: "p3", label: "3. Control Structures" }
+            ],
+            midterm: [
+                { id: "m1", label: "1. Functions" },
+                { id: "m2", label: "2. Arrays" },
+                { id: "m3", label: "3. Strings" }
+            ],
+            finals: [
+                { id: "f1", label: "1. Pointers" },
+                { id: "f2", label: "2. File Handling" },
+                { id: "f3", label: "3. Structures & Unions" }
+            ]
+        }
+    },
+    ooprog: {
+        code: "OOPROG",
+        name: "Object-Oriented Programming",
+        icon: "🧩",
+        desc: "Master object-oriented programming concepts — classes, objects, inheritance, polymorphism, exception handling, and GUI development using Java.",
+        password: "OOP2025",
+        periods: ["PRELIM", "MIDTERM", "FINALS"],
+        lessons: {
+            prelim: [
+                { id: "p1", label: "1. OOP Concepts" },
+                { id: "p2", label: "2. Classes & Objects" },
+                { id: "p3", label: "3. Encapsulation" }
+            ],
+            midterm: [
+                { id: "m1", label: "1. Inheritance" },
+                { id: "m2", label: "2. Polymorphism" },
+                { id: "m3", label: "3. Abstract Classes & Interfaces" }
+            ],
+            finals: [
+                { id: "f1", label: "1. Exception Handling" },
+                { id: "f2", label: "2. File I/O" },
+                { id: "f3", label: "3. GUI Programming" }
+            ]
+        }
+    },
+    csele1: {
+        code: "CSELE1",
+        name: "Graphics and Visual Computing",
+        icon: "🎨",
+        desc: "Explore computer graphics fundamentals — from output primitives and 2D/3D transformations to viewing, clipping, visible surface detection, color models, and animation.",
+        password: "CSELE2025",
+        periods: ["PRELIM", "MIDTERM", "FINALS"],
+        lessons: {
+            prelim: [
+                { id: "p1", label: "1. Introduction to Computer Graphics" },
+                { id: "p2", label: "2. Graphics Systems" },
+                { id: "p3", label: "3. Output Primitives" }
+            ],
+            midterm: [
+                { id: "m1", label: "1. 2D Transformations" },
+                { id: "m2", label: "2. 2D Viewing & Clipping" },
+                { id: "m3", label: "3. 3D Concepts" }
+            ],
+            finals: [
+                { id: "f1", label: "1. 3D Transformations" },
+                { id: "f2", label: "2. Visible Surface Detection" },
+                { id: "f3", label: "3. Color Models & Animation" }
             ]
         }
     }
@@ -5970,6 +6323,2827 @@ lessons.websys.f2 = {
 };
 
 // ===========================
+// ADBMS LESSONS
+// ===========================
+lessons.adbms = {
+    p1: {
+        title: "Database Concepts & Architecture",
+        period: "PRELIM",
+        content: `
+            <h2>Database Concepts & Architecture</h2>
+            <span class="period-badge">PRELIM</span>
+            <p>A <strong>database</strong> is an organized collection of structured data stored electronically. A <strong>Database Management System (DBMS)</strong> is software that interacts with end users, applications, and the database itself to capture, store, and analyze data. The combination of a database and its DBMS is called a <strong>database system</strong>.</p>
+
+            <h3>Key Components of a Database System</h3>
+            <ul>
+                <li><strong>Data:</strong> The actual raw facts and figures stored in the database</li>
+                <li><strong>Hardware:</strong> Physical devices — servers, storage disks, memory — that store and run the database</li>
+                <li><strong>Software:</strong> The DBMS (e.g., MySQL, Oracle, PostgreSQL, SQL Server) that manages the data</li>
+                <li><strong>Users:</strong> Database administrators (DBAs), application developers, end users, and analysts</li>
+                <li><strong>Procedures:</strong> Rules and guidelines for designing, using, and maintaining the database</li>
+            </ul>
+
+            <h3>Three-Level Database Architecture (ANSI-SPARC)</h3>
+            <ul>
+                <li><strong>External Level (View Level):</strong> How users perceive the data. Different users see different views (e.g., a student sees grades, an admin sees all records)</li>
+                <li><strong>Conceptual Level (Logical Level):</strong> The logical structure of the entire database — what data is stored and the relationships among them. Independent of physical storage</li>
+                <li><strong>Internal Level (Physical Level):</strong> How data is physically stored on storage media — file organization, indexing, compression</li>
+            </ul>
+
+            <h3>Data Independence</h3>
+            <ul>
+                <li><strong>Logical Data Independence:</strong> The ability to change the conceptual schema without affecting external views or application programs</li>
+                <li><strong>Physical Data Independence:</strong> The ability to change the internal schema (e.g., switching to a different storage engine) without affecting the conceptual schema</li>
+            </ul>
+
+            <h3>DBMS Models</h3>
+            <table>
+                <tr><th>Model</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>Hierarchical</strong></td><td>Data organized in a tree-like structure with parent-child relationships</td><td>IBM IMS</td></tr>
+                <tr><td><strong>Network</strong></td><td>Data organized as graphs with many-to-many relationships</td><td>IDMS</td></tr>
+                <tr><td><strong>Relational</strong></td><td>Data organized in tables (relations) with rows and columns</td><td>MySQL, PostgreSQL</td></tr>
+                <tr><td><strong>Object-Oriented</strong></td><td>Data stored as objects, similar to OOP concepts</td><td>ObjectDB</td></tr>
+                <tr><td><strong>NoSQL</strong></td><td>Flexible schema for unstructured or semi-structured data</td><td>MongoDB, Cassandra</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> A database system is more than just data — it's a combination of hardware, software, data, users, and procedures working together. The three-level architecture provides data independence, making databases flexible and scalable. Choosing the right DBMS model depends on the specific requirements of the application.</div>
+        `
+    },
+    p2: {
+        title: "Relational Model & SQL",
+        period: "PRELIM",
+        content: `
+            <h2>Relational Model & SQL</h2>
+            <span class="period-badge">PRELIM</span>
+            <p>The <strong>relational model</strong>, proposed by <strong>Edgar F. Codd</strong> in 1970, organizes data into <strong>relations</strong> (tables). Each relation consists of <strong>tuples</strong> (rows) and <strong>attributes</strong> (columns). <strong>SQL (Structured Query Language)</strong> is the standard language for interacting with relational databases.</p>
+
+            <h3>Key Concepts of the Relational Model</h3>
+            <ul>
+                <li><strong>Relation:</strong> A table with rows and columns. Each relation has a unique name</li>
+                <li><strong>Tuple:</strong> A single row representing one entity or record</li>
+                <li><strong>Attribute:</strong> A column representing a property of the entity</li>
+                <li><strong>Domain:</strong> The set of allowable values for an attribute (e.g., integers, strings, dates)</li>
+                <li><strong>Degree:</strong> The number of attributes in a relation</li>
+                <li><strong>Cardinality:</strong> The number of tuples in a relation</li>
+            </ul>
+
+            <h3>Keys in Relational Model</h3>
+            <ul>
+                <li><strong>Super Key:</strong> A set of attributes that uniquely identifies a tuple</li>
+                <li><strong>Candidate Key:</strong> A minimal super key — no subset is a super key</li>
+                <li><strong>Primary Key:</strong> A chosen candidate key used to uniquely identify each tuple</li>
+                <li><strong>Foreign Key:</strong> An attribute in one relation that references the primary key of another relation, creating a relationship</li>
+                <li><strong>Composite Key:</strong> A key consisting of two or more attributes</li>
+            </ul>
+
+            <h3>SQL Categories</h3>
+            <table>
+                <tr><th>Category</th><th>Purpose</th><th>Examples</th></tr>
+                <tr><td><strong>DDL</strong></td><td>Define database structure</td><td>CREATE, ALTER, DROP, TRUNCATE</td></tr>
+                <tr><td><strong>DML</strong></td><td>Manipulate data</td><td>SELECT, INSERT, UPDATE, DELETE</td></tr>
+                <tr><td><strong>DCL</strong></td><td>Control access</td><td>GRANT, REVOKE</td></tr>
+                <tr><td><strong>TCL</strong></td><td>Manage transactions</td><td>COMMIT, ROLLBACK, SAVEPOINT</td></tr>
+            </table>
+
+            <h3>Basic SQL Examples</h3>
+            <pre>CREATE TABLE Students (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    course VARCHAR(50),
+    gpa DECIMAL(3,2)
+);
+
+INSERT INTO Students VALUES (1, 'Juan Dela Cruz', 'BSIT', 1.75);
+SELECT name, gpa FROM Students WHERE gpa &lt; 2.0;
+UPDATE Students SET gpa = 1.50 WHERE id = 1;
+DELETE FROM Students WHERE id = 1;</pre>
+
+            <h3>JOIN Operations</h3>
+            <ul>
+                <li><strong>INNER JOIN:</strong> Returns matching rows from both tables</li>
+                <li><strong>LEFT JOIN:</strong> Returns all rows from left table, matching rows from right table (NULL if no match)</li>
+                <li><strong>RIGHT JOIN:</strong> Returns all rows from right table, matching rows from left table</li>
+                <li><strong>FULL OUTER JOIN:</strong> Returns all rows when there is a match in either table</li>
+                <li><strong>CROSS JOIN:</strong> Returns the Cartesian product of both tables</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> The relational model uses keys to establish relationships between tables. SQL is the universal language for relational databases, divided into DDL, DML, DCL, and TCL categories. Mastering JOINs is essential for querying data across multiple tables.</div>
+        `
+    },
+    p3: {
+        title: "Normalization & ER Diagrams",
+        period: "PRELIM",
+        content: `
+            <h2>Normalization & ER Diagrams</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Normalization</strong> is the process of organizing data to reduce redundancy and improve data integrity. <strong>Entity-Relationship (ER) Diagrams</strong> are visual representations of entities, their attributes, and relationships in a database.</p>
+
+            <h3>Normal Forms</h3>
+            <table>
+                <tr><th>Form</th><th>Rule</th><th>Problem Solved</th></tr>
+                <tr><td><strong>1NF</strong></td><td>Each column must have atomic (indivisible) values. No repeating groups</td><td>Duplicate columns, multi-valued attributes</td></tr>
+                <tr><td><strong>2NF</strong></td><td>Must be in 1NF. All non-key attributes must be fully functionally dependent on the entire primary key</td><td>Partial dependency (composite key)</td></tr>
+                <tr><td><strong>3NF</strong></td><td>Must be in 2NF. No transitive dependency — non-key attributes must not depend on other non-key attributes</td><td>Transitive dependency</td></tr>
+                <tr><td><strong>BCNF</strong></td><td>Stronger version of 3NF. Every determinant must be a candidate key</td><td>Certain anomalies not covered by 3NF</td></tr>
+                <tr><td><strong>4NF</strong></td><td>Must be in BCNF. No multi-valued dependencies</td><td>Multi-valued facts about an entity</td></tr>
+                <tr><td><strong>5NF</strong></td><td>Must be in 4NF. No join dependencies that are not implied by candidate keys</td><td>Lossless join decomposition</td></tr>
+            </table>
+
+            <h3>ER Diagram Components</h3>
+            <ul>
+                <li><strong>Entity:</strong> A real-world object (e.g., Student, Course)</li>
+                <li><strong>Attribute:</strong> A property of an entity (e.g., name, age, address)</li>
+                <li><strong>Relationship:</strong> An association between entities (e.g., Enrolls, Teaches)</li>
+                <li><strong>Cardinality:</strong> Defines how many instances of one entity relate to another
+                    <ul>
+                        <li>1:1 (One-to-One) — A person has one passport</li>
+                        <li>1:M (One-to-Many) — A department has many employees</li>
+                        <li>M:N (Many-to-Many) — A student can enroll in many courses; a course has many students</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Normalization Example</h3>
+            <p><strong>Unnormalized:</strong> Student(stud_id, name, course, subject1, grade1, subject2, grade2)</p>
+            <p><strong>1NF:</strong> Remove repeating groups → Student(stud_id, name, course) + Grade(stud_id, subject, grade)</p>
+            <p><strong>2NF:</strong> Remove partial dependencies (if composite key exists)</p>
+            <p><strong>3NF:</strong> Remove transitive dependencies (e.g., course depends on stud_id, but instructor depends on course)</p>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Normalization eliminates data redundancy and anomalies. Most practical databases aim for 3NF, balancing data integrity with query performance. ER diagrams provide a blueprint for designing databases before implementation.</div>
+        `
+    },
+    m1: {
+        title: "Transaction Management & Concurrency",
+        period: "MIDTERM",
+        content: `
+            <h2>Transaction Management & Concurrency Control</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p>A <strong>transaction</strong> is a logical unit of work that consists of one or more database operations (reads, writes, updates, deletes). <strong>Concurrency control</strong> ensures that multiple transactions can execute simultaneously without interfering with each other.</p>
+
+            <h3>ACID Properties</h3>
+            <table>
+                <tr><th>Property</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>Atomicity</strong></td><td>All operations in a transaction complete, or none do (all-or-nothing)</td><td>A fund transfer: debit + credit must both succeed or both fail</td></tr>
+                <tr><td><strong>Consistency</strong></td><td>Transaction brings database from one valid state to another</td><td>Account balances must remain non-negative</td></tr>
+                <tr><td><strong>Isolation</strong></td><td>Concurrent transactions appear to execute in isolation</td><td>Two users buying the last item — only one succeeds</td></tr>
+                <tr><td><strong>Durability</strong></td><td>Once committed, changes persist even after system failure</td><td>After a crash, committed data is recovered</td></tr>
+            </table>
+
+            <h3>Transaction States</h3>
+            <ul>
+                <li><strong>Active:</strong> Transaction is executing</li>
+                <li><strong>Partially Committed:</strong> All operations executed, but not yet permanently saved</li>
+                <li><strong>Committed:</strong> Transaction completed successfully and changes are permanent</li>
+                <li><strong>Failed:</strong> Transaction aborted due to an error</li>
+                <li><strong>Aborted:</strong> Transaction rolled back to its initial state</li>
+            </ul>
+
+            <h3>Concurrency Problems</h3>
+            <ul>
+                <li><strong>Dirty Read:</strong> Reading uncommitted data from another transaction</li>
+                <li><strong>Non-Repeatable Read:</strong> Same query returns different results because another transaction modified the data</li>
+                <li><strong>Phantom Read:</strong> A new row inserted by another transaction appears in subsequent queries</li>
+                <li><strong>Lost Update:</strong> Two transactions read the same value, modify it, and one overwrites the other's changes</li>
+            </ul>
+
+            <h3>Concurrency Control Protocols</h3>
+            <ul>
+                <li><strong>Lock-Based Protocols:</strong> Transactions acquire locks (shared/exclusive) before accessing data. Two-Phase Locking (2PL) ensures serializability</li>
+                <li><strong>Timestamp-Based Protocols:</strong> Each transaction is assigned a timestamp; operations are ordered by timestamp</li>
+                <li><strong>Optimistic Protocols:</strong> Validate at commit time. Good for low-conflict environments</li>
+                <li><strong>Multiversion Concurrency Control (MVCC):</strong> Each transaction sees a snapshot of the database at a point in time. Used by PostgreSQL and MySQL InnoDB</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> ACID properties guarantee reliable transaction processing. Concurrency control prevents data anomalies when multiple transactions run simultaneously. MVCC is the most widely used modern approach, balancing performance with isolation.</div>
+        `
+    },
+    m2: {
+        title: "Query Optimization & Indexing",
+        period: "MIDTERM",
+        content: `
+            <h2>Query Optimization & Indexing</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Query optimization</strong> is the process of selecting the most efficient execution plan for a SQL query. <strong>Indexing</strong> is a data structure technique that speeds up data retrieval at the cost of additional storage and slower writes.</p>
+
+            <h3>Query Processing Steps</h3>
+            <ol>
+                <li><strong>Parsing & Translation:</strong> SQL query is parsed and validated</li>
+                <li><strong>Query Optimization:</strong> The DBMS generates multiple execution plans and selects the one with the lowest estimated cost (CPU, I/O, memory)</li>
+                <li><strong>Query Execution:</strong> The chosen plan is executed by the database engine</li>
+            </ol>
+
+            <h3>Types of Indexes</h3>
+            <table>
+                <tr><th>Index Type</th><th>Description</th><th>Best For</th></tr>
+                <tr><td><strong>B-Tree</strong></td><td>Balanced tree structure; default in most DBMS</td><td>Range queries, equality searches, ORDER BY</td></tr>
+                <tr><td><strong>Hash</strong></td><td>Uses a hash function for fast lookup</td><td>Equality searches (=)</td></tr>
+                <tr><td><strong>Bitmap</strong></td><td>Uses bit arrays for each distinct value</td><td>Low-cardinality columns (gender, status)</td></tr>
+                <tr><td><strong>Clustered</strong></td><td>Determines the physical order of data in a table</td><td>Primary key lookups; range queries</td></tr>
+                <tr><td><strong>Non-Clustered</strong></td><td>Separate structure with pointers to actual data</td><td>Frequent read queries on non-key columns</td></tr>
+                <tr><td><strong>Full-Text</strong></td><td>Optimized for text searching</td><td>LIKE '%word%' on large text columns</td></tr>
+            </table>
+
+            <h3>Query Optimization Techniques</h3>
+            <ul>
+                <li><strong>Index Usage:</strong> Ensure WHERE, JOIN, and ORDER BY columns are indexed</li>
+                <li><strong>Join Optimization:</strong> Use appropriate JOIN types; avoid unnecessary joins</li>
+                <li><strong>Subquery vs JOIN:</strong> Often, JOINs perform better than correlated subqueries</li>
+                <li><strong>EXPLAIN Plan:</strong> Use EXPLAIN to analyze query execution plans</li>
+                <li><strong>Avoid SELECT *:</strong> Select only the columns you need</li>
+                <li><strong>Limit Results:</strong> Use LIMIT to reduce result set size</li>
+                <li><strong>Partitioning:</strong> Split large tables into smaller, manageable chunks</li>
+            </ul>
+
+            <h4>Using EXPLAIN</h4>
+            <pre>EXPLAIN SELECT s.name, c.course_name
+FROM Students s
+JOIN Enrollments e ON s.id = e.student_id
+JOIN Courses c ON e.course_id = c.id
+WHERE s.gpa &gt; 2.0;</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Indexes dramatically improve query performance but add overhead to INSERT/UPDATE/DELETE operations. Always analyze query plans using EXPLAIN before optimizing. A well-designed index strategy can improve query speed by orders of magnitude.</div>
+        `
+    },
+    m3: {
+        title: "Database Security & Authorization",
+        period: "MIDTERM",
+        content: `
+            <h2>Database Security & Authorization</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Database security</strong> protects data from unauthorized access, modification, or destruction. <strong>Authorization</strong> controls what actions authenticated users can perform on database objects.</p>
+
+            <h3>Security Threats</h3>
+            <ul>
+                <li><strong>SQL Injection:</strong> Malicious SQL code inserted through user input</li>
+                <li><strong>Privilege Escalation:</strong> Gaining higher access than authorized</li>
+                <li><strong>Data Breach:</strong> Unauthorized access to sensitive data</li>
+                <li><strong>Denial of Service (DoS):</strong> Overwhelming the database with requests</li>
+                <li><strong>Insider Threats:</strong> Authorized users misusing their access</li>
+            </ul>
+
+            <h3>Access Control Models</h3>
+            <table>
+                <tr><th>Model</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>DAC</strong></td><td>Owner of data decides who can access it</td><td>GRANT SELECT ON table TO user</td></tr>
+                <tr><td><strong>MAC</strong></td><td>System-wide policies enforced regardless of user</td><td>Military security classifications</td></tr>
+                <tr><td><strong>RBAC</strong></td><td>Access based on user roles</td><td>Admin, Editor, Viewer roles</td></tr>
+            </table>
+
+            <h3>SQL Security Commands</h3>
+            <pre>-- Create user
+CREATE USER 'student_user'@'localhost' IDENTIFIED BY 'secure_pass';
+
+-- Grant privileges
+GRANT SELECT, INSERT ON school.* TO 'student_user'@'localhost';
+
+-- Revoke privileges
+REVOKE DELETE ON school.* FROM 'student_user'@'localhost';
+
+-- Create role (RBAC)
+CREATE ROLE 'instructor';
+GRANT SELECT, UPDATE ON school.grades TO 'instructor';
+
+-- Row-Level Security (RLS)
+CREATE POLICY student_policy ON students
+    USING (advisor_id = current_user_id());</pre>
+
+            <h3>Encryption Techniques</h3>
+            <ul>
+                <li><strong>Transparent Data Encryption (TDE):</strong> Automatically encrypts data at the file level</li>
+                <li><strong>Column-Level Encryption:</strong> Encrypts sensitive columns (e.g., credit card numbers, passwords)</li>
+                <li><strong>Hashing:</strong> One-way transformation for passwords (bcrypt, SHA-256)</li>
+                <li><strong>SSL/TLS:</strong> Encrypts data in transit between application and database</li>
+            </ul>
+
+            <h3>Auditing & Compliance</h3>
+            <ul>
+                <li><strong>Audit Logs:</strong> Track who accessed what, when, and from where</li>
+                <li><strong>Compliance:</strong> GDPR, HIPAA, PCI-DSS, Data Privacy Act (Philippines)</li>
+                <li><strong>Backup Security:</strong> Encrypt backups; store them securely</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Database security is multi-layered — authentication, authorization, encryption, auditing, and backup protection. The principle of least privilege should always be applied: grant only the minimum access needed. SQL injection remains one of the most common and dangerous database threats — always use prepared statements.</div>
+        `
+    },
+    f1: {
+        title: "NoSQL & Big Data",
+        period: "FINALS",
+        content: `
+            <h2>NoSQL & Big Data</h2>
+            <span class="period-badge">FINALS</span>
+            <p><strong>NoSQL (Not Only SQL)</strong> databases provide flexible schemas, horizontal scalability, and high performance for unstructured or semi-structured data. <strong>Big Data</strong> refers to extremely large datasets that cannot be processed using traditional database tools.</p>
+
+            <h3>Types of NoSQL Databases</h3>
+            <table>
+                <tr><th>Type</th><th>Data Model</th><th>Use Case</th><th>Example</th></tr>
+                <tr><td><strong>Document Stores</strong></td><td>JSON/BSON documents</td><td>Content management, catalogs</td><td>MongoDB, CouchDB</td></tr>
+                <tr><td><strong>Key-Value Stores</strong></td><td>Key-value pairs</td><td>Caching, session management</td><td>Redis, DynamoDB</td></tr>
+                <tr><td><strong>Column-Family Stores</strong></td><td>Columns grouped into families</td><td>Time-series data, analytics</td><td>Cassandra, HBase</td></tr>
+                <tr><td><strong>Graph Databases</strong></td><td>Nodes and edges</td><td>Social networks, recommendation engines</td><td>Neo4j, Amazon Neptune</td></tr>
+            </table>
+
+            <h3>CAP Theorem</h3>
+            <p>A distributed database can only guarantee two of three properties simultaneously:</p>
+            <ul>
+                <li><strong>C (Consistency):</strong> Every read returns the most recent write</li>
+                <li><strong>A (Availability):</strong> Every request receives a response (even if not the latest data)</li>
+                <li><strong>P (Partition Tolerance):</strong> System continues operating despite network failures</li>
+            </ul>
+
+            <h3>The 5 V's of Big Data</h3>
+            <ul>
+                <li><strong>Volume:</strong> Massive amounts of data (terabytes, petabytes, exabytes)</li>
+                <li><strong>Velocity:</strong> Data is generated at high speed (real-time streams)</li>
+                <li><strong>Variety:</strong> Structured, semi-structured, and unstructured data</li>
+                <li><strong>Veracity:</strong> Data quality and trustworthiness</li>
+                <li><strong>Value:</strong> Extracting meaningful insights from data</li>
+            </ul>
+
+            <h3>SQL vs NoSQL</h3>
+            <table>
+                <tr><th>Feature</th><th>SQL</th><th>NoSQL</th></tr>
+                <tr><td>Schema</td><td>Fixed, predefined</td><td>Flexible, dynamic</td></tr>
+                <tr><td>Scalability</td><td>Vertical (more powerful server)</td><td>Horizontal (more servers)</td></tr>
+                <tr><td>ACID</td><td>Fully supported</td><td>BASE (Basically Available, Soft state, Eventually consistent)</td></tr>
+                <tr><td>Query Language</td><td>Standardized SQL</td><td>Varies by database</td></tr>
+                <tr><td>Best For</td><td>Complex queries, transactions, relationships</td><td>Large-scale data, real-time, flexible schemas</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> NoSQL databases excel at handling large-scale, unstructured data with flexible schemas. The CAP theorem explains the trade-offs in distributed systems. Choosing between SQL and NoSQL depends on the specific requirements for consistency, availability, and scalability.</div>
+        `
+    },
+    f2: {
+        title: "Data Warehousing & Mining",
+        period: "FINALS",
+        content: `
+            <h2>Data Warehousing & Mining</h2>
+            <span class="period-badge">FINALS</span>
+            <p>A <strong>data warehouse</strong> is a centralized repository that stores integrated data from multiple sources for reporting and analysis. <strong>Data mining</strong> is the process of discovering patterns, correlations, and insights from large datasets using statistical and machine learning techniques.</p>
+
+            <h3>Data Warehouse Architecture</h3>
+            <ul>
+                <li><strong>Bottom Tier:</strong> The database server that stores and manages data (OLAP, columnar storage)</li>
+                <li><strong>Middle Tier:</strong> OLAP server that transforms data for analysis (ROLAP, MOLAP, HOLAP)</li>
+                <li><strong>Top Tier:</strong> Front-end tools for querying, reporting, and visualization (Power BI, Tableau)</li>
+            </ul>
+
+            <h3>ETL Process</h3>
+            <ol>
+                <li><strong>Extract:</strong> Pull data from source systems (operational databases, APIs, flat files)</li>
+                <li><strong>Transform:</strong> Clean, validate, format, and integrate the data</li>
+                <li><strong>Load:</strong> Insert the transformed data into the data warehouse</li>
+            </ol>
+
+            <h3>Data Mining Techniques</h3>
+            <table>
+                <tr><th>Technique</th><th>Description</th><th>Application</th></tr>
+                <tr><td><strong>Classification</strong></td><td>Predict categorical labels based on input features</td><td>Spam detection, fraud detection</td></tr>
+                <tr><td><strong>Regression</strong></td><td>Predict continuous numerical values</td><td>Sales forecasting, stock prices</td></tr>
+                <tr><td><strong>Clustering</strong></td><td>Group similar data points without predefined labels</td><td>Customer segmentation, anomaly detection</td></tr>
+                <tr><td><strong>Association Rule Mining</strong></td><td>Discover relationships between variables</td><td>Market basket analysis (if X then Y)</td></tr>
+                <tr><td><strong>Anomaly Detection</strong></td><td>Identify rare or unusual patterns</td><td>Credit card fraud, network intrusion</td></tr>
+            </table>
+
+            <h3>Star Schema vs Snowflake Schema</h3>
+            <ul>
+                <li><strong>Star Schema:</strong> A central fact table surrounded by dimension tables (denormalized). Fast queries, simple design</li>
+                <li><strong>Snowflake Schema:</strong> Dimension tables are normalized into sub-dimensions. More storage efficient, but complex queries</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Data warehouses enable organizations to consolidate data from diverse sources for business intelligence. Data mining uncovers hidden patterns that drive strategic decisions. The choice of schema (star vs snowflake) affects query performance and storage efficiency.</div>
+        `
+    },
+    f3: {
+        title: "Distributed Databases",
+        period: "FINALS",
+        content: `
+            <h2>Distributed Databases</h2>
+            <span class="period-badge">FINALS</span>
+            <p>A <strong>distributed database</strong> is a collection of multiple logically related databases distributed across a computer network. A <strong>Distributed DBMS (DDBMS)</strong> manages the distributed data and makes the distribution transparent to users.</p>
+
+            <h3>Advantages of Distributed Databases</h3>
+            <ul>
+                <li><strong>Reliability & Availability:</strong> If one site fails, others continue operating</li>
+                <li><strong>Scalability:</strong> Easy to add new nodes as data grows</li>
+                <li><strong>Performance:</strong> Data stored closer to where it is used most frequently</li>
+                <li><strong>Autonomy:</strong> Local control over local data</li>
+            </ul>
+
+            <h3>Data Distribution Strategies</h3>
+            <table>
+                <tr><th>Strategy</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>Horizontal Partitioning</strong></td><td>Rows are split across nodes (sharding)</td><td>Students A-M on Server 1, N-Z on Server 2</td></tr>
+                <tr><td><strong>Vertical Partitioning</strong></td><td>Columns are split across nodes</td><td>Student info on Server 1, grades on Server 2</td></tr>
+                <tr><td><strong>Replication</strong></td><td>Copies of data stored on multiple nodes</td><td>Master-slave replication, multi-master</td></tr>
+                <tr><td><strong>Hybrid</strong></td><td>Combination of partitioning and replication</td><td>Sharded + replicated for fault tolerance</td></tr>
+            </table>
+
+            <h3>Distributed Query Processing</h3>
+            <ul>
+                <li><strong>Query Decomposition:</strong> Break global query into sub-queries for each site</li>
+                <li><strong>Data Localization:</strong> Determine which data is at which site using fragmentation information</li>
+                <li><strong>Global Optimization:</strong> Find the most efficient way to execute sub-queries and combine results</li>
+                <li><strong>Local Optimization:</strong> Each site optimizes its own sub-query</li>
+            </ul>
+
+            <h3>Two-Phase Commit (2PC)</h3>
+            <ol>
+                <li><strong>Phase 1 (Prepare):</strong> Coordinator asks all participants if they can commit. Each votes Yes or No</li>
+                <li><strong>Phase 2 (Commit/Abort):</strong> If all vote Yes, coordinator tells all to commit. If any votes No, coordinator tells all to abort</li>
+            </ol>
+
+            <h3>Eventual Consistency</h3>
+            <p>In large distributed systems (e.g., Amazon DynamoDB, Cassandra), strict ACID is impractical. <strong>Eventual consistency</strong> guarantees that if no new updates are made, all nodes will eventually become consistent. This is a key trade-off in the CAP theorem.</p>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Distributed databases provide high availability, scalability, and fault tolerance. The trade-offs defined by the CAP theorem guide design decisions. Two-Phase Commit ensures atomic transactions across nodes, while eventual consistency offers better availability in large-scale systems.</div>
+        `
+    }
+};
+
+// ===========================
+// CPROG1 LESSONS
+// ===========================
+lessons.cprog1 = {
+    p1: {
+        title: "Introduction to Programming",
+        period: "PRELIM",
+        content: `
+            <h2>Introduction to Programming</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Programming</strong> (or coding) is the process of creating a set of instructions that tell a computer how to perform a specific task. Programs are written in <strong>programming languages</strong> such as C, Java, Python, and many others. C is a powerful, general-purpose language developed by <strong>Dennis Ritchie</strong> in 1972 at Bell Labs.</p>
+
+            <h3>The Programming Process</h3>
+            <ol>
+                <li><strong>Problem Analysis:</strong> Understand the problem and define requirements</li>
+                <li><strong>Algorithm Design:</strong> Develop a step-by-step solution</li>
+                <li><strong>Flowcharting:</strong> Visually represent program logic using symbols</li>
+                <li><strong>Coding:</strong> Write the program in a programming language</li>
+                <li><strong>Compilation:</strong> Translate source code to machine code</li>
+                <li><strong>Testing & Debugging:</strong> Find and fix errors</li>
+                <li><strong>Documentation:</strong> Write comments and user manuals</li>
+                <li><strong>Maintenance:</strong> Update and improve the program</li>
+            </ol>
+
+            <h3>Basic Structure of a C Program</h3>
+            <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}</pre>
+            <ul>
+                <li><code>#include &lt;stdio.h&gt;</code> — Preprocessor directive to include standard I/O functions</li>
+                <li><code>int main()</code> — The main function where program execution begins</li>
+                <li><code>printf()</code> — Function to display output on the screen</li>
+                <li><code>return 0;</code> — Indicates successful program termination</li>
+            </ul>
+
+            <h3>Types of Programming Languages</h3>
+            <table>
+                <tr><th>Level</th><th>Description</th><th>Examples</th></tr>
+                <tr><td><strong>Machine Language</strong></td><td>Binary code (0s and 1s) directly executed by CPU</td><td>00101010 11110000</td></tr>
+                <tr><td><strong>Assembly Language</strong></td><td>Uses mnemonics instead of binary</td><td>MOV AX, BX</td></tr>
+                <tr><td><strong>High-Level Language</strong></td><td>Uses English-like syntax and abstractions</td><td>C, Java, Python</td></tr>
+            </table>
+
+            <h3>Programming Paradigms</h3>
+            <ul>
+                <li><strong>Procedural Programming:</strong> Programs as sequences of procedures/functions (C, Pascal)</li>
+                <li><strong>Object-Oriented Programming:</strong> Programs as interacting objects (Java, C++)</li>
+                <li><strong>Functional Programming:</strong> Programs as mathematical functions (Haskell, Lisp)</li>
+                <li><strong>Logic Programming:</strong> Programs as logical statements (Prolog)</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Programming is a systematic process that transforms a problem into a working solution. C is a foundational language that teaches essential programming concepts used across all languages. Understanding the compilation process and program structure is the first step in becoming a programmer.</div>
+        `
+    },
+    p2: {
+        title: "Variables & Data Types",
+        period: "PRELIM",
+        content: `
+            <h2>Variables & Data Types</h2>
+            <span class="period-badge">PRELIM</span>
+            <p>A <strong>variable</strong> is a named memory location that stores a value. <strong>Data types</strong> define the type of data a variable can hold and the operations that can be performed on it.</p>
+
+            <h3>Basic Data Types in C</h3>
+            <table>
+                <tr><th>Type</th><th>Size</th><th>Format Specifier</th><th>Example</th></tr>
+                <tr><td><code>int</code></td><td>2 or 4 bytes</td><td>%d</td><td>25</td></tr>
+                <tr><td><code>float</code></td><td>4 bytes</td><td>%f</td><td>3.14</td></tr>
+                <tr><td><code>double</code></td><td>8 bytes</td><td>%lf</td><td>3.141592</td></tr>
+                <tr><td><code>char</code></td><td>1 byte</td><td>%c</td><td>'A'</td></tr>
+                <tr><td><code>void</code></td><td>0 bytes</td><td>—</td><td>No value</td></tr>
+            </table>
+
+            <h3>Variable Declaration & Initialization</h3>
+            <pre>int age;                // declaration
+age = 18;               // assignment
+float gpa = 1.75;       // declaration + initialization
+char grade = 'A';
+int x, y, z;            // multiple declarations</pre>
+
+            <h3>Naming Rules & Conventions</h3>
+            <ul>
+                <li>Must start with a letter or underscore (_)</li>
+                <li>Can contain letters, digits, and underscores</li>
+                <li>Case-sensitive (age, Age, AGE are different)</li>
+                <li>Cannot use reserved keywords (int, float, return, etc.)</li>
+                <li>Use meaningful names: <code>studentAge</code> not <code>sa</code></li>
+                <li>Common conventions: camelCase, snake_case</li>
+            </ul>
+
+            <h3>Input & Output</h3>
+            <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("You entered: %d", num);
+    return 0;
+}</pre>
+
+            <h3>Constants</h3>
+            <pre>#define PI 3.14159       // macro constant
+const int MAX = 100;    // const keyword</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Variables store data in memory, and data types determine what kind of data can be stored. C provides basic types (int, float, double, char) and requires explicit type declarations. Using meaningful variable names and proper format specifiers is essential for readable, error-free code.</div>
+        `
+    },
+    p3: {
+        title: "Control Structures",
+        period: "PRELIM",
+        content: `
+            <h2>Control Structures</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Control structures</strong> determine the flow of execution in a program. They control which statements run and in what order based on conditions or loops.</p>
+
+            <h3>Types of Control Structures</h3>
+            <ul>
+                <li><strong>Sequential:</strong> Statements execute in order, one after another</li>
+                <li><strong>Selection (Branching):</strong> Choose between different paths based on conditions</li>
+                <li><strong>Iteration (Looping):</strong> Repeat a block of code multiple times</li>
+            </ul>
+
+            <h3>Selection Statements</h3>
+            <pre>// if statement
+if (score >= 75) {
+    printf("Passed!");
+}
+
+// if-else
+if (score >= 75) {
+    printf("Passed!");
+} else {
+    printf("Failed!");
+}
+
+// if-else if-else
+if (score >= 90) {
+    printf("Excellent!");
+} else if (score >= 75) {
+    printf("Good!");
+} else {
+    printf("Needs improvement.");
+}
+
+// switch statement
+switch (grade) {
+    case 'A': printf("Excellent"); break;
+    case 'B': printf("Good"); break;
+    case 'C': printf("Fair"); break;
+    default: printf("Invalid");
+}</pre>
+
+            <h3>Relational & Logical Operators</h3>
+            <table>
+                <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+                <tr><td>==</td><td>Equal to</td><td>a == b</td></tr>
+                <tr><td>!=</td><td>Not equal to</td><td>a != b</td></tr>
+                <tr><td>&gt;</td><td>Greater than</td><td>a &gt; b</td></tr>
+                <tr><td>&lt;</td><td>Less than</td><td>a &lt; b</td></tr>
+                <tr><td>&gt;=</td><td>Greater than or equal</td><td>a &gt;= b</td></tr>
+                <tr><td>&lt;=</td><td>Less than or equal</td><td>a &lt;= b</td></tr>
+                <tr><td>&amp;&amp;</td><td>Logical AND</td><td>(a &gt; 0) &amp;&amp; (b &gt; 0)</td></tr>
+                <tr><td>||</td><td>Logical OR</td><td>(a &gt; 0) || (b &gt; 0)</td></tr>
+                <tr><td>!</td><td>Logical NOT</td><td>!(a &gt; 0)</td></tr>
+            </table>
+
+            <h3>Looping Statements</h3>
+            <pre>// while loop
+int i = 1;
+while (i <= 5) {
+    printf("%d ", i);
+    i++;
+}
+
+// do-while loop (executes at least once)
+int j = 1;
+do {
+    printf("%d ", j);
+    j++;
+} while (j <= 5);
+
+// for loop
+for (int k = 1; k <= 5; k++) {
+    printf("%d ", k);
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Control structures are the building blocks of program logic. Selection statements (if, switch) enable decision-making, while loops (while, do-while, for) enable repetition. Mastering these structures is essential for solving any programming problem.</div>
+        `
+    },
+    m1: {
+        title: "Functions",
+        period: "MIDTERM",
+        content: `
+            <h2>Functions</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p>A <strong>function</strong> is a reusable block of code that performs a specific task. Functions help organize code, reduce repetition, and make programs easier to read and maintain.</p>
+
+            <h3>Why Use Functions?</h3>
+            <ul>
+                <li><strong>Modularity:</strong> Break complex problems into smaller, manageable pieces</li>
+                <li><strong>Reusability:</strong> Call the same function multiple times from different parts of the program</li>
+                <li><strong>Readability:</strong> Well-named functions make code self-documenting</li>
+                <li><strong>Debugging:</strong> Isolate and test individual functions independently</li>
+            </ul>
+
+            <h3>Function Structure</h3>
+            <pre>return_type function_name(parameters) {
+    // function body
+    return value;
+}</pre>
+
+            <h3>Types of Functions</h3>
+            <ul>
+                <li><strong>Predefined (Library) Functions:</strong> Built into C (printf, scanf, sqrt, strlen)</li>
+                <li><strong>User-Defined Functions:</strong> Created by the programmer</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <pre>// Function without parameters and return value
+void greet() {
+    printf("Hello!");
+}
+
+// Function with parameters and return value
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function with default behavior
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);  // recursion
+}
+
+int main() {
+    greet();
+    int sum = add(5, 3);
+    int fact = factorial(5);
+    return 0;
+}</pre>
+
+            <h3>Function Prototypes</h3>
+            <p>A function prototype tells the compiler about a function before it is defined. It includes the return type, name, and parameter types.</p>
+            <pre>#include &lt;stdio.h&gt;
+
+int add(int a, int b);  // prototype
+
+int main() {
+    printf("%d", add(5, 3));
+    return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
+}</pre>
+
+            <h3>Parameter Passing</h3>
+            <ul>
+                <li><strong>Pass by Value:</strong> A copy of the argument is passed. Changes inside the function do not affect the original variable</li>
+                <li><strong>Pass by Reference (using pointers):</strong> The memory address is passed. Changes inside the function affect the original variable</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Functions promote code reuse and modular design. A function has a clear interface (parameters and return type) and implementation (body). Understanding the difference between pass by value and pass by reference is critical for effective programming.</div>
+        `
+    },
+    m2: {
+        title: "Arrays",
+        period: "MIDTERM",
+        content: `
+            <h2>Arrays</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p>An <strong>array</strong> is a collection of elements of the same data type stored in contiguous memory locations. Arrays allow you to store and manipulate multiple values using a single variable name.</p>
+
+            <h3>Declaring and Initializing Arrays</h3>
+            <pre>int numbers[5];                    // declaration
+int scores[3] = {85, 90, 78};     // initialization
+int values[] = {1, 2, 3, 4, 5};  // size inferred</pre>
+
+            <h3>Accessing Array Elements</h3>
+            <p>Array indices start at 0. The last index is size - 1.</p>
+            <pre>int nums[4] = {10, 20, 30, 40};
+printf("%d", nums[0]);     // 10
+nums[2] = 35;               // change third element
+
+// Traversing an array
+for (int i = 0; i < 4; i++) {
+    printf("%d ", nums[i]);
+}</pre>
+
+            <h3>Common Array Operations</h3>
+            <pre>// Find sum and average
+int sum = 0;
+for (int i = 0; i < n; i++) {
+    sum += arr[i];
+}
+float avg = (float)sum / n;
+
+// Find maximum
+int max = arr[0];
+for (int i = 1; i < n; i++) {
+    if (arr[i] > max) max = arr[i];
+}
+
+// Linear search
+int search(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) return i;
+    }
+    return -1;
+}</pre>
+
+            <h3>Multi-Dimensional Arrays</h3>
+            <pre>int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Accessing elements
+printf("%d", matrix[1][2]);  // 6 (row 1, col 2)</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Arrays provide efficient storage and access for collections of related data. Array indices start at 0. Multi-dimensional arrays are useful for representing tables, matrices, and grids. Common operations include searching, sorting, and computing statistics like sum, average, min, and max.</div>
+        `
+    },
+    m3: {
+        title: "Strings",
+        period: "MIDTERM",
+        content: `
+            <h2>Strings</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p>In C, a <strong>string</strong> is an array of characters terminated by a null character (<code>\\0</code>). Strings are used to store text data like names, addresses, and messages.</p>
+
+            <h3>String Declaration</h3>
+            <pre>char name[20];                    // can hold 19 chars + null
+char str[] = "Hello";            // size = 6 (5 chars + '\\0')
+char city[10] = "Manila";        // explicit size</pre>
+
+            <h3>String Input & Output</h3>
+            <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    char name[50];
+
+    printf("Enter name: ");
+    scanf("%s", name);            // reads until space
+    printf("Hello, %s!", name);
+
+    // Better: fgets (reads spaces)
+    fgets(name, 50, stdin);
+
+    return 0;
+}</pre>
+
+            <h3>String Functions (string.h)</h3>
+            <table>
+                <tr><th>Function</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>strlen(s)</code></td><td>Returns length of string</td><td>strlen("Hello") = 5</td></tr>
+                <tr><td><code>strcpy(dest, src)</code></td><td>Copies src to dest</td><td>strcpy(copy, original)</td></tr>
+                <tr><td><code>strcat(dest, src)</code></td><td>Appends src to dest</td><td>strcat(full, last)</td></tr>
+                <tr><td><code>strcmp(s1, s2)</code></td><td>Compares two strings</td><td>strcmp("a", "b") = -1</td></tr>
+                <tr><td><code>strlwr(s)</code></td><td>Converts to lowercase</td><td>strlwr("HELLO") = "hello"</td></tr>
+                <tr><td><code>strupr(s)</code></td><td>Converts to uppercase</td><td>strupr("hello") = "HELLO"</td></tr>
+            </table>
+
+            <h3>String Example</h3>
+            <pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char first[20] = "Juan";
+    char last[20] = "Dela Cruz";
+    char full[40];
+
+    strcpy(full, first);
+    strcat(full, " ");
+    strcat(full, last);
+
+    printf("Full name: %s", full);
+    printf("Length: %d", strlen(full));
+    return 0;
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Strings in C are null-terminated character arrays. The string.h library provides essential functions for string manipulation. Always ensure sufficient buffer space to avoid buffer overflow errors.</div>
+        `
+    },
+    f1: {
+        title: "Pointers",
+        period: "FINALS",
+        content: `
+            <h2>Pointers</h2>
+            <span class="period-badge">FINALS</span>
+            <p>A <strong>pointer</strong> is a variable that stores the memory address of another variable. Pointers are one of the most powerful features of C, enabling dynamic memory allocation, efficient array processing, and pass-by-reference.</p>
+
+            <h3>Pointer Concepts</h3>
+            <pre>int x = 10;
+int *ptr = &x;        // ptr stores the address of x
+
+printf("%d", x);      // 10
+printf("%p", &x);     // address of x
+printf("%p", ptr);    // same address
+printf("%d", *ptr);   // 10 (dereferencing)</pre>
+
+            <h3>Pointer Operations</h3>
+            <ul>
+                <li><strong>& (Address-of):</strong> Returns the memory address of a variable</li>
+                <li><strong>* (Dereference):</strong> Accesses the value at the address stored in the pointer</li>
+            </ul>
+
+            <h3>Pointers and Arrays</h3>
+            <pre>int arr[3] = {10, 20, 30};
+int *p = arr;            // p points to arr[0]
+
+// Array indexing using pointers
+printf("%d", *(p + 0));  // 10
+printf("%d", *(p + 1));  // 20
+printf("%d", *(p + 2));  // 30
+
+// Equivalent to:
+printf("%d", p[0]);      // 10
+printf("%d", p[1]);      // 20</pre>
+
+            <h3>Dynamic Memory Allocation</h3>
+            <pre>#include &lt;stdlib.h&gt;
+
+int *arr;
+int n = 5;
+
+arr = (int*)malloc(n * sizeof(int));
+if (arr == NULL) {
+    printf("Memory allocation failed");
+    return 1;
+}
+
+// Use the array
+for (int i = 0; i < n; i++) {
+    arr[i] = i * 10;
+}
+
+free(arr);  // always free allocated memory</pre>
+
+            <h3>Pointer to Pointer</h3>
+            <pre>int x = 5;
+int *p = &x;
+int **pp = &p;
+
+printf("%d", **pp);  // 5</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Pointers provide direct access to memory, enabling efficient array manipulation, dynamic memory allocation, and pass-by-reference. Understanding pointers is essential for systems programming and is a distinguishing feature of C.</div>
+        `
+    },
+    f2: {
+        title: "File Handling",
+        period: "FINALS",
+        content: `
+            <h2>File Handling</h2>
+            <span class="period-badge">FINALS</span>
+            <p><strong>File handling</strong> in C allows programs to store data permanently on storage devices. Files can be used for input (reading) and output (writing).</p>
+
+            <h3>File Operations</h3>
+            <ol>
+                <li><strong>Open</strong> the file using <code>fopen()</code></li>
+                <li><strong>Read</strong> from or <strong>Write</strong> to the file</li>
+                <li><strong>Close</strong> the file using <code>fclose()</code></li>
+            </ol>
+
+            <h3>File Access Modes</h3>
+            <table>
+                <tr><th>Mode</th><th>Description</th></tr>
+                <tr><td><code>"r"</code></td><td>Open for reading. File must exist</td></tr>
+                <tr><td><code>"w"</code></td><td>Open for writing. Creates new file or overwrites existing</td></tr>
+                <tr><td><code>"a"</code></td><td>Open for appending. Creates file if not exists</td></tr>
+                <tr><td><code>"r+"</code></td><td>Open for reading and writing. File must exist</td></tr>
+                <tr><td><code>"w+"</code></td><td>Open for reading and writing. Creates or overwrites</td></tr>
+                <tr><td><code>"a+"</code></td><td>Open for reading and appending</td></tr>
+            </table>
+
+            <h3>Writing to a File</h3>
+            <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fp = fopen("output.txt", "w");
+    if (fp == NULL) {
+        printf("Error opening file");
+        return 1;
+    }
+
+    fprintf(fp, "Hello, File!\\n");
+    fprintf(fp, "Student: Juan Dela Cruz\\n");
+    fprintf(fp, "Grade: 1.75\\n");
+
+    fclose(fp);
+    return 0;
+}</pre>
+
+            <h3>Reading from a File</h3>
+            <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fp = fopen("output.txt", "r");
+    if (fp == NULL) {
+        printf("File not found");
+        return 1;
+    }
+
+    char buffer[100];
+    while (fgets(buffer, 100, fp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    fclose(fp);
+    return 0;
+}</pre>
+
+            <h3>fscanf - Reading Formatted Data</h3>
+            <pre>int id;
+char name[30];
+float gpa;
+
+while (fscanf(fp, "%d %s %f", &id, name, &gpa) != EOF) {
+    printf("%d %s %.2f\\n", id, name, gpa);
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> File handling allows programs to persist data beyond program execution. Always check if fopen returns NULL (file open failed) and always close files after use to prevent data loss or corruption.</div>
+        `
+    },
+    f3: {
+        title: "Structures & Unions",
+        period: "FINALS",
+        content: `
+            <h2>Structures & Unions</h2>
+            <span class="period-badge">FINALS</span>
+            <p>A <strong>structure</strong> is a user-defined data type that groups variables of different data types under a single name. A <strong>union</strong> is similar but shares memory space among its members.</p>
+
+            <h3>Defining a Structure</h3>
+            <pre>struct Student {
+    int id;
+    char name[50];
+    char course[20];
+    float gpa;
+};</pre>
+
+            <h3>Using Structures</h3>
+            <pre>struct Student s1;                     // declaration
+s1.id = 101;
+strcpy(s1.name, "Juan Dela Cruz");
+strcpy(s1.course, "BSIT");
+s1.gpa = 1.75;
+
+// Declaration + initialization
+struct Student s2 = {102, "Maria Santos", "BSCS", 1.50};
+
+// Accessing members
+printf("Name: %s", s1.name);
+printf("GPA: %.2f", s1.gpa);</pre>
+
+            <h3>Arrays of Structures</h3>
+            <pre>struct Student students[3] = {
+    {101, "Juan", "BSIT", 1.75},
+    {102, "Maria", "BSCS", 1.50},
+    {103, "Pedro", "BSIT", 2.00}
+};
+
+for (int i = 0; i < 3; i++) {
+    printf("%d %s %.2f\\n",
+        students[i].id,
+        students[i].name,
+        students[i].gpa);
+}</pre>
+
+            <h3>Structures and Functions</h3>
+            <pre>void displayStudent(struct Student s) {
+    printf("ID: %d\\n", s.id);
+    printf("Name: %s\\n", s.name);
+    printf("GPA: %.2f\\n", s.gpa);
+}
+
+struct Student createStudent(int id, char name[], float gpa) {
+    struct Student s;
+    s.id = id;
+    strcpy(s.name, name);
+    s.gpa = gpa;
+    return s;
+}</pre>
+
+            <h3>Unions</h3>
+            <pre>union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
+int main() {
+    union Data data;
+    data.i = 10;
+    printf("%d", data.i);     // 10
+    data.f = 3.14;
+    printf("%f", data.f);     // 3.14 (i is overwritten)
+    return 0;
+}</pre>
+
+            <h3>typedef</h3>
+            <pre>typedef struct {
+    int x, y;
+} Point;
+
+Point p1 = {10, 20};
+printf("(%d, %d)", p1.x, p1.y);</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Structures group related data of different types into a single unit. They are essential for modeling real-world entities in programs. Unions save memory but can only store one member at a time. The typedef keyword simplifies struct declarations.</div>
+        `
+    }
+};
+
+// ===========================
+// OOPROG LESSONS
+// ===========================
+lessons.ooprog = {
+    p1: {
+        title: "OOP Concepts",
+        period: "PRELIM",
+        content: `
+            <h2>OOP Concepts</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Object-Oriented Programming (OOP)</strong> is a programming paradigm that organizes code around <strong>objects</strong> rather than functions and logic. An object is a self-contained entity that contains both <strong>data</strong> (attributes) and <strong>behavior</strong> (methods).</p>
+
+            <h3>Why OOP?</h3>
+            <ul>
+                <li><strong>Modularity:</strong> Each object is a self-contained unit, making code easier to manage and debug</li>
+                <li><strong>Reusability:</strong> Classes can be reused across projects</li>
+                <li><strong>Scalability:</strong> OOP systems are easier to extend and maintain as they grow</li>
+                <li><strong>Real-World Modeling:</strong> Objects map naturally to real-world entities</li>
+            </ul>
+
+            <h3>Four Pillars of OOP</h3>
+            <table>
+                <tr><th>Pillar</th><th>Description</th><th>Analogy</th></tr>
+                <tr><td><strong>Encapsulation</strong></td><td>Bundle data and methods together; hide internal details</td><td>A vending machine — you interact with buttons, not internal mechanics</td></tr>
+                <tr><td><strong>Inheritance</strong></td><td>Create new classes from existing ones</td><td>A car inherits properties of a vehicle (wheels, engine)</td></tr>
+                <tr><td><strong>Polymorphism</strong></td><td>Same method name, different implementations</td><td>The same "play" method works for piano, guitar, and drums</td></tr>
+                <tr><td><strong>Abstraction</strong></td><td>Show only essential features; hide complexity</td><td>Driving a car — you use pedals and steering wheel, not the engine</td></tr>
+            </table>
+
+            <h3>Class vs Object</h3>
+            <ul>
+                <li><strong>Class:</strong> A blueprint or template for creating objects. Defines attributes and methods</li>
+                <li><strong>Object:</strong> An instance of a class. Has its own state (attribute values)</li>
+            </ul>
+
+            <h3>Basic Java Class Example</h3>
+            <pre>public class Student {
+    // Attributes (fields)
+    int id;
+    String name;
+    double gpa;
+
+    // Method
+    void display() {
+        System.out.println(id + " " + name + " " + gpa);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.id = 101;
+        s.name = "Juan";
+        s.gpa = 1.75;
+        s.display();
+    }
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> OOP organizes code into objects that combine data and behavior. The four pillars — encapsulation, inheritance, polymorphism, and abstraction — provide a powerful framework for building complex, maintainable software systems.</div>
+        `
+    },
+    p2: {
+        title: "Classes & Objects",
+        period: "PRELIM",
+        content: `
+            <h2>Classes & Objects</h2>
+            <span class="period-badge">PRELIM</span>
+            <p>A <strong>class</strong> is a blueprint, and an <strong>object</strong> is an instance created from that blueprint. In Java, everything (except primitives) is an object.</p>
+
+            <h3>Defining a Class</h3>
+            <pre>public class Car {
+    // Instance variables
+    String brand;
+    String model;
+    int year;
+
+    // Constructor
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Methods
+    public void start() {
+        System.out.println(brand + " " + model + " is starting...");
+    }
+
+    public void displayInfo() {
+        System.out.println(year + " " + brand + " " + model);
+    }
+}</pre>
+
+            <h3>Creating Objects</h3>
+            <pre>public class Main {
+    public static void main(String[] args) {
+        Car car1 = new Car("Toyota", "Vios", 2023);
+        Car car2 = new Car("Honda", "Civic", 2024);
+
+        car1.displayInfo();
+        car2.start();
+    }
+}</pre>
+
+            <h3>Instance vs Static Members</h3>
+            <table>
+                <tr><th>Feature</th><th>Instance</th><th>Static</th></tr>
+                <tr><td>Belongs to</td><td>Each object (has its own copy)</td><td>The class (shared across all objects)</td></tr>
+                <tr><td>Access</td><td>objectName.member</td><td>ClassName.member</td></tr>
+                <tr><td>Memory</td><td>Allocated per object</td><td>Allocated once</td></tr>
+                <tr><td>Example</td><td>car1.brand</td><td>Math.PI</td></tr>
+            </table>
+
+            <pre>public class Counter {
+    static int count = 0;  // shared by all objects
+    int id;                // unique per object
+
+    public Counter() {
+        count++;
+        id = count;
+    }
+}</pre>
+
+            <h3>this Keyword</h3>
+            <p>The <code>this</code> keyword refers to the current object instance. It is used to:</p>
+            <ul>
+                <li>Distinguish between instance variables and parameters with the same name</li>
+                <li>Call another constructor in the same class (<code>this()</code>)</li>
+                <li>Pass the current object as a parameter</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> A class defines the structure and behavior of objects. Constructors initialize object state. Static members belong to the class, not individual objects. The 'this' keyword references the current object instance.</div>
+        `
+    },
+    p3: {
+        title: "Encapsulation",
+        period: "PRELIM",
+        content: `
+            <h2>Encapsulation</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Encapsulation</strong> is the practice of hiding internal details of an object and providing controlled access through public methods. It is achieved using <strong>access modifiers</strong>.</p>
+
+            <h3>Access Modifiers in Java</h3>
+            <table>
+                <tr><th>Modifier</th><th>Class</th><th>Package</th><th>Subclass</th><th>World</th></tr>
+                <tr><td><code>public</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td><code>protected</code></td><td>✓</td><td>✓</td><td>✓</td><td>✗</td></tr>
+                <tr><td><em>default</em></td><td>✓</td><td>✓</td><td>✗</td><td>✗</td></tr>
+                <tr><td><code>private</code></td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr>
+            </table>
+
+            <h3>Encapsulation Example</h3>
+            <pre>public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private String pin;
+
+    // Constructor
+    public BankAccount(String accountNumber, double initialDeposit, String pin) {
+        this.accountNumber = accountNumber;
+        this.balance = initialDeposit;
+        this.pin = pin;
+    }
+
+    // Getter (controlled read access)
+    public double getBalance() {
+        return balance;
+    }
+
+    // Setter (controlled write access with validation)
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public boolean withdraw(double amount, String pin) {
+        if (!this.pin.equals(pin)) return false;
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
+}</pre>
+
+            <h3>Getters and Setters (Accessors & Mutators)</h3>
+            <pre>public class Employee {
+    private int id;
+    private String name;
+    private double salary;
+
+    // Getter
+    public String getName() {
+        return name;
+    }
+
+    // Setter with validation
+    public void setSalary(double salary) {
+        if (salary >= 0) {
+            this.salary = salary;
+        }
+    }
+}</pre>
+
+            <h3>Benefits of Encapsulation</h3>
+            <ul>
+                <li><strong>Data Protection:</strong> Prevents unauthorized or accidental modification</li>
+                <li><strong>Validation:</strong> Business rules can be enforced in setters</li>
+                <li><strong>Flexibility:</strong> Internal implementation can change without affecting external code</li>
+                <li><strong>Maintainability:</strong> Code is easier to understand and modify</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Encapsulation is the foundation of OOP data protection. Use private fields and provide public getters/setters for controlled access. This pattern is also called data hiding and is essential for building robust, maintainable applications.</div>
+        `
+    },
+    m1: {
+        title: "Inheritance",
+        period: "MIDTERM",
+        content: `
+            <h2>Inheritance</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Inheritance</strong> allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass). It promotes code reuse and establishes a hierarchical relationship.</p>
+
+            <h3>Basic Inheritance</h3>
+            <pre>// Parent class
+public class Animal {
+    protected String name;
+
+    public void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+// Child class
+public class Dog extends Animal {
+    public void bark() {
+        System.out.println(name + " is barking");
+    }
+}
+
+// Usage
+Dog d = new Dog();
+d.name = "Buddy";
+d.eat();   // inherited from Animal
+d.bark();  // defined in Dog</pre>
+
+            <h3>Types of Inheritance in Java</h3>
+            <ul>
+                <li><strong>Single Inheritance:</strong> One child extends one parent (Java supports this directly)</li>
+                <li><strong>Multi-Level Inheritance:</strong> A chain: Grandparent → Parent → Child</li>
+                <li><strong>Hierarchical Inheritance:</strong> One parent, multiple children</li>
+                <li><em>Multiple Inheritance:</em> One child, multiple parents (not supported in Java classes; achieved via interfaces)</li>
+            </ul>
+
+            <h3>The super Keyword</h3>
+            <pre>public class Vehicle {
+    String brand;
+
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+
+    public void honk() {
+        System.out.println("Beep!");
+    }
+}
+
+public class Motorcycle extends Vehicle {
+    private int cc;
+
+    public Motorcycle(String brand, int cc) {
+        super(brand);  // call parent constructor
+        this.cc = cc;
+    }
+
+    @Override
+    public void honk() {
+        super.honk();  // call parent method
+        System.out.println("Vroom!");
+    }
+}</pre>
+
+            <h3>Overriding vs Overloading</h3>
+            <table>
+                <tr><th>Feature</th><th>Overriding</th><th>Overloading</th></tr>
+                <tr><td>Definition</td><td>Child redefines a parent method</td><td>Same name, different parameters</td></tr>
+                <tr><td>Same Class?</td><td>No (parent-child)</td><td>Yes</td></tr>
+                <tr><td>Parameters</td><td>Must be identical</td><td>Must be different</td></tr>
+                <tr><td>Return Type</td><td>Must be same/covariant</td><td>Can be different</td></tr>
+                <tr><td>Annotation</td><td>@Override</td><td>None</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Inheritance creates parent-child relationships between classes, enabling code reuse. The 'super' keyword accesses parent class members. Method overriding allows child classes to provide specific implementations of parent methods.</div>
+        `
+    },
+    m2: {
+        title: "Polymorphism",
+        period: "MIDTERM",
+        content: `
+            <h2>Polymorphism</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Polymorphism</strong> (Greek for "many forms") allows objects of different classes to be treated as objects of a common parent class. The same method call can behave differently depending on the actual object type.</p>
+
+            <h3>Compile-Time Polymorphism (Method Overloading)</h3>
+            <pre>public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}</pre>
+
+            <h3>Runtime Polymorphism (Method Overriding)</h3>
+            <pre>public class Shape {
+    public double getArea() {
+        return 0;
+    }
+}
+
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Rectangle extends Shape {
+    private double length, width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double getArea() {
+        return length * width;
+    }
+}
+
+// Usage
+Shape[] shapes = {
+    new Circle(5),
+    new Rectangle(4, 6)
+};
+
+for (Shape s : shapes) {
+    System.out.println(s.getArea());  // different behavior per object
+}</pre>
+
+            <h3>Upcasting and Downcasting</h3>
+            <pre>// Upcasting (implicit) — child to parent reference
+Shape s = new Circle(5);
+
+// Downcasting (explicit) — parent to child reference
+Circle c = (Circle) s;
+c.getRadius();
+
+// instanceof check
+if (s instanceof Circle) {
+    Circle c2 = (Circle) s;
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Polymorphism enables flexible, extensible code. Compile-time polymorphism (overloading) resolves at compile time; runtime polymorphism (overriding) resolves at runtime using dynamic method dispatch. The instanceof operator ensures safe downcasting.</div>
+        `
+    },
+    m3: {
+        title: "Abstract Classes & Interfaces",
+        period: "MIDTERM",
+        content: `
+            <h2>Abstract Classes & Interfaces</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Abstract classes</strong> and <strong>interfaces</strong> provide abstraction — they define what a class should do without specifying how. They are essential for designing flexible, extensible systems.</p>
+
+            <h3>Abstract Classes</h3>
+            <ul>
+                <li>Cannot be instantiated directly</li>
+                <li>Can have both abstract methods (no body) and concrete methods (with body)</li>
+                <li>Can have constructors, instance variables, and static methods</li>
+                <li>Declared with the <code>abstract</code> keyword</li>
+            </ul>
+
+            <pre>abstract class Employee {
+    protected String name;
+    protected double baseSalary;
+
+    public Employee(String name, double baseSalary) {
+        this.name = name;
+        this.baseSalary = baseSalary;
+    }
+
+    // Abstract method — subclasses must implement
+    public abstract double calculateSalary();
+
+    // Concrete method
+    public void displayInfo() {
+        System.out.println(name + ": " + calculateSalary());
+    }
+}
+
+class FullTimeEmployee extends Employee {
+    public FullTimeEmployee(String name, double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    public double calculateSalary() {
+        return baseSalary * 1.2;  // 20% bonus
+    }
+}</pre>
+
+            <h3>Interfaces</h3>
+            <ul>
+                <li>Define a contract (what to do, not how)</li>
+                <li>All methods are implicitly public and abstract (before Java 8)</li>
+                <li>Support multiple inheritance of type</li>
+                <li>Can have default and static methods (Java 8+)</li>
+                <li>Declared with the <code>interface</code> keyword</li>
+            </ul>
+
+            <pre>interface Printable {
+    void print();
+}
+
+interface Scannable {
+    void scan();
+}
+
+// Multiple interface implementation
+class MultiFunctionPrinter implements Printable, Scannable {
+    @Override
+    public void print() {
+        System.out.println("Printing...");
+    }
+
+    @Override
+    public void scan() {
+        System.out.println("Scanning...");
+    }
+}</pre>
+
+            <h3>Abstract Class vs Interface</h3>
+            <table>
+                <tr><th>Feature</th><th>Abstract Class</th><th>Interface</th></tr>
+                <tr><td>Instantiation</td><td>Cannot be instantiated</td><td>Cannot be instantiated</td></tr>
+                <tr><td>Methods</td><td>Abstract + concrete</td><td>Abstract (default/static in Java 8+)</td></tr>
+                <tr><td>Variables</td><td>Any type</td><td>public static final (constants)</td></tr>
+                <tr><td>Constructors</td><td>Yes</td><td>No</td></tr>
+                <tr><td>Multiple Inheritance</td><td>No (single extends)</td><td>Yes (multiple implements)</td></tr>
+                <tr><td>Use Case</td><td>Related classes with shared code</td><td>Unrelated classes sharing behavior</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Abstract classes provide partial abstraction with shared implementation. Interfaces define pure contracts supporting multiple inheritance of type. Use abstract classes for related classes with common code; use interfaces for defining capabilities across unrelated classes.</div>
+        `
+    },
+    f1: {
+        title: "Exception Handling",
+        period: "FINALS",
+        content: `
+            <h2>Exception Handling</h2>
+            <span class="period-badge">FINALS</span>
+            <p>An <strong>exception</strong> is an event that disrupts the normal flow of program execution. Java provides a robust exception handling mechanism using try-catch-finally blocks.</p>
+
+            <h3>Types of Exceptions</h3>
+            <table>
+                <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+                <tr><td><strong>Checked</strong></td><td>Checked at compile time; must be handled</td><td>IOException, SQLException</td></tr>
+                <tr><td><strong>Unchecked (Runtime)</strong></td><td>Occur at runtime; not required to be handled</td><td>ArithmeticException, NullPointerException</td></tr>
+                <tr><td><strong>Error</strong></td><td>Serious problems beyond program control</td><td>OutOfMemoryError, StackOverflowError</td></tr>
+            </table>
+
+            <h3>Try-Catch-Finally</h3>
+            <pre>public class DivisionExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b;  // ArithmeticException
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        } finally {
+            System.out.println("This always executes.");
+        }
+    }
+}</pre>
+
+            <h3>Multiple Catch Blocks</h3>
+            <pre>try {
+    int[] arr = new int[3];
+    arr[5] = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Math error: " + e.getMessage());
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array error: " + e.getMessage());
+} catch (Exception e) {
+    System.out.println("General error: " + e.getMessage());
+}</pre>
+
+            <h3>Custom Exceptions</h3>
+            <pre>class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+public class BankAccount {
+    private double balance;
+
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            throw new InsufficientFundsException(
+                "Insufficient balance: " + balance);
+        }
+        balance -= amount;
+    }
+}</pre>
+
+            <h3>Try-With-Resources (AutoCloseable)</h3>
+            <pre>// Automatically closes resources
+try (BufferedReader br = new BufferedReader(
+        new FileReader("file.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Exception handling separates error-handling code from normal logic. Checked exceptions must be handled or declared. The finally block always executes. Custom exceptions allow domain-specific error handling. Try-with-resources ensures automatic resource cleanup.</div>
+        `
+    },
+    f2: {
+        title: "File I/O",
+        period: "FINALS",
+        content: `
+            <h2>File I/O</h2>
+            <span class="period-badge">FINALS</span>
+            <p>Java provides comprehensive APIs for reading from and writing to files. The <strong>java.io</strong> and <strong>java.nio</strong> packages contain classes for file operations.</p>
+
+            <h3>Writing to a File</h3>
+            <pre>import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteExample {
+    public static void main(String[] args) {
+        try (FileWriter fw = new FileWriter("output.txt")) {
+            fw.write("Hello, Java File I/O!\\n");
+            fw.write("Student: Juan Dela Cruz\\n");
+            fw.write("Course: BSIT\\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</pre>
+
+            <h3>Reading from a File</h3>
+            <pre>import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadExample {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(
+                new FileReader("output.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</pre>
+
+            <h3>Using Scanner for File Input</h3>
+            <pre>import java.io.File;
+import java.util.Scanner;
+
+public class ScannerFileExample {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(new File("data.txt"));
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            System.out.println(line);
+        }
+        sc.close();
+    }
+}</pre>
+
+            <h3>Reading Formatted Data</h3>
+            <pre>// data.txt format: id name gpa
+// 101 Juan 1.75
+// 102 Maria 1.50
+
+import java.util.Scanner;
+import java.io.File;
+
+public class ReadStudents {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(new File("students.txt"));
+        while (sc.hasNext()) {
+            int id = sc.nextInt();
+            String name = sc.next();
+            double gpa = sc.nextDouble();
+            System.out.printf("%d %s %.2f%n", id, name, gpa);
+        }
+        sc.close();
+    }
+}</pre>
+
+            <h3>File Class Operations</h3>
+            <pre>File file = new File("test.txt");
+file.exists()         // check if file exists
+file.createNewFile()  // create new file
+file.delete()         // delete file
+file.length()         // file size in bytes
+file.getName()        // get file name
+file.getAbsolutePath() // get full path
+file.isDirectory()    // check if directory
+file.listFiles()      // list directory contents</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Java File I/O uses streams and readers/writers for input and output. Always close resources or use try-with-resources. The File class provides methods for file system operations. BufferedReader and FileWriter are efficient for text file operations.</div>
+        `
+    },
+    f3: {
+        title: "GUI Programming",
+        period: "FINALS",
+        content: `
+            <h2>GUI Programming</h2>
+            <span class="period-badge">FINALS</span>
+            <p><strong>Graphical User Interface (GUI)</strong> programming allows users to interact with programs through visual components like windows, buttons, text fields, and menus. Java provides <strong>Swing</strong> (javax.swing) for building desktop GUI applications.</p>
+
+            <h3>JFrame — The Main Window</h3>
+            <pre>import javax.swing.*;
+
+public class MyWindow {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("My First GUI");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}</pre>
+
+            <h3>Common Swing Components</h3>
+            <table>
+                <tr><th>Component</th><th>Description</th></tr>
+                <tr><td><code>JLabel</code></td><td>Displays text or an image</td></tr>
+                <tr><td><code>JTextField</code></td><td>Single-line text input</td></tr>
+                <tr><td><code>JPasswordField</code></td><td>Password input (masked text)</td></tr>
+                <tr><td><code>JTextArea</code></td><td>Multi-line text area</td></tr>
+                <tr><td><code>JButton</code></td><td>Clickable button</td></tr>
+                <tr><td><code>JCheckBox</code></td><td>Checkable option</td></tr>
+                <tr><td><code>JRadioButton</code></td><td>Radio button (mutually exclusive)</td></tr>
+                <tr><td><code>JComboBox</code></td><td>Dropdown list</td></tr>
+                <tr><td><code>JTable</code></td><td>Table component for data display</td></tr>
+            </table>
+
+            <h3>Layout Managers</h3>
+            <pre>import javax.swing.*;
+import java.awt.*;
+
+public class LayoutDemo {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Layout Demo");
+        frame.setLayout(new FlowLayout());
+
+        frame.add(new JButton("Button 1"));
+        frame.add(new JButton("Button 2"));
+        frame.add(new JButton("Button 3"));
+
+        frame.setSize(400, 150);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}</pre>
+
+            <h3>Event Handling</h3>
+            <pre>import javax.swing.*;
+import java.awt.event.*;
+
+public class ButtonClick {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Click Me");
+        JButton btn = new JButton("Click Me!");
+        JLabel label = new JLabel("Waiting...");
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                label.setText("Button clicked!");
+            }
+        });
+
+        frame.setLayout(new FlowLayout());
+        frame.add(btn);
+        frame.add(label);
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}</pre>
+
+            <h3>Simple Login Form</h3>
+            <pre>import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class LoginForm extends JFrame {
+    private JTextField usernameField;
+    private JPasswordField passwordField;
+
+    public LoginForm() {
+        setTitle("Login");
+        setLayout(new GridLayout(3, 2, 10, 10));
+
+        add(new JLabel("Username:"));
+        usernameField = new JTextField();
+        add(usernameField);
+
+        add(new JLabel("Password:"));
+        passwordField = new JPasswordField();
+        add(passwordField);
+
+        JButton loginBtn = new JButton("Login");
+        loginBtn.addActionListener(e -> {
+            String user = usernameField.getText();
+            String pass = new String(passwordField.getPassword());
+            if (user.equals("admin") && pass.equals("1234")) {
+                JOptionPane.showMessageDialog(this, "Welcome!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid credentials");
+            }
+        });
+        add(loginBtn);
+
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new LoginForm();
+    }
+}</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Java Swing provides a rich set of GUI components for building desktop applications. Layout managers control component placement. Event listeners handle user interactions. JOptionPane provides convenient dialog boxes for messages and input.</div>
+        `
+    }
+};
+
+// ===========================
+// CSELE1 LESSONS
+// ===========================
+lessons.csele1 = {
+    p1: {
+        title: "Introduction to Computer Graphics",
+        period: "PRELIM",
+        content: `
+            <h2>Introduction to Computer Graphics</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Computer graphics</strong> refers to the creation, manipulation, and representation of visual images using computers. It is a vast field that encompasses everything from simple line drawings to photorealistic 3D renderings and interactive virtual environments.</p>
+
+            <h3>Applications of Computer Graphics</h3>
+            <table>
+                <tr><th>Field</th><th>Application</th><th>Examples</th></tr>
+                <tr><td><strong>Entertainment</strong></td><td>Movies, video games, animation</td><td>Pixar films, Fortnite, anime</td></tr>
+                <tr><td><strong>Education</strong></td><td>Interactive simulations, visualizations</td><td>Virtual labs, anatomy models</td></tr>
+                <tr><td><strong>Engineering</strong></td><td>CAD, architectural visualization</td><td>AutoCAD, Blender, SketchUp</td></tr>
+                <tr><td><strong>Medicine</strong></td><td>Medical imaging, surgical simulation</td><td>MRI visualization, virtual surgery</td></tr>
+                <tr><td><strong>Science</strong></td><td>Data visualization, modeling</td><td>Weather maps, molecular models</td></tr>
+                <tr><td><strong>Design</strong></td><td>UI/UX, graphic design, typography</td><td>Figma, Photoshop, Illustrator</td></tr>
+            </table>
+
+            <h3>Graphics Pipeline Overview</h3>
+            <ol>
+                <li><strong>Application Stage:</strong> CPU sends geometry data (vertices, polygons) to GPU</li>
+                <li><strong>Geometry Processing:</strong> Transforms 3D coordinates to 2D screen positions</li>
+                <li><strong>Rasterization:</strong> Converts geometric primitives into pixels</li>
+                <li><strong>Fragment Processing:</strong> Determines color, texture, and lighting for each pixel</li>
+                <li><strong>Output:</strong> Final image is displayed on screen</li>
+            </ol>
+
+            <h3>Raster vs Vector Graphics</h3>
+            <ul>
+                <li><strong>Raster (Bitmap):</strong> Grid of pixels (JPG, PNG, GIF). Resolution-dependent. Good for photos</li>
+                <li><strong>Vector:</strong> Mathematical formulas (SVG, EPS). Resolution-independent. Good for logos, illustrations</li>
+            </ul>
+
+            <h3>Key Concepts</h3>
+            <ul>
+                <li><strong>Pixel:</strong> The smallest addressable element in a display</li>
+                <li><strong>Resolution:</strong> Number of pixels in a display (e.g., 1920×1080)</li>
+                <li><strong>Aspect Ratio:</strong> Width-to-height ratio (e.g., 16:9)</li>
+                <li><strong>Frame Buffer:</strong> Memory area that stores pixel data for display</li>
+                <li><strong>Refresh Rate:</strong> How often the display updates per second (Hz)</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Computer graphics is everywhere — from movies and games to medicine and engineering. The graphics pipeline converts 3D geometry into 2D images through a series of processing stages. Understanding the difference between raster and vector graphics is fundamental.</div>
+        `
+    },
+    p2: {
+        title: "Graphics Systems",
+        period: "PRELIM",
+        content: `
+            <h2>Graphics Systems</h2>
+            <span class="period-badge">PRELIM</span>
+            <p>A <strong>graphics system</strong> consists of hardware and software components that work together to produce visual output. Understanding these components is essential for developing efficient graphics applications.</p>
+
+            <h3>Components of a Graphics System</h3>
+            <ul>
+                <li><strong>CPU:</strong> Performs general computations and sends rendering commands to the GPU</li>
+                <li><strong>GPU (Graphics Processing Unit):</strong> Specialized processor for parallel rendering operations</li>
+                <li><strong>Display:</strong> Output device (monitor, screen, VR headset)</li>
+                <li><strong>Frame Buffer:</strong> Memory that holds the image data for display</li>
+                <li><strong>Input Devices:</strong> Mouse, keyboard, stylus, touch screen, VR controllers</li>
+            </ul>
+
+            <h3>GPU vs CPU</h3>
+            <table>
+                <tr><th>Feature</th><th>CPU</th><th>GPU</th></tr>
+                <tr><td><strong>Cores</strong></td><td>Few (4-16), powerful</td><td>Many (thousands), simpler</td></tr>
+                <tr><td><strong>Optimized for</strong></td><td>Sequential tasks, complex logic</td><td>Parallel tasks, matrix operations</td></tr>
+                <tr><td><strong>Memory</strong></td><td>System RAM</td><td>VRAM (dedicated video memory)</td></tr>
+                <tr><td><strong>Graphics APIs</strong></td><td>—</td><td>OpenGL, DirectX, Vulkan, WebGL</td></tr>
+            </table>
+
+            <h3>Display Technologies</h3>
+            <ul>
+                <li><strong>CRT (Cathode Ray Tube):</strong> Old technology; bulky, heavy</li>
+                <li><strong>LCD (Liquid Crystal Display):</strong> Thin, energy-efficient; most common today</li>
+                <li><strong>LED (Light Emitting Diode):</strong> Backlit LCD; better contrast, thinner</li>
+                <li><strong>OLED (Organic LED):</strong> Self-emissive pixels; perfect blacks, vibrant colors</li>
+                <li><strong>VR/AR Headsets:</strong> High refresh rate, low latency displays</li>
+            </ul>
+
+            <h3>Color Depth</h3>
+            <table>
+                <tr><th>Depth</th><th>Colors</th><th>Used For</th></tr>
+                <tr><td>1-bit</td><td>2 (black & white)</td><td>Monochrome displays</td></tr>
+                <tr><td>8-bit</td><td>256</td><td>Older systems, GIFs</td></tr>
+                <tr><td>16-bit</td><td>65,536</td><td>Low-end graphics</td></tr>
+                <tr><td>24-bit (True Color)</td><td>16.7 million</td><td>Standard displays, photos</td></tr>
+                <tr><td>32-bit</td><td>16.7 million + alpha</td><td>Transparency effects</td></tr>
+            </table>
+
+            <h3>Graphics APIs</h3>
+            <ul>
+                <li><strong>OpenGL:</strong> Cross-platform, widely used for games and scientific visualization</li>
+                <li><strong>DirectX:</strong> Microsoft's API for Windows and Xbox</li>
+                <li><strong>Vulkan:</strong> Modern, low-overhead API for high-performance graphics</li>
+                <li><strong>WebGL:</strong> JavaScript API for browser-based 3D graphics</li>
+                <li><strong>CUDA/OpenCL:</strong> GPU computing for general-purpose parallel processing</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> A modern graphics system relies on the GPU for parallel rendering. Display technology affects visual quality, and color depth determines how many colors can be represented. Graphics APIs provide standardized interfaces to harness GPU power.</div>
+        `
+    },
+    p3: {
+        title: "Output Primitives",
+        period: "PRELIM",
+        content: `
+            <h2>Output Primitives</h2>
+            <span class="period-badge">PRELIM</span>
+            <p><strong>Output primitives</strong> are the basic geometric building blocks used to construct images in computer graphics. These include points, lines, circles, ellipses, and filled areas. All complex graphics are composed of these primitives.</p>
+
+            <h3>Basic Primitives</h3>
+            <table>
+                <tr><th>Primitive</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>Point</strong></td><td>A single pixel at (x, y) coordinate</td><td>GL_POINTS</td></tr>
+                <tr><td><strong>Line</strong></td><td>Set of pixels between two endpoints</td><td>GL_LINES, GL_LINE_STRIP</td></tr>
+                <tr><td><strong>Circle/Ellipse</strong></td><td>Curved primitive defined by center and radius</td><td>GL_TRIANGLE_FAN (approximated)</td></tr>
+                <tr><td><strong>Polygon</strong></td><td>Closed shape with 3+ vertices (triangle, quad, etc.)</td><td>GL_TRIANGLES, GL_QUADS</td></tr>
+                <tr><td><strong>Text</strong></td><td>Character glyphs rendered on screen</td><td>Bitmap or outline fonts</td></tr>
+            </table>
+
+            <h3>Line Drawing Algorithms</h3>
+            <ul>
+                <li><strong>DDA (Digital Differential Analyzer):</strong> Incremental algorithm using floating-point arithmetic. Simple but less accurate</li>
+                <li><strong>Bresenham's Line Algorithm:</strong> Uses only integer arithmetic. Faster and more accurate. Most widely used</li>
+            </ul>
+
+            <pre>// Bresenham's Line Algorithm (pseudocode)
+function drawLine(x0, y0, x1, y1):
+    dx = abs(x1 - x0)
+    dy = abs(y1 - y0)
+    p = 2 * dy - dx
+    x, y = x0, y0
+
+    for each x from x0 to x1:
+        plot(x, y)
+        if p < 0:
+            p += 2 * dy
+        else:
+            y++
+            p += 2 * (dy - dx)</pre>
+
+            <h3>Circle Drawing</h3>
+            <p><strong>Midpoint Circle Algorithm</strong> (Bresenham's) uses integer calculations to draw circles efficiently. It takes advantage of 8-way symmetry — only 1/8 of the circle needs to be computed.</p>
+
+            <h3>Polygon Fill Algorithms</h3>
+            <ul>
+                <li><strong>Scan-Line Fill:</strong> Fills polygon row by row using intersection calculations</li>
+                <li><strong>Flood Fill:</strong> Recursively fills connected areas starting from a seed point</li>
+                <li><strong>Boundary Fill:</strong> Fills until a boundary color is encountered</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> All computer graphics are built from simple primitives — points, lines, and polygons. Efficient algorithms like Bresenham's are essential for real-time rendering. Understanding these fundamentals is critical before moving to complex 3D graphics.</div>
+        `
+    },
+    m1: {
+        title: "2D Transformations",
+        period: "MIDTERM",
+        content: `
+            <h2>2D Transformations</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>2D transformations</strong> modify the position, size, or orientation of objects in a 2D coordinate system. They are fundamental to computer graphics, animation, and game development.</p>
+
+            <h3>Basic 2D Transformations</h3>
+
+            <h4>1. Translation (Moving)</h4>
+            <p>Shifts an object by (tx, ty):</p>
+            <pre>x' = x + tx
+y' = y + ty</pre>
+
+            <h4>2. Scaling (Resizing)</h4>
+            <p>Scales an object by (sx, sy) relative to origin:</p>
+            <pre>x' = x * sx
+y' = y * sy</pre>
+
+            <h4>3. Rotation</h4>
+            <p>Rotates an object by angle θ (counterclockwise):</p>
+            <pre>x' = x*cos(θ) - y*sin(θ)
+y' = x*sin(θ) + y*cos(θ)</pre>
+
+            <h3>Homogeneous Coordinates</h3>
+            <p>To represent all transformations as matrix multiplications, we use <strong>homogeneous coordinates</strong> (add a third coordinate w=1):</p>
+            <pre>Translation:   [1 0 tx]    Scaling:    [sx 0 0]    Rotation:    [cos(θ) -sin(θ) 0]
+               [0 1 ty]                [0 sy 0]                 [sin(θ)  cos(θ) 0]
+               [0 0 1 ]                [0 0  1]                 [0       0      1]</pre>
+
+            <h3>Composite Transformations</h3>
+            <p>Complex transformations are achieved by multiplying individual transformation matrices. Order matters — matrix multiplication is not commutative.</p>
+            <pre>// Rotate about a pivot point (px, py):
+// 1. Translate to origin
+// 2. Rotate
+// 3. Translate back
+M = T(px, py) * R(θ) * T(-px, -py)</pre>
+
+            <h3>Reflection (Mirror)</h3>
+            <pre>// Reflection across x-axis:
+[1  0 0]
+[0 -1 0]
+[0  0 1]
+
+// Reflection across y-axis:
+[-1 0 0]
+[ 0 1 0]
+[ 0 0 1]</pre>
+
+            <h3>Shear</h3>
+            <pre>// Shear in x-direction:
+[1 shx 0]
+[0  1  0]
+[0  0  1]
+
+// Shear in y-direction:
+[1   0 0]
+[shy 1 0]
+[0   0 1]</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> 2D transformations — translation, scaling, and rotation — are the building blocks of object manipulation in graphics. Homogeneous coordinates allow all transformations to be expressed as 3×3 matrix multiplications. Composite transformations combine multiple operations, and order is critical.</div>
+        `
+    },
+    m2: {
+        title: "2D Viewing & Clipping",
+        period: "MIDTERM",
+        content: `
+            <h2>2D Viewing & Clipping</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p><strong>Viewing</strong> refers to the process of selecting and displaying a portion of a scene. <strong>Clipping</strong> removes parts of objects that lie outside the viewing area (viewport) to improve performance and ensure correct display.</p>
+
+            <h3>Coordinate Systems</h3>
+            <ul>
+                <li><strong>World Coordinates:</strong> The coordinate system used to define objects in the scene (e.g., meters, pixels)</li>
+                <li><strong>Viewing (Window) Coordinates:</strong> A rectangular region in the world that we want to display</li>
+                <li><strong>Viewport Coordinates:</strong> The rectangular area on the display device where the image appears</li>
+                <li><strong>Normalized Device Coordinates (NDC):</strong> Coordinates mapped to range [0,1] or [-1,1]</li>
+            </ul>
+
+            <h3>Window-to-Viewport Transformation</h3>
+            <p>Maps the viewing window (xw, yw) to the viewport (xv, yv):</p>
+            <pre>sx = (xvmax - xvmin) / (xwmax - xwmin)
+sy = (yvmax - yvmin) / (ywmax - ywmin)
+xv = xvmin + (xw - xwmin) * sx
+yv = yvmin + (yw - ywmin) * sy</pre>
+
+            <h3>Point Clipping</h3>
+            <p>A point is visible if it lies within the clipping rectangle:</p>
+            <pre>xwmin <= x <= xwmax AND ywmin <= y <= ywmax</pre>
+
+            <h3>Line Clipping Algorithms</h3>
+            <h4>Cohen-Sutherland Algorithm</h4>
+            <p>Assigns a 4-bit region code to each endpoint. If both codes are 0000, the line is fully inside. If the bitwise AND is not 0000, the line is fully outside. Otherwise, compute intersection.</p>
+            <pre>Region Codes:
+1001 | 1000 | 1010
+-----+------+-----
+0001 | 0000 | 0010
+-----+------+-----
+0101 | 0100 | 0110</pre>
+
+            <h4>Liang-Barsky Algorithm</h4>
+            <p>Uses parametric line equations. More efficient than Cohen-Sutherland for many cases. Finds the range of t where the line is inside the clipping window.</p>
+
+            <h3>Polygon Clipping</h3>
+            <p><strong>Sutherland-Hodgman Algorithm:</strong> Clips a polygon against each edge of the clipping window sequentially. For each edge, it processes vertices and outputs new vertices for the next stage.</p>
+
+            <h3>Text Clipping</h3>
+            <ul>
+                <li><strong>All-or-None:</strong> Entire character is displayed or not</li>
+                <li><strong>Character Clipping:</strong> Individual characters outside bounds are clipped</li>
+                <li><strong>Pixel-Level Clipping:</strong> Parts of a character are clipped</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Viewing transforms world coordinates to device coordinates. Clipping eliminates objects outside the viewing region for efficiency. The Cohen-Sutherland and Liang-Barsky algorithms efficiently clip lines, while Sutherland-Hodgman handles polygon clipping.</div>
+        `
+    },
+    m3: {
+        title: "3D Concepts",
+        period: "MIDTERM",
+        content: `
+            <h2>3D Concepts</h2>
+            <span class="period-badge">MIDTERM</span>
+            <p>3D computer graphics extend 2D concepts by adding depth (z-coordinate). Objects are defined in 3D space and projected onto a 2D screen for display.</p>
+
+            <h3>3D Coordinate Systems</h3>
+            <ul>
+                <li><strong>Right-Handed System:</strong> Z-axis points toward viewer (+z out of screen). Used by OpenGL</li>
+                <li><strong>Left-Handed System:</strong> Z-axis points into the screen. Used by DirectX</li>
+            </ul>
+
+            <h3>3D Primitives</h3>
+            <table>
+                <tr><th>Primitive</th><th>Description</th><th>Uses</th></tr>
+                <tr><td><strong>Point</strong></td><td>Single 3D position (x, y, z)</td><td>Particle systems</td></tr>
+                <tr><td><strong>Line</strong></td><td>Two connected 3D points</td><td>Wireframe models</td></tr>
+                <tr><td><strong>Triangle</strong></td><td>Three vertices forming a face</td><td>Most common — used for all surfaces</td></tr>
+                <tr><td><strong>Quad</strong></td><td>Four vertices forming a face</td><td>Simpler modeling (converted to triangles)</td></tr>
+                <tr><td><strong>Polygon</strong></td><td>Multiple vertices forming a closed shape</td><td>Complex surfaces</td></tr>
+            </table>
+
+            <h3>3D Modeling Concepts</h3>
+            <ul>
+                <li><strong>Vertex:</strong> A point in 3D space with position (x, y, z) and optional attributes (color, normal, texture coordinates)</li>
+                <li><strong>Edge:</strong> A line connecting two vertices</li>
+                <li><strong>Face:</strong> A flat surface bounded by edges (usually triangles)</li>
+                <li><strong>Mesh:</strong> A collection of vertices, edges, and faces forming a 3D object</li>
+                <li><strong>Normal:</strong> A vector perpendicular to a surface, used for lighting calculations</li>
+                <li><strong>Polygon Count:</strong> Number of polygons in a model; affects rendering performance</li>
+            </ul>
+
+            <h3>Projections</h3>
+            <h4>Parallel Projection</h4>
+            <ul>
+                <li><strong>Orthographic:</strong> No perspective distortion. Used in engineering/architectural drawings</li>
+                <li><strong>Axonometric:</strong> Isometric, dimetric, trimetric — multiple sides visible</li>
+            </ul>
+            <h4>Perspective Projection</h4>
+            <ul>
+                <li><strong>One-Point:</strong> Lines converge to a single vanishing point</li>
+                <li><strong>Two-Point:</strong> Lines converge to two vanishing points</li>
+                <li><strong>Three-Point:</strong> Lines converge to three vanishing points (includes height)</li>
+            </ul>
+
+            <h3>Depth Cueing</h3>
+            <p>Techniques to convey depth perception on a 2D screen:</p>
+            <ul>
+                <li><strong>Hidden Surface Removal:</strong> Remove surfaces behind other objects</li>
+                <li><strong>Shading:</strong> Lighting variations based on surface orientation</li>
+                <li><strong>Texturing:</strong> Adding surface details</li>
+                <li><strong>Atmospheric Perspective:</strong> Distant objects appear fainter, bluer</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> 3D graphics add depth complexity to 2D concepts. Objects are built from vertices, edges, and faces forming meshes. Projections map 3D space to 2D screens. Perspective projection creates realistic depth, while orthographic projection preserves measurements.</div>
+        `
+    },
+    f1: {
+        title: "3D Transformations",
+        period: "FINALS",
+        content: `
+            <h2>3D Transformations</h2>
+            <span class="period-badge">FINALS</span>
+            <p>3D transformations extend 2D concepts by adding operations on the z-coordinate. They use 4×4 matrices in homogeneous coordinates.</p>
+
+            <h3>3D Translation</h3>
+            <pre>[1 0 0 tx]    x' = x + tx
+[0 1 0 ty]    y' = y + ty
+[0 0 1 tz]    z' = z + tz
+[0 0 0 1 ]</pre>
+
+            <h3>3D Scaling</h3>
+            <pre>[sx 0  0 0]    x' = x * sx
+[0  sy 0 0]    y' = y * sy
+[0  0  sz 0]    z' = z * sz
+[0  0  0  1]</pre>
+
+            <h3>3D Rotation</h3>
+            <h4>Rotation about X-axis:</h4>
+            <pre>[1  0      0     0]
+[0  cos(θ) -sin(θ) 0]
+[0  sin(θ)  cos(θ) 0]
+[0  0      0     1]</pre>
+
+            <h4>Rotation about Y-axis:</h4>
+            <pre>[cos(θ)  0 sin(θ) 0]
+[0       1 0      0]
+[-sin(θ) 0 cos(θ) 0]
+[0       0 0      1]</pre>
+
+            <h4>Rotation about Z-axis:</h4>
+            <pre>[cos(θ) -sin(θ) 0 0]
+[sin(θ)  cos(θ) 0 0]
+[0       0      1 0]
+[0       0      0 1]</pre>
+
+            <h3>Composite 3D Transformations</h3>
+            <p>As with 2D, complex 3D transformations are achieved by multiplying matrices. For rotation about an arbitrary axis, the transformation involves translation, rotation, and inverse translation.</p>
+
+            <h3>Quaternions</h3>
+            <p><strong>Quaternions</strong> are an alternative to rotation matrices that avoid gimbal lock. A quaternion q = (w, x, y, z) represents a rotation of angle θ around axis (ax, ay, az):</p>
+            <pre>q = (cos(θ/2), ax*sin(θ/2), ay*sin(θ/2), az*sin(θ/2))</pre>
+            <p>Advantages: Smooth interpolation (SLERP), compact (4 values vs 9 for matrix), no gimbal lock</p>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> 3D transformations use 4×4 matrices in homogeneous coordinates. Rotation about X, Y, and Z axes form the basis for all 3D orientation changes. Quaternions offer a superior alternative for complex rotations, especially in animation and VR.</div>
+        `
+    },
+    f2: {
+        title: "Visible Surface Detection",
+        period: "FINALS",
+        content: `
+            <h2>Visible Surface Detection</h2>
+            <span class="period-badge">FINALS</span>
+            <p><strong>Visible surface detection (hidden surface removal)</strong> determines which surfaces of a 3D scene are visible from a given viewpoint. Surfaces hidden behind other objects must be removed to produce a correct image.</p>
+
+            <h3>Object-Space Methods</h3>
+            <p>Perform calculations in the original 3D coordinate system. More accurate but computationally expensive.</p>
+
+            <h4>Back-Face Removal</h4>
+            <p>Removes polygons facing away from the viewer. A polygon's normal (N) and the view direction (V) determine visibility:</p>
+            <pre>If N · V > 0, the polygon is back-facing and can be removed</pre>
+
+            <h4>Depth Sorting (Painter's Algorithm)</h4>
+            <p>Sorts polygons by depth (z-value) and draws them back-to-front. Simple but fails with overlapping or intersecting polygons.</p>
+
+            <h4>Binary Space Partitioning (BSP) Tree</h4>
+            <p>Recursively partitions space with planes. Renders polygons in correct order without sorting per frame. Used in early 3D games (Doom, Quake).</p>
+
+            <h3>Image-Space Methods</h3>
+            <p>Perform calculations at each pixel position on the screen. More common in modern GPUs.</p>
+
+            <h4>Z-Buffer (Depth Buffer) Algorithm</h4>
+            <p>The most widely used visibility algorithm. Uses a buffer to store the depth (z-value) of the closest object at each pixel:</p>
+            <ol>
+                <li>Initialize Z-buffer to maximum depth, frame buffer to background color</li>
+                <li>For each polygon, compute depth at each pixel</li>
+                <li>If pixel depth < Z-buffer value, update Z-buffer and frame buffer</li>
+                <li>Result: closest surface is displayed</li>
+            </ol>
+
+            <h4>Scan-Line Algorithm</h4>
+            <p>Processes the scene one scan line at a time. Maintains a list of active polygons and determines visibility per scan line.</p>
+
+            <h3>Ray Tracing</h3>
+            <p>Traces rays from the viewer through each pixel into the scene. The first surface hit by each ray determines the pixel color. Produces highly realistic results (reflections, shadows, refraction) but is computationally intensive.</p>
+
+            <table>
+                <tr><th>Method</th><th>Speed</th><th>Accuracy</th><th>Hardware Support</th></tr>
+                <tr><td>Z-Buffer</td><td>Fast</td><td>Good</td><td>GPU native</td></tr>
+                <tr><td>Painter's</td><td>Medium</td><td>Limited</td><td>CPU only</td></tr>
+                <tr><td>Ray Tracing</td><td>Slow</td><td>Excellent</td><td>RT cores (modern GPUs)</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Visible surface detection is essential for realistic 3D rendering. The Z-buffer algorithm is the industry standard, supported directly in GPU hardware. Ray tracing produces the most realistic results but requires significantly more computational power.</div>
+        `
+    },
+    f3: {
+        title: "Color Models & Animation",
+        period: "FINALS",
+        content: `
+            <h2>Color Models & Animation</h2>
+            <span class="period-badge">FINALS</span>
+            <p><strong>Color models</strong> mathematically represent colors for display and printing. <strong>Animation</strong> creates the illusion of movement by displaying a sequence of images rapidly.</p>
+
+            <h3>Color Models</h3>
+            <table>
+                <tr><th>Model</th><th>Components</th><th>Use Case</th></tr>
+                <tr><td><strong>RGB</strong></td><td>Red, Green, Blue (additive)</td><td>Displays, monitors, screens</td></tr>
+                <tr><td><strong>CMYK</strong></td><td>Cyan, Magenta, Yellow, Black (subtractive)</td><td>Printing</td></tr>
+                <tr><td><strong>HSV/HSB</strong></td><td>Hue, Saturation, Value/Brightness</td><td>Color picking, human-friendly</td></tr>
+                <tr><td><strong>HSL</strong></td><td>Hue, Saturation, Lightness</td><td>Web design, CSS</td></tr>
+                <tr><td><strong>CIE Lab</strong></td><td>L*, a*, b* (perceptually uniform)</td><td>Color science, accurate reproduction</td></tr>
+            </table>
+
+            <h3>RGB Color Cube</h3>
+            <p>RGB is represented as a cube with black (0,0,0) at one corner and white (255,255,255) at the opposite corner. Each axis represents one primary color. All colors are points within or on the surface of the cube.</p>
+
+            <h3>Animation Principles</h3>
+            <ol>
+                <li><strong>Frame Rate:</strong> Number of frames displayed per second (fps). 24 fps = film, 30/60 fps = video/games</li>
+                <li><strong>Keyframes:</strong> Important frames defining start/end of motion. Computer interpolates in-between frames</li>
+                <li><strong>Tweening (In-Betweening):</strong> Automatic generation of intermediate frames between keyframes</li>
+                <li><strong>Easing:</strong> Controls acceleration/deceleration for natural motion (ease-in, ease-out, bounce)</li>
+            </ol>
+
+            <h3>Animation Techniques</h3>
+            <table>
+                <tr><th>Technique</th><th>Description</th><th>Example</th></tr>
+                <tr><td><strong>Traditional</strong></td><td>Hand-drawn frames</td><td>Disney classics</td></tr>
+                <tr><td><strong>2D Vector Animation</strong></td><td>Vector shapes with bone rigging</td><td>Adobe Animate, Toon Boom</td></tr>
+                <tr><td><strong>3D Animation</strong></td><td>3D models with skeletal animation</td><td>Blender, Maya, 3DS Max</td></tr>
+                <tr><td><strong>Motion Capture</strong></td><td>Recorded human movement applied to 3D models</td><td>Film VFX, games</td></tr>
+                <tr><td><strong>Procedural Animation</strong></td><td>Algorithm-generated motion (physics, particles)</td><td>Explosions, cloth, hair</td></tr>
+            </table>
+
+            <h3>Double Buffering</h3>
+            <p>To prevent flicker in real-time animation, two frame buffers are used: one is displayed while the other is being drawn. When rendering is complete, the buffers are swapped (vsync).</p>
+
+            <h3>Frame Interpolation</h3>
+            <p>Techniques to create smooth motion between keyframes:</p>
+            <ul>
+                <li><strong>Linear Interpolation (LERP):</strong> Straight-line interpolation between two values</li>
+                <li><strong>Spherical Linear Interpolation (SLERP):</strong> Smooth interpolation between quaternions for rotations</li>
+                <li><strong>Catmull-Rom Splines:</strong> Smooth curves passing through all control points</li>
+            </ul>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Color models define how colors are represented and reproduced — RGB for screens, CMYK for print. Animation brings graphics to life through rapid frame display. Keyframe animation with easing creates natural motion, while double buffering ensures flicker-free real-time animation.</div>
+        `
+    }
+};
+
+// ===========================
+// ACTIVITIES (Quiz & Assignment)
+// ===========================
+const activities = {
+    genel1: {
+        p1: {
+            quiz: [
+                { question: "What does ICT stand for?", choices: ["Information and Computer Technology", "Information and Communication Technology", "Internet and Communication Technology", "Integrated Computer Technology"], correct: 1 },
+                { question: "Which of the following is NOT a purpose of computers?", choices: ["Data Processing", "Automation", "Emotional Intelligence", "Communication"], correct: 2 },
+                { question: "Which generation of computers used vacuum tubes?", choices: ["First Generation", "Second Generation", "Third Generation", "Fourth Generation"], correct: 0 }
+            ],
+            assignment: "Write a 300-word essay on how ICT has transformed education in the Philippines. Provide at least three specific examples of technologies used in modern classrooms."
+        },
+        p2: {
+            quiz: [
+                { question: "Who invented the World Wide Web?", choices: ["Alan Turing", "Charles Babbage", "Tim Berners-Lee", "Bill Gates"], correct: 2 },
+                { question: "Which age of computing introduced the microprocessor?", choices: ["Mechanical Age", "Electromechanical Age", "Electronic Age", "Pre-Mechanical Age"], correct: 2 },
+                { question: "What was the first electronic general-purpose computer?", choices: ["UNIVAC", "ENIAC", "IBM PC", "Apple II"], correct: 1 }
+            ],
+            assignment: "Create a timeline infographic showing the five generations of computers. Include at least one key technology and one example computer per generation."
+        },
+        p3: {
+            quiz: [
+                { question: "Which component is considered the 'brain' of the computer?", choices: ["RAM", "GPU", "CPU", "Hard Drive"], correct: 2 },
+                { question: "What type of software is the operating system?", choices: ["Application Software", "System Software", "Utility Software", "Device Driver"], correct: 1 },
+                { question: "Which storage type is faster?", choices: ["HDD", "SSD", "Both are the same", "Neither"], correct: 1 }
+            ],
+            assignment: "Draw and label a diagram of a computer system unit showing at least 5 internal components. Write a brief description of each component's function."
+        },
+        m1: {
+            quiz: [
+                { question: "What protocol does the Web use for transferring data?", choices: ["FTP", "HTTP/HTTPS", "SMTP", "TCP"], correct: 1 },
+                { question: "Which web era is characterized by user-generated content and social media?", choices: ["Web 1.0", "Web 2.0", "Web 3.0", "Web 4.0"], correct: 1 },
+                { question: "What does URL stand for?", choices: ["Universal Resource Locator", "Uniform Resource Locator", "Unified Resource Link", "Universal Reference Locator"], correct: 1 }
+            ],
+            assignment: "Compare and contrast Web 1.0, Web 2.0, and Web 3.0 in a table. Include at least 5 comparison points such as user role, technology, examples, and interactivity."
+        },
+        m2: {
+            quiz: [
+                { question: "What technology breaks data into packets for internet transmission?", choices: ["Circuit Switching", "Packet Switching", "Message Switching", "Data Switching"], correct: 1 },
+                { question: "What does DNS stand for?", choices: ["Domain Network System", "Domain Name Service", "Digital Network Service", "Domain Name System"], correct: 3 },
+                { question: "Which of the following is an example of an IP address?", choices: ["google.com", "192.168.1.1", "@gmail.com", "http://"], correct: 1 }
+            ],
+            assignment: "Explain how data travels from your computer to a web server and back. Use the concepts of packet switching, IP addresses, DNS, and routing in your explanation."
+        },
+        m3: {
+            quiz: [
+                { question: "What is the most important rule of netiquette?", choices: ["Use proper grammar", "Remember the human", "Post frequently", "Share everything"], correct: 1 },
+                { question: "What is a digital footprint?", choices: ["A computer virus", "Your online activity trail", "A type of password", "A social media account"], correct: 1 },
+                { question: "Which of the following is an example of good netiquette?", choices: ["Typing in all caps", "Sharing passwords with friends", "Respecting others' privacy", "Posting without fact-checking"], correct: 2 }
+            ],
+            assignment: "Create a 'Digital Citizen's Guide' poster (digital or hand-drawn) listing 10 rules of good netiquette and explaining why each rule matters."
+        },
+        f1: {
+            quiz: [
+                { question: "Which Philippine law addresses cybercrime?", choices: ["RA 10173", "RA 10175", "RA 9165", "RA 8293"], correct: 1 },
+                { question: "What type of malware encrypts your files and demands payment?", choices: ["Virus", "Spyware", "Ransomware", "Trojan"], correct: 2 },
+                { question: "What is phishing?", choices: ["A type of computer virus", "A social engineering attack to steal credentials", "A method of encrypting data", "A networking protocol"], correct: 1 }
+            ],
+            assignment: "Research and write a report on a recent cybercrime incident in the Philippines. Describe what happened, how it could have been prevented, and what laws were violated."
+        },
+        f2: {
+            quiz: [
+                { question: "Which type of hacker is considered ethical?", choices: ["Black Hat", "White Hat", "Grey Hat", "Script Kiddie"], correct: 1 },
+                { question: "What is SQL injection?", choices: ["A database optimization technique", "A hacking technique that targets databases", "A type of firewall", "A programming language"], correct: 1 },
+                { question: "What is the purpose of penetration testing?", choices: ["To damage systems", "To find vulnerabilities before attackers do", "To install software", "To monitor network traffic"], correct: 1 }
+            ],
+            assignment: "Create a presentation comparing white-hat, black-hat, and grey-hat hackers. Include real-world examples and explain the legal and ethical implications of each."
+        },
+        f3: {
+            quiz: [
+                { question: "Which of the following is NOT a type of malware?", choices: ["Virus", "Worm", "Firewall", "Trojan"], correct: 2 },
+                { question: "What is a DDoS attack?", choices: ["Distributed Denial of Service", "Direct Data Overload System", "Dynamic Digital Operating System", "Distributed Data Output Service"], correct: 0 },
+                { question: "What is the best defense against phishing attacks?", choices: ["Installing more software", "Being cautious of suspicious emails and links", "Using a faster internet connection", "Changing your IP address"], correct: 1 }
+            ],
+            assignment: "Develop a cybersecurity awareness brochure targeting senior citizens. Cover topics: malware, phishing, password safety, and safe browsing. Use simple language and visuals."
+        }
+    },
+    gened7: {
+        p1: {
+            quiz: [
+                { question: "Which invention is attributed to the Inca civilization?", choices: ["Paper", "Terrace Farming", "Gunpowder", "Compass"], correct: 1 },
+                { question: "What is a key scientific contribution of the Islamic Golden Age?", choices: ["Calculus", "Algebra", "Evolution Theory", "Quantum Mechanics"], correct: 1 },
+                { question: "Which of the following is a pre-colonial Philippine invention?", choices: ["Jeepney", "Balangay boat", "Microsatellite", "Solar panel"], correct: 1 }
+            ],
+            assignment: "Choose one ancient civilization (e.g., Inca, Maya, Aztec, or a Philippine indigenous group). Write a 500-word paper on their key scientific and technological contributions and how these innovations affect modern society."
+        },
+        p2: {
+            quiz: [
+                { question: "What did the Copernican Revolution change?", choices: ["The Earth-centered model of the universe", "The theory of evolution", "The concept of the unconscious mind", "The laws of motion"], correct: 0 },
+                { question: "Who proposed the theory of evolution by natural selection?", choices: ["Sigmund Freud", "Charles Darwin", "Nicolaus Copernicus", "Isaac Newton"], correct: 1 },
+                { question: "Which part of the mind did Freud describe as the moral conscience?", choices: ["Id", "Ego", "Superego", "Unconscious"], correct: 2 }
+            ],
+            assignment: "Choose one intellectual revolution (Copernican, Darwinian, or Freudian) and write a 400-word reflection on how it changed humanity's understanding of itself and its place in the world."
+        },
+        p3: {
+            quiz: [
+                { question: "Which Philippine government agency is responsible for space technology?", choices: ["DOST", "PAGASA", "PhilSA", "ASTI"], correct: 2 },
+                { question: "What does the Balik Scientist Program do?", choices: ["Sends Filipino scientists abroad", "Brings foreign scientists to the Philippines", "Encourages Filipino scientists abroad to return and contribute", "Funds local research"], correct: 2 },
+                { question: "What is an example of indigenous science in the Philippines?", choices: ["Microsatellite development", "Herbal medicine", "Artificial intelligence", "Nuclear energy"], correct: 1 }
+            ],
+            assignment: "Research one Filipino scientist (e.g., Dr. Fe del Mundo, Dr. Gregorio Zara). Create a one-page biography highlighting their contributions to science and technology and how their work impacted Philippine society."
+        }
+    },
+    inform: {
+        p1: {
+            quiz: [
+                { question: "What is the first stage of the Information Lifecycle?", choices: ["Storage", "Creation", "Disposal", "Archival"], correct: 1 },
+                { question: "Which of the following is structured data?", choices: ["A photograph", "An email", "A database table", "A video file"], correct: 2 },
+                { question: "What is metadata?", choices: ["A type of database", "Data about data", "A programming language", "A file format"], correct: 1 }
+            ],
+            assignment: "Track the information lifecycle of a school-related document (e.g., a report card or enrollment form). Describe each stage from creation to disposal."
+        },
+        p2: {
+            quiz: [
+                { question: "What is the main difference between a database and a data warehouse?", choices: ["Size", "Purpose (OLTP vs OLAP)", "Speed", "Cost"], correct: 1 },
+                { question: "Which of the following is a cloud storage service?", choices: ["Microsoft Excel", "Google Drive", "MySQL", "Windows File Explorer"], correct: 1 },
+                { question: "What does SQL stand for?", choices: ["Structured Question Language", "Structured Query Language", "Simple Query Language", "Standard Query Language"], correct: 1 }
+            ],
+            assignment: "Compare file systems, databases, and cloud storage in a table. Include advantages, disadvantages, and at least two use cases for each."
+        },
+        p3: {
+            quiz: [
+                { question: "What does 'C' stand for in the CIA Triad?", choices: ["Control", "Confidentiality", "Communication", "Compliance"], correct: 1 },
+                { question: "Which law protects data privacy in the Philippines?", choices: ["RA 10175", "RA 10173", "RA 9165", "RA 8293"], correct: 1 },
+                { question: "What is multi-factor authentication?", choices: ["Using multiple passwords", "Using two or more verification methods", "Using a single strong password", "Using biometrics only"], correct: 1 }
+            ],
+            assignment: "Create a data protection plan for a small business. Include at least 5 security measures covering the CIA Triad principles."
+        }
+    },
+    quanti: {
+        p1: {
+            quiz: [
+                { question: "What is quantitative methods primarily based on?", choices: ["Opinions and feelings", "Mathematical and statistical analysis", "Observational research", "Case studies"], correct: 1 },
+                { question: "Which of the following is a key characteristic of quantitative research?", choices: ["Subjective interpretation", "Numerical data", "Open-ended questions", "Small sample sizes"], correct: 1 },
+                { question: "What is the difference between descriptive and inferential statistics?", choices: ["Sample size", "Descriptive summarizes data; inferential makes predictions", "Cost of analysis", "Data collection method"], correct: 1 }
+            ],
+            assignment: "Collect a small dataset (at least 20 data points) from your daily life (e.g., hours spent on social media per day, daily expenses). Compute the mean, median, and mode. Create a simple bar chart showing your data."
+        },
+        p2: {
+            quiz: [
+                { question: "What is the first step in the data analysis process?", choices: ["Clean the data", "Define the problem", "Analyze the data", "Visualize the results"], correct: 1 },
+                { question: "What does a correlation coefficient of +1 indicate?", choices: ["No correlation", "Perfect positive correlation", "Perfect negative correlation", "Weak correlation"], correct: 1 },
+                { question: "Which chart type is best for showing trends over time?", choices: ["Pie chart", "Bar chart", "Line graph", "Scatter plot"], correct: 2 }
+            ],
+            assignment: "Find a real-world dataset (e.g., from Kaggle, government data, or your school). Perform a basic analysis: calculate descriptive statistics, create at least two different chart types, and write a one-page summary of your findings."
+        }
+    },
+    websys: {
+        p1: {
+            quiz: [
+                { question: "What is the difference between the Internet and the Web?", choices: ["They are the same thing", "Internet is infrastructure; Web is a service on top of it", "Web is infrastructure; Internet is a service", "Neither is related"], correct: 1 },
+                { question: "What protocol ensures secure data transfer on the web?", choices: ["HTTP", "FTP", "HTTPS", "SMTP"], correct: 2 },
+                { question: "What does DNS do?", choices: ["Encrypts data", "Converts domain names to IP addresses", "Hosts websites", "Manages email"], correct: 1 }
+            ],
+            assignment: "Trace the complete journey of what happens when you type 'https://www.example.com' in your browser and press Enter. Include DNS lookup, TCP connection, HTTP request, server processing, and page rendering."
+        },
+        p2: {
+            quiz: [
+                { question: "Which HTML tag is used to create a hyperlink?", choices: ["<link>", "<a>", "<href>", "<nav>"], correct: 1 },
+                { question: "What does CSS stand for?", choices: ["Computer Style Sheets", "Cascading Style Sheets", "Creative Style System", "Colorful Style Sheets"], correct: 1 },
+                { question: "Which JavaScript keyword is used to declare a variable?", choices: ["var", "let", "const", "All of the above"], correct: 3 }
+            ],
+            assignment: "Create a simple personal portfolio webpage using HTML and CSS. Your page must include: a header with your name, a navigation menu, an about section, a projects section with at least 3 items, and a contact form."
+        }
+    },
+    adbms: {
+        p1: {
+            quiz: [
+                { question: "What are the three levels of the ANSI-SPARC database architecture?", choices: ["Physical, Logical, View", "Internal, Conceptual, External", "Low, Medium, High", "Base, Middle, Top"], correct: 1 },
+                { question: "Which of the following is NOT a component of a database system?", choices: ["Data", "Software", "Compiler", "Users"], correct: 2 },
+                { question: "What type of DBMS model organizes data in tables?", choices: ["Hierarchical", "Network", "Relational", "Object-Oriented"], correct: 2 }
+            ],
+            assignment: "Draw and explain the three-level ANSI-SPARC database architecture. For each level, provide a concrete example related to a university database system."
+        },
+        p2: {
+            quiz: [
+                { question: "What does DML stand for?", choices: ["Data Manipulation Language", "Database Management Language", "Data Modeling Language", "Dynamic Markup Language"], correct: 0 },
+                { question: "Which key uniquely identifies each tuple in a relation?", choices: ["Foreign Key", "Super Key", "Primary Key", "Composite Key"], correct: 2 },
+                { question: "Which JOIN returns all rows from the left table and matching rows from the right?", choices: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL JOIN"], correct: 1 }
+            ],
+            assignment: "Create a database schema for a library management system with at least 5 tables. Write SQL queries to: (1) list all books by a specific author, (2) show borrowed books with member names, (3) find the most borrowed book."
+        },
+        p3: {
+            quiz: [
+                { question: "Which normal form requires no transitive dependencies?", choices: ["1NF", "2NF", "3NF", "BCNF"], correct: 2 },
+                { question: "What cardinality does 'a student can enroll in many courses' represent?", choices: ["1:1", "1:M", "M:N", "M:1"], correct: 1 },
+                { question: "What is the primary goal of normalization?", choices: ["Increase query speed", "Reduce data redundancy", "Reduce storage cost", "Improve security"], correct: 1 }
+            ],
+            assignment: "Take an unnormalized table (e.g., student enrollment with repeating subjects) and normalize it to 3NF. Show each step: 1NF, 2NF, and 3NF with the resulting table structures."
+        },
+        m1: {
+            quiz: [
+                { question: "Which ACID property ensures all operations in a transaction complete or none do?", choices: ["Consistency", "Isolation", "Atomicity", "Durability"], correct: 2 },
+                { question: "What problem occurs when a transaction reads uncommitted data from another transaction?", choices: ["Non-Repeatable Read", "Phantom Read", "Dirty Read", "Lost Update"], correct: 2 },
+                { question: "Which concurrency protocol assigns timestamps to transactions?", choices: ["Lock-Based", "Timestamp-Based", "Optimistic", "MVCC"], correct: 1 }
+            ],
+            assignment: "Create a diagram showing two concurrent bank transfer transactions (transfer PHP 500 from A to B, and PHP 300 from A to C). Show how a problem occurs without concurrency control and how it's resolved using locking."
+        },
+        m2: {
+            quiz: [
+                { question: "Which type of index determines the physical order of data?", choices: ["B-Tree", "Hash", "Clustered", "Non-Clustered"], correct: 2 },
+                { question: "What does the EXPLAIN command do?", choices: ["Shows the query execution plan", "Runs the query", "Deletes the query", "Creates an index"], correct: 0 },
+                { question: "Which optimization technique splits large tables into smaller chunks?", choices: ["Indexing", "Partitioning", "Caching", "Denormalization"], correct: 1 }
+            ],
+            assignment: "Take a slow-performing SQL query (provided by your instructor or from a sample database) and optimize it. Show the original query with EXPLAIN output, the optimized query, and explain what changes improved performance."
+        },
+        m3: {
+            quiz: [
+                { question: "Which access control model uses roles to manage permissions?", choices: ["DAC", "MAC", "RBAC", "BAC"], correct: 2 },
+                { question: "What is the most common and dangerous database security threat?", choices: ["DoS Attack", "SQL Injection", "Data Breach", "Privilege Escalation"], correct: 1 },
+                { question: "Which encryption technique encrypts data at the file level automatically?", choices: ["Column-Level Encryption", "Hashing", "TDE", "SSL/TLS"], correct: 2 }
+            ],
+            assignment: "Design a database security plan for an e-commerce application. Include user roles, privileges, encryption strategy, backup plan, and SQL injection prevention measures. Submit as a formal security document."
+        },
+        f1: {
+            quiz: [
+                { question: "Which NoSQL database type stores JSON/BSON documents?", choices: ["Key-Value", "Document Store", "Column-Family", "Graph"], correct: 1 },
+                { question: "According to the CAP theorem, which property ensures every request gets a response?", choices: ["Consistency", "Availability", "Partition Tolerance", "All of the above"], correct: 1 },
+                { question: "Which of the following is a graph database?", choices: ["MongoDB", "Redis", "Neo4j", "Cassandra"], correct: 2 }
+            ],
+            assignment: "Compare MongoDB and MySQL for a social media application. Discuss schema design, scalability, consistency, and query patterns. Include a recommendation with justification based on the application's requirements."
+        },
+        f2: {
+            quiz: [
+                { question: "What does the 'T' in ETL stand for?", choices: ["Test", "Transform", "Transfer", "Transmit"], correct: 1 },
+                { question: "Which data mining technique predicts categorical labels?", choices: ["Regression", "Classification", "Clustering", "Association"], correct: 1 },
+                { question: "What schema design uses a central fact table surrounded by dimension tables?", choices: ["Snowflake Schema", "Star Schema", "Galaxy Schema", "Network Schema"], correct: 1 }
+            ],
+            assignment: "Design a data warehouse schema for a retail business. Create both a star schema and a snowflake schema version. Explain the trade-offs between the two designs and recommend which one to implement."
+        },
+        f3: {
+            quiz: [
+                { question: "What strategy splits rows of a table across multiple nodes?", choices: ["Replication", "Vertical Partitioning", "Horizontal Partitioning", "Hybrid"], correct: 2 },
+                { question: "How many phases are in the Two-Phase Commit protocol?", choices: ["1", "2", "3", "4"], correct: 1 },
+                { question: "Which consistency model is used by Amazon DynamoDB and Cassandra?", choices: ["Strong Consistency", "Eventual Consistency", "Immediate Consistency", "ACID Consistency"], correct: 1 }
+            ],
+            assignment: "Design a distributed database architecture for a global e-learning platform with users, courses, and assessments. Discuss data distribution strategy, replication approach, consistency model, and how the system handles node failures."
+        }
+    },
+    cprog1: {
+        p1: {
+            quiz: [
+                { question: "What is the first step in the programming process?", choices: ["Coding", "Testing", "Problem Analysis", "Documentation"], correct: 2 },
+                { question: "Which function is the entry point of a C program?", choices: ["printf()", "main()", "scanf()", "start()"], correct: 1 },
+                { question: "What type of language is C?", choices: ["Machine Language", "Assembly Language", "High-Level Language", "Query Language"], correct: 2 }
+            ],
+            assignment: "Write a C program that prints your name, course, year level, and school name. Compile and run the program. Take a screenshot of the output and explain each line of code."
+        },
+        p2: {
+            quiz: [
+                { question: "Which data type is used to store a single character?", choices: ["int", "float", "char", "string"], correct: 2 },
+                { question: "What format specifier is used for integers in C?", choices: ["%f", "%c", "%d", "%s"], correct: 2 },
+                { question: "Which of the following is a valid variable name?", choices: ["2ndYear", "my-var", "_count", "int"], correct: 2 }
+            ],
+            assignment: "Create a program that asks the user for their name, age, and GPA. Store these in appropriate variables and display them back in a formatted output."
+        },
+        p3: {
+            quiz: [
+                { question: "Which loop executes the code block at least once?", choices: ["for", "while", "do-while", "if"], correct: 2 },
+                { question: "What is the result of (5 > 3) && (2 < 1)?", choices: ["true", "false", "1", "0"], correct: 1 },
+                { question: "Which statement is used for multi-way branching?", choices: ["if", "if-else", "switch", "while"], correct: 2 }
+            ],
+            assignment: "Write a program that asks the user for a numeric grade (0-100) and displays the equivalent letter grade using if-else if-else. Add a loop to allow the user to check multiple grades without restarting the program."
+        },
+        m1: {
+            quiz: [
+                { question: "What is a function prototype?", choices: ["The function body", "A declaration of the function before its definition", "A call to the function", "The return value"], correct: 1 },
+                { question: "Which keyword is used to define a function in C?", choices: ["func", "define", "def", "None (just write the function)"], correct: 3 },
+                { question: "What is recursion?", choices: ["A function calling itself", "A function with no parameters", "A loop inside a function", "A function without a return value"], correct: 0 }
+            ],
+            assignment: "Write a program with at least 3 user-defined functions: one that calculates the area of a circle, one that checks if a number is prime, and one that displays a menu. Call these functions from main()."
+        },
+        m2: {
+            quiz: [
+                { question: "What is the index of the first element in an array?", choices: ["-1", "0", "1", "It depends"], correct: 1 },
+                { question: "What happens if you access an array element outside its bounds?", choices: ["Compiler error", "Runtime error or undefined behavior", "Returns 0", "Increases array size"], correct: 1 },
+                { question: "How do you declare a 2D array in C?", choices: ["int arr[3,3]", "int arr[3][3]", "int arr(3)(3)", "array<int> arr(3,3)"], correct: 1 }
+            ],
+            assignment: "Create a program that stores 10 test scores in an array. Calculate and display the highest score, lowest score, average, and the number of scores above the average."
+        },
+        m3: {
+            quiz: [
+                { question: "What character terminates every string in C?", choices: ["\\n", "\\0", "\\t", "\\r"], correct: 1 },
+                { question: "Which function returns the length of a string?", choices: ["strlen()", "strcpy()", "strcmp()", "sizeof()"], correct: 0 },
+                { question: "Which function is safer for reading a string with spaces?", choices: ["scanf()", "gets()", "fgets()", "getchar()"], correct: 2 }
+            ],
+            assignment: "Write a program that asks the user for their first name, middle name, and last name. Use string functions to combine them into a full name and display it in uppercase. Also display the total number of characters."
+        },
+        f1: {
+            quiz: [
+                { question: "What does the & operator do when used with a variable?", choices: ["Dereferences a pointer", "Returns the address of the variable", "Performs bitwise AND", "Declares a reference"], correct: 1 },
+                { question: "What does 'malloc' stand for?", choices: ["Memory lock", "Memory allocation", "Memory location", "Memory load"], correct: 1 },
+                { question: "What should you do after using malloc()?", choices: ["Nothing", "Call free() to deallocate", "Call delete()", "Restart the program"], correct: 1 }
+            ],
+            assignment: "Write a program that dynamically allocates an array of n integers (n entered by the user). Fill the array with numbers from 1 to n, display them, calculate the sum, and free the memory."
+        },
+        f2: {
+            quiz: [
+                { question: "Which mode opens a file for reading?", choices: ["'w'", "'r'", "'a'", "'rw'"], correct: 1 },
+                { question: "What does fopen() return if the file cannot be opened?", choices: ["0", "NULL", "-1", "false"], correct: 1 },
+                { question: "Which function reads a line from a file?", choices: ["fgetc()", "fgets()", "fscanf()", "fread()"], correct: 1 }
+            ],
+            assignment: "Create a program that writes 10 student records (ID, name, grade) to a file named 'students.txt'. Then create another program that reads and displays all records, and calculates the average grade."
+        },
+        f3: {
+            quiz: [
+                { question: "What keyword is used to define a structure?", choices: ["struct", "class", "typedef", "union"], correct: 0 },
+                { question: "How do you access a structure member using a pointer?", choices: [".", "->", "*", "&"], correct: 1 },
+                { question: "What is the main difference between a structure and a union?", choices: ["Syntax", "Memory sharing", "Speed", "Data types allowed"], correct: 1 }
+            ],
+            assignment: "Define a 'Book' structure with members: title, author, ISBN, and price. Create an array of 5 books. Write a program that allows the user to input book details, display all books, and search for a book by title."
+        }
+    },
+    ooprog: {
+        p1: {
+            quiz: [
+                { question: "What is an object in OOP?", choices: ["A variable", "A function", "An instance of a class", "A data type"], correct: 2 },
+                { question: "Which pillar of OOP bundles data and methods together?", choices: ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction"], correct: 2 },
+                { question: "What is the difference between a class and an object?", choices: ["No difference", "Class is a blueprint; object is an instance", "Class is an instance; object is a blueprint", "Class has data; object has methods"], correct: 1 }
+            ],
+            assignment: "Create a Java class called 'Book' with attributes: title, author, ISBN, and price. Add a method displayInfo(). In main(), create 3 Book objects and display their information."
+        },
+        p2: {
+            quiz: [
+                { question: "What is a constructor?", choices: ["A method that destroys an object", "A special method that initializes objects", "A regular method", "A variable declaration"], correct: 1 },
+                { question: "Which keyword is used to refer to the current object?", choices: ["self", "me", "this", "current"], correct: 2 },
+                { question: "What does the 'static' keyword mean?", choices: ["Belongs to the object", "Belongs to the class", "Cannot be changed", "Only accessible in main"], correct: 1 }
+            ],
+            assignment: "Create a Java class 'Student' with private attributes, a constructor, getters/setters, and a method display(). In main(), create an array of 5 Student objects and display honor students (GPA >= 1.75)."
+        },
+        p3: {
+            quiz: [
+                { question: "Which access modifier makes a member accessible only within the same class?", choices: ["public", "protected", "private", "default"], correct: 2 },
+                { question: "What is a getter method used for?", choices: ["To modify a private field", "To access a private field", "To delete a field", "To create a field"], correct: 1 },
+                { question: "What is the benefit of encapsulation?", choices: ["Faster code", "Data protection and validation", "Less memory usage", "Automatic compilation"], correct: 1 }
+            ],
+            assignment: "Create a 'BankAccount' class with private fields (accountNumber, balance, pin). Implement deposit(), withdraw() with PIN validation, and getBalance(). Demonstrate the class in main()."
+        },
+        m1: {
+            quiz: [
+                { question: "Which keyword is used for inheritance in Java?", choices: ["inherits", "extends", "implements", "super"], correct: 1 },
+                { question: "What does the super keyword do?", choices: ["Creates a new object", "Refers to the parent class", "Calls the current class", "Deletes an object"], correct: 1 },
+                { question: "Does Java support multiple inheritance through classes?", choices: ["Yes", "No", "Only in interfaces", "Only in abstract classes"], correct: 1 }
+            ],
+            assignment: "Create a class hierarchy: Person (parent) → Student and Teacher (children). Person has name and age. Student adds course and gpa. Teacher adds department and salary. Override displayInfo() in each subclass."
+        },
+        m2: {
+            quiz: [
+                { question: "What is method overloading?", choices: ["Same method name, different parameters", "Same method name, same parameters", "Different class, same method", "Method in parent class"], correct: 0 },
+                { question: "What is dynamic method dispatch?", choices: ["Compile-time method resolution", "Runtime method resolution based on object type", "Method with multiple returns", "Static method call"], correct: 1 },
+                { question: "Which annotation indicates a method is being overridden?", choices: ["@Override", "@Overload", "@Inherit", "@Polymorph"], correct: 0 }
+            ],
+            assignment: "Create a Shape hierarchy: Shape (abstract with getArea()), Circle, Rectangle, and Triangle. Write a program that creates an array of Shape objects and displays the area of each using polymorphism."
+        },
+        m3: {
+            quiz: [
+                { question: "Can an abstract class be instantiated?", choices: ["Yes", "No", "Only with parameters", "Only if it has concrete methods"], correct: 1 },
+                { question: "How many interfaces can a class implement?", choices: ["Only 1", "Up to 2", "As many as needed", "None"], correct: 2 },
+                { question: "What is the purpose of an interface?", choices: ["To provide implementation", "To define a contract", "To create objects", "To store data"], correct: 1 }
+            ],
+            assignment: "Create interfaces 'Playable' (play(), pause(), stop()) and 'Recordable' (record()). Create a class 'Smartphone' that implements both. Write a main method demonstrating all functionalities."
+        },
+        f1: {
+            quiz: [
+                { question: "Which keyword is used to throw an exception manually?", choices: ["try", "catch", "throw", "throws"], correct: 2 },
+                { question: "What is the purpose of the finally block?", choices: ["To catch exceptions", "To execute code regardless of exception", "To throw exceptions", "To define custom exceptions"], correct: 1 },
+                { question: "Which of these is an unchecked exception?", choices: ["IOException", "SQLException", "NullPointerException", "FileNotFoundException"], correct: 2 }
+            ],
+            assignment: "Write a Java program that asks the user for two numbers and divides them. Handle ArithmeticException and InputMismatchException. Create a custom exception 'InvalidInputException' for negative numbers."
+        },
+        f2: {
+            quiz: [
+                { question: "Which class is used for reading text from a file efficiently?", choices: ["FileReader", "BufferedReader", "Scanner", "InputStream"], correct: 1 },
+                { question: "What does try-with-resources do?", choices: ["Catches exceptions", "Automatically closes resources", "Creates resources", "Logs errors"], correct: 1 },
+                { question: "Which method checks if a file exists?", choices: ["file.exists()", "file.isFile()", "file.check()", "file.available()"], correct: 0 }
+            ],
+            assignment: "Create a program that reads a text file and counts the number of lines, words, and characters. Write the results to a new file named 'report.txt'. Handle all possible exceptions."
+        },
+        f3: {
+            quiz: [
+                { question: "Which class represents a window in Java Swing?", choices: ["JWindow", "JFrame", "JDialog", "JPanel"], correct: 1 },
+                { question: "Which method sets the size of a JFrame?", choices: ["setSize()", "setDimension()", "resize()", "size()"], correct: 0 },
+                { question: "Which interface is used for button click events?", choices: ["KeyListener", "MouseListener", "ActionListener", "WindowListener"], correct: 2 }
+            ],
+            assignment: "Create a simple calculator GUI using Java Swing with buttons for numbers 0-9, operators (+, -, *, /), and an equals button. Display the result in a JTextField."
+        }
+    },
+    csele1: {
+        p1: {
+            quiz: [
+                { question: "What is the smallest addressable element on a display?", choices: ["Vertex", "Pixel", "Polygon", "Dot"], correct: 1 },
+                { question: "Which of the following is an application of computer graphics?", choices: ["Word processing", "Spreadsheet calculations", "Medical imaging", "Database management"], correct: 2 },
+                { question: "Which type of graphics is resolution-independent?", choices: ["Raster", "Vector", "Bitmap", "Pixel art"], correct: 1 }
+            ],
+            assignment: "Create a visual presentation or poster showing 10 different applications of computer graphics across various fields (entertainment, education, medicine, engineering, etc.). Include at least one real-world example per application."
+        },
+        p2: {
+            quiz: [
+                { question: "What does GPU stand for?", choices: ["General Processing Unit", "Graphics Processing Unit", "Graphical Performance Unit", "Global Processing Unit"], correct: 1 },
+                { question: "Which API is used for browser-based 3D graphics?", choices: ["OpenGL", "DirectX", "WebGL", "Vulkan"], correct: 2 },
+                { question: "How many colors can 24-bit True Color represent?", choices: ["256", "65,536", "16.7 million", "4.3 billion"], correct: 2 }
+            ],
+            assignment: "Research and compare three display technologies (LCD, OLED, and one more of your choice). Create a comparison table covering: technology type, power consumption, contrast ratio, response time, cost, and common applications."
+        },
+        p3: {
+            quiz: [
+                { question: "Which line drawing algorithm uses only integer arithmetic?", choices: ["DDA", "Bresenham's", "Midpoint Circle", "Flood Fill"], correct: 1 },
+                { question: "What is the basic geometric primitive in computer graphics?", choices: ["Cube", "Sphere", "Point", "Mesh"], correct: 2 },
+                { question: "Which algorithm fills a polygon row by row?", choices: ["Flood Fill", "Boundary Fill", "Scan-Line Fill", "Depth Fill"], correct: 2 }
+            ],
+            assignment: "Implement Bresenham's line drawing algorithm in any programming language. Draw at least 5 lines with different slopes (steep, shallow, horizontal, vertical, diagonal). Document your code and include screenshots of the output."
+        },
+        m1: {
+            quiz: [
+                { question: "What is the order of transformation matrices for rotation about a pivot point?", choices: ["R * T", "T * R * T(inv)", "T * R", "R * T * R(inv)"], correct: 1 },
+                { question: "Which coordinate system adds a third coordinate for matrix representation?", choices: ["Cartesian", "Polar", "Homogeneous", "Spherical"], correct: 2 },
+                { question: "What is the result of reflecting a point across the x-axis?", choices: ["(x, y)", "(x, -y)", "(-x, y)", "(-x, -y)"], correct: 1 }
+            ],
+            assignment: "Create an interactive 2D transformation demo using any graphics library (Processing, p5.js, OpenGL, or HTML Canvas). Allow the user to apply translation, scaling, rotation, and reflection to a simple shape (e.g., triangle or house shape) using buttons or sliders."
+        },
+        m2: {
+            quiz: [
+                { question: "Which coordinate system defines where objects exist in the scene?", choices: ["Viewport", "World", "Normalized Device", "Screen"], correct: 1 },
+                { question: "What is the Cohen-Sutherland algorithm used for?", choices: ["Line drawing", "Circle drawing", "Line clipping", "Polygon filling"], correct: 2 },
+                { question: "What does it mean if both endpoint codes are 0000 in Cohen-Sutherland?", choices: ["Line is fully outside", "Line is fully inside", "Line needs clipping", "Line is vertical"], correct: 1 }
+            ],
+            assignment: "Create a visual demonstration of the Cohen-Sutherland line clipping algorithm. Draw a clipping rectangle and several lines in different categories (fully inside, fully outside, partially inside). Show the region codes for each endpoint and the clipping process step by step."
+        },
+        m3: {
+            quiz: [
+                { question: "Which projection preserves measurements and has no perspective distortion?", choices: ["Perspective", "Orthographic", "Isometric", "Oblique"], correct: 1 },
+                { question: "What is a mesh in 3D graphics?", choices: ["A type of display", "A collection of vertices, edges, and faces", "A rendering algorithm", "A color model"], correct: 1 },
+                { question: "How many vanishing points does two-point perspective have?", choices: ["1", "2", "3", "4"], correct: 1 }
+            ],
+            assignment: "Using any 3D software (Blender, AutoCAD, SketchUp, or even hand-drawing), create a simple 3D scene with at least 5 objects. Show the scene from different viewpoints (orthographic front, top, side, and perspective view). Include a written explanation of the projection types used."
+        },
+        f1: {
+            quiz: [
+                { question: "How many values does a 3D transformation matrix have?", choices: ["9", "12", "16", "4"], correct: 2 },
+                { question: "Which alternative to rotation matrices avoids gimbal lock?", choices: ["Euler angles", "Quaternions", "Vectors", "Scalars"], correct: 1 },
+                { question: "What does SLERP stand for?", choices: ["Smooth Linear Extrapolation", "Spherical Linear Interpolation", "Simple Linear Rotation", "Spatial Linear Estimation"], correct: 1 }
+            ],
+            assignment: "Using any 3D graphics library (Three.js, Processing, OpenGL), create a 3D scene showing a cube that rotates about all three axes (X, Y, Z) simultaneously. Allow the user to toggle individual axis rotations on/off and adjust rotation speed."
+        },
+        f2: {
+            quiz: [
+                { question: "What is the most widely used visible surface detection algorithm?", choices: ["Ray Tracing", "Painter's Algorithm", "Z-Buffer", "BSP Tree"], correct: 2 },
+                { question: "What determines if a polygon is back-facing?", choices: ["Distance from viewer", "Dot product of normal and view direction", "Polygon color", "Polygon size"], correct: 1 },
+                { question: "Which method produces the most realistic results for reflections and shadows?", choices: ["Z-Buffer", "Scan-Line", "Ray Tracing", "Painter's"], correct: 2 }
+            ],
+            assignment: "Research and write a comparative analysis of three visible surface detection algorithms (Z-Buffer, Painter's Algorithm, and Ray Tracing). For each algorithm, explain how it works, its advantages and disadvantages, and provide a real-world use case. Include diagrams."
+        },
+        f3: {
+            quiz: [
+                { question: "Which color model is used for displays and monitors?", choices: ["CMYK", "RGB", "HSL", "CIE Lab"], correct: 1 },
+                { question: "How many frames per second is standard for film?", choices: ["24", "30", "60", "120"], correct: 0 },
+                { question: "What technique prevents flicker in real-time animation?", choices: ["Single buffering", "Double buffering", "Triple buffering", "No buffering"], correct: 1 }
+            ],
+            assignment: "Create a simple 2D animation using any programming language or tool (HTML Canvas, Processing, Scratch). The animation must include: at least 2 moving objects, color changes over time, and one interactive element (mouse click or key press triggers an action). Submit source code and a video screen recording."
+        }
+    }
+};
+
+// ===========================
+// FINAL OUTPUTS (Per Subject Term)
+// ===========================
+const finalOutputs = {
+    genel1: {
+        prelim: "Develop a comprehensive timeline infographic showing the evolution of computers from the Abacus to modern AI systems. Include key inventors, technologies, and the impact of each generation on society.",
+        midterm: "Create a website or blog (using any platform) that educates users about netiquette, internet safety, and digital citizenship. Include at least 5 articles with multimedia content.",
+        finals: "Research and present a case study on a major cybersecurity incident in the Philippines. Analyze the attack method, impact, response, and recommend preventive measures. Submit as a written report with a 5-minute video presentation."
+    },
+    gened7: {
+        prelim: "Write a 5-page research paper on how indigenous science and technology in the Philippines can be integrated into modern scientific education. Use at least 5 scholarly references.",
+        midterm: "Create a multimedia presentation exploring 'The Good Life' in the age of technology. Discuss at least 3 ethical dilemmas posed by modern technology and propose your own framework for responsible innovation.",
+        finals: "Design an advocacy campaign (poster series, social media content, or video) addressing climate change or biodiversity loss in the Philippines. Include scientific data, local examples, and actionable steps for the community."
+    },
+    inform: {
+        prelim: "Develop a data management plan for a small-to-medium enterprise. Include data collection methods, storage solutions, security measures, and a disposal policy. Submit as a formal business proposal.",
+        midterm: "Create a working prototype of a web-based information system for a specific use case (e.g., library management, student records, inventory). Submit source code, database schema, and user documentation."
+    },
+    quanti: {
+        prelim: "Conduct a survey on a topic of your choice (minimum 50 respondents). Apply descriptive and inferential statistics to analyze the data. Submit a complete report with charts, tables, and interpretations.",
+        midterm: "Develop an optimization model for a real-world problem (e.g., scheduling, routing, resource allocation). Implement your solution using Excel Solver, Python, or any quantitative tool. Submit your model, results, and analysis.",
+        finals: "Create a predictive model using regression analysis on a real dataset. Document your methodology, assumptions, validation results, and recommendations. Submit as a technical paper."
+    },
+    websys: {
+        prelim: "Build a fully functional multi-page website for a fictional business or organization. Must include: responsive design, navigation, forms, multimedia content, and SEO best practices. Submit all source files.",
+        midterm: "Develop a full-stack web application with user authentication, database integration, and CRUD functionality. Deploy it on a free hosting platform (e.g., Vercel, Netlify, Render) and submit the live URL with documentation.",
+        finals: "Design and implement a REST API for a specific domain (e.g., e-commerce, library, school management). Include authentication, error handling, and comprehensive API documentation. Submit source code and a live demo."
+    },
+    adbms: {
+        prelim: "Design and implement a complete relational database system for a real-world scenario (e.g., hospital, school, library). Submit the ER diagram, normalized schema (3NF), SQL scripts, and a report explaining design decisions.",
+        midterm: "Build a web-based database application with transaction management, user authentication, and role-based access control. Include at least 5 CRUD operations and demonstrate concurrency handling. Submit source code and documentation.",
+        finals: "Develop a data analytics solution that integrates a data warehouse with a data mining component. Use a real or synthetic dataset, implement ETL processes, and generate at least 3 actionable insights. Submit all scripts, reports, and a presentation."
+    },
+    cprog1: {
+        prelim: "Develop a complete C program that functions as a student grade calculator. It must use variables, control structures, arrays, and functions. Include input validation and a menu-driven interface. Submit source code and program output.",
+        midterm: "Create a text-based game (e.g., Hangman, Number Guessing, Maze) in C using functions, arrays, strings, and file handling for high scores. Submit source code with comments and a user guide.",
+        finals: "Build a student record management system in C using structures, dynamic memory allocation, and file handling. Features: add, display, search, update, and delete records. Submit source code and documentation."
+    },
+    ooprog: {
+        prelim: "Design and implement a Java class library for a library management system. Include classes for Book, Member, and Librarian with proper encapsulation, constructors, and getters/setters. Submit UML diagram and source code.",
+        midterm: "Develop a Java payroll system using inheritance, polymorphism, and interfaces. Include Employee, FullTimeEmployee, PartTimeEmployee classes. Calculate salaries and display payslips. Submit source code and sample output.",
+        finals: "Build a Java Swing GUI application for a student enrollment system. Include forms for adding students, searching, displaying the list, and saving/loading data from files. Submit source code and executable JAR."
+    },
+    csele1: {
+        prelim: "Research and create a visual timeline infographic of the evolution of computer graphics hardware from the 1960s to today. Include key milestones such as the first GPU, programmable shaders, real-time ray tracing, and VR/AR technologies. Submit as PDF or high-resolution image.",
+        midterm: "Develop an interactive 3D scene viewer in any graphics library (Three.js, Processing, OpenGL) featuring a simple virtual environment with at least 6 objects, lighting (ambient + directional), and keyboard/mouse camera controls. Submit source code and a demo video.",
+        finals: "Create a comprehensive final project: a 2D or 3D interactive application of your choice (game, visualization tool, simulation, or educational app) using any graphics library. Must include transformations, user interaction, animation, and proper documentation. Submit source code, executable, and a project report."
+    }
+};
+
+// ===========================
 // NAVIGATION
 // ===========================
 let currentSubject = null;
@@ -5990,9 +9164,102 @@ function renderSidebar(subject) {
         lessonsList.forEach(lesson => {
             html += `<a href="#" onclick="showLesson('${subject}','${lesson.id}')" id="nav-${subject}-${lesson.id}">${lesson.label}</a>`;
         });
+        if (finalOutputs[subject]?.[key]) {
+            html += `<a href="#" onclick="showFinalOutput('${subject}','${period}')" id="final-${subject}-${key}" class="final-link">🎯 Final Output</a>`;
+        }
     });
 
     container.innerHTML = html;
+}
+
+function getQuizPassword(subject) {
+    const data = subjects[subject];
+    return (data?.password || '') + 'BADUA';
+}
+
+let quizUnlocked = {};
+
+function renderActivityHtml(subject, lessonId) {
+    const data = activities[subject]?.[lessonId];
+    if (!data) return '';
+
+    let html = `<div class="activity-section"><h3>📝 Activities</h3>`;
+
+    // Quiz (password protected)
+    if (data.quiz && data.quiz.length) {
+        const quizId = `quiz-${subject}-${lessonId}`;
+        const isUnlocked = quizUnlocked[quizId] || false;
+
+        html += `<div class="activity-card"><h4>📄 Quiz <span class="badge badge-quiz">QUIZ</span></h4>`;
+
+        if (!isUnlocked) {
+            html += `<div class="quiz-unlock-area" id="${quizId}-lock">
+                <p>🔒 This quiz is locked. Enter the quiz password to access it.</p>
+                <input type="password" id="${quizId}-input" placeholder="Enter quiz password" onkeydown="if(event.key==='Enter')unlockQuiz('${subject}','${lessonId}')">
+                <button class="quiz-unlock-btn" onclick="unlockQuiz('${subject}','${lessonId}')">Unlock Quiz</button>
+                <div class="quiz-unlock-error" id="${quizId}-error">Incorrect password. Try again.</div>
+            </div>`;
+        }
+
+        html += `<div class="quiz-content${isUnlocked ? ' show' : ''}" id="${quizId}-content">`;
+        data.quiz.forEach((q, qi) => {
+            html += `<div class="quiz-question" id="q-${subject}-${lessonId}-${qi}">
+                <div class="q-text">${qi+1}. ${q.question}</div>`;
+            q.choices.forEach((c, ci) => {
+                html += `<label><input type="radio" name="q-${subject}-${lessonId}-${qi}" value="${ci}"> ${c}</label>`;
+            });
+            html += `<div class="quiz-result" id="qr-${subject}-${lessonId}-${qi}"></div>`;
+            html += `</div>`;
+        });
+        html += `<button class="quiz-submit-btn" onclick="checkQuiz('${subject}','${lessonId}')">Check Answers</button>`;
+        html += `</div></div>`;
+    }
+
+    // Assignment
+    if (data.assignment) {
+        html += `<div class="activity-card"><h4>📝 Assignment <span class="badge badge-assignment">ASSIGNMENT</span></h4>
+            <p>${data.assignment}</p>
+            <button class="btn-outline" onclick="alert('Mark this as done in your notebook!')">✓ Mark as Complete</button>
+        </div>`;
+    }
+
+    html += `</div>`;
+    return html;
+}
+
+function unlockQuiz(subject, lessonId) {
+    const quizId = `quiz-${subject}-${lessonId}`;
+    const input = document.getElementById(`${quizId}-input`);
+    const error = document.getElementById(`${quizId}-error`);
+    const expected = getQuizPassword(subject);
+
+    if (input.value === expected) {
+        quizUnlocked[quizId] = true;
+        document.getElementById(`${quizId}-lock`).style.display = 'none';
+        document.getElementById(`${quizId}-content`).classList.add('show');
+    } else {
+        error.style.display = 'block';
+        input.value = '';
+        input.focus();
+    }
+}
+
+function checkQuiz(subject, lessonId) {
+    const data = activities[subject]?.[lessonId];
+    if (!data?.quiz) return;
+    data.quiz.forEach((q, qi) => {
+        const selected = document.querySelector(`input[name="q-${subject}-${lessonId}-${qi}"]:checked`);
+        const resultEl = document.getElementById(`qr-${subject}-${lessonId}-${qi}`);
+        if (!resultEl) return;
+        if (selected && parseInt(selected.value) === q.correct) {
+            resultEl.className = 'quiz-result correct';
+            resultEl.textContent = '✓ Correct!';
+        } else {
+            const correctText = q.choices[q.correct];
+            resultEl.className = 'quiz-result wrong';
+            resultEl.textContent = selected ? `✗ Incorrect. The correct answer is: ${correctText}` : `Please select an answer. The correct answer is: ${correctText}`;
+        }
+    });
 }
 
 function showLesson(subject, lessonId) {
@@ -6002,13 +9269,47 @@ function showLesson(subject, lessonId) {
     currentSubject = subject;
 
     document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.sidebar .final-link').forEach(a => a.classList.remove('active'));
     const navEl = document.getElementById(`nav-${subject}-${lessonId}`);
     if (navEl) navEl.classList.add('active');
 
     document.getElementById('homeView').style.display = 'none';
     const lessonView = document.getElementById('lessonView');
     lessonView.classList.remove('d-none');
-    lessonView.innerHTML = lesson.content;
+
+    const activityHtml = renderActivityHtml(subject, lessonId);
+    lessonView.innerHTML = lesson.content + activityHtml;
+
+    document.getElementById('sidebar').classList.remove('open');
+    document.querySelector('.overlay').classList.remove('show');
+    window.scrollTo(0, 0);
+}
+
+function showFinalOutput(subject, period) {
+    const desc = finalOutputs[subject]?.[period.toLowerCase()];
+    if (!desc) return;
+
+    currentSubject = subject;
+
+    document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.sidebar .final-link').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById(`final-${subject}-${period.toLowerCase()}`);
+    if (navEl) navEl.classList.add('active');
+
+    document.getElementById('homeView').style.display = 'none';
+    const lessonView = document.getElementById('lessonView');
+    lessonView.classList.remove('d-none');
+
+    const data = subjects[subject];
+    lessonView.innerHTML = `
+        <div class="final-output-banner">
+            <span class="period-badge">${period}</span>
+            <h2>🎯 Final Output — ${data.code}</h2>
+            <h3>${data.name}</h3>
+            <p>${desc}</p>
+            <button class="btn-primary" onclick="alert('Submit your output to your instructor.')">Submit Output</button>
+        </div>
+    `;
 
     document.getElementById('sidebar').classList.remove('open');
     document.querySelector('.overlay').classList.remove('show');
@@ -6308,7 +9609,7 @@ async function askGroq(query, context) {
         userMessage = `STUDENT QUESTION: ${query}`;
     }
 
-    const systemPrompt = `You are a casual, friendly study buddy with a human touch -- not a robot. Answer in exactly one concise paragraph — summarize the key points only, no extra details. If lesson content is provided below, use it naturally as reference. If the user greets you or asks something casual (like "hello", "how are you", "what's up"), respond warmly like a normal person would. If they ask about their lessons, answer concisely using the material. Always sound natural and human, never robotic or stiff.`;
+    const systemPrompt = `You are a study assistant. Answer in one precise sentence. Be direct and factual — no greetings, no fluff, no casual words. If you don't know, say "I don't have an answer for that."`;
 
     try {
         const res = await fetch('/api/chat', {
