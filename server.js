@@ -2,8 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import https from 'https';
 import { fileURLToPath } from 'url';
+import Groq from 'groq-sdk';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -15,6 +15,8 @@ app.use(express.json());
 
 app.use(express.static(__dirname));
 
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
 app.post('/api/chat', async (req, res) => {
   const { messages } = req.body;
 
@@ -22,48 +24,29 @@ app.post('/api/chat', async (req, res) => {
     return res.status(400).json({ error: 'messages array is required' });
   }
 
-  const body = JSON.stringify({
-    model: 'llama-3.3-70b-versatile',
-    temperature: 0.3,
-    messages
-  });
-
   try {
-    const data = await new Promise((resolve, reject) => {
-      const options = {
-        hostname: 'api.groq.com',
-        path: '/openai/v1/chat/completions',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
-          'Content-Length': Buffer.byteLength(body)
-        }
-      };
-
-      const httpsReq = https.request(options, (groqRes) => {
-        let raw = '';
-        groqRes.on('data', chunk => raw += chunk);
-        groqRes.on('end', () => {
-          try {
-            const parsed = JSON.parse(raw);
-            if (groqRes.statusCode >= 200 && groqRes.statusCode < 300) {
-              resolve(parsed);
-            } else {
-              reject(new Error(parsed.error?.message || `Groq API error (${groqRes.statusCode})`));
-            }
-          } catch (e) {
-            reject(new Error('Failed to parse Groq response'));
-          }
-        });
-      });
-
-      httpsReq.on('error', reject);
-      httpsReq.write(body);
-      httpsReq.end();
+    const completion = await groq.chat.completions.create({
+      model: 'llama3-8b-8192',
+      temperature: 0.8,
+      max_tokens: 180,
+      top_p: 0.9,
+      messages
     });
 
-    res.json(data);
+    const reply = completion.choices[0].message.content;
+
+    const cleanReply = reply
+      .replace(/\n\n+/g, ' ')
+      .replace(/\n/g, ' ')
+      .trim();
+
+    res.json({
+      choices: [{
+        message: {
+          content: cleanReply
+        }
+      }]
+    });
   } catch (err) {
     console.error('Groq proxy error:', err.message);
     res.status(500).json({ error: err.message || 'Failed to reach Groq API' });

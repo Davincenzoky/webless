@@ -9267,6 +9267,7 @@ function showLesson(subject, lessonId) {
     if (!lesson) return;
 
     currentSubject = subject;
+    renderChips();
 
     document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
     document.querySelectorAll('.sidebar .final-link').forEach(a => a.classList.remove('active'));
@@ -9290,6 +9291,7 @@ function showFinalOutput(subject, period) {
     if (!desc) return;
 
     currentSubject = subject;
+    renderChips();
 
     document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
     document.querySelectorAll('.sidebar .final-link').forEach(a => a.classList.remove('active'));
@@ -9331,6 +9333,7 @@ function switchSubject(subject) {
     document.getElementById(`tab-${subject}`).classList.add('active');
 
     renderSidebar(subject);
+    renderChips();
 
     document.getElementById('homeView').style.display = 'block';
     document.getElementById('lessonView').classList.add('d-none');
@@ -9436,7 +9439,7 @@ function stripHtml(html) {
 
 function buildLessonIndex() {
     const index = [];
-    const subjectCodes = { genel1:'GENEL1', gened7:'GENED7', inform:'INFORM', quanti:'QUANTI', websys:'WEBSYS' };
+    const subjectCodes = { genel1:'GENEL1', gened7:'GENED7', inform:'INFORM', quanti:'QUANTI', websys:'WEBSYS', adbms:'ADBMS', cprog1:'CPROG1', ooprog:'OOPROG', csele1:'CSELE1' };
     for (const [key, subj] of Object.entries(lessons)) {
         for (const [id, lesson] of Object.entries(subj)) {
             const text = stripHtml(lesson.content);
@@ -9609,7 +9612,20 @@ async function askGroq(query, context) {
         userMessage = `STUDENT QUESTION: ${query}`;
     }
 
-    const systemPrompt = `You are a study assistant. Answer in one precise sentence. Be direct and factual — no greetings, no fluff, no casual words. If you don't know, say "I don't have an answer for that."`;
+    const current = currentSubject ? subjects[currentSubject] : null;
+    const subjectName = current ? current.name : 'general';
+    const subjectCode = current ? current.code : '';
+
+    const systemPrompt = `You are a helpful, knowledgeable study assistant for college students taking up ${subjectCode} (${subjectName}).
+
+RULES TO FOLLOW STRICTLY:
+1. Give ONLY ONE concise paragraph (3-5 sentences) per response.
+2. Be accurate and factual based on standard academic knowledge.
+3. Use natural Taglish (mix of Tagalog and English), parang friendly at matalinong classmate.
+4. Huwag magmukhang robot — gumamit ng natural na pananalita.
+5. If you don't know, say "Hindi ko po sure, pero pwede kong i-check..." — wag mag-imbento.
+6. Always keep it brief and directly answer the question.
+7. Huwag magdagdag ng greetings or introductions — derecho sa sagot.`;
 
     try {
         const res = await fetch('/api/chat', {
@@ -9632,6 +9648,41 @@ async function askGroq(query, context) {
     }
 }
 
+async function displayTypingResponse(text, role, source) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + role;
+    if (role === 'bot') {
+        const label = document.createElement('div');
+        label.className = 'label';
+        label.textContent = 'Study Bot';
+        div.appendChild(label);
+    }
+    const p = document.createElement('span');
+    div.appendChild(p);
+    if (source) {
+        const s = document.createElement('div');
+        s.className = 'source';
+        s.innerHTML = '\uD83D\uDCD6 ' + source;
+        div.appendChild(s);
+    }
+    document.getElementById('chatMessages').appendChild(div);
+
+    let index = 0;
+    const speed = 12;
+    return new Promise((resolve) => {
+        const interval = setInterval(() => {
+            if (index < text.length) {
+                p.textContent += text.charAt(index);
+                index++;
+                document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+            } else {
+                clearInterval(interval);
+                resolve();
+            }
+        }, speed);
+    });
+}
+
 function sendChat() {
     const input = document.getElementById('chatInput');
     const q = input.value.trim();
@@ -9649,7 +9700,7 @@ function sendChat() {
             const sources = context && context.length
                 ? context.map(c => c.subject + ' \u2014 ' + c.title).join('<br>')
                 : null;
-            addMessage(answer, 'bot', sources);
+            await displayTypingResponse(answer, 'bot', sources);
         } else {
             const result = searchLessons(q);
             if (result) {
@@ -9665,18 +9716,31 @@ function sendChat() {
     }, 100);
 }
 
-// Init chat status
-const examples = [
+const defaultChips = [
     'What is a computer?',
     'Explain APIs',
     'Internet threats',
     'What is blockchain?'
 ];
 
+const subjectChips = {
+    genel1: ['What is ICT?', 'History of computer', 'Types of hackers', 'Cybercrimes in PH'],
+    adbms: ['What is normalization?', 'Explain SQL vs NoSQL', 'Database security', 'What is data warehousing?'],
+    cprog1: ['What is a variable?', 'Explain control structures', 'What is a function?', 'Arrays in C'],
+    ooprog: ['What is OOP?', 'Explain inheritance', 'Polymorphism example', 'What is encapsulation?'],
+    gened7: ['STS meaning', 'Human flourishing', 'Information age', 'Climate change'],
+    inform: ['What is information management?', 'Data governance', 'CMS examples', 'Big data'],
+    quanti: ['Quantitative methods', 'Data analysis', 'Scheduling optimization', 'Predictive modeling'],
+    websys: ['Web development', 'Frontend vs backend', 'What is an API?', 'Web security']
+};
+
 function renderChips() {
     const container = document.getElementById('chatChips');
     container.innerHTML = '';
-    examples.forEach(text => {
+    const chips = currentSubject && subjectChips[currentSubject]
+        ? subjectChips[currentSubject]
+        : defaultChips;
+    chips.forEach(text => {
         const btn = document.createElement('button');
         btn.textContent = text;
         btn.onclick = () => {
