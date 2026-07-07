@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "genel1_source/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "inform_text/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "gened7_text/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "quanti_source/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "websys_source/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "api/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
