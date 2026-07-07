@@ -9,11 +9,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const ROOT = process.env.VERCEL ? process.cwd() : __dirname;
 
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname));
+app.use(express.static(ROOT));
 
 app.post('/api/chat', async (req, res) => {
   const { messages } = req.body;
