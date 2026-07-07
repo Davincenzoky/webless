@@ -1,21 +1,10 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import path from 'path';
 import https from 'https';
-import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(cors());
-app.use(express.json());
-
-app.use(express.static(__dirname));
-
-app.post('/api/chat', async (req, res) => {
   const { messages } = req.body;
 
   if (!messages || !Array.isArray(messages)) {
@@ -68,8 +57,4 @@ app.post('/api/chat', async (req, res) => {
     console.error('Groq proxy error:', err.message);
     res.status(500).json({ error: err.message || 'Failed to reach Groq API' });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`WebLess server running at http://localhost:${PORT}`);
-});
+}
