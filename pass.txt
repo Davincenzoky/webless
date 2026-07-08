@@ -8,7 +8,7 @@ INFORM - Information Management        IM2025
 QUANTI - Quantitative Methods          QM2025
 WEBSYS - Web Systems and Technologies        WS2025
 ADBMS - Advanced Database Management System   ADBMS2025
-CPROG1 - Computer Programming 1               CPROG2025
+CPROG1 - Computer Programming 1 (Python)       CPROG2025
 OOPROG - Object-Oriented Programming          OOP2025
 CSELE1 - Graphics and Visual Computing        CSELE2025
 

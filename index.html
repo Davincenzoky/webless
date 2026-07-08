@@ -1794,25 +1794,25 @@ const subjects = {
     cprog1: {
         code: "CPROG1",
         name: "Computer Programming 1",
-        icon: "💻",
-        desc: "Learn the fundamentals of programming — from algorithms and variables to control structures, functions, arrays, and file handling using the C programming language.",
+        icon: "🐍",
+        desc: "Learn the fundamentals of programming using Python — from algorithms and variables to control structures, functions, data structures, and file handling.",
         password: "CPROG2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
             prelim: [
-                { id: "p1", label: "1. Introduction to Programming" },
+                { id: "p1", label: "1. Introduction to Python" },
                 { id: "p2", label: "2. Variables & Data Types" },
                 { id: "p3", label: "3. Control Structures" }
             ],
             midterm: [
                 { id: "m1", label: "1. Functions" },
-                { id: "m2", label: "2. Arrays" },
+                { id: "m2", label: "2. Lists & Tuples" },
                 { id: "m3", label: "3. Strings" }
             ],
             finals: [
-                { id: "f1", label: "1. Pointers" },
+                { id: "f1", label: "1. Dictionaries & Sets" },
                 { id: "f2", label: "2. File Handling" },
-                { id: "f3", label: "3. Structures & Unions" }
+                { id: "f3", label: "3. Exception Handling & OOP" }
             ]
         }
     },
@@ -6771,37 +6771,42 @@ CREATE POLICY student_policy ON students
 // ===========================
 lessons.cprog1 = {
     p1: {
-        title: "Introduction to Programming",
+        title: "Introduction to Python",
         period: "PRELIM",
         content: `
-            <h2>Introduction to Programming</h2>
+            <h2>Introduction to Python</h2>
             <span class="period-badge">PRELIM</span>
-            <p><strong>Programming</strong> (or coding) is the process of creating a set of instructions that tell a computer how to perform a specific task. Programs are written in <strong>programming languages</strong> such as C, Java, Python, and many others. C is a powerful, general-purpose language developed by <strong>Dennis Ritchie</strong> in 1972 at Bell Labs.</p>
+            <p><strong>Python</strong> is a high-level, interpreted programming language created by <strong>Guido van Rossum</strong> and first released in 1991. It is known for its simplicity, readability, and versatility — making it one of the most popular languages for beginners and professionals alike.</p>
+
+            <h3>Why Python?</h3>
+            <ul>
+                <li><strong>Easy to Read and Write:</strong> Python's syntax is clean and intuitive, using indentation instead of curly braces or keywords.</li>
+                <li><strong>Interpreted Language:</strong> Code runs line by line without needing compilation — making development faster.</li>
+                <li><strong>Dynamically Typed:</strong> You don't need to declare variable types — Python infers them automatically.</li>
+                <li><strong>Cross-Platform:</strong> Python runs on Windows, macOS, Linux, and more.</li>
+                <li><strong>Large Ecosystem:</strong> Thousands of libraries and frameworks available for web development (Django, Flask), data science (NumPy, Pandas), AI (TensorFlow, PyTorch), and more.</li>
+            </ul>
 
             <h3>The Programming Process</h3>
             <ol>
                 <li><strong>Problem Analysis:</strong> Understand the problem and define requirements</li>
                 <li><strong>Algorithm Design:</strong> Develop a step-by-step solution</li>
                 <li><strong>Flowcharting:</strong> Visually represent program logic using symbols</li>
-                <li><strong>Coding:</strong> Write the program in a programming language</li>
-                <li><strong>Compilation:</strong> Translate source code to machine code</li>
+                <li><strong>Coding:</strong> Write the program in Python</li>
                 <li><strong>Testing & Debugging:</strong> Find and fix errors</li>
                 <li><strong>Documentation:</strong> Write comments and user manuals</li>
                 <li><strong>Maintenance:</strong> Update and improve the program</li>
             </ol>
 
-            <h3>Basic Structure of a C Program</h3>
-            <pre>#include &lt;stdio.h&gt;
+            <h3>Your First Python Program</h3>
+            <pre>print("Hello, World!")</pre>
+            <p>That's it! Unlike other languages, Python doesn't require a main function, semicolons, or curly braces. Just one line and it runs.</p>
 
-int main() {
-    printf("Hello, World!");
-    return 0;
-}</pre>
+            <h3>Running Python Code</h3>
             <ul>
-                <li><code>#include &lt;stdio.h&gt;</code> — Preprocessor directive to include standard I/O functions</li>
-                <li><code>int main()</code> — The main function where program execution begins</li>
-                <li><code>printf()</code> — Function to display output on the screen</li>
-                <li><code>return 0;</code> — Indicates successful program termination</li>
+                <li><strong>Interactive Mode:</strong> Type <code>python</code> in the terminal to open the Python REPL (Read-Eval-Print Loop)</li>
+                <li><strong>Script Mode:</strong> Save code in a <code>.py</code> file and run with <code>python filename.py</code></li>
+                <li><strong>IDEs:</strong> Use VS Code, PyCharm, Thonny, or Jupyter Notebook for a full development environment</li>
             </ul>
 
             <h3>Types of Programming Languages</h3>
@@ -6809,18 +6814,26 @@ int main() {
                 <tr><th>Level</th><th>Description</th><th>Examples</th></tr>
                 <tr><td><strong>Machine Language</strong></td><td>Binary code (0s and 1s) directly executed by CPU</td><td>00101010 11110000</td></tr>
                 <tr><td><strong>Assembly Language</strong></td><td>Uses mnemonics instead of binary</td><td>MOV AX, BX</td></tr>
-                <tr><td><strong>High-Level Language</strong></td><td>Uses English-like syntax and abstractions</td><td>C, Java, Python</td></tr>
+                <tr><td><strong>High-Level Language</strong></td><td>Uses English-like syntax and abstractions</td><td>Python, Java, C++</td></tr>
             </table>
 
             <h3>Programming Paradigms</h3>
             <ul>
-                <li><strong>Procedural Programming:</strong> Programs as sequences of procedures/functions (C, Pascal)</li>
-                <li><strong>Object-Oriented Programming:</strong> Programs as interacting objects (Java, C++)</li>
-                <li><strong>Functional Programming:</strong> Programs as mathematical functions (Haskell, Lisp)</li>
+                <li><strong>Procedural Programming:</strong> Programs as sequences of procedures/functions (C, Python)</li>
+                <li><strong>Object-Oriented Programming:</strong> Programs as interacting objects (Java, Python)</li>
+                <li><strong>Functional Programming:</strong> Programs as mathematical functions (Haskell, Python)</li>
                 <li><strong>Logic Programming:</strong> Programs as logical statements (Prolog)</li>
             </ul>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Programming is a systematic process that transforms a problem into a working solution. C is a foundational language that teaches essential programming concepts used across all languages. Understanding the compilation process and program structure is the first step in becoming a programmer.</div>
+            <h3>Python Comment Syntax</h3>
+            <pre># This is a single-line comment
+
+"""
+This is a multi-line comment
+or docstring. It spans multiple lines.
+"""</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Python is a beginner-friendly, versatile programming language. Its clean syntax and interpreted nature make it easy to learn and use. The programming process — from problem analysis to maintenance — applies to any language, and Python makes each step straightforward.</div>
         `
     },
     p2: {
@@ -6829,51 +6842,72 @@ int main() {
         content: `
             <h2>Variables & Data Types</h2>
             <span class="period-badge">PRELIM</span>
-            <p>A <strong>variable</strong> is a named memory location that stores a value. <strong>Data types</strong> define the type of data a variable can hold and the operations that can be performed on it.</p>
+            <p>A <strong>variable</strong> is a named container that stores a value in memory. In Python, you don't need to declare a variable's type — it is <strong>dynamically inferred</strong> when you assign a value.</p>
 
-            <h3>Basic Data Types in C</h3>
+            <h3>Variable Assignment</h3>
+            <pre>age = 18                    # integer
+gpa = 1.75                  # float
+name = "Juan"               # string
+is_student = True           # boolean
+grade = 'A'                 # character (same as string)</pre>
+
+            <h3>Basic Data Types in Python</h3>
             <table>
-                <tr><th>Type</th><th>Size</th><th>Format Specifier</th><th>Example</th></tr>
-                <tr><td><code>int</code></td><td>2 or 4 bytes</td><td>%d</td><td>25</td></tr>
-                <tr><td><code>float</code></td><td>4 bytes</td><td>%f</td><td>3.14</td></tr>
-                <tr><td><code>double</code></td><td>8 bytes</td><td>%lf</td><td>3.141592</td></tr>
-                <tr><td><code>char</code></td><td>1 byte</td><td>%c</td><td>'A'</td></tr>
-                <tr><td><code>void</code></td><td>0 bytes</td><td>—</td><td>No value</td></tr>
+                <tr><th>Type</th><th>Python Class</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>int</code></td><td><code>&lt;class 'int'&gt;</code></td><td>Whole numbers (unlimited precision)</td><td><code>25</code>, <code>-10</code>, <code>1000000</code></td></tr>
+                <tr><td><code>float</code></td><td><code>&lt;class 'float'&gt;</code></td><td>Decimal numbers</td><td><code>3.14</code>, <code>-0.5</code>, <code>1.0</code></td></tr>
+                <tr><td><code>str</code></td><td><code>&lt;class 'str'&gt;</code></td><td>Text data (sequence of characters)</td><td><code>"Hello"</code>, <code>'Python'</code></td></tr>
+                <tr><td><code>bool</code></td><td><code>&lt;class 'bool'&gt;</code></td><td>Logical values</td><td><code>True</code>, <code>False</code></td></tr>
+                <tr><td><code>NoneType</code></td><td><code>&lt;class 'NoneType'&gt;</code></td><td>Represents absence of a value</td><td><code>None</code></td></tr>
             </table>
 
-            <h3>Variable Declaration & Initialization</h3>
-            <pre>int age;                // declaration
-age = 18;               // assignment
-float gpa = 1.75;       // declaration + initialization
-char grade = 'A';
-int x, y, z;            // multiple declarations</pre>
+            <h3>Type Checking & Conversion</h3>
+            <pre># Check type
+print(type(age))       # &lt;class 'int'&gt;
+
+# Type conversion (casting)
+x = 10
+y = float(x)           # 10.0
+z = str(x)             # "10"
+num = int("42")        # 42
+grade = int(1.75)      # 1 (truncation)</pre>
 
             <h3>Naming Rules & Conventions</h3>
             <ul>
                 <li>Must start with a letter or underscore (_)</li>
                 <li>Can contain letters, digits, and underscores</li>
                 <li>Case-sensitive (age, Age, AGE are different)</li>
-                <li>Cannot use reserved keywords (int, float, return, etc.)</li>
-                <li>Use meaningful names: <code>studentAge</code> not <code>sa</code></li>
-                <li>Common conventions: camelCase, snake_case</li>
+                <li>Cannot use reserved keywords (if, else, for, while, etc.)</li>
+                <li>Use meaningful names: <code>student_age</code> not <code>sa</code></li>
+                <li>Python convention: <strong>snake_case</strong> for variables and functions</li>
             </ul>
 
             <h3>Input & Output</h3>
-            <pre>#include &lt;stdio.h&gt;
+            <pre># Output
+print("Hello, World!")
+print("Age:", age)
 
-int main() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    printf("You entered: %d", num);
-    return 0;
-}</pre>
+# Input
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))  # input() returns string
 
-            <h3>Constants</h3>
-            <pre>#define PI 3.14159       // macro constant
-const int MAX = 100;    // const keyword</pre>
+print(f"Hello {name}, you are {age} years old!")  # f-string</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Variables store data in memory, and data types determine what kind of data can be stored. C provides basic types (int, float, double, char) and requires explicit type declarations. Using meaningful variable names and proper format specifiers is essential for readable, error-free code.</div>
+            <h3>Constants (Convention)</h3>
+            <p>Python does not have built-in constants, but by convention, constant names are written in UPPER_CASE:</p>
+            <pre>PI = 3.14159
+MAX_STUDENTS = 100
+COLLEGE_NAME = "FBC"</pre>
+
+            <h3>Multiple Assignment</h3>
+            <pre># Assign multiple variables at once
+x, y, z = 10, 20, 30
+
+# Swap values
+a, b = 5, 10
+a, b = b, a          # a=10, b=5</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Python is dynamically typed — variables don't need explicit type declarations. Use the <code>type()</code> function to check types and casting functions to convert between types. Follow snake_case naming and use meaningful variable names for readable code.</div>
         `
     },
     p3: {
@@ -6891,35 +6925,27 @@ const int MAX = 100;    // const keyword</pre>
                 <li><strong>Iteration (Looping):</strong> Repeat a block of code multiple times</li>
             </ul>
 
+            <h3>Python Indentation</h3>
+            <p>Python uses <strong>indentation</strong> (spaces or tabs) to define code blocks — no curly braces or begin/end keywords. The standard is 4 spaces per indentation level.</p>
+
             <h3>Selection Statements</h3>
-            <pre>// if statement
-if (score >= 75) {
-    printf("Passed!");
-}
+            <pre># if statement
+if score >= 75:
+    print("Passed!")
 
-// if-else
-if (score >= 75) {
-    printf("Passed!");
-} else {
-    printf("Failed!");
-}
+# if-else
+if score >= 75:
+    print("Passed!")
+else:
+    print("Failed!")
 
-// if-else if-else
-if (score >= 90) {
-    printf("Excellent!");
-} else if (score >= 75) {
-    printf("Good!");
-} else {
-    printf("Needs improvement.");
-}
-
-// switch statement
-switch (grade) {
-    case 'A': printf("Excellent"); break;
-    case 'B': printf("Good"); break;
-    case 'C': printf("Fair"); break;
-    default: printf("Invalid");
-}</pre>
+# if-elif-else
+if score >= 90:
+    print("Excellent!")
+elif score >= 75:
+    print("Good!")
+else:
+    print("Needs improvement.")</pre>
 
             <h3>Relational & Logical Operators</h3>
             <table>
@@ -6930,32 +6956,49 @@ switch (grade) {
                 <tr><td>&lt;</td><td>Less than</td><td>a &lt; b</td></tr>
                 <tr><td>&gt;=</td><td>Greater than or equal</td><td>a &gt;= b</td></tr>
                 <tr><td>&lt;=</td><td>Less than or equal</td><td>a &lt;= b</td></tr>
-                <tr><td>&amp;&amp;</td><td>Logical AND</td><td>(a &gt; 0) &amp;&amp; (b &gt; 0)</td></tr>
-                <tr><td>||</td><td>Logical OR</td><td>(a &gt; 0) || (b &gt; 0)</td></tr>
-                <tr><td>!</td><td>Logical NOT</td><td>!(a &gt; 0)</td></tr>
+                <tr><td>and</td><td>Logical AND</td><td>a &gt; 0 and b &gt; 0</td></tr>
+                <tr><td>or</td><td>Logical OR</td><td>a &gt; 0 or b &gt; 0</td></tr>
+                <tr><td>not</td><td>Logical NOT</td><td>not (a &gt; 0)</td></tr>
             </table>
 
             <h3>Looping Statements</h3>
-            <pre>// while loop
-int i = 1;
-while (i <= 5) {
-    printf("%d ", i);
-    i++;
-}
+            <pre># while loop
+i = 1
+while i <= 5:
+    print(i, end=" ")
+    i += 1
 
-// do-while loop (executes at least once)
-int j = 1;
-do {
-    printf("%d ", j);
-    j++;
-} while (j <= 5);
+# for loop (range)
+for i in range(1, 6):
+    print(i, end=" ")
 
-// for loop
-for (int k = 1; k <= 5; k++) {
-    printf("%d ", k);
-}</pre>
+# for loop (list)
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Control structures are the building blocks of program logic. Selection statements (if, switch) enable decision-making, while loops (while, do-while, for) enable repetition. Mastering these structures is essential for solving any programming problem.</div>
+# break and continue
+for i in range(10):
+    if i == 3:
+        continue      # skip 3
+    if i == 7:
+        break         # stop at 7
+    print(i)</pre>
+
+            <h3>The match Statement (Python 3.10+)</h3>
+            <pre>grade = input("Enter grade: ").upper()
+
+match grade:
+    case "A":
+        print("Excellent!")
+    case "B":
+        print("Good!")
+    case "C":
+        print("Fair")
+    case _:
+        print("Invalid grade")</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Python uses indentation to define code blocks. Selection (if-elif-else) enables decision-making, and loops (while, for) enable repetition. The <code>range()</code> function is commonly used with for loops. Use <code>break</code> to exit early and <code>continue</code> to skip an iteration.</div>
         `
     },
     m1: {
@@ -6974,123 +7017,172 @@ for (int k = 1; k <= 5; k++) {
                 <li><strong>Debugging:</strong> Isolate and test individual functions independently</li>
             </ul>
 
-            <h3>Function Structure</h3>
-            <pre>return_type function_name(parameters) {
-    // function body
-    return value;
-}</pre>
+            <h3>Defining and Calling Functions</h3>
+            <pre>def greet():
+    print("Hello!")
 
-            <h3>Types of Functions</h3>
-            <ul>
-                <li><strong>Predefined (Library) Functions:</strong> Built into C (printf, scanf, sqrt, strlen)</li>
-                <li><strong>User-Defined Functions:</strong> Created by the programmer</li>
-            </ul>
+greet()  # call the function</pre>
 
-            <h3>Examples</h3>
-            <pre>// Function without parameters and return value
-void greet() {
-    printf("Hello!");
-}
+            <h3>Functions with Parameters and Return Values</h3>
+            <pre>def add(a, b):
+    return a + b
 
-// Function with parameters and return value
-int add(int a, int b) {
-    return a + b;
-}
+def greet_user(name):
+    return f"Hello, {name}!"
 
-// Function with default behavior
-int factorial(int n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);  // recursion
-}
+result = add(5, 3)
+print(result)           # 8
+print(greet_user("Juan"))  # Hello, Juan!</pre>
 
-int main() {
-    greet();
-    int sum = add(5, 3);
-    int fact = factorial(5);
-    return 0;
-}</pre>
+            <h3>Default Parameters & Keyword Arguments</h3>
+            <pre>def greet(name, greeting="Hello"):
+    print(f"{greeting}, {name}!")
 
-            <h3>Function Prototypes</h3>
-            <p>A function prototype tells the compiler about a function before it is defined. It includes the return type, name, and parameter types.</p>
-            <pre>#include &lt;stdio.h&gt;
+greet("Juan")               # Hello, Juan!
+greet("Maria", "Hi")        # Hi, Maria!
+greet(name="Pedro", greeting="Hey")  # keyword args</pre>
 
-int add(int a, int b);  // prototype
+            <h3>Variable Scope</h3>
+            <pre>x = 10  # global variable
 
-int main() {
-    printf("%d", add(5, 3));
-    return 0;
-}
+def my_func():
+    y = 5   # local variable
+    print(x)  # can access global
+    print(y)  # can access local
 
-int add(int a, int b) {
-    return a + b;
-}</pre>
+my_func()
+print(x)     # works
+# print(y)   # Error! y is not defined outside</pre>
 
-            <h3>Parameter Passing</h3>
-            <ul>
-                <li><strong>Pass by Value:</strong> A copy of the argument is passed. Changes inside the function do not affect the original variable</li>
-                <li><strong>Pass by Reference (using pointers):</strong> The memory address is passed. Changes inside the function affect the original variable</li>
-            </ul>
+            <h3>Returning Multiple Values</h3>
+            <pre>def get_min_max(numbers):
+    return min(numbers), max(numbers)
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Functions promote code reuse and modular design. A function has a clear interface (parameters and return type) and implementation (body). Understanding the difference between pass by value and pass by reference is critical for effective programming.</div>
+low, high = get_min_max([3, 1, 7, 2, 9])
+print(low, high)  # 1 9</pre>
+
+            <h3>Lambda Functions (Anonymous)</h3>
+            <pre># Lambda: a one-line function
+square = lambda x: x ** 2
+print(square(5))  # 25
+
+# Used with map/filter
+nums = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x**2, nums))
+print(squares)  # [1, 4, 9, 16, 25]</pre>
+
+            <h3>Recursion</h3>
+            <pre>def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # 120</pre>
+
+            <h3>Docstrings</h3>
+            <pre>def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+help(add)  # shows the docstring</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Functions are defined with <code>def</code> in Python. They can have parameters, default values, and return values. Python supports multiple return values, lambda functions, recursion, and docstrings. Scope rules determine where variables can be accessed.</div>
         `
     },
     m2: {
-        title: "Arrays",
+        title: "Lists & Tuples",
         period: "MIDTERM",
         content: `
-            <h2>Arrays</h2>
+            <h2>Lists & Tuples</h2>
             <span class="period-badge">MIDTERM</span>
-            <p>An <strong>array</strong> is a collection of elements of the same data type stored in contiguous memory locations. Arrays allow you to store and manipulate multiple values using a single variable name.</p>
+            <p><strong>Lists</strong> and <strong>tuples</strong> are Python's built-in sequence types for storing collections of items. Lists are mutable (can be changed), while tuples are immutable (cannot be changed after creation).</p>
 
-            <h3>Declaring and Initializing Arrays</h3>
-            <pre>int numbers[5];                    // declaration
-int scores[3] = {85, 90, 78};     // initialization
-int values[] = {1, 2, 3, 4, 5};  // size inferred</pre>
+            <h3>Creating Lists</h3>
+            <pre>fruits = ["apple", "banana", "cherry"]
+numbers = [1, 2, 3, 4, 5]
+mixed = [1, "hello", 3.14, True]
+empty = []
+nested = [[1, 2], [3, 4], [5, 6]]</pre>
 
-            <h3>Accessing Array Elements</h3>
-            <p>Array indices start at 0. The last index is size - 1.</p>
-            <pre>int nums[4] = {10, 20, 30, 40};
-printf("%d", nums[0]);     // 10
-nums[2] = 35;               // change third element
+            <h3>Accessing List Elements</h3>
+            <p>List indices start at 0. Negative indices count from the end.</p>
+            <pre>nums = [10, 20, 30, 40, 50]
+print(nums[0])     # 10
+print(nums[-1])    # 50 (last element)
+print(nums[1:3])   # [20, 30] (slicing)
+print(nums[::-1])  # [50, 40, 30, 20, 10] (reverse)</pre>
 
-// Traversing an array
-for (int i = 0; i < 4; i++) {
-    printf("%d ", nums[i]);
-}</pre>
+            <h3>Modifying Lists</h3>
+            <pre>nums = [10, 20, 30, 40]
+nums[2] = 35            # change element
+nums.append(50)         # add to end
+nums.insert(1, 15)      # insert at index 1
+nums.remove(20)         # remove by value
+popped = nums.pop()     # remove and return last
+del nums[0]             # delete by index</pre>
 
-            <h3>Common Array Operations</h3>
-            <pre>// Find sum and average
-int sum = 0;
-for (int i = 0; i < n; i++) {
-    sum += arr[i];
-}
-float avg = (float)sum / n;
+            <h3>Common List Operations</h3>
+            <pre>numbers = [3, 1, 7, 2, 9, 1, 7]
 
-// Find maximum
-int max = arr[0];
-for (int i = 1; i < n; i++) {
-    if (arr[i] > max) max = arr[i];
-}
+# Length
+print(len(numbers))   # 7
 
-// Linear search
-int search(int arr[], int n, int key) {
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key) return i;
-    }
-    return -1;
-}</pre>
+# Sum and average
+total = sum(numbers)
+avg = total / len(numbers)
 
-            <h3>Multi-Dimensional Arrays</h3>
-            <pre>int matrix[3][3] = {
-    {1, 2, 3},
-    {4, 5, 6},
-    {7, 8, 9}
-};
+# Min and max
+print(min(numbers))  # 1
+print(max(numbers))  # 9
 
-// Accessing elements
-printf("%d", matrix[1][2]);  // 6 (row 1, col 2)</pre>
+# Sort
+numbers.sort()       # [1, 1, 2, 3, 7, 7, 9]
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Arrays provide efficient storage and access for collections of related data. Array indices start at 0. Multi-dimensional arrays are useful for representing tables, matrices, and grids. Common operations include searching, sorting, and computing statistics like sum, average, min, and max.</div>
+# Check membership
+print(7 in numbers)  # True
+
+# Iterate
+for i, num in enumerate(numbers):
+    print(f"Index {i}: {num}")</pre>
+
+            <h3>List Comprehension</h3>
+            <pre># Create a list of squares
+squares = [x**2 for x in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]
+
+# Filter even numbers
+evens = [x for x in range(10) if x % 2 == 0]
+print(evens)  # [0, 2, 4, 6, 8]</pre>
+
+            <h3>Tuples (Immutable Sequences)</h3>
+            <pre># Tuples are created with parentheses
+point = (3, 4)
+colors = ("red", "green", "blue")
+single = (5,)          # single-element tuple needs comma
+empty_tuple = ()
+
+# Accessing (same as lists)
+print(point[0])    # 3
+print(point[1])    # 4
+
+# Tuple unpacking
+x, y = point
+print(f"({x}, {y})")  # (3, 4)
+
+# Tuples are immutable
+# point[0] = 10  # Error!</pre>
+
+            <h3>When to Use Lists vs Tuples</h3>
+            <table>
+                <tr><th>Feature</th><th>List</th><th>Tuple</th></tr>
+                <tr><td>Mutable?</td><td>Yes</td><td>No</td></tr>
+                <tr><td>Syntax</td><td><code>[ ]</code></td><td><code>( )</code></td></tr>
+                <tr><td>Speed</td><td>Slower</td><td>Faster</td></tr>
+                <tr><td>Use Case</td><td>Collection that changes</td><td>Fixed data (coordinates, constants)</td></tr>
+                <tr><td>Hashable?</td><td>No</td><td>Yes (can be used as dict key)</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Lists are mutable, ordered collections ideal for dynamic data. Tuples are immutable and faster for fixed data. List comprehensions provide a concise way to create lists. Use <code>enumerate()</code> to iterate with both index and value.</div>
         `
     },
     m3: {
@@ -7099,124 +7191,165 @@ printf("%d", matrix[1][2]);  // 6 (row 1, col 2)</pre>
         content: `
             <h2>Strings</h2>
             <span class="period-badge">MIDTERM</span>
-            <p>In C, a <strong>string</strong> is an array of characters terminated by a null character (<code>\\0</code>). Strings are used to store text data like names, addresses, and messages.</p>
+            <p>A <strong>string</strong> in Python is a sequence of characters enclosed in single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>). Strings are <strong>immutable</strong> — once created, they cannot be changed.</p>
 
-            <h3>String Declaration</h3>
-            <pre>char name[20];                    // can hold 19 chars + null
-char str[] = "Hello";            // size = 6 (5 chars + '\\0')
-char city[10] = "Manila";        // explicit size</pre>
+            <h3>Creating Strings</h3>
+            <pre>name = "Juan Dela Cruz"
+message = 'Hello, Python!'
+multi_line = """This is a
+multi-line string"""
+empty = ""</pre>
 
-            <h3>String Input & Output</h3>
-            <pre>#include &lt;stdio.h&gt;
+            <h3>String Indexing & Slicing</h3>
+            <pre>text = "Python"
+print(text[0])      # P
+print(text[-1])     # n
+print(text[1:4])    # yth
+print(text[:3])     # Pyt
+print(text[::2])    # Pto (every 2nd char)
+print(text[::-1])   # nohtyP (reverse)</pre>
 
-int main() {
-    char name[50];
-
-    printf("Enter name: ");
-    scanf("%s", name);            // reads until space
-    printf("Hello, %s!", name);
-
-    // Better: fgets (reads spaces)
-    fgets(name, 50, stdin);
-
-    return 0;
-}</pre>
-
-            <h3>String Functions (string.h)</h3>
+            <h3>String Methods</h3>
             <table>
-                <tr><th>Function</th><th>Description</th><th>Example</th></tr>
-                <tr><td><code>strlen(s)</code></td><td>Returns length of string</td><td>strlen("Hello") = 5</td></tr>
-                <tr><td><code>strcpy(dest, src)</code></td><td>Copies src to dest</td><td>strcpy(copy, original)</td></tr>
-                <tr><td><code>strcat(dest, src)</code></td><td>Appends src to dest</td><td>strcat(full, last)</td></tr>
-                <tr><td><code>strcmp(s1, s2)</code></td><td>Compares two strings</td><td>strcmp("a", "b") = -1</td></tr>
-                <tr><td><code>strlwr(s)</code></td><td>Converts to lowercase</td><td>strlwr("HELLO") = "hello"</td></tr>
-                <tr><td><code>strupr(s)</code></td><td>Converts to uppercase</td><td>strupr("hello") = "HELLO"</td></tr>
+                <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>len(s)</code></td><td>Returns length of string</td><td><code>len("Hello") = 5</code></td></tr>
+                <tr><td><code>s.upper()</code></td><td>Converts to uppercase</td><td><code>"hello".upper() = "HELLO"</code></td></tr>
+                <tr><td><code>s.lower()</code></td><td>Converts to lowercase</td><td><code>"HELLO".lower() = "hello"</code></td></tr>
+                <tr><td><code>s.strip()</code></td><td>Removes leading/trailing whitespace</td><td><code>"  hi  ".strip() = "hi"</code></td></tr>
+                <tr><td><code>s.split()</code></td><td>Splits string into list</td><td><code>"a b c".split() = ["a","b","c"]</code></td></tr>
+                <tr><td><code>" ".join(list)</code></td><td>Joins list into string</td><td><code>" ".join(["a","b"]) = "a b"</code></td></tr>
+                <tr><td><code>s.replace(a, b)</code></td><td>Replaces substring</td><td><code>"hello".replace("l","x") = "hexxo"</code></td></tr>
+                <tr><td><code>s.find(sub)</code></td><td>Finds substring index</td><td><code>"hello".find("e") = 1</code></td></tr>
+                <tr><td><code>s.count(sub)</code></td><td>Counts occurrences</td><td><code>"hello".count("l") = 2</code></td></tr>
+                <tr><td><code>s.startswith(x)</code></td><td>Checks prefix</td><td><code>"hello".startswith("he") = True</code></td></tr>
             </table>
 
-            <h3>String Example</h3>
-            <pre>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+            <h3>String Formatting</h3>
+            <pre>name = "Juan"
+age = 20
+gpa = 1.75
 
-int main() {
-    char first[20] = "Juan";
-    char last[20] = "Dela Cruz";
-    char full[40];
+# f-strings (recommended)
+print(f"Name: {name}, Age: {age}, GPA: {gpa}")
 
-    strcpy(full, first);
-    strcat(full, " ");
-    strcat(full, last);
+# .format() method
+print("Name: {}, Age: {}".format(name, age))
 
-    printf("Full name: %s", full);
-    printf("Length: %d", strlen(full));
-    return 0;
-}</pre>
+# % formatting (old style)
+print("Name: %s, Age: %d, GPA: %.2f" % (name, age, gpa))</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Strings in C are null-terminated character arrays. The string.h library provides essential functions for string manipulation. Always ensure sufficient buffer space to avoid buffer overflow errors.</div>
+            <h3>String Operations</h3>
+            <pre># Concatenation
+first = "Juan"
+last = "Dela Cruz"
+full = first + " " + last
+print(full)  # Juan Dela Cruz
+
+# Repetition
+print("Ha" * 3)  # HaHaHa
+
+# Membership
+print("a" in "Juan")    # True
+print("z" not in "Juan")  # True
+
+# Comparison (lexicographic)
+print("apple" < "banana")  # True</pre>
+
+            <h3>Escape Characters</h3>
+            <table>
+                <tr><th>Escape</th><th>Meaning</th></tr>
+                <tr><td><code>\\n</code></td><td>Newline</td></tr>
+                <tr><td><code>\\t</code></td><td>Tab</td></tr>
+                <tr><td><code>\\\\</code></td><td>Backslash</td></tr>
+                <tr><td><code>\\'</code></td><td>Single quote</td></tr>
+                <tr><td><code>\\"</code></td><td>Double quote</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Strings in Python are immutable sequences of characters. They support indexing, slicing, and a rich set of built-in methods. f-strings provide the most readable way to format strings. Common operations include split, join, replace, and find.</div>
         `
     },
     f1: {
-        title: "Pointers",
+        title: "Dictionaries & Sets",
         period: "FINALS",
         content: `
-            <h2>Pointers</h2>
+            <h2>Dictionaries & Sets</h2>
             <span class="period-badge">FINALS</span>
-            <p>A <strong>pointer</strong> is a variable that stores the memory address of another variable. Pointers are one of the most powerful features of C, enabling dynamic memory allocation, efficient array processing, and pass-by-reference.</p>
+            <p><strong>Dictionaries</strong> and <strong>sets</strong> are built-in Python data structures for storing collections. Dictionaries store key-value pairs, while sets store unique, unordered elements.</p>
 
-            <h3>Pointer Concepts</h3>
-            <pre>int x = 10;
-int *ptr = &x;        // ptr stores the address of x
+            <h3>Dictionaries (dict)</h3>
+            <p>A dictionary stores data in <strong>key-value pairs</strong>. Keys must be unique and immutable (strings, numbers, tuples). Values can be any type.</p>
 
-printf("%d", x);      // 10
-printf("%p", &x);     // address of x
-printf("%p", ptr);    // same address
-printf("%d", *ptr);   // 10 (dereferencing)</pre>
-
-            <h3>Pointer Operations</h3>
-            <ul>
-                <li><strong>& (Address-of):</strong> Returns the memory address of a variable</li>
-                <li><strong>* (Dereference):</strong> Accesses the value at the address stored in the pointer</li>
-            </ul>
-
-            <h3>Pointers and Arrays</h3>
-            <pre>int arr[3] = {10, 20, 30};
-int *p = arr;            // p points to arr[0]
-
-// Array indexing using pointers
-printf("%d", *(p + 0));  // 10
-printf("%d", *(p + 1));  // 20
-printf("%d", *(p + 2));  // 30
-
-// Equivalent to:
-printf("%d", p[0]);      // 10
-printf("%d", p[1]);      // 20</pre>
-
-            <h3>Dynamic Memory Allocation</h3>
-            <pre>#include &lt;stdlib.h&gt;
-
-int *arr;
-int n = 5;
-
-arr = (int*)malloc(n * sizeof(int));
-if (arr == NULL) {
-    printf("Memory allocation failed");
-    return 1;
+            <h4>Creating Dictionaries</h4>
+            <pre>student = {
+    "id": 101,
+    "name": "Juan Dela Cruz",
+    "course": "BSIT",
+    "gpa": 1.75
 }
 
-// Use the array
-for (int i = 0; i < n; i++) {
-    arr[i] = i * 10;
-}
+empty_dict = {}
+also_dict = dict(name="Maria", age=20)</pre>
 
-free(arr);  // always free allocated memory</pre>
+            <h4>Accessing and Modifying</h4>
+            <pre>print(student["name"])       # Juan Dela Cruz
+print(student.get("gpa"))    # 1.75 (safe access)
+print(student.get("year", "N/A"))  # N/A (default)
 
-            <h3>Pointer to Pointer</h3>
-            <pre>int x = 5;
-int *p = &x;
-int **pp = &p;
+student["gpa"] = 1.50        # update value
+student["year"] = 2          # add new key-value pair
+del student["year"]          # remove key
+popped = student.pop("id")   # remove and return value</pre>
 
-printf("%d", **pp);  // 5</pre>
+            <h4>Dictionary Methods</h4>
+            <pre>print(student.keys())    # dict_keys(['name', 'course', 'gpa'])
+print(student.values())  # dict_values(['Juan Dela Cruz', 'BSIT', 1.75])
+print(student.items())   # dict_items([('name', 'Juan...'), ...])
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Pointers provide direct access to memory, enabling efficient array manipulation, dynamic memory allocation, and pass-by-reference. Understanding pointers is essential for systems programming and is a distinguishing feature of C.</div>
+# Iterate
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+# Check key existence
+if "name" in student:
+    print("Name exists")</pre>
+
+            <h3>Sets</h3>
+            <p>A set is an <strong>unordered</strong> collection of <strong>unique</strong> elements. Sets are mutable but can only contain immutable (hashable) elements.</p>
+
+            <h4>Creating Sets</h4>
+            <pre>fruits = {"apple", "banana", "cherry", "apple"}
+print(fruits)  # {"apple", "cherry", "banana"} (duplicates removed, order may vary)
+
+numbers = set([1, 2, 3, 2, 1])  # {1, 2, 3}
+empty_set = set()</pre>
+
+            <h4>Set Operations</h4>
+            <pre>a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+
+# Adding and removing
+a.add(7)
+a.remove(2)
+
+# Set operations
+print(a | b)   # Union: {1, 2, 3, 4, 5, 6, 7}
+print(a & b)   # Intersection: {3, 4}
+print(a - b)   # Difference: {1, 2, 7}
+print(a ^ b)   # Symmetric diff: {1, 2, 5, 6, 7}
+
+# Membership (very fast)
+print(3 in a)  # True</pre>
+
+            <h3>When to Use Each</h3>
+            <table>
+                <tr><th>Structure</th><th>Ordered?</th><th>Mutable?</th><th>Duplicates?</th><th>Use Case</th></tr>
+                <tr><td><strong>List</strong></td><td>Yes</td><td>Yes</td><td>Allowed</td><td>Sequences, ordered collections</td></tr>
+                <tr><td><strong>Tuple</strong></td><td>Yes</td><td>No</td><td>Allowed</td><td>Fixed data, coordinates</td></tr>
+                <tr><td><strong>Set</strong></td><td>No</td><td>Yes</td><td>Not allowed</td><td>Unique items, membership tests</td></tr>
+                <tr><td><strong>Dict</strong></td><td>Yes (3.7+)</td><td>Yes</td><td>Keys: no / Values: yes</td><td>Key-value mappings</td></tr>
+            </table>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Dictionaries store key-value pairs for fast lookups by key. Sets store unique elements and excel at membership tests and mathematical operations (union, intersection, difference). Choose the right data structure based on your needs.</div>
         `
     },
     f2: {
@@ -7225,19 +7358,19 @@ printf("%d", **pp);  // 5</pre>
         content: `
             <h2>File Handling</h2>
             <span class="period-badge">FINALS</span>
-            <p><strong>File handling</strong> in C allows programs to store data permanently on storage devices. Files can be used for input (reading) and output (writing).</p>
+            <p><strong>File handling</strong> in Python allows programs to read from and write to files on the storage device. Python's built-in <code>open()</code> function makes file I/O simple and readable.</p>
 
             <h3>File Operations</h3>
             <ol>
-                <li><strong>Open</strong> the file using <code>fopen()</code></li>
+                <li><strong>Open</strong> the file using <code>open()</code></li>
                 <li><strong>Read</strong> from or <strong>Write</strong> to the file</li>
-                <li><strong>Close</strong> the file using <code>fclose()</code></li>
+                <li><strong>Close</strong> the file using <code>close()</code></li>
             </ol>
 
             <h3>File Access Modes</h3>
             <table>
                 <tr><th>Mode</th><th>Description</th></tr>
-                <tr><td><code>"r"</code></td><td>Open for reading. File must exist</td></tr>
+                <tr><td><code>"r"</code></td><td>Open for reading (default). File must exist</td></tr>
                 <tr><td><code>"w"</code></td><td>Open for writing. Creates new file or overwrites existing</td></tr>
                 <tr><td><code>"a"</code></td><td>Open for appending. Creates file if not exists</td></tr>
                 <tr><td><code>"r+"</code></td><td>Open for reading and writing. File must exist</td></tr>
@@ -7246,138 +7379,197 @@ printf("%d", **pp);  // 5</pre>
             </table>
 
             <h3>Writing to a File</h3>
-            <pre>#include &lt;stdio.h&gt;
+            <pre># Using with statement (recommended - auto-closes file)
+with open("output.txt", "w") as file:
+    file.write("Hello, File!\\n")
+    file.write("Student: Juan Dela Cruz\\n")
+    file.write("Grade: 1.75\\n")
 
-int main() {
-    FILE *fp = fopen("output.txt", "w");
-    if (fp == NULL) {
-        printf("Error opening file");
-        return 1;
-    }
-
-    fprintf(fp, "Hello, File!\\n");
-    fprintf(fp, "Student: Juan Dela Cruz\\n");
-    fprintf(fp, "Grade: 1.75\\n");
-
-    fclose(fp);
-    return 0;
-}</pre>
+# File is automatically closed after the with block</pre>
 
             <h3>Reading from a File</h3>
-            <pre>#include &lt;stdio.h&gt;
+            <pre># Read entire file
+with open("output.txt", "r") as file:
+    content = file.read()
+    print(content)
 
-int main() {
-    FILE *fp = fopen("output.txt", "r");
-    if (fp == NULL) {
-        printf("File not found");
-        return 1;
-    }
+# Read line by line
+with open("output.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # strip removes trailing newline
 
-    char buffer[100];
-    while (fgets(buffer, 100, fp) != NULL) {
-        printf("%s", buffer);
-    }
+# Read all lines into a list
+with open("output.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)</pre>
 
-    fclose(fp);
-    return 0;
-}</pre>
+            <h3>Working with CSV Files</h3>
+            <pre>import csv
 
-            <h3>fscanf - Reading Formatted Data</h3>
-            <pre>int id;
-char name[30];
-float gpa;
+# Writing CSV
+with open("students.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["ID", "Name", "Course", "GPA"])
+    writer.writerow([101, "Juan Dela Cruz", "BSIT", 1.75])
+    writer.writerow([102, "Maria Santos", "BSCS", 1.50])
 
-while (fscanf(fp, "%d %s %f", &id, name, &gpa) != EOF) {
-    printf("%d %s %.2f\\n", id, name, gpa);
-}</pre>
+# Reading CSV
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)  # each row is a list</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> File handling allows programs to persist data beyond program execution. Always check if fopen returns NULL (file open failed) and always close files after use to prevent data loss or corruption.</div>
+            <h3>Working with JSON Files</h3>
+            <pre>import json
+
+# Writing JSON
+student = {
+    "id": 101,
+    "name": "Juan Dela Cruz",
+    "course": "BSIT",
+    "gpa": 1.75
+}
+
+with open("student.json", "w") as file:
+    json.dump(student, file, indent=4)
+
+# Reading JSON
+with open("student.json", "r") as file:
+    data = json.load(file)
+    print(data["name"])  # Juan Dela Cruz</pre>
+
+            <h3>Error Handling in File Operations</h3>
+            <pre>try:
+    with open("nonexistent.txt", "r") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found! Please check the filename.")
+except PermissionError:
+    print("You don't have permission to access this file.")</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Python's <code>with</code> statement ensures files are properly closed after use. Common modes are "r" (read), "w" (write), and "a" (append). Python has built-in support for CSV and JSON file formats. Always handle file-related errors with try-except blocks.</div>
         `
     },
     f3: {
-        title: "Structures & Unions",
+        title: "Exception Handling & OOP",
         period: "FINALS",
         content: `
-            <h2>Structures & Unions</h2>
+            <h2>Exception Handling & OOP</h2>
             <span class="period-badge">FINALS</span>
-            <p>A <strong>structure</strong> is a user-defined data type that groups variables of different data types under a single name. A <strong>union</strong> is similar but shares memory space among its members.</p>
+            <p><strong>Exception handling</strong> allows you to manage errors gracefully at runtime. <strong>Object-Oriented Programming (OOP)</strong> is a paradigm that organizes code around objects and classes.</p>
 
-            <h3>Defining a Structure</h3>
-            <pre>struct Student {
-    int id;
-    char name[50];
-    char course[20];
-    float gpa;
-};</pre>
+            <h3>Part 1: Exception Handling</h3>
+            <p>Exceptions are errors that occur during program execution. Python provides try-except blocks to handle them without crashing the program.</p>
 
-            <h3>Using Structures</h3>
-            <pre>struct Student s1;                     // declaration
-s1.id = 101;
-strcpy(s1.name, "Juan Dela Cruz");
-strcpy(s1.course, "BSIT");
-s1.gpa = 1.75;
+            <h4>Basic Try-Except</h4>
+            <pre>try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print(result)
+except ValueError:
+    print("Invalid input! Please enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"An error occurred: {e}")</pre>
 
-// Declaration + initialization
-struct Student s2 = {102, "Maria Santos", "BSCS", 1.50};
+            <h4>Try-Except-Else-Finally</h4>
+            <pre>try:
+    file = open("data.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found!")
+else:
+    print("File read successfully!")
+    print(content)
+finally:
+    print("This always runs, even if an error occurs.")</pre>
 
-// Accessing members
-printf("Name: %s", s1.name);
-printf("GPA: %.2f", s1.gpa);</pre>
+            <h4>Raising Exceptions</h4>
+            <pre>def withdraw(balance, amount):
+    if amount < 0:
+        raise ValueError("Amount cannot be negative")
+    if amount > balance:
+        raise ValueError("Insufficient balance")
+    return balance - amount
 
-            <h3>Arrays of Structures</h3>
-            <pre>struct Student students[3] = {
-    {101, "Juan", "BSIT", 1.75},
-    {102, "Maria", "BSCS", 1.50},
-    {103, "Pedro", "BSIT", 2.00}
-};
+try:
+    new_balance = withdraw(1000, 1500)
+except ValueError as e:
+    print(e)</pre>
 
-for (int i = 0; i < 3; i++) {
-    printf("%d %s %.2f\\n",
-        students[i].id,
-        students[i].name,
-        students[i].gpa);
-}</pre>
+            <h3>Part 2: Object-Oriented Programming</h3>
+            <p>Python supports OOP with classes, objects, inheritance, and more.</p>
 
-            <h3>Structures and Functions</h3>
-            <pre>void displayStudent(struct Student s) {
-    printf("ID: %d\\n", s.id);
-    printf("Name: %s\\n", s.name);
-    printf("GPA: %.2f\\n", s.gpa);
-}
+            <h4>Classes and Objects</h4>
+            <pre>class Student:
+    # Class attribute (shared by all instances)
+    college = "FBC"
 
-struct Student createStudent(int id, char name[], float gpa) {
-    struct Student s;
-    s.id = id;
-    strcpy(s.name, name);
-    s.gpa = gpa;
-    return s;
-}</pre>
+    # Constructor
+    def __init__(self, name, course, gpa):
+        # Instance attributes
+        self.name = name
+        self.course = course
+        self.gpa = gpa
 
-            <h3>Unions</h3>
-            <pre>union Data {
-    int i;
-    float f;
-    char str[20];
-};
+    # Instance method
+    def display(self):
+        print(f"{self.name} | {self.course} | GPA: {self.gpa}")
 
-int main() {
-    union Data data;
-    data.i = 10;
-    printf("%d", data.i);     // 10
-    data.f = 3.14;
-    printf("%f", data.f);     // 3.14 (i is overwritten)
-    return 0;
-}</pre>
+    # String representation
+    def __str__(self):
+        return f"Student: {self.name}"
 
-            <h3>typedef</h3>
-            <pre>typedef struct {
-    int x, y;
-} Point;
+# Creating objects
+s1 = Student("Juan Dela Cruz", "BSIT", 1.75)
+s2 = Student("Maria Santos", "BSCS", 1.50)
 
-Point p1 = {10, 20};
-printf("(%d, %d)", p1.x, p1.y);</pre>
+s1.display()
+print(s1.college)  # FBC (class attribute)</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Structures group related data of different types into a single unit. They are essential for modeling real-world entities in programs. Unions save memory but can only store one member at a time. The typedef keyword simplifies struct declarations.</div>
+            <h4>Instance vs Class vs Static Methods</h4>
+            <pre>class Example:
+    class_var = "shared"
+
+    def instance_method(self):
+        """Has access to instance (self) and class"""
+        return f"Instance: {self.class_var}"
+
+    @classmethod
+    def class_method(cls):
+        """Has access to class (cls) but not instance"""
+        return f"Class: {cls.class_var}"
+
+    @staticmethod
+    def static_method():
+        """Has no access to instance or class"""
+        return "Static: independent"</pre>
+
+            <h4>Inheritance</h4>
+            <pre>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        return f"Hi, I'm {self.name} and I'm {self.age} years old."
+
+class Student(Person):
+    def __init__(self, name, age, course, gpa):
+        super().__init__(name, age)  # call parent constructor
+        self.course = course
+        self.gpa = gpa
+
+    # Override parent method
+    def introduce(self):
+        return f"{super().introduce()} I'm studying {self.course}."
+
+# Usage
+s = Student("Juan", 20, "BSIT", 1.75)
+print(s.introduce())</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Exception handling with try-except keeps your programs running gracefully through errors. OOP in Python uses classes, objects, inheritance, and special methods (__init__, __str__). Class methods (@classmethod) and static methods (@staticmethod) provide different levels of access in a class.</div>
         `
     }
 };
