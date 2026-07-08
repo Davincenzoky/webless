@@ -2,7 +2,7 @@
   "name": "Study Notes - College FBC",
   "short_name": "Study Notes",
   "description": "Your all-in-one digital study companion for IT, STS, Information Management & more",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#6366f1",

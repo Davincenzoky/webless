@@ -1,10 +1,10 @@
 const CACHE = 'webless-v1';
 
 const PRECACHE = [
-  '/',
-  '/index.html',
-  '/logo.png',
-  '/manifest.json'
+  './',
+  './index.html',
+  './logo.png',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
