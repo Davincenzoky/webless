@@ -1708,15 +1708,16 @@ const subjects = {
         code: "MIT",
         name: "Comprehensive Exam for MIT",
         icon: "🎓",
-        desc: "A comprehensive reviewer covering Object-Oriented Programming, Advanced Computer Networks, Technology & Project Management, and Information Assurance & Security for MIT comprehensive examinations.",
+        desc: "A comprehensive reviewer covering Object-Oriented Programming, Advanced Computer Networks, Technology & Project Management, Information Assurance & Security, and Information Technology Assurance for MIT comprehensive examinations.",
         password: "COMPRE2025",
         periods: ["REVIEW"],
         lessons: {
             review: [
-                { id: "r1", label: "1. Object-Oriented Programming (OOP)" },
+                { id: "r1", label: "1. Advance Object Oriented Programming" },
                 { id: "r2", label: "2. Advanced Computer Networks" },
                 { id: "r3", label: "3. Technology & Project Management" },
-                { id: "r4", label: "4. Information Assurance & Security" }
+                { id: "r4", label: "4. Information Assurance & Security" },
+                { id: "r5", label: "5. Information Technology Assurance" }
             ]
         }
     }
@@ -2053,6 +2054,14 @@ const activities = {
                 { question: "What is the maximum downtime allowed if a system has 99.99% availability?", choices: ["52.56 minutes/year", "8.76 hours/year", "87.6 hours/year", "5.26 minutes/year"], correct: 3 }
             ],
             assignment: "Write a comprehensive Information Security Policy for a university. Cover: data classification, access control, encryption standards, incident response procedure, and disaster recovery plan. Reference relevant Philippine laws (RA 10173, RA 10175)."
+        },
+        r5: {
+            quiz: [
+                { question: "What is the primary goal of Information Technology Assurance?", choices: ["Maximize profits", "Ensure data integrity, confidentiality, and availability", "Increase network speed", "Reduce hardware costs"], correct: 1 },
+                { question: "Which framework is commonly used for IT governance and assurance?", choices: ["ITIL", "COBIT", "ISO 9001", "PMBOK"], correct: 1 },
+                { question: "What does a SOC 2 report primarily assess?", choices: ["Financial accuracy", "Security, availability, processing integrity, confidentiality, and privacy", "Software performance", "Employee productivity"], correct: 1 }
+            ],
+            assignment: "Conduct an IT assurance assessment on a hypothetical e-commerce company. Identify: (1) key IT risks, (2) control objectives using COBIT, (3) recommended audit procedures, (4) compliance requirements under Philippine laws. Submit a formal audit report."
         }
     }
 };
@@ -2082,7 +2091,7 @@ const finalOutputs = {
         finals: "Build a Python application for a student enrollment system using context managers for file handling, custom exceptions for validation, and magic methods for data representation. Include forms for adding, searching, displaying, and saving/loading data from files."
     },
     mit: {
-        review: "Complete a comprehensive written examination covering all four MIT subjects: OOP, Advanced Computer Networks, Technology & Project Management, and Information Assurance & Security. The exam consists of multiple-choice questions, concept explanations, problem-solving exercises, and essay-type questions that demonstrate mastery of the material. Submit all answer sheets and any supporting diagrams or code samples."
+        review: "Complete a comprehensive written examination covering all five MIT subjects: Advance Object Oriented Programming, Advanced Computer Networks, Technology & Project Management, Information Assurance & Security, and Information Technology Assurance. The exam consists of multiple-choice questions, concept explanations, problem-solving exercises, and essay-type questions that demonstrate mastery of the material. Submit all answer sheets and any supporting diagrams or code samples."
     }
 };
 
@@ -3776,10 +3785,10 @@ lessons.adbms.f3 = {
 // ===========================
 lessons.mit = {};
 lessons.mit.r1 = {
-    title: "Object-Oriented Programming (OOP)",
+    title: "Advance Object Oriented Programming",
     period: "REVIEW",
     content: `
-        <h2>Object-Oriented Programming (OOP)</h2>
+        <h2>Advance Object Oriented Programming</h2>
         <span class="period-badge">REVIEW</span>
 
         <h3>Core Concepts</h3>
@@ -3911,6 +3920,100 @@ lessons.mit.r1 = {
             <li><strong>Example:</strong> For a Banking System: Actors (Customer, Bank Teller, Admin) and Use Cases (Withdraw, Deposit, Check Balance, Transfer, Approve Loan).</li>
         </ul>
 
+        <h4>F. Cohesion & Coupling</h4>
+        <p><strong>Cohesion</strong> measures how closely related the responsibilities of a class are. <strong>Coupling</strong> measures the degree of dependency between classes.</p>
+        <ul>
+            <li><strong>High Cohesion:</strong> A class has a single, well-focused purpose. <em>Good.</em> Easier to maintain and understand.</li>
+            <li><strong>Low Cohesion:</strong> A class does many unrelated things. <em>Bad.</em> Hard to maintain, test, and reuse.</li>
+            <li><strong>Tight Coupling:</strong> A class directly depends on the concrete implementation of another class. <em>Bad.</em> Changes in one class force changes in others.</li>
+            <li><strong>Loose Coupling:</strong> A class depends on abstractions (interfaces/abstract classes) rather than concrete implementations. <em>Good.</em> Promotes flexibility and testability.</li>
+        </ul>
+        <p><strong>Example:</strong> An <code>OrderService</code> that directly instantiates <code>MySqlDatabase</code> is tightly coupled. If it depends on an <code>IDatabase</code> interface, it becomes loosely coupled and can easily switch to <code>PostgresDatabase</code> or <code>MongoDatabase</code>.</p>
+
+        <h4>G. Composition over Inheritance</h4>
+        <p><strong>Composition</strong> means building classes by including instances of other classes as fields, rather than inheriting from them. <strong>"HAS-A" over "IS-A".</strong></p>
+        <ul>
+            <li><strong>Why prefer composition?</strong> Inheritance creates rigid hierarchies that break easily (the "fragile base class" problem). Composition gives more flexibility at runtime.</li>
+            <li><strong>Example:</strong> Instead of <code>Car extends Engine</code> (IS-A), use <code>Car { Engine engine; }</code> (HAS-A). The car can swap engines, change behavior at runtime, and is not bound to a single engine type.</li>
+            <li><strong>Strategy Pattern</strong> is a classic example of composition: a <code>PaymentProcessor</code> holds a reference to an <code>IPaymentStrategy</code> and can switch between <code>CreditCardStrategy</code>, <code>PayPalStrategy</code>, or <code>GCashStrategy</code> at runtime.</li>
+        </ul>
+
+        <h4>H. More GoF Design Patterns</h4>
+
+        <p><strong>5. Creational — Builder:</strong> Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.</p>
+        <ul>
+            <li><strong>Example:</strong> Building a <code>Computer</code> object with optional parts (CPU, RAM, Storage, GPU). Instead of a constructor with 10 parameters, use a <code>ComputerBuilder</code> with chainable methods: <code>new ComputerBuilder().SetCPU("i9").SetRAM(32).SetStorage("1TB SSD").Build()</code>.</li>
+        </ul>
+
+        <p><strong>6. Behavioral — Strategy:</strong> Defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>Navigator</code> app that can route using different strategies: <code>CarStrategy</code>, <code>WalkingStrategy</code>, <code>PublicTransportStrategy</code>. The user selects the strategy at runtime.</li>
+        </ul>
+
+        <p><strong>7. Structural — Decorator:</strong> Attaches additional responsibilities to an object dynamically. Provides a flexible alternative to subclassing for extending functionality.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>Coffee</code> base class. Decorators like <code>MilkDecorator</code>, <code>SugarDecorator</code>, <code>WhippedCreamDecorator</code> wrap the coffee object and add cost/description. <code>new MilkDecorator(new SugarDecorator(new Espresso()))</code>.</li>
+        </ul>
+
+        <p><strong>8. Structural — Proxy:</strong> Provides a placeholder or surrogate for another object to control access to it (lazy loading, access control, logging).</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>VirtualProxy</code> for a high-resolution <code>Image</code> — loads the image only when it's actually displayed, not when the object is created.</li>
+            <li><strong>Example:</strong> A <code>ProtectedProxy</code> that checks user permissions before calling the real <code>BankAccount.Withdraw()</code> method.</li>
+        </ul>
+
+        <p><strong>9. Structural — Facade:</strong> Provides a simplified interface to a complex subsystem. Hides the complexity from the client.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>HomeTheaterFacade</code> that wraps <code>Amplifier</code>, <code>DVDPlayer</code>, <code>Projector</code>, <code>Screen</code>, and <code>Lights</code>. Instead of calling 5+ methods, the client calls one: <code>homeTheater.WatchMovie("Inception")</code>.</li>
+        </ul>
+
+        <h4>I. Dependency Injection (DI) & Inversion of Control (IoC)</h4>
+        <p><strong>Dependency Injection</strong> is a technique where an object receives its dependencies from an external source rather than creating them internally. It is the practical application of the Dependency Inversion Principle (DIP).</p>
+        <ul>
+            <li><strong>Types:</strong>
+                <ul>
+                    <li><strong>Constructor Injection:</strong> Dependencies are passed via the constructor.</li>
+                    <li><strong>Setter Injection:</strong> Dependencies are set via setter methods.</li>
+                    <li><strong>Interface Injection:</strong> Dependencies are passed through a method defined in an interface.</li>
+                </ul>
+            </li>
+            <li><strong>Example:</strong> Instead of <code>class EmailService { SmtpClient client = new SmtpClient(); }</code>, use constructor injection: <code>class EmailService { private IMailClient client; public EmailService(IMailClient client) { this.client = client; } }</code>.</li>
+            <li><strong>IoC Containers:</strong> Frameworks like Spring (Java), ASP.NET Core DI (C#), and Guice (Java) automate dependency injection and manage object lifetimes.</li>
+        </ul>
+
+        <h4>J. OOP & Concurrency</h4>
+        <p>Object-oriented systems often need to handle multiple threads of execution. Key concepts:</p>
+        <ul>
+            <li><strong>Thread Safety:</strong> Ensuring that an object behaves correctly when accessed by multiple threads simultaneously.</li>
+            <li><strong>Synchronization:</strong> Using locks (<code>synchronized</code> in Java, <code>lock</code> in C#) to prevent race conditions.</li>
+            <li><strong>Thread-Safe Patterns:</strong>
+                <ul>
+                    <li><strong>Immutable Objects:</strong> Objects whose state cannot be changed after creation. Inherently thread-safe. <em>Example:</em> <code>String</code> in Java/C#.</li>
+                    <li><strong>Double-Checked Locking:</strong> Used to implement thread-safe Singleton with minimal performance overhead.</li>
+                    <li><strong>Producer-Consumer:</strong> One or more threads produce data, one or more threads consume it, synchronized via a shared queue.</li>
+                    <li><strong>Read-Write Lock:</strong> Allows multiple readers or one writer, improving concurrency for read-heavy workloads.</li>
+                </ul>
+            </li>
+            <li><strong>Example:</strong> A thread-safe <code>BankAccount</code> class uses a lock around <code>Withdraw()</code> to prevent two threads from withdrawing simultaneously and causing an overdraft.</li>
+        </ul>
+
+        <h4>K. OOP & Functional Programming (FP) Paradigms</h4>
+        <p>Modern languages increasingly blend OOP and FP concepts:</p>
+        <ul>
+            <li><strong>Lambda Expressions / Anonymous Functions:</strong> Treat functions as first-class citizens. <em>Example:</em> <code>list.Where(x => x > 5).Select(x => x * x)</code> in C# LINQ.</li>
+            <li><strong>Streams & Pipelines:</strong> Processing sequences of data declaratively (Java Streams, C# LINQ, Kotlin Sequences).</li>
+            <li><strong>Records / Data Classes:</strong> Immutable data carriers with auto-generated <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code>. <em>Example:</em> Java <code>record Person(String name, int age)</code>, C# <code>record Person(string Name, int Age)</code>.</li>
+            <li><strong>Optional / Maybe:</strong> A container that may or may not hold a value, avoiding null reference errors. <em>Example:</em> <code>Optional&lt;User&gt;</code> in Java, <code>Nullable&lt;User&gt;</code> in C#.</li>
+            <li><strong>Pattern Matching:</strong> Checking an object against a pattern and extracting data. <em>Example:</em> C# <code>if (shape is Circle { Radius: &gt; 10 } c)</code>.</li>
+        </ul>
+
+        <h4>L. Testing OOP Code</h4>
+        <ul>
+            <li><strong>Unit Testing:</strong> Testing individual classes/methods in isolation. Frameworks: JUnit (Java), NUnit/xUnit (C#), pytest (Python).</li>
+            <li><strong>Mocking:</strong> Creating fake objects that simulate the behavior of real dependencies. Frameworks: Mockito (Java), Moq (C#), unittest.mock (Python).</li>
+            <li><strong>Test-Driven Development (TDD):</strong> Write tests first, then write code to pass the tests. Red → Green → Refactor cycle.</li>
+            <li><strong>Example:</strong> Testing <code>OrderService</code> with a mock <code>IDatabase</code> — no real database needed, just verify the correct methods were called with the right parameters.</li>
+        </ul>
+
         <h4>Sample Questions</h4>
         <ol>
             <li>What is the difference between an Abstract Class and an Interface?</li>
@@ -3919,6 +4022,12 @@ lessons.mit.r1 = {
             <li>Explain the Single Responsibility Principle. Give an example of a violation and how to fix it.</li>
             <li>What is the Singleton pattern? When would you use it?</li>
             <li>Draw a UML class diagram for a Library System with classes Book, Member, Librarian, and Loan. Show relationships (inheritance, association, aggregation) between them.</li>
+            <li>What is the difference between high cohesion and low coupling? Why are both desirable?</li>
+            <li>Explain why composition is often preferred over inheritance. Give an example.</li>
+            <li>Describe the Builder pattern. When would you use it instead of a regular constructor?</li>
+            <li>What is Dependency Injection? Explain the three types with examples.</li>
+            <li>How would you make a <code>BankAccount</code> class thread-safe?</li>
+            <li>What is a Mock object? How does it help in unit testing?</li>
         </ol>
     `
 };
@@ -4372,6 +4481,143 @@ lessons.mit.r4 = {
             <li>What are the key rights of a data subject under the Philippine Data Privacy Act (RA 10173)?</li>
             <li>What offenses are penalized under RA 10175 (Cybercrime Prevention Act)?</li>
             <li>A hospital's patient records system goes down. The IT director says RTO = 1 hour, RPO = 5 minutes. Interpret these numbers. What do they mean for the hospital?</li>
+        </ol>
+    `
+};
+
+lessons.mit.r5 = {
+    title: "Information Technology Assurance",
+    period: "REVIEW",
+    content: `
+        <h2>Information Technology Assurance</h2>
+        <span class="period-badge">REVIEW</span>
+
+        <h3>Core Concepts</h3>
+
+        <h4>A. What is IT Assurance?</h4>
+        <p><strong>IT Assurance</strong> is the process of evaluating an organization's IT systems, controls, and processes to ensure they meet defined requirements for confidentiality, integrity, availability, and compliance.</p>
+        <ul>
+            <li><strong>Objective:</strong> Provide independent, objective evidence that IT controls are operating effectively.</li>
+            <li><strong>Scope:</strong> IT governance, security, operations, data management, disaster recovery, and regulatory compliance.</li>
+            <li><strong>Key Difference from Audit:</strong> Assurance is broader — it encompasses audit, assessment, review, and attestation engagements.</li>
+        </ul>
+
+        <h4>B. IT Governance Frameworks</h4>
+
+        <p><strong>1. COBIT (Control Objectives for Information and Related Technologies):</strong></p>
+        <ul>
+            <li>Developed by ISACA. Provides a comprehensive framework for IT governance and management.</li>
+            <li><strong>Key Principles:</strong> Meeting stakeholder needs, covering the enterprise end-to-end, applying a single integrated framework, enabling a holistic approach, separating governance from management.</li>
+            <li><strong>COBIT Domains:</strong>
+                <ul>
+                    <li><strong>EDM (Evaluate, Direct, Monitor):</strong> Governance objectives.</li>
+                    <li><strong>APO (Align, Plan, Organize):</strong> Management — strategic alignment.</li>
+                    <li><strong>BAI (Build, Acquire, Implement):</strong> Management — solution delivery.</li>
+                    <li><strong>DSS (Deliver, Service, Support):</strong> Management — service delivery.</li>
+                    <li><strong>MEA (Monitor, Evaluate, Assess):</strong> Management — performance monitoring.</li>
+                </ul>
+            </li>
+            <li><strong>Maturity Levels (CMMI-based):</strong> 0 (Incomplete) to 5 (Optimizing).</li>
+        </ul>
+
+        <p><strong>2. ISO 27001 — Information Security Management:</strong></p>
+        <ul>
+            <li>International standard for establishing, implementing, maintaining, and continually improving an Information Security Management System (ISMS).</li>
+            <li><strong>Key Requirements:</strong> Risk assessment, security policy, asset management, access control, cryptography, incident management, business continuity.</li>
+            <li><strong>Annex A Controls:</strong> 93 controls grouped into 14 domains (e.g., A.9 Access Control, A.12 Operations Security).</li>
+        </ul>
+
+        <h4>C. Types of IT Assurance Engagements</h4>
+        <ul>
+            <li><strong>IT Audit:</strong> Systematic examination of IT controls, policies, and procedures. <em>Example:</em> Auditing user access rights to a financial system.</li>
+            <li><strong>Vulnerability Assessment:</strong> Automated scanning to identify security weaknesses (missing patches, misconfigurations).</li>
+            <li><strong>Penetration Testing:</strong> Simulated attacks to exploit vulnerabilities and test real-world security posture. <em>Example:</em> Ethical hacker attempts to breach a web application.</li>
+            <li><strong>Compliance Review:</strong> Checking adherence to laws, regulations, and standards (e.g., BSP regulations, DPA compliance).</li>
+            <li><strong>SOC Reports (Service Organization Controls):</strong>
+                <ul>
+                    <li><strong>SOC 1:</strong> Controls relevant to financial reporting (SSAE 18 / ISAE 3402).</li>
+                    <li><strong>SOC 2:</strong> Controls related to security, availability, processing integrity, confidentiality, and privacy (Trust Services Criteria).</li>
+                    <li><strong>SOC 3:</strong> Public-facing summary of SOC 2.</li>
+                </ul>
+            </li>
+            <li><strong>Forensic Investigation:</strong> Systematic collection and analysis of digital evidence for legal proceedings.</li>
+        </ul>
+
+        <h4>D. Risk-Based Auditing</h4>
+        <p>Modern IT assurance follows a <strong>risk-based approach</strong> — focusing audit effort on areas with the highest risk.</p>
+        <ul>
+            <li><strong>Steps:</strong>
+                <ol>
+                    <li><strong>Identify IT Risks:</strong> Threat landscape, asset criticality, vulnerability data.</li>
+                    <li><strong>Assess Inherent Risk:</strong> Risk level without considering controls.</li>
+                    <li><strong>Evaluate Controls:</strong> Design effectiveness and operating effectiveness.</li>
+                    <li><strong>Determine Residual Risk:</strong> Risk remaining after controls are applied.</li>
+                    <li><strong>Develop Audit Plan:</strong> Focus on high residual risk areas.</li>
+                </ol>
+            </li>
+            <li><strong>Example:</strong> A bank's online banking system has inherent risk = HIGH (critical asset, public-facing, handles transactions). Controls include MFA, encryption, and WAF. If controls are effective, residual risk = LOW, and audit effort is reduced.</li>
+        </ul>
+
+        <h4>E. IT Controls</h4>
+        <p><strong>General IT Controls (GITCs):</strong> Pervasive controls that apply to the entire IT environment.</p>
+        <ul>
+            <li>Program development and change management</li>
+            <li>Logical access controls (user provisioning, authentication, authorization)</li>
+            <li>Physical security (data centers, server rooms)</li>
+            <li>Backup and disaster recovery</li>
+        </ul>
+
+        <p><strong>Application Controls:</strong> Controls embedded within specific applications.</p>
+        <ul>
+            <li><strong>Input Controls:</strong> Validation, range checks, mandatory fields. <em>Example:</em> An online form rejects negative values for "Age".</li>
+            <li><strong>Processing Controls:</strong> Run-to-run totals, reasonableness checks. <em>Example:</em> A payroll system verifies total salary before and after processing.</li>
+            <li><strong>Output Controls:</strong> Report distribution logs, reconciliation. <em>Example:</em> A bank's end-of-day report is reconciled against transaction logs.</li>
+        </ul>
+
+        <h4>F. Data Integrity & Assurance Techniques</h4>
+        <ul>
+            <li><strong>Data Validation:</strong> Ensuring data meets defined rules before processing (e.g., format checks, consistency checks).</li>
+            <li><strong>Data Reconciliation:</strong> Comparing two data sets to ensure they match. <em>Example:</em> Reconciling bank statements against internal transaction records.</li>
+            <li><strong>CAATs (Computer-Assisted Audit Techniques):</strong> Using software to analyze large datasets. Tools: ACL, IDEA, SQL queries, Python/Pandas.</li>
+            <li><strong>Continuous Auditing:</strong> Real-time or near-real-time monitoring of controls using automated tools (e.g., SIEM alerts, automated control testing).</li>
+            <li><strong>Blockchain for Assurance:</strong> Immutable ledger provides inherent audit trail. <em>Example:</em> Supply chain tracking with verifiable transaction history.</li>
+        </ul>
+
+        <h4>G. Regulatory Compliance & Philippine Context</h4>
+        <ul>
+            <li><strong>BSP (Bangko Sentral ng Pilipinas) Regulations:</strong> Circulars on IT risk management, cybersecurity, and outsourcing (e.g., BSP Circular 982 on IT Risk Management).</li>
+            <li><strong>SEC (Securities and Exchange Commission) Guidelines:</strong> Data breach notification, corporate governance.</li>
+            <li><strong>NTC (National Telecommunications Commission):</strong> Regulations on telecommunications and data privacy.</li>
+            <li><strong>RA 10173 (Data Privacy Act):</strong> Requires organizations to implement security measures, conduct privacy impact assessments, and report breaches to NPC.</li>
+            <li><strong>RA 10175 (Cybercrime Prevention Act):</strong> Criminalizes cyber offenses and requires organizations to assist in investigations.</li>
+        </ul>
+
+        <h4>H. IT Assurance Reporting</h4>
+        <ul>
+            <li><strong>Audit Report:</strong> Formal document stating scope, methodology, findings, and recommendations. Includes an opinion on control effectiveness.</li>
+            <li><strong>Management Letter:</strong> Less formal communication highlighting operational improvements.</li>
+            <li><strong>Opinion Types:</strong>
+                <ul>
+                    <li><strong>Unqualified (Clean):</strong> Controls are effective.</li>
+                    <li><strong>Qualified:</strong> Controls are effective except for specific areas.</li>
+                    <li><strong>Adverse:</strong> Controls are ineffective.</li>
+                    <li><strong>Disclaimer:</strong> Insufficient evidence to form an opinion.</li>
+                </ul>
+            </li>
+            <li><strong>Follow-up:</strong> Tracking and verification of management's remediation actions.</li>
+        </ul>
+
+        <h4>Sample Questions</h4>
+        <ol>
+            <li>What is the difference between IT Assurance and IT Audit?</li>
+            <li>Explain the five COBIT domains and their purpose.</li>
+            <li>What are the key differences between SOC 1, SOC 2, and SOC 3 reports?</li>
+            <li>Describe the risk-based audit approach. Why is it preferred over a checklist-based approach?</li>
+            <li>What are General IT Controls (GITCs)? Give at least four examples.</li>
+            <li>What is the difference between input controls and output controls in application controls?</li>
+            <li>How can CAATs (Computer-Assisted Audit Techniques) improve the efficiency of an IT audit?</li>
+            <li>What are the key IT compliance requirements under BSP regulations for Philippine banks?</li>
+            <li>Explain the four types of audit opinions. What does each mean for stakeholders?</li>
         </ol>
     `
 };
