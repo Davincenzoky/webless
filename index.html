@@ -1709,7 +1709,7 @@ const subjects = {
         name: "Comprehensive Exam for MIT",
         icon: "🎓",
         desc: "A comprehensive reviewer covering Object-Oriented Programming, Advanced Computer Networks, Technology & Project Management, and Information Assurance & Security for MIT comprehensive examinations.",
-        password: "MIT2025",
+        password: "COMPRE2025",
         periods: ["REVIEW"],
         lessons: {
             review: [
@@ -2020,6 +2020,40 @@ const activities = {
             ],
             assignment: "Design a distributed database architecture for a global e-learning platform with users, courses, and assessments. Discuss data distribution strategy, replication approach, consistency model, and how the system handles node failures."
         }
+    },
+    mit: {
+        r1: {
+            quiz: [
+                { question: "Which SOLID principle states that a class should have only one reason to change?", choices: ["Open-Closed", "Single Responsibility", "Liskov Substitution", "Dependency Inversion"], correct: 1 },
+                { question: "Which design pattern ensures a class has only one instance and provides a global point of access to it?", choices: ["Factory", "Observer", "Singleton", "Adapter"], correct: 2 },
+                { question: "In UML, what does a solid line with a hollow diamond arrow represent?", choices: ["Inheritance", "Aggregation", "Composition", "Dependency"], correct: 1 }
+            ],
+            assignment: "Choose any three SOLID principles. For each, write a code example in Java or C# showing a violation and the corrected version. Also draw a UML class diagram for a Library System with at least 5 classes."
+        },
+        r2: {
+            quiz: [
+                { question: "Which network topology connects all devices to a single central cable?", choices: ["Star", "Ring", "Bus", "Mesh"], correct: 2 },
+                { question: "What does SDN separate from the data plane?", choices: ["Application plane", "Management plane", "Control plane", "Forwarding plane"], correct: 2 },
+                { question: "Which VPN protocol is commonly used for site-to-site VPNs and operates at Layer 3?", choices: ["SSL", "IPsec", "PPTP", "L2TP"], correct: 1 }
+            ],
+            assignment: "Design a network topology for a company with 3 branches (Manila, Cebu, Davao). Each branch has 50 employees. Include VLANs for HR, Finance, and Engineering departments. Specify the WAN connectivity and VPN approach between branches."
+        },
+        r3: {
+            quiz: [
+                { question: "If EV = ₱50,000, AC = ₱60,000, what is the Cost Performance Index (CPI)?", choices: ["1.2", "0.83", "1.0", "0.75"], correct: 1 },
+                { question: "Which ITIL stage focuses on designing new or changed services?", choices: ["Service Strategy", "Service Design", "Service Transition", "Service Operation"], correct: 1 },
+                { question: "Which DevOps practice involves automatically building and testing code changes?", choices: ["Infrastructure as Code", "Continuous Integration", "Monitoring", "Configuration Management"], correct: 1 }
+            ],
+            assignment: "Create a Work Breakdown Structure (WBS) for a university-wide Learning Management System (LMS) deployment project. Identify at least 15 tasks across 4 phases. Then calculate EV, AC, PV, CPI, and SPI for one phase using assumed values."
+        },
+        r4: {
+            quiz: [
+                { question: "Which encryption method uses a single shared key for both encryption and decryption?", choices: ["Symmetric", "Asymmetric", "Hashing", "PKI"], correct: 0 },
+                { question: "What does RA 10173, also known as the Data Privacy Act, primarily protect?", choices: ["Intellectual property", "Personal information", "Government data", "Corporate secrets"], correct: 1 },
+                { question: "What is the maximum downtime allowed if a system has 99.99% availability?", choices: ["52.56 minutes/year", "8.76 hours/year", "87.6 hours/year", "5.26 minutes/year"], correct: 3 }
+            ],
+            assignment: "Write a comprehensive Information Security Policy for a university. Cover: data classification, access control, encryption standards, incident response procedure, and disaster recovery plan. Reference relevant Philippine laws (RA 10173, RA 10175)."
+        }
     }
 };
 
@@ -2046,6 +2080,9 @@ const finalOutputs = {
         prelim: "Design and implement a Python class library for a library management system. Include classes for Book, Member, and Librarian with proper encapsulation, properties, and methods. Submit UML diagram and source code.",
         midterm: "Develop a Python payroll system using inheritance, polymorphism, and ABCs. Include Employee (ABC), FullTimeEmployee, PartTimeEmployee classes. Calculate salaries and display payslips. Submit source code and sample output.",
         finals: "Build a Python application for a student enrollment system using context managers for file handling, custom exceptions for validation, and magic methods for data representation. Include forms for adding, searching, displaying, and saving/loading data from files."
+    },
+    mit: {
+        review: "Complete a comprehensive written examination covering all four MIT subjects: OOP, Advanced Computer Networks, Technology & Project Management, and Information Assurance & Security. The exam consists of multiple-choice questions, concept explanations, problem-solving exercises, and essay-type questions that demonstrate mastery of the material. Submit all answer sheets and any supporting diagrams or code samples."
     }
 };
 
@@ -3793,11 +3830,95 @@ lessons.mit.r1 = {
             <li><strong>Abstract Class:</strong> A class that cannot be instantiated. It may contain abstract methods (without a body) and concrete methods.</li>
         </ul>
 
+        <h4>C. SOLID Principles</h4>
+        <p>The <strong>SOLID</strong> principles are five design principles that make object-oriented code more maintainable, flexible, and understandable.</p>
+
+        <p><strong>1. S — Single Responsibility Principle (SRP):</strong> A class should have only one reason to change. Each class should do one thing and do it well.</p>
+        <ul>
+            <li><strong>Violation Example:</strong> A <code>Report</code> class that stores data AND prints the report.</li>
+            <li><strong>Fix:</strong> Separate into <code>Report</code> (data) and <code>ReportPrinter</code> (output).</li>
+        </ul>
+
+        <p><strong>2. O — Open-Closed Principle (OCP):</strong> Classes should be open for extension but closed for modification. You should be able to add new behavior without changing existing code.</p>
+        <ul>
+            <li><strong>Example:</strong> Use an interface <code>IShape</code> with a <code>CalculateArea()</code> method. Add new shapes (<code>Circle</code>, <code>Triangle</code>) without modifying existing code.</li>
+        </ul>
+
+        <p><strong>3. L — Liskov Substitution Principle (LSP):</strong> Objects of a parent class should be replaceable with objects of a child class without affecting correctness.</p>
+        <ul>
+            <li><strong>Violation Example:</strong> A <code>Square</code> class inheriting from <code>Rectangle</code> — setting width may affect height, breaking expected behavior.</li>
+            <li><strong>Fix:</strong> Use a common abstract base class <code>Shape</code> instead.</li>
+        </ul>
+
+        <p><strong>4. I — Interface Segregation Principle (ISP):</strong> Clients should not be forced to depend on interfaces they do not use. Large interfaces should be split into smaller, focused ones.</p>
+        <ul>
+            <li><strong>Violation Example:</strong> A <code>IMultiFunctionPrinter</code> interface with <code>Print()</code>, <code>Scan()</code>, <code>Fax()</code> — a simple printer should not need to implement <code>Fax()</code>.</li>
+            <li><strong>Fix:</strong> Split into <code>IPrinter</code>, <code>IScanner</code>, <code>IFax</code> interfaces.</li>
+        </ul>
+
+        <p><strong>5. D — Dependency Inversion Principle (DIP):</strong> High-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>NotificationService</code> depends on an <code>IMessageSender</code> interface instead of directly on <code>EmailSender</code>. This allows easily swapping to <code>SmsSender</code> or <code>PushNotificationSender</code>.</li>
+        </ul>
+
+        <h4>D. Design Patterns (GoF)</h4>
+        <p><strong>Design Patterns</strong> are reusable solutions to common software design problems. They are categorized into Creational, Structural, and Behavioral patterns.</p>
+
+        <p><strong>1. Creational — Singleton:</strong> Ensures a class has only one instance and provides a global access point to it.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>DatabaseConnection</code> class that should only create one connection object to avoid resource waste.</li>
+            <li><strong>Implementation:</strong> Private constructor, static method <code>getInstance()</code> returning the single instance.</li>
+        </ul>
+
+        <p><strong>2. Creational — Factory Method:</strong> Provides an interface for creating objects but lets subclasses decide which class to instantiate.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>VehicleFactory</code> with a method <code>CreateVehicle(type)</code> that returns <code>Car</code>, <code>Motorcycle</code>, or <code>Truck</code> based on input.</li>
+        </ul>
+
+        <p><strong>3. Structural — Adapter:</strong> Allows incompatible interfaces to work together by converting the interface of a class into another interface the client expects.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>MediaPlayer</code> that only plays MP3 files needs an adapter to play VLC files. The <code>VlcAdapter</code> wraps the <code>VlcPlayer</code> and implements the <code>MediaPlayer</code> interface.</li>
+        </ul>
+
+        <p><strong>4. Behavioral — Observer:</strong> Defines a one-to-many dependency where when one object changes state, all its dependents are notified automatically.</p>
+        <ul>
+            <li><strong>Example:</strong> A <code>WeatherStation</code> (subject) notifies multiple <code>DisplayDevice</code> objects (observers) whenever temperature changes.</li>
+        </ul>
+
+        <h4>E. UML Diagrams</h4>
+        <p><strong>Unified Modeling Language (UML)</strong> is a visual language for modeling software systems.</p>
+
+        <p><strong>1. Class Diagram:</strong> Shows the structure of a system by displaying classes, attributes, methods, and relationships.</p>
+        <ul>
+            <li><strong>Relationships:</strong>
+                <ul>
+                    <li><strong>Inheritance:</strong> Solid line with hollow triangle arrow (▷) — "IS-A"</li>
+                    <li><strong>Association:</strong> Solid line — "HAS-A" (e.g., Student takes Course)</li>
+                    <li><strong>Aggregation:</strong> Solid line with hollow diamond — "HAS-A" but parts can exist without the whole (e.g., Department contains Professors)</li>
+                    <li><strong>Composition:</strong> Solid line with filled diamond — stronger ownership, parts cannot exist without the whole (e.g., House contains Rooms)</li>
+                    <li><strong>Dependency:</strong> Dashed arrow — "USES"</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><strong>2. Sequence Diagram:</strong> Shows how objects interact in a time sequence. Useful for modeling use case scenarios.</p>
+        <ul>
+            <li><strong>Example:</strong> A student logs into an online exam system: <code>Student → LoginForm → AuthenticationService → Database</code> with lifelines and messages showing the flow.</li>
+        </ul>
+
+        <p><strong>3. Use Case Diagram:</strong> Shows the interactions between actors (users, systems) and the system's functionalities (use cases).</p>
+        <ul>
+            <li><strong>Example:</strong> For a Banking System: Actors (Customer, Bank Teller, Admin) and Use Cases (Withdraw, Deposit, Check Balance, Transfer, Approve Loan).</li>
+        </ul>
+
         <h4>Sample Questions</h4>
         <ol>
             <li>What is the difference between an Abstract Class and an Interface?</li>
             <li>Explain the difference between Method Overloading and Method Overriding.</li>
             <li>Write a Java/C# class for a <code>BankAccount</code> with private fields <code>accountNumber</code> and <code>balance</code>, and public methods for <code>Deposit()</code> and <code>Withdraw()</code>.</li>
+            <li>Explain the Single Responsibility Principle. Give an example of a violation and how to fix it.</li>
+            <li>What is the Singleton pattern? When would you use it?</li>
+            <li>Draw a UML class diagram for a Library System with classes Book, Member, Librarian, and Loan. Show relationships (inheritance, association, aggregation) between them.</li>
         </ol>
     `
 };
@@ -3877,6 +3998,65 @@ lessons.mit.r2 = {
             <li><strong>Techniques:</strong> Queuing (FIFO, PQ, WFQ), Traffic Shaping, and Policing.</li>
         </ul>
 
+        <h4>E. Network Topologies & Types</h4>
+        <p><strong>Network Topologies</strong> describe the physical or logical arrangement of devices in a network.</p>
+        <ul>
+            <li><strong>Star:</strong> All devices connect to a central hub/switch. <strong>Example:</strong> Typical office LAN. <strong>Advantage:</strong> Easy to manage, one cable failure doesn't affect others.</li>
+            <li><strong>Bus:</strong> All devices share a single communication line. <strong>Example:</strong> Early Ethernet networks. <strong>Disadvantage:</strong> A single break can bring down the entire network.</li>
+            <li><strong>Ring:</strong> Each device is connected to two others, forming a closed loop. <strong>Example:</strong> Token Ring networks. <strong>Disadvantage:</strong> Failure of one device can disrupt the whole network.</li>
+            <li><strong>Mesh:</strong> Every device is connected to every other device. <strong>Example:</strong> Internet backbone, WANs. <strong>Advantage:</strong> High fault tolerance and redundancy.</li>
+            <li><strong>Hybrid:</strong> Combination of two or more topologies. <strong>Example:</strong> Large enterprise networks combining star and mesh.</li>
+        </ul>
+
+        <p><strong>Network Types</strong></p>
+        <ul>
+            <li><strong>LAN (Local Area Network):</strong> Small geographic area (office, building). High speed, low cost.</li>
+            <li><strong>WAN (Wide Area Network):</strong> Large geographic area (cities, countries). Uses leased lines, satellites. <strong>Example:</strong> The Internet.</li>
+            <li><strong>MAN (Metropolitan Area Network):</strong> Covers a city. <strong>Example:</strong> City-wide WiFi network.</li>
+            <li><strong>PAN (Personal Area Network):</strong> Very short range (few meters). <strong>Example:</strong> Bluetooth connecting phone to headphones.</li>
+            <li><strong>WLAN (Wireless LAN):</strong> LAN using wireless signals. <strong>Example:</strong> Home WiFi network.</li>
+        </ul>
+
+        <h4>F. Wireless & Cellular Networks</h4>
+        <p><strong>WiFi Standards (IEEE 802.11):</strong></p>
+        <ul>
+            <li><strong>802.11a:</strong> 5 GHz, up to 54 Mbps. Shorter range but less interference.</li>
+            <li><strong>802.11b/g:</strong> 2.4 GHz, up to 11/54 Mbps. Longer range, more interference.</li>
+            <li><strong>802.11n (WiFi 4):</strong> 2.4/5 GHz, up to 600 Mbps. Introduced MIMO (Multiple Input Multiple Output).</li>
+            <li><strong>802.11ac (WiFi 5):</strong> 5 GHz, up to 3.5 Gbps. Beamforming, MU-MIMO.</li>
+            <li><strong>802.11ax (WiFi 6):</strong> 2.4/5 GHz, up to 9.6 Gbps. Better performance in dense environments, OFDMA.</li>
+        </ul>
+
+        <p><strong>Cellular Generations:</strong></p>
+        <ul>
+            <li><strong>4G LTE:</strong> All-IP network, up to 100 Mbps (mobile) / 1 Gbps (stationary). Supports VoLTE.</li>
+            <li><strong>5G:</strong> Three usage scenarios: eMBB (enhanced Mobile Broadband), URLLC (Ultra-Reliable Low Latency), mMTC (massive Machine-Type Communications). Up to 20 Gbps, sub-1ms latency.</li>
+        </ul>
+
+        <h4>G. Software-Defined Networking (SDN)</h4>
+        <p><strong>SDN</strong> decouples the control plane (decision-making) from the data plane (packet forwarding), making networks more programmable and flexible.</p>
+        <ul>
+            <li><strong>Control Plane:</strong> Makes decisions about where traffic should go. Centralized SDN controller (e.g., OpenDaylight, ONOS).</li>
+            <li><strong>Data Plane:</strong> Forwards packets based on control plane decisions. SDN switches (e.g., OpenFlow-enabled).</li>
+            <li><strong>Benefits:</strong> Centralized management, easier to implement policies, better resource utilization, improved automation.</li>
+            <li><strong>Example:</strong> Google's B4 network uses SDN to interconnect its data centers, achieving 95% link utilization.</li>
+        </ul>
+
+        <h4>H. Virtual LANs (VLANs) & Virtual Private Networks (VPNs)</h4>
+        <p><strong>VLAN:</strong> A logical grouping of devices on the same physical network, allowing them to communicate as if on separate networks.</p>
+        <ul>
+            <li><strong>Benefit:</strong> Improved security, reduced broadcast traffic, simplified management.</li>
+            <li><strong>Example:</strong> In a company, HR computers (VLAN 10), Finance computers (VLAN 20), and Engineering computers (VLAN 30) are separated even though they share the same physical switch.</li>
+            <li><strong>Trunking (802.1Q):</strong> Carries multiple VLANs between switches using tagged frames.</li>
+        </ul>
+
+        <p><strong>VPN:</strong> Creates a secure, encrypted tunnel over a public network (usually the Internet) for remote access or site-to-site connectivity.</p>
+        <ul>
+            <li><strong>Site-to-Site VPN:</strong> Connects entire networks (e.g., branch office to headquarters). Uses IPsec or MPLS.</li>
+            <li><strong>Remote Access VPN:</strong> Allows individual users to connect to the corporate network from anywhere. Uses IPsec or SSL (e.g., OpenVPN, WireGuard).</li>
+            <li><strong>Example:</strong> A salesperson in a hotel uses a VPN client to securely access the company's internal CRM system.</li>
+        </ul>
+
         <h4>Sample Questions</h4>
         <ol>
             <li>Compare and contrast the OSI and TCP/IP models.</li>
@@ -3884,6 +4064,10 @@ lessons.mit.r2 = {
             <li>Distinguish between a Router and a Switch. At which OSI layers do they operate?</li>
             <li>How does OSPF differ from RIP in terms of convergence and metrics?</li>
             <li>Explain the difference between AH and ESP in the IPsec protocol suite.</li>
+            <li>What are the advantages of a Star topology over a Bus topology?</li>
+            <li>Explain how SDN separates the control plane from the data plane. What is the benefit?</li>
+            <li>What is a VLAN? Give a real-world scenario where VLANs would be used.</li>
+            <li>Compare site-to-site VPN and remote access VPN. When would you use each?</li>
         </ol>
     `
 };
@@ -3941,6 +4125,85 @@ lessons.mit.r3 = {
             <li><strong>Data Management & Security:</strong> Projects must address data privacy (GDPR, HIPAA), security protocols, and data governance.</li>
         </ul>
 
+        <h4>D. Earned Value Management (EVM)</h4>
+        <p><strong>EVM</strong> is a project management technique for measuring project performance and progress in an objective manner by integrating scope, schedule, and cost.</p>
+        <ul>
+            <li><strong>Key Metrics:</strong>
+                <ul>
+                    <li><strong>PV (Planned Value):</strong> The budgeted cost of work scheduled. <em>"How much work should be done?"</em></li>
+                    <li><strong>EV (Earned Value):</strong> The budgeted cost of work actually performed. <em>"How much work is actually done?"</em></li>
+                    <li><strong>AC (Actual Cost):</strong> The actual cost incurred for work performed. <em>"How much did it cost?"</em></li>
+                </ul>
+            </li>
+            <li><strong>Performance Indices:</strong>
+                <ul>
+                    <li><strong>CPI = EV / AC:</strong> Cost efficiency. CPI &lt; 1 means over budget.</li>
+                    <li><strong>SPI = EV / PV:</strong> Schedule efficiency. SPI &lt; 1 means behind schedule.</li>
+                </ul>
+            </li>
+            <li><strong>Forecasting:</strong>
+                <ul>
+                    <li><strong>EAC (Estimate at Completion):</strong> BAC / CPI. Projected total cost at completion.</li>
+                    <li><strong>ETC (Estimate to Complete):</strong> EAC - AC. How much more will it cost?</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Example:</strong> A project has BAC = ₱100,000. By month 3, PV = ₱50,000, EV = ₱40,000, AC = ₱45,000.<br>
+        CPI = 40,000 / 45,000 = 0.89 (over budget)<br>
+        SPI = 40,000 / 50,000 = 0.80 (behind schedule)<br>
+        EAC = 100,000 / 0.89 = ₱112,360 (projected overspend)</p>
+
+        <h4>E. Project Selection Methods</h4>
+        <p>Organizations choose projects based on their financial viability and alignment with business goals.</p>
+        <ul>
+            <li><strong>Net Present Value (NPV):</strong> The sum of future cash flows discounted to present value. A positive NPV means the project is profitable. <em>Higher NPV = better investment.</em></li>
+            <li><strong>Internal Rate of Return (IRR):</strong> The discount rate that makes NPV = 0. Projects with IRR greater than the cost of capital are accepted.</li>
+            <li><strong>Payback Period:</strong> The time required to recover the initial investment. <em>Shorter payback period = less risk.</em></li>
+            <li><strong>Return on Investment (ROI):</strong> (Net Profit / Investment Cost) × 100. <em>Higher ROI = more profitable.</em></li>
+        </ul>
+        <p><strong>Example:</strong> A project costs ₱500,000 and is expected to generate ₱150,000 per year for 5 years.<br>
+        Payback Period = 500,000 / 150,000 = 3.33 years<br>
+        ROI = (250,000 / 500,000) × 100 = 50%</p>
+
+        <h4>F. ITIL Framework (IT Service Management)</h4>
+        <p><strong>ITIL (Information Technology Infrastructure Library)</strong> is a set of best practices for IT service management (ITSM).</p>
+        <ul>
+            <li><strong>Service Strategy:</strong> Defines the business strategy for IT services. Key processes: Service Portfolio Management, Financial Management.</li>
+            <li><strong>Service Design:</strong> Designs new or changed services. Key processes: Service Level Management, Capacity Management, Availability Management.</li>
+            <li><strong>Service Transition:</strong> Manages changes and releases. Key processes: Change Management, Release & Deployment Management, Knowledge Management.</li>
+            <li><strong>Service Operation:</strong> Delivers and supports services. Key processes: Incident Management, Problem Management, Request Fulfillment.</li>
+            <li><strong>Continual Service Improvement (CSI):</strong> Continuously improves services using the Plan-Do-Check-Act (PDCA) cycle.</li>
+        </ul>
+
+        <h4>G. DevOps Principles</h4>
+        <p><strong>DevOps</strong> is a culture and set of practices that combines development and operations to shorten the development lifecycle and deliver high-quality software continuously.</p>
+        <ul>
+            <li><strong>Key Practices:</strong>
+                <ul>
+                    <li><strong>Continuous Integration (CI):</strong> Developers frequently merge code changes into a shared repository, with automated builds and tests.</li>
+                    <li><strong>Continuous Delivery/Deployment (CD):</strong> Automatically deploys code changes to production after passing tests.</li>
+                    <li><strong>Infrastructure as Code (IaC):</strong> Managing and provisioning infrastructure through machine-readable definition files (e.g., Terraform, Ansible, Docker).</li>
+                    <li><strong>Monitoring & Logging:</strong> Real-time monitoring of applications and infrastructure (e.g., Prometheus, Grafana, ELK Stack).</li>
+                    <li><strong>Microservices:</strong> Architecture where applications are composed of small, independent services that communicate via APIs.</li>
+                </ul>
+            </li>
+            <li><strong>Benefits:</strong> Faster time to market, reduced failure rate, improved collaboration, faster recovery from failures.</li>
+        </ul>
+
+        <h4>H. Risk Register & Mitigation Strategies</h4>
+        <p>A <strong>Risk Register</strong> is a document that identifies, assesses, and plans responses to project risks.</p>
+        <ul>
+            <li><strong>Components:</strong> Risk ID, Description, Probability (Low/Medium/High), Impact (Low/Medium/High), Risk Score, Mitigation Plan, Owner.</li>
+            <li><strong>Risk Response Strategies:</strong>
+                <ul>
+                    <li><strong>Avoid:</strong> Change the project plan to eliminate the risk. <em>Example:</em> Use proven technology instead of experimental.</li>
+                    <li><strong>Mitigate:</strong> Reduce the probability or impact. <em>Example:</em> Add extra testing for critical features.</li>
+                    <li><strong>Transfer:</strong> Shift the risk to a third party. <em>Example:</em> Purchase insurance or outsource.</li>
+                    <li><strong>Accept:</strong> Acknowledge the risk and prepare a contingency plan. <em>Example:</em> Set aside a management reserve for schedule delays.</li>
+                </ul>
+            </li>
+        </ul>
+
         <h4>Sample Questions</h4>
         <ol>
             <li>What is the difference between a Project Manager and a Product Owner in an Agile environment?</li>
@@ -3948,6 +4211,11 @@ lessons.mit.r3 = {
             <li>What is a Work Breakdown Structure (WBS)? Why is it a critical document for scope management?</li>
             <li>Describe the key steps in the Risk Management process.</li>
             <li>Compare and contrast the Waterfall and Agile project management methodologies. In what situation would you choose one over the other?</li>
+            <li>A project has PV = ₱80,000, EV = ₱60,000, AC = ₱75,000. Calculate CPI and SPI. Is the project over or under budget? Ahead or behind schedule?</li>
+            <li>What is the difference between NPV and Payback Period? Which is a better decision-making tool and why?</li>
+            <li>Explain the five stages of the ITIL service lifecycle.</li>
+            <li>What is Continuous Integration and how does it benefit a development team?</li>
+            <li>Create a risk register entry for the risk "Key developer leaves the project mid-development." Include probability, impact, risk score, and mitigation plan.</li>
         </ol>
     `
 };
@@ -4010,6 +4278,88 @@ lessons.mit.r4 = {
             <li><strong>Disaster Recovery:</strong> Redundancy, Failover, RTO, RPO</li>
         </ul>
 
+        <h4>E. Public Key Infrastructure (PKI)</h4>
+        <p><strong>PKI</strong> is a framework of policies, procedures, hardware, and software that enables the creation, distribution, management, and revocation of digital certificates.</p>
+        <ul>
+            <li><strong>Digital Certificate:</strong> An electronic document that binds a public key to an entity (person, server, organization). Issued by a <strong>Certificate Authority (CA)</strong>.</li>
+            <li><strong>Certificate Authority (CA):</strong> A trusted third party that issues and validates certificates (e.g., DigiCert, Let's Encrypt).</li>
+            <li><strong>Registration Authority (RA):</strong> Verifies the identity of entities requesting certificates before the CA issues them.</li>
+            <li><strong>Steps:</strong>
+                <ol>
+                    <li>User generates a key pair (public + private).</li>
+                    <li>User sends a Certificate Signing Request (CSR) to the RA/CA.</li>
+                    <li>RA verifies identity → CA issues a signed digital certificate.</li>
+                    <li>User installs the certificate on the server/device.</li>
+                    <li>Clients verify the certificate against the CA's root certificate during TLS handshake.</li>
+                </ol>
+            </li>
+            <li><strong>Use Cases:</strong> HTTPS (TLS/SSL), email signing (S/MIME), code signing, VPN authentication.</li>
+        </ul>
+
+        <h4>F. Cyber Threats & Attacks</h4>
+        <ul>
+            <li><strong>Malware:</strong> Malicious software (viruses, worms, Trojans, ransomware, spyware). <strong>Example:</strong> WannaCry ransomware (2017) encrypted files on 200,000+ computers worldwide.</li>
+            <li><strong>Phishing:</strong> Social engineering attack using fraudulent emails/messages to trick users into revealing credentials. <strong>Example:</strong> A fake email from "your bank" asking you to click a link and enter your login details.</li>
+            <li><strong>Denial of Service (DoS/DDoS):</strong> Overwhelming a server with traffic to make it unavailable. <strong>Example:</strong> Mirai botnet DDoS attack (2016) targeted DNS provider Dyn, taking down Twitter, Netflix, and Reddit.</li>
+            <li><strong>Man-in-the-Middle (MitM):</strong> An attacker intercepts communication between two parties. <strong>Example:</strong> Evil twin WiFi attack — attacker sets up a fake WiFi hotspot to capture data.</li>
+            <li><strong>SQL Injection:</strong> Injecting malicious SQL queries into input fields to manipulate databases. <strong>Mitigation:</strong> Parameterized queries, input validation.</li>
+            <li><strong>Cross-Site Scripting (XSS):</strong> Injecting malicious scripts into web pages viewed by others. <strong>Mitigation:</strong> Output encoding, Content Security Policy (CSP).</li>
+        </ul>
+
+        <h4>G. RA 10173 — Data Privacy Act of 2012 (Philippines)</h4>
+        <p><strong>RA 10173</strong> protects the fundamental right to privacy of communication and ensures the free flow of information while protecting personal data.</p>
+        <ul>
+            <li><strong>Key Definitions:</strong>
+                <ul>
+                    <li><strong>Personal Information:</strong> Any data from which an individual can be identified (name, address, phone, email, ID numbers).</li>
+                    <li><strong>Sensitive Personal Information:</strong> Race, ethnicity, health, sexual orientation, religion, criminal records, government IDs.</li>
+                    <li><strong>Data Subject:</strong> The individual whose personal data is processed.</li>
+                    <li><strong>Data Controller:</strong> The organization that determines the purpose and means of data processing.</li>
+                    <li><strong>Data Processor:</strong> The entity that processes data on behalf of the controller.</li>
+                </ul>
+            </li>
+            <li><strong>Data Subject Rights:</strong> Right to be informed, right to access, right to object, right to erasure or blocking, right to damages, right to data portability.</li>
+            <li><strong>Penalties:</strong> Fines up to ₱5,000,000 and imprisonment of up to 6 years for unauthorized processing or malicious disclosure.</li>
+            <li><strong>NPC:</strong> National Privacy Commission — the government body that enforces RA 10173.</li>
+        </ul>
+
+        <h4>H. RA 10175 — Cybercrime Prevention Act of 2012 (Philippines)</h4>
+        <p><strong>RA 10175</strong> defines and penalizes offenses committed against computer systems and networks.</p>
+        <ul>
+            <li><strong>Key Offenses:</strong>
+                <ul>
+                    <li><strong>Illegal Access (Hacking):</strong> Intentionally accessing a computer system without authorization.</li>
+                    <li><strong>Illegal Interception:</strong> Intercepting non-public data transmissions without authorization.</li>
+                    <li><strong>Data Interference:</strong> Intentionally damaging, deleting, or altering data.</li>
+                    <li><strong>System Interference:</strong> Hindering the functioning of a computer system (e.g., DDoS).</li>
+                    <li><strong>Computer-Related Identity Theft:</strong> Using someone else's identity without authorization.</li>
+                    <li><strong>Computer-Related Fraud:</strong> Manipulating data to cause economic damage.</li>
+                    <li><strong>Cyber Libel:</strong> Libel committed through a computer system.</li>
+                </ul>
+            </li>
+            <li><strong>Penalties:</strong> Fines and imprisonment depending on the offense and damage caused.</li>
+        </ul>
+
+        <h4>I. Business Continuity Planning (BCP) & Disaster Recovery (DR)</h4>
+        <p><strong>BCP</strong> is a proactive plan that outlines how an organization will continue operating during and after a disruptive event.</p>
+        <ul>
+            <li><strong>Key Components:</strong>
+                <ul>
+                    <li><strong>Business Impact Analysis (BIA):</strong> Identifies critical business functions and the impact of their disruption.</li>
+                    <li><strong>Risk Assessment:</strong> Identifies threats (natural disasters, cyberattacks, power outages, pandemics).</li>
+                    <li><strong>Recovery Strategies:</strong> Plans for restoring operations (alternate sites, cloud failover, manual workarounds).</li>
+                </ul>
+            </li>
+            <li><strong>DR vs. BCP:</strong> BCP is the overarching plan covering all aspects of business continuity. DR is a subset focusing specifically on restoring IT systems.</li>
+            <li><strong>Key Metrics:</strong>
+                <ul>
+                    <li><strong>RTO (Recovery Time Objective):</strong> Maximum acceptable downtime (e.g., 4 hours).</li>
+                    <li><strong>RPO (Recovery Point Objective):</strong> Maximum acceptable data loss (e.g., 1 hour of data).</li>
+                </ul>
+            </li>
+            <li><strong>Example:</strong> A bank has RTO = 2 hours and RPO = 15 minutes. If a server fails at 10:00 AM, the system must be restored by 12:00 PM with no more than 15 minutes of lost transactions.</li>
+        </ul>
+
         <h4>Sample Questions</h4>
         <ol>
             <li>What is the difference between a patent and a copyright? Give an example of each.</li>
@@ -4017,6 +4367,11 @@ lessons.mit.r4 = {
             <li>Explain the purpose of an IP Audit. What are the key steps involved?</li>
             <li>What are the critical components of an SLA for a telecommunications network?</li>
             <li>How can an organization ensure high network availability (e.g., 99.99% uptime)?</li>
+            <li>Describe the steps involved in issuing a digital certificate under PKI.</li>
+            <li>What is the difference between a phishing attack and a DDoS attack? Give a real-world example of each.</li>
+            <li>What are the key rights of a data subject under the Philippine Data Privacy Act (RA 10173)?</li>
+            <li>What offenses are penalized under RA 10175 (Cybercrime Prevention Act)?</li>
+            <li>A hospital's patient records system goes down. The IT director says RTO = 1 hour, RPO = 5 minutes. Interpret these numbers. What do they mean for the hospital?</li>
         </ol>
     `
 };
