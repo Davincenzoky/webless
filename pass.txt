@@ -2,15 +2,12 @@
 
 Subject                     Password
 ───────────────             ─────────
-GENEL1 - Living in the IT Era         GE2025
-GENED7 - Science, Technology & Society  ST2025
-INFORM - Information Management        IM2025
-QUANTI - Quantitative Methods          QM2025
-WEBSYS - Web Systems and Technologies        WS2025
-ADBMS - Advanced Database Management System   ADBMS2025
-CPROG1 - Computer Programming 1 (Python)       CPROG2025
-OOPROG - Object-Oriented Programming          OOP2025
-CSELE1 - Graphics and Visual Computing        CSELE2025
+GENEL1 - Living in IT Era   GE2025
+GENED7 - Science & Society  OCE
+INFORM - Info Management    IM2025
+QUANTI - Quantitative Meth  QM2025
+WEBSYS - Web Systems        WS2025
+MIT - Comp Exam for MIT     MIT2025
 
 ────────────────────────────────────
 To change a password, edit index.html
