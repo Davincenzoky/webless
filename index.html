@@ -1819,25 +1819,25 @@ const subjects = {
     ooprog: {
         code: "OOPROG",
         name: "Object-Oriented Programming",
-        icon: "🧩",
-        desc: "Master object-oriented programming concepts — classes, objects, inheritance, polymorphism, exception handling, and GUI development using Java.",
+        icon: "🐍",
+        desc: "Master advanced Python programming concepts — OOP, classes, inheritance, polymorphism, exception handling, file I/O, and advanced Python features.",
         password: "OOP2025",
         periods: ["PRELIM", "MIDTERM", "FINALS"],
         lessons: {
             prelim: [
-                { id: "p1", label: "1. OOP Concepts" },
-                { id: "p2", label: "2. Classes & Objects" },
-                { id: "p3", label: "3. Encapsulation" }
+                { id: "p1", label: "1. OOP Concepts in Python" },
+                { id: "p2", label: "2. Classes & Objects in Python" },
+                { id: "p3", label: "3. Encapsulation & Properties" }
             ],
             midterm: [
-                { id: "m1", label: "1. Inheritance" },
-                { id: "m2", label: "2. Polymorphism" },
-                { id: "m3", label: "3. Abstract Classes & Interfaces" }
+                { id: "m1", label: "1. Inheritance & MRO" },
+                { id: "m2", label: "2. Polymorphism & Duck Typing" },
+                { id: "m3", label: "3. ABCs & Protocols" }
             ],
             finals: [
                 { id: "f1", label: "1. Exception Handling" },
-                { id: "f2", label: "2. File I/O" },
-                { id: "f3", label: "3. GUI Programming" }
+                { id: "f2", label: "2. File I/O & Context Managers" },
+                { id: "f3", label: "3. Magic Methods & Advanced Features" }
             ]
         }
     },
@@ -7579,10 +7579,10 @@ print(s.introduce())</pre>
 // ===========================
 lessons.ooprog = {
     p1: {
-        title: "OOP Concepts",
+        title: "OOP Concepts in Python",
         period: "PRELIM",
         content: `
-            <h2>OOP Concepts</h2>
+            <h2>OOP Concepts in Python</h2>
             <span class="period-badge">PRELIM</span>
             <p><strong>Object-Oriented Programming (OOP)</strong> is a programming paradigm that organizes code around <strong>objects</strong> rather than functions and logic. An object is a self-contained entity that contains both <strong>data</strong> (attributes) and <strong>behavior</strong> (methods).</p>
 
@@ -7609,173 +7609,131 @@ lessons.ooprog = {
                 <li><strong>Object:</strong> An instance of a class. Has its own state (attribute values)</li>
             </ul>
 
-            <h3>Basic Java Class Example</h3>
-            <pre>public class Student {
-    // Attributes (fields)
-    int id;
-    String name;
-    double gpa;
+            <h3>Basic Python Class Example</h3>
+            <pre>class Student:
+    def __init__(self, id, name, gpa):
+        self.id = id
+        self.name = name
+        self.gpa = gpa
 
-    // Method
-    void display() {
-        System.out.println(id + " " + name + " " + gpa);
-    }
+    def display(self):
+        print(f"{self.id} {self.name} {self.gpa}")
 
-    public static void main(String[] args) {
-        Student s = new Student();
-        s.id = 101;
-        s.name = "Juan";
-        s.gpa = 1.75;
-        s.display();
-    }
-}</pre>
+# Creating objects
+s = Student(101, "Juan", 1.75)
+s.display()</pre>
 
             <div class="highlight-box"><strong>Key Takeaway:</strong> OOP organizes code into objects that combine data and behavior. The four pillars — encapsulation, inheritance, polymorphism, and abstraction — provide a powerful framework for building complex, maintainable software systems.</div>
         `
     },
     p2: {
-        title: "Classes & Objects",
+        title: "Classes & Objects in Python",
         period: "PRELIM",
         content: `
-            <h2>Classes & Objects</h2>
+            <h2>Classes & Objects in Python</h2>
             <span class="period-badge">PRELIM</span>
-            <p>A <strong>class</strong> is a blueprint, and an <strong>object</strong> is an instance created from that blueprint. In Java, everything (except primitives) is an object.</p>
+            <p>A <strong>class</strong> is a blueprint, and an <strong>object</strong> is an instance created from that blueprint. In Python, everything is an object — including integers, strings, and functions.</p>
 
             <h3>Defining a Class</h3>
-            <pre>public class Car {
-    // Instance variables
-    String brand;
-    String model;
-    int year;
+            <pre>class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
-    // Constructor
-    public Car(String brand, String model, int year) {
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-    }
+    def start(self):
+        print(f"{self.brand} {self.model} is starting...")
 
-    // Methods
-    public void start() {
-        System.out.println(brand + " " + model + " is starting...");
-    }
-
-    public void displayInfo() {
-        System.out.println(year + " " + brand + " " + model);
-    }
-}</pre>
+    def display_info(self):
+        print(f"{self.year} {self.brand} {self.model}")</pre>
 
             <h3>Creating Objects</h3>
-            <pre>public class Main {
-    public static void main(String[] args) {
-        Car car1 = new Car("Toyota", "Vios", 2023);
-        Car car2 = new Car("Honda", "Civic", 2024);
+            <pre>car1 = Car("Toyota", "Vios", 2023)
+car2 = Car("Honda", "Civic", 2024)
 
-        car1.displayInfo();
-        car2.start();
-    }
-}</pre>
+car1.display_info()
+car2.start()</pre>
 
-            <h3>Instance vs Static Members</h3>
+            <h3>Instance vs Class Members</h3>
             <table>
-                <tr><th>Feature</th><th>Instance</th><th>Static</th></tr>
+                <tr><th>Feature</th><th>Instance</th><th>Class</th></tr>
                 <tr><td>Belongs to</td><td>Each object (has its own copy)</td><td>The class (shared across all objects)</td></tr>
-                <tr><td>Access</td><td>objectName.member</td><td>ClassName.member</td></tr>
+                <tr><td>Access</td><td>object.member</td><td>ClassName.member</td></tr>
                 <tr><td>Memory</td><td>Allocated per object</td><td>Allocated once</td></tr>
-                <tr><td>Example</td><td>car1.brand</td><td>Math.PI</td></tr>
+                <tr><td>Example</td><td>car1.brand</td><td>Car.wheel_count</td></tr>
             </table>
 
-            <pre>public class Counter {
-    static int count = 0;  // shared by all objects
-    int id;                // unique per object
+            <pre>class Counter:
+    count = 0  # class variable shared by all objects
 
-    public Counter() {
-        count++;
-        id = count;
-    }
-}</pre>
+    def __init__(self):
+        Counter.count += 1
+        self.id = Counter.count  # unique per object</pre>
 
-            <h3>this Keyword</h3>
-            <p>The <code>this</code> keyword refers to the current object instance. It is used to:</p>
+            <h3>self Parameter</h3>
+            <p>The <code>self</code> parameter refers to the current object instance. It is the first parameter of every instance method and is used to:</p>
             <ul>
-                <li>Distinguish between instance variables and parameters with the same name</li>
-                <li>Call another constructor in the same class (<code>this()</code>)</li>
-                <li>Pass the current object as a parameter</li>
+                <li>Access instance variables and methods</li>
+                <li>Distinguish between instance attributes and parameters with the same name</li>
             </ul>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> A class defines the structure and behavior of objects. Constructors initialize object state. Static members belong to the class, not individual objects. The 'this' keyword references the current object instance.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> A class defines the structure and behavior of objects. The __init__ method is the constructor that initializes object state. Class variables are shared across all instances. 'self' references the current object instance.</div>
         `
     },
     p3: {
-        title: "Encapsulation",
+        title: "Encapsulation & Properties",
         period: "PRELIM",
         content: `
-            <h2>Encapsulation</h2>
+            <h2>Encapsulation & Properties</h2>
             <span class="period-badge">PRELIM</span>
-            <p><strong>Encapsulation</strong> is the practice of hiding internal details of an object and providing controlled access through public methods. It is achieved using <strong>access modifiers</strong>.</p>
+            <p><strong>Encapsulation</strong> is the practice of hiding internal details of an object and providing controlled access through public methods. In Python, encapsulation is achieved through naming conventions and the <code>@property</code> decorator.</p>
 
-            <h3>Access Modifiers in Java</h3>
+            <h3>Naming Conventions in Python</h3>
             <table>
-                <tr><th>Modifier</th><th>Class</th><th>Package</th><th>Subclass</th><th>World</th></tr>
-                <tr><td><code>public</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-                <tr><td><code>protected</code></td><td>✓</td><td>✓</td><td>✓</td><td>✗</td></tr>
-                <tr><td><em>default</em></td><td>✓</td><td>✓</td><td>✗</td><td>✗</td></tr>
-                <tr><td><code>private</code></td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr>
+                <tr><th>Convention</th><th>Meaning</th><th>Example</th></tr>
+                <tr><td><code>name</code></td><td>Public attribute</td><td><code>self.name</code></td></tr>
+                <tr><td><code>_name</code></td><td>Protected (internal use, convention)</td><td><code>self._balance</code></td></tr>
+                <tr><td><code>__name</code></td><td>Private (name mangling)</td><td><code>self.__pin</code></td></tr>
             </table>
 
             <h3>Encapsulation Example</h3>
-            <pre>public class BankAccount {
-    private String accountNumber;
-    private double balance;
-    private String pin;
+            <pre>class BankAccount:
+    def __init__(self, account_number, initial_deposit, pin):
+        self.account_number = account_number
+        self.__balance = initial_deposit  # private
+        self.__pin = pin                  # private
 
-    // Constructor
-    public BankAccount(String accountNumber, double initialDeposit, String pin) {
-        this.accountNumber = accountNumber;
-        this.balance = initialDeposit;
-        this.pin = pin;
-    }
+    def get_balance(self):
+        return self.__balance
 
-    // Getter (controlled read access)
-    public double getBalance() {
-        return balance;
-    }
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
 
-    // Setter (controlled write access with validation)
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
-    }
+    def withdraw(self, amount, pin):
+        if self.__pin != pin:
+            return False
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            return True
+        return False</pre>
 
-    public boolean withdraw(double amount, String pin) {
-        if (!this.pin.equals(pin)) return false;
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            return true;
-        }
-        return false;
-    }
-}</pre>
+            <h3>Using @property Decorator</h3>
+            <pre>class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.__salary = salary
 
-            <h3>Getters and Setters (Accessors & Mutators)</h3>
-            <pre>public class Employee {
-    private int id;
-    private String name;
-    private double salary;
+    @property
+    def salary(self):
+        return self.__salary
 
-    // Getter
-    public String getName() {
-        return name;
-    }
-
-    // Setter with validation
-    public void setSalary(double salary) {
-        if (salary >= 0) {
-            this.salary = salary;
-        }
-    }
-}</pre>
+    @salary.setter
+    def salary(self, value):
+        if value >= 0:
+            self.__salary = value
+        else:
+            raise ValueError("Salary cannot be negative")</pre>
 
             <h3>Benefits of Encapsulation</h3>
             <ul>
@@ -7785,259 +7743,236 @@ lessons.ooprog = {
                 <li><strong>Maintainability:</strong> Code is easier to understand and modify</li>
             </ul>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Encapsulation is the foundation of OOP data protection. Use private fields and provide public getters/setters for controlled access. This pattern is also called data hiding and is essential for building robust, maintainable applications.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Encapsulation is the foundation of OOP data protection. Use private naming conventions and @property decorators for controlled access. This pattern is also called data hiding and is essential for building robust, maintainable applications.</div>
         `
     },
     m1: {
-        title: "Inheritance",
+        title: "Inheritance & MRO",
         period: "MIDTERM",
         content: `
-            <h2>Inheritance</h2>
+            <h2>Inheritance & MRO</h2>
             <span class="period-badge">MIDTERM</span>
             <p><strong>Inheritance</strong> allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass). It promotes code reuse and establishes a hierarchical relationship.</p>
 
             <h3>Basic Inheritance</h3>
-            <pre>// Parent class
-public class Animal {
-    protected String name;
+            <pre>class Animal:
+    def __init__(self, name):
+        self.name = name
 
-    public void eat() {
-        System.out.println(name + " is eating");
-    }
-}
+    def eat(self):
+        print(f"{self.name} is eating")
 
-// Child class
-public class Dog extends Animal {
-    public void bark() {
-        System.out.println(name + " is barking");
-    }
-}
+class Dog(Animal):
+    def bark(self):
+        print(f"{self.name} is barking")
 
-// Usage
-Dog d = new Dog();
-d.name = "Buddy";
-d.eat();   // inherited from Animal
-d.bark();  // defined in Dog</pre>
+# Usage
+d = Dog("Buddy")
+d.eat()   # inherited from Animal
+d.bark()  # defined in Dog</pre>
 
-            <h3>Types of Inheritance in Java</h3>
+            <h3>Types of Inheritance in Python</h3>
             <ul>
-                <li><strong>Single Inheritance:</strong> One child extends one parent (Java supports this directly)</li>
+                <li><strong>Single Inheritance:</strong> One child inherits from one parent</li>
                 <li><strong>Multi-Level Inheritance:</strong> A chain: Grandparent → Parent → Child</li>
                 <li><strong>Hierarchical Inheritance:</strong> One parent, multiple children</li>
-                <li><em>Multiple Inheritance:</em> One child, multiple parents (not supported in Java classes; achieved via interfaces)</li>
+                <li><strong>Multiple Inheritance:</strong> A child can inherit from multiple parents (unique to Python!)</li>
             </ul>
 
-            <h3>The super Keyword</h3>
-            <pre>public class Vehicle {
-    String brand;
+            <h3>The super() Function</h3>
+            <pre>class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
 
-    public Vehicle(String brand) {
-        this.brand = brand;
-    }
+    def honk(self):
+        print("Beep!")
 
-    public void honk() {
-        System.out.println("Beep!");
-    }
-}
+class Motorcycle(Vehicle):
+    def __init__(self, brand, cc):
+        super().__init__(brand)  # call parent constructor
+        self.cc = cc
 
-public class Motorcycle extends Vehicle {
-    private int cc;
+    def honk(self):
+        super().honk()  # call parent method
+        print("Vroom!")</pre>
 
-    public Motorcycle(String brand, int cc) {
-        super(brand);  // call parent constructor
-        this.cc = cc;
-    }
+            <h3>Method Resolution Order (MRO)</h3>
+            <p>Python uses the C3 linearization algorithm to determine the order in which classes are searched when calling a method. You can view the MRO using <code>ClassName.__mro__</code> or <code>ClassName.mro()</code>.</p>
+            <pre>class A:
+    def process(self):
+        print("A.process")
 
-    @Override
-    public void honk() {
-        super.honk();  // call parent method
-        System.out.println("Vroom!");
-    }
-}</pre>
+class B(A):
+    def process(self):
+        print("B.process")
 
-            <h3>Overriding vs Overloading</h3>
+class C(A):
+    def process(self):
+        print("C.process")
+
+class D(B, C):
+    pass
+
+d = D()
+d.process()       # B.process (MRO: D → B → C → A)
+print(D.__mro__)  # (<class 'D'>, <class 'B'>, <class 'C'>, <class 'A'>, <class 'object'>)</pre>
+
+            <h3>Method Overriding</h3>
             <table>
                 <tr><th>Feature</th><th>Overriding</th><th>Overloading</th></tr>
                 <tr><td>Definition</td><td>Child redefines a parent method</td><td>Same name, different parameters</td></tr>
-                <tr><td>Same Class?</td><td>No (parent-child)</td><td>Yes</td></tr>
-                <tr><td>Parameters</td><td>Must be identical</td><td>Must be different</td></tr>
-                <tr><td>Return Type</td><td>Must be same/covariant</td><td>Can be different</td></tr>
-                <tr><td>Annotation</td><td>@Override</td><td>None</td></tr>
+                <tr><td>Python Support</td><td>Yes — just redefine the method</td><td>Not directly (use default args or *args)</td></tr>
+                <tr><td>Parameters</td><td>Should match parent signature</td><td>Varies</td></tr>
             </table>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Inheritance creates parent-child relationships between classes, enabling code reuse. The 'super' keyword accesses parent class members. Method overriding allows child classes to provide specific implementations of parent methods.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Inheritance creates parent-child relationships between classes, enabling code reuse. Python supports multiple inheritance. The super() function accesses parent class members. MRO determines the method lookup order using the C3 linearization algorithm.</div>
         `
     },
     m2: {
-        title: "Polymorphism",
+        title: "Polymorphism & Duck Typing",
         period: "MIDTERM",
         content: `
-            <h2>Polymorphism</h2>
+            <h2>Polymorphism & Duck Typing</h2>
             <span class="period-badge">MIDTERM</span>
             <p><strong>Polymorphism</strong> (Greek for "many forms") allows objects of different classes to be treated as objects of a common parent class. The same method call can behave differently depending on the actual object type.</p>
 
-            <h3>Compile-Time Polymorphism (Method Overloading)</h3>
-            <pre>public class Calculator {
-    public int add(int a, int b) {
-        return a + b;
-    }
+            <h3>Method Overriding (Runtime Polymorphism)</h3>
+            <pre>class Shape:
+    def get_area(self):
+        return 0
 
-    public double add(double a, double b) {
-        return a + b;
-    }
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
 
-    public int add(int a, int b, int c) {
-        return a + b + c;
-    }
-}</pre>
+    def get_area(self):
+        return 3.14159 * self.radius ** 2
 
-            <h3>Runtime Polymorphism (Method Overriding)</h3>
-            <pre>public class Shape {
-    public double getArea() {
-        return 0;
-    }
-}
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-public class Circle extends Shape {
-    private double radius;
+    def get_area(self):
+        return self.length * self.width
 
-    public Circle(double radius) {
-        this.radius = radius;
-    }
+# Usage
+shapes = [Circle(5), Rectangle(4, 6)]
 
-    @Override
-    public double getArea() {
-        return Math.PI * radius * radius;
-    }
-}
+for shape in shapes:
+    print(shape.get_area())  # different behavior per object type</pre>
 
-public class Rectangle extends Shape {
-    private double length, width;
+            <h3>Duck Typing</h3>
+            <p>"If it walks like a duck and quacks like a duck, it's a duck." Python focuses on <strong>what an object can do</strong>, not what class it is. If an object has the required methods, it can be used regardless of its type.</p>
+            <pre>class Duck:
+    def quack(self):
+        print("Quack!")
 
-    public Rectangle(double length, double width) {
-        this.length = length;
-        this.width = width;
-    }
+class Person:
+    def quack(self):
+        print("I'm quacking like a duck!")
 
-    @Override
-    public double getArea() {
-        return length * width;
-    }
-}
+def make_it_quack(thing):
+    thing.quack()  # works with any object that has quack()
 
-// Usage
-Shape[] shapes = {
-    new Circle(5),
-    new Rectangle(4, 6)
-};
+make_it_quack(Duck())    # Quack!
+make_it_quack(Person())  # I'm quacking like a duck!</pre>
 
-for (Shape s : shapes) {
-    System.out.println(s.getArea());  // different behavior per object
-}</pre>
+            <h3>Operator Overloading</h3>
+            <p>Python allows operators to work with custom objects through magic methods:</p>
+            <pre>class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-            <h3>Upcasting and Downcasting</h3>
-            <pre>// Upcasting (implicit) — child to parent reference
-Shape s = new Circle(5);
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
 
-// Downcasting (explicit) — parent to child reference
-Circle c = (Circle) s;
-c.getRadius();
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
 
-// instanceof check
-if (s instanceof Circle) {
-    Circle c2 = (Circle) s;
-}</pre>
+v1 = Vector(2, 3)
+v2 = Vector(4, 5)
+print(v1 + v2)  # Vector(6, 8) — uses __add__</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Polymorphism enables flexible, extensible code. Compile-time polymorphism (overloading) resolves at compile time; runtime polymorphism (overriding) resolves at runtime using dynamic method dispatch. The instanceof operator ensures safe downcasting.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Polymorphism enables flexible, extensible code. Python's duck typing means you don't need inheritance to achieve polymorphism — just the right methods. Operator overloading lets you define custom behavior for built-in operators.</div>
         `
     },
     m3: {
-        title: "Abstract Classes & Interfaces",
+        title: "ABCs & Protocols",
         period: "MIDTERM",
         content: `
-            <h2>Abstract Classes & Interfaces</h2>
+            <h2>ABCs & Protocols</h2>
             <span class="period-badge">MIDTERM</span>
-            <p><strong>Abstract classes</strong> and <strong>interfaces</strong> provide abstraction — they define what a class should do without specifying how. They are essential for designing flexible, extensible systems.</p>
+            <p><strong>Abstract Base Classes (ABCs)</strong> and <strong>Protocols</strong> provide abstraction in Python — they define what a class should do without specifying how. They are essential for designing flexible, extensible systems.</p>
 
-            <h3>Abstract Classes</h3>
+            <h3>Abstract Base Classes (ABCs)</h3>
+            <p>ABCs are classes that cannot be instantiated directly. They define abstract methods that subclasses must implement. Use the <code>abc</code> module.</p>
             <ul>
                 <li>Cannot be instantiated directly</li>
-                <li>Can have both abstract methods (no body) and concrete methods (with body)</li>
-                <li>Can have constructors, instance variables, and static methods</li>
-                <li>Declared with the <code>abstract</code> keyword</li>
+                <li>Can have both abstract and concrete methods</li>
+                <li>Defined using <code>ABC</code> as a parent class</li>
+                <li>Abstract methods use the <code>@abstractmethod</code> decorator</li>
             </ul>
 
-            <pre>abstract class Employee {
-    protected String name;
-    protected double baseSalary;
+            <pre>from abc import ABC, abstractmethod
 
-    public Employee(String name, double baseSalary) {
-        this.name = name;
-        this.baseSalary = baseSalary;
-    }
+class Employee(ABC):
+    def __init__(self, name, base_salary):
+        self.name = name
+        self.base_salary = base_salary
 
-    // Abstract method — subclasses must implement
-    public abstract double calculateSalary();
+    @abstractmethod
+    def calculate_salary(self):
+        pass  # subclasses must implement
 
-    // Concrete method
-    public void displayInfo() {
-        System.out.println(name + ": " + calculateSalary());
-    }
-}
+    def display_info(self):  # concrete method
+        print(f"{self.name}: {self.calculate_salary()}")
 
-class FullTimeEmployee extends Employee {
-    public FullTimeEmployee(String name, double salary) {
-        super(name, salary);
-    }
+class FullTimeEmployee(Employee):
+    def calculate_salary(self):
+        return self.base_salary * 1.2  # 20% bonus
 
-    @Override
-    public double calculateSalary() {
-        return baseSalary * 1.2;  // 20% bonus
-    }
-}</pre>
+# emp = Employee("John", 30000)  # TypeError! Can't instantiate ABC</pre>
 
-            <h3>Interfaces</h3>
-            <ul>
-                <li>Define a contract (what to do, not how)</li>
-                <li>All methods are implicitly public and abstract (before Java 8)</li>
-                <li>Support multiple inheritance of type</li>
-                <li>Can have default and static methods (Java 8+)</li>
-                <li>Declared with the <code>interface</code> keyword</li>
-            </ul>
+            <h3>Protocols (Structural Subtyping)</h3>
+            <p>Protocols (PEP 544) provide <strong>static duck typing</strong>. A class satisfies a protocol if it has the required methods, without needing to explicitly inherit from it.</p>
 
-            <pre>interface Printable {
-    void print();
-}
+            <pre>from typing import Protocol
 
-interface Scannable {
-    void scan();
-}
+class Printable(Protocol):
+    def print(self) -> None:
+        ...
 
-// Multiple interface implementation
-class MultiFunctionPrinter implements Printable, Scannable {
-    @Override
-    public void print() {
-        System.out.println("Printing...");
-    }
+class Scannable(Protocol):
+    def scan(self) -> None:
+        ...
 
-    @Override
-    public void scan() {
-        System.out.println("Scanning...");
-    }
-}</pre>
+class MultiFunctionPrinter:
+    def print(self):
+        print("Printing...")
 
-            <h3>Abstract Class vs Interface</h3>
+    def scan(self):
+        print("Scanning...")
+
+# MFP satisfies both Printable and Scannable structurally
+def use_printer(device: Printable):
+    device.print()
+
+use_printer(MultiFunctionPrinter())  # Works!</pre>
+
+            <h3>ABC vs Protocol</h3>
             <table>
-                <tr><th>Feature</th><th>Abstract Class</th><th>Interface</th></tr>
+                <tr><th>Feature</th><th>ABC</th><th>Protocol</th></tr>
                 <tr><td>Instantiation</td><td>Cannot be instantiated</td><td>Cannot be instantiated</td></tr>
-                <tr><td>Methods</td><td>Abstract + concrete</td><td>Abstract (default/static in Java 8+)</td></tr>
-                <tr><td>Variables</td><td>Any type</td><td>public static final (constants)</td></tr>
-                <tr><td>Constructors</td><td>Yes</td><td>No</td></tr>
-                <tr><td>Multiple Inheritance</td><td>No (single extends)</td><td>Yes (multiple implements)</td></tr>
+                <tr><td>Methods</td><td>Abstract + concrete</td><td>Method signatures only</td></tr>
+                <tr><td>Inheritance Required?</td><td>Yes (must inherit)</td><td>No (structural typing)</td></tr>
+                <tr><td>Multiple Inheritance</td><td>Yes</td><td>Yes</td></tr>
+                <tr><td>Runtime Check</td><td>isinstance() works</td><td>isinstance() with @runtime_checkable</td></tr>
                 <tr><td>Use Case</td><td>Related classes with shared code</td><td>Unrelated classes sharing behavior</td></tr>
             </table>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Abstract classes provide partial abstraction with shared implementation. Interfaces define pure contracts supporting multiple inheritance of type. Use abstract classes for related classes with common code; use interfaces for defining capabilities across unrelated classes.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> ABCs provide formal abstraction with required inheritance. Protocols enable structural subtyping (duck typing at scale). Use ABCs for related classes with shared implementation; use Protocols for defining capabilities across unrelated classes.</div>
         `
     },
     f1: {
@@ -8046,294 +7981,255 @@ class MultiFunctionPrinter implements Printable, Scannable {
         content: `
             <h2>Exception Handling</h2>
             <span class="period-badge">FINALS</span>
-            <p>An <strong>exception</strong> is an event that disrupts the normal flow of program execution. Java provides a robust exception handling mechanism using try-catch-finally blocks.</p>
+            <p>An <strong>exception</strong> is an event that disrupts the normal flow of program execution. Python provides a robust exception handling mechanism using try-except-finally blocks.</p>
 
             <h3>Types of Exceptions</h3>
             <table>
                 <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
-                <tr><td><strong>Checked</strong></td><td>Checked at compile time; must be handled</td><td>IOException, SQLException</td></tr>
-                <tr><td><strong>Unchecked (Runtime)</strong></td><td>Occur at runtime; not required to be handled</td><td>ArithmeticException, NullPointerException</td></tr>
-                <tr><td><strong>Error</strong></td><td>Serious problems beyond program control</td><td>OutOfMemoryError, StackOverflowError</td></tr>
+                <tr><td><strong>Built-in</strong></td><td>Pre-defined exception classes in Python</td><td>ZeroDivisionError, TypeError, ValueError</td></tr>
+                <tr><td><strong>OS Errors</strong></td><td>Related to operating system operations</td><td>FileNotFoundError, PermissionError</td></tr>
+                <tr><td><strong>Custom</strong></td><td>User-defined exception classes</td><td>InsufficientFundsError</td></tr>
             </table>
 
-            <h3>Try-Catch-Finally</h3>
-            <pre>public class DivisionExample {
-    public static void main(String[] args) {
-        try {
-            int a = 10;
-            int b = 0;
-            int result = a / b;  // ArithmeticException
-            System.out.println("Result: " + result);
-        } catch (ArithmeticException e) {
-            System.out.println("Cannot divide by zero!");
-        } finally {
-            System.out.println("This always executes.");
-        }
-    }
-}</pre>
+            <h3>Try-Except-Finally</h3>
+            <pre>try:
+    a = 10
+    b = 0
+    result = a / b  # ZeroDivisionError
+    print(f"Result: {result}")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("This always executes.")</pre>
 
-            <h3>Multiple Catch Blocks</h3>
-            <pre>try {
-    int[] arr = new int[3];
-    arr[5] = 10 / 0;
-} catch (ArithmeticException e) {
-    System.out.println("Math error: " + e.getMessage());
-} catch (ArrayIndexOutOfBoundsException e) {
-    System.out.println("Array error: " + e.getMessage());
-} catch (Exception e) {
-    System.out.println("General error: " + e.getMessage());
-}</pre>
+            <h3>Multiple Except Blocks</h3>
+            <pre>try:
+    arr = [1, 2, 3]
+    arr[5] = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Math error: {e}")
+except IndexError as e:
+    print(f"Index error: {e}")
+except Exception as e:
+    print(f"General error: {e}")</pre>
 
             <h3>Custom Exceptions</h3>
-            <pre>class InsufficientFundsException extends Exception {
-    public InsufficientFundsException(String message) {
-        super(message);
-    }
-}
+            <pre>class InsufficientFundsError(Exception):
+    def __init__(self, balance, amount):
+        self.balance = balance
+        self.amount = amount
+        super().__init__(f"Insufficient balance {balance} for withdrawal {amount}")
 
-public class BankAccount {
-    private double balance;
+class BankAccount:
+    def __init__(self, balance=0):
+        self.balance = balance
 
-    public void withdraw(double amount) throws InsufficientFundsException {
-        if (amount > balance) {
-            throw new InsufficientFundsException(
-                "Insufficient balance: " + balance);
-        }
-        balance -= amount;
-    }
-}</pre>
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise InsufficientFundsError(self.balance, amount)
+        self.balance -= amount</pre>
 
-            <h3>Try-With-Resources (AutoCloseable)</h3>
-            <pre>// Automatically closes resources
-try (BufferedReader br = new BufferedReader(
-        new FileReader("file.txt"))) {
-    String line;
-    while ((line = br.readLine()) != null) {
-        System.out.println(line);
-    }
-} catch (IOException e) {
-    e.printStackTrace();
-}</pre>
+            <h3>The else Clause & try-except-else-finally</h3>
+            <pre>try:
+    num = int(input("Enter a number: "))
+    result = 100 / num
+except ValueError:
+    print("That's not a valid number!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+else:
+    print(f"Result: {result}")  # runs only if no exception
+finally:
+    print("Cleanup complete.")  # always runs</pre>
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Exception handling separates error-handling code from normal logic. Checked exceptions must be handled or declared. The finally block always executes. Custom exceptions allow domain-specific error handling. Try-with-resources ensures automatic resource cleanup.</div>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Exception handling separates error-handling code from normal logic. Use specific exception types rather than bare except clauses. The else block runs when no exception occurs. Custom exceptions allow domain-specific error handling. Always clean up resources in the finally block.</div>
         `
     },
     f2: {
-        title: "File I/O",
+        title: "File I/O & Context Managers",
         period: "FINALS",
         content: `
-            <h2>File I/O</h2>
+            <h2>File I/O & Context Managers</h2>
             <span class="period-badge">FINALS</span>
-            <p>Java provides comprehensive APIs for reading from and writing to files. The <strong>java.io</strong> and <strong>java.nio</strong> packages contain classes for file operations.</p>
+            <p>Python provides simple yet powerful APIs for reading from and writing to files. The built-in <code>open()</code> function and the <code>with</code> statement make file operations safe and concise.</p>
 
             <h3>Writing to a File</h3>
-            <pre>import java.io.FileWriter;
-import java.io.IOException;
-
-public class WriteExample {
-    public static void main(String[] args) {
-        try (FileWriter fw = new FileWriter("output.txt")) {
-            fw.write("Hello, Java File I/O!\\n");
-            fw.write("Student: Juan Dela Cruz\\n");
-            fw.write("Course: BSIT\\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}</pre>
+            <pre>with open("output.txt", "w") as f:
+    f.write("Hello, Python File I/O!\\n")
+    f.write("Student: Juan Dela Cruz\\n")
+    f.write("Course: BSIT\\n")
+# File automatically closed after the with block</pre>
 
             <h3>Reading from a File</h3>
-            <pre>import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+            <pre>with open("output.txt", "r") as f:
+    for line in f:
+        print(line, end="")</pre>
 
-public class ReadExample {
-    public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(
-                new FileReader("output.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}</pre>
-
-            <h3>Using Scanner for File Input</h3>
-            <pre>import java.io.File;
-import java.util.Scanner;
-
-public class ScannerFileExample {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("data.txt"));
-        while (sc.hasNextLine()) {
-            String line = sc.nextLine();
-            System.out.println(line);
-        }
-        sc.close();
-    }
-}</pre>
+            <h3>Different File Modes</h3>
+            <table>
+                <tr><th>Mode</th><th>Description</th></tr>
+                <tr><td><code>"r"</code></td><td>Read (default)</td></tr>
+                <tr><td><code>"w"</code></td><td>Write (overwrites existing content)</td></tr>
+                <tr><td><code>"a"</code></td><td>Append (adds to existing content)</td></tr>
+                <tr><td><code>"r+"</code></td><td>Read and write</td></tr>
+                <tr><td><code>"b"</code></td><td>Binary mode (e.g., "rb", "wb")</td></tr>
+            </table>
 
             <h3>Reading Formatted Data</h3>
-            <pre>// data.txt format: id name gpa
-// 101 Juan 1.75
-// 102 Maria 1.50
+            <pre># students.txt format: id,name,gpa
+# 101,Juan,1.75
+# 102,Maria,1.50
 
-import java.util.Scanner;
-import java.io.File;
+with open("students.txt", "r") as f:
+    for line in f:
+        id, name, gpa = line.strip().split(",")
+        print(f"{id} {name} {float(gpa):.2f}")</pre>
 
-public class ReadStudents {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("students.txt"));
-        while (sc.hasNext()) {
-            int id = sc.nextInt();
-            String name = sc.next();
-            double gpa = sc.nextDouble();
-            System.out.printf("%d %s %.2f%n", id, name, gpa);
-        }
-        sc.close();
-    }
-}</pre>
+            <h3>Custom Context Managers</h3>
+            <p>The <code>with</code> statement works with any object that implements the context manager protocol (<code>__enter__</code> and <code>__exit__</code>).</p>
+            <pre>class ManagedFile:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
 
-            <h3>File Class Operations</h3>
-            <pre>File file = new File("test.txt");
-file.exists()         // check if file exists
-file.createNewFile()  // create new file
-file.delete()         // delete file
-file.length()         // file size in bytes
-file.getName()        // get file name
-file.getAbsolutePath() // get full path
-file.isDirectory()    // check if directory
-file.listFiles()      // list directory contents</pre>
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Java File I/O uses streams and readers/writers for input and output. Always close resources or use try-with-resources. The File class provides methods for file system operations. BufferedReader and FileWriter are efficient for text file operations.</div>
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+# Usage
+with ManagedFile("test.txt", "w") as f:
+    f.write("Using custom context manager!")</pre>
+
+            <h3>Using contextlib</h3>
+            <pre>from contextlib import contextmanager
+
+@contextmanager
+def managed_file(filename, mode):
+    f = open(filename, mode)
+    try:
+        yield f
+    finally:
+        f.close()
+
+with managed_file("test.txt", "w") as f:
+    f.write("Using contextlib!")</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Python File I/O uses the built-in open() function with the 'with' statement for automatic resource management. Context managers ensure proper cleanup. Create custom context managers using __enter__/__exit__ or the @contextmanager decorator from contextlib.</div>
         `
     },
     f3: {
-        title: "GUI Programming",
+        title: "Magic Methods & Advanced Features",
         period: "FINALS",
         content: `
-            <h2>GUI Programming</h2>
+            <h2>Magic Methods & Advanced Features</h2>
             <span class="period-badge">FINALS</span>
-            <p><strong>Graphical User Interface (GUI)</strong> programming allows users to interact with programs through visual components like windows, buttons, text fields, and menus. Java provides <strong>Swing</strong> (javax.swing) for building desktop GUI applications.</p>
+            <p><strong>Magic methods</strong> (dunder methods) are special methods with double underscores that allow your objects to integrate seamlessly with Python's built-in operations. They enable operator overloading, iteration, and more.</p>
 
-            <h3>JFrame — The Main Window</h3>
-            <pre>import javax.swing.*;
+            <h3>String Representation</h3>
+            <pre>class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
 
-public class MyWindow {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("My First GUI");
-        frame.setSize(400, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}</pre>
+    def __str__(self):
+        return f"'{self.title}' by {self.author}"
 
-            <h3>Common Swing Components</h3>
-            <table>
-                <tr><th>Component</th><th>Description</th></tr>
-                <tr><td><code>JLabel</code></td><td>Displays text or an image</td></tr>
-                <tr><td><code>JTextField</code></td><td>Single-line text input</td></tr>
-                <tr><td><code>JPasswordField</code></td><td>Password input (masked text)</td></tr>
-                <tr><td><code>JTextArea</code></td><td>Multi-line text area</td></tr>
-                <tr><td><code>JButton</code></td><td>Clickable button</td></tr>
-                <tr><td><code>JCheckBox</code></td><td>Checkable option</td></tr>
-                <tr><td><code>JRadioButton</code></td><td>Radio button (mutually exclusive)</td></tr>
-                <tr><td><code>JComboBox</code></td><td>Dropdown list</td></tr>
-                <tr><td><code>JTable</code></td><td>Table component for data display</td></tr>
-            </table>
+    def __repr__(self):
+        return f"Book('{self.title}', '{self.author}')"
 
-            <h3>Layout Managers</h3>
-            <pre>import javax.swing.*;
-import java.awt.*;
+b = Book("1984", "George Orwell")
+print(str(b))   # '1984' by George Orwell
+print(repr(b))  # Book('1984', 'George Orwell')</pre>
 
-public class LayoutDemo {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Layout Demo");
-        frame.setLayout(new FlowLayout());
+            <h3>Operator Overloading</h3>
+            <pre>class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
 
-        frame.add(new JButton("Button 1"));
-        frame.add(new JButton("Button 2"));
-        frame.add(new JButton("Button 3"));
+    def __add__(self, other):
+        return Fraction(
+            self.num * other.den + other.num * self.den,
+            self.den * other.den
+        )
 
-        frame.setSize(400, 150);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}</pre>
+    def __eq__(self, other):
+        return self.num * other.den == other.num * self.den
 
-            <h3>Event Handling</h3>
-            <pre>import javax.swing.*;
-import java.awt.event.*;
+    def __str__(self):
+        return f"{self.num}/{self.den}"
 
-public class ButtonClick {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Click Me");
-        JButton btn = new JButton("Click Me!");
-        JLabel label = new JLabel("Waiting...");
+f1 = Fraction(1, 3)
+f2 = Fraction(1, 6)
+print(f1 + f2)  # 9/18
+print(f1 == Fraction(2, 6))  # True</pre>
 
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                label.setText("Button clicked!");
-            }
-        });
+            <h3>Iteration & Containers</h3>
+            <pre>class Playlist:
+    def __init__(self, songs):
+        self.songs = songs
 
-        frame.setLayout(new FlowLayout());
-        frame.add(btn);
-        frame.add(label);
-        frame.setSize(300, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}</pre>
+    def __len__(self):
+        return len(self.songs)
 
-            <h3>Simple Login Form</h3>
-            <pre>import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+    def __getitem__(self, index):
+        return self.songs[index]
 
-public class LoginForm extends JFrame {
-    private JTextField usernameField;
-    private JPasswordField passwordField;
+    def __contains__(self, song):
+        return song in self.songs
 
-    public LoginForm() {
-        setTitle("Login");
-        setLayout(new GridLayout(3, 2, 10, 10));
+pl = Playlist(["Song A", "Song B", "Song C"])
+print(len(pl))           # 3
+print(pl[1])             # Song B
+print("Song A" in pl)    # True
+for song in pl:
+    print(song)</pre>
 
-        add(new JLabel("Username:"));
-        usernameField = new JTextField();
-        add(usernameField);
+            <h3>Callable Objects</h3>
+            <pre>class Counter:
+    def __init__(self):
+        self.count = 0
 
-        add(new JLabel("Password:"));
-        passwordField = new JPasswordField();
-        add(passwordField);
+    def __call__(self):
+        self.count += 1
+        return self.count
 
-        JButton loginBtn = new JButton("Login");
-        loginBtn.addActionListener(e -> {
-            String user = usernameField.getText();
-            String pass = new String(passwordField.getPassword());
-            if (user.equals("admin") && pass.equals("1234")) {
-                JOptionPane.showMessageDialog(this, "Welcome!");
-            } else {
-                JOptionPane.showMessageDialog(this, "Invalid credentials");
-            }
-        });
-        add(loginBtn);
+counter = Counter()
+print(counter())  # 1
+print(counter())  # 2
+print(counter())  # 3</pre>
 
-        setSize(300, 150);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-    }
+            <h3>Decorators</h3>
+            <p>Decorators are functions that modify the behavior of other functions.</p>
+            <pre>def timer(func):
+    import time
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} took {time.time()-start:.2f}s")
+        return result
+    return wrapper
 
-    public static void main(String[] args) {
-        new LoginForm();
-    }
-}</pre>
+@timer
+def slow_function():
+    sum(range(1000000))
 
-            <div class="highlight-box"><strong>Key Takeaway:</strong> Java Swing provides a rich set of GUI components for building desktop applications. Layout managers control component placement. Event listeners handle user interactions. JOptionPane provides convenient dialog boxes for messages and input.</div>
+slow_function()</pre>
+
+            <h3>Generators</h3>
+            <pre>def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+for num in fibonacci(10):
+    print(num, end=" ")  # 0 1 1 2 3 5 8 13 21 34</pre>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Magic methods allow your classes to integrate with Python's syntax and built-in functions. Decorators modify function behavior. Generators produce sequences lazily using yield. These advanced features make Python powerful and expressive.</div>
         `
     }
 };
@@ -9148,71 +9044,71 @@ const activities = {
                 { question: "Which pillar of OOP bundles data and methods together?", choices: ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction"], correct: 2 },
                 { question: "What is the difference between a class and an object?", choices: ["No difference", "Class is a blueprint; object is an instance", "Class is an instance; object is a blueprint", "Class has data; object has methods"], correct: 1 }
             ],
-            assignment: "Create a Java class called 'Book' with attributes: title, author, ISBN, and price. Add a method displayInfo(). In main(), create 3 Book objects and display their information."
+            assignment: "Create a Python class 'Book' with attributes: title, author, ISBN, and price. Add a method display_info(). Create 3 Book objects and display their information."
         },
         p2: {
             quiz: [
-                { question: "What is a constructor?", choices: ["A method that destroys an object", "A special method that initializes objects", "A regular method", "A variable declaration"], correct: 1 },
-                { question: "Which keyword is used to refer to the current object?", choices: ["self", "me", "this", "current"], correct: 2 },
-                { question: "What does the 'static' keyword mean?", choices: ["Belongs to the object", "Belongs to the class", "Cannot be changed", "Only accessible in main"], correct: 1 }
+                { question: "What method is the constructor in Python?", choices: ["__construct__", "__init__", "init()", "constructor()"], correct: 1 },
+                { question: "What parameter refers to the current object in Python?", choices: ["self", "me", "this", "current"], correct: 0 },
+                { question: "What does a class variable mean in Python?", choices: ["Belongs to the object", "Belongs to the class", "Cannot be changed", "Only accessible in methods"], correct: 1 }
             ],
-            assignment: "Create a Java class 'Student' with private attributes, a constructor, getters/setters, and a method display(). In main(), create an array of 5 Student objects and display honor students (GPA >= 1.75)."
+            assignment: "Create a Python class 'Student' with private attributes, a constructor, getters/setters, and a method display(). Create a list of 5 Student objects and display honor students (GPA >= 1.75)."
         },
         p3: {
             quiz: [
-                { question: "Which access modifier makes a member accessible only within the same class?", choices: ["public", "protected", "private", "default"], correct: 2 },
-                { question: "What is a getter method used for?", choices: ["To modify a private field", "To access a private field", "To delete a field", "To create a field"], correct: 1 },
+                { question: "Which naming convention makes an attribute protected in Python?", choices: ["_name", "__name", "name_", "__name__"], correct: 0 },
+                { question: "What decorator is used to create a getter in Python?", choices: ["@getter", "@property", "@setter", "@accessor"], correct: 1 },
                 { question: "What is the benefit of encapsulation?", choices: ["Faster code", "Data protection and validation", "Less memory usage", "Automatic compilation"], correct: 1 }
             ],
-            assignment: "Create a 'BankAccount' class with private fields (accountNumber, balance, pin). Implement deposit(), withdraw() with PIN validation, and getBalance(). Demonstrate the class in main()."
+            assignment: "Create a 'BankAccount' class in Python with private fields (account_number, balance, pin). Implement deposit(), withdraw() with PIN validation, and get_balance() using @property."
         },
         m1: {
             quiz: [
-                { question: "Which keyword is used for inheritance in Java?", choices: ["inherits", "extends", "implements", "super"], correct: 1 },
-                { question: "What does the super keyword do?", choices: ["Creates a new object", "Refers to the parent class", "Calls the current class", "Deletes an object"], correct: 1 },
-                { question: "Does Java support multiple inheritance through classes?", choices: ["Yes", "No", "Only in interfaces", "Only in abstract classes"], correct: 1 }
+                { question: "Which function calls the parent class constructor in Python?", choices: ["parent().__init__()", "super().__init__()", "base().__init__()", "self.parent()"], correct: 1 },
+                { question: "What does MRO stand for?", choices: ["Method Resolution Order", "Main Runtime Object", "Multiple Reference Order", "Method Return Operation"], correct: 0 },
+                { question: "Does Python support multiple inheritance?", choices: ["Yes", "No", "Only through interfaces", "Only with ABCs"], correct: 0 }
             ],
-            assignment: "Create a class hierarchy: Person (parent) → Student and Teacher (children). Person has name and age. Student adds course and gpa. Teacher adds department and salary. Override displayInfo() in each subclass."
+            assignment: "Create a class hierarchy: Person (parent) → Student and Teacher (children). Person has name and age. Student adds course and gpa. Teacher adds department and salary. Override display_info() in each subclass. Demonstrate MRO."
         },
         m2: {
             quiz: [
-                { question: "What is method overloading?", choices: ["Same method name, different parameters", "Same method name, same parameters", "Different class, same method", "Method in parent class"], correct: 0 },
-                { question: "What is dynamic method dispatch?", choices: ["Compile-time method resolution", "Runtime method resolution based on object type", "Method with multiple returns", "Static method call"], correct: 1 },
-                { question: "Which annotation indicates a method is being overridden?", choices: ["@Override", "@Overload", "@Inherit", "@Polymorph"], correct: 0 }
+                { question: "What is duck typing?", choices: ["A type of inheritance", "If it walks like a duck and quacks like a duck, it's a duck", "A way to define classes", "A method overloading technique"], correct: 1 },
+                { question: "Which magic method overloads the + operator?", choices: ["__plus__", "__add__", "__sum__", "__concat__"], correct: 1 },
+                { question: "What does isinstance() do?", choices: ["Checks if an object is an instance of a class", "Creates an instance", "Deletes an instance", "Converts types"], correct: 0 }
             ],
-            assignment: "Create a Shape hierarchy: Shape (abstract with getArea()), Circle, Rectangle, and Triangle. Write a program that creates an array of Shape objects and displays the area of each using polymorphism."
+            assignment: "Create a Shape hierarchy using duck typing: define a Circle class and a Rectangle class, each with get_area(). Write a function that accepts any object with get_area() and prints the area."
         },
         m3: {
             quiz: [
-                { question: "Can an abstract class be instantiated?", choices: ["Yes", "No", "Only with parameters", "Only if it has concrete methods"], correct: 1 },
-                { question: "How many interfaces can a class implement?", choices: ["Only 1", "Up to 2", "As many as needed", "None"], correct: 2 },
-                { question: "What is the purpose of an interface?", choices: ["To provide implementation", "To define a contract", "To create objects", "To store data"], correct: 1 }
+                { question: "Which module provides ABC support in Python?", choices: ["abc", "abstract", "interface", "protocol"], correct: 0 },
+                { question: "What decorator marks an abstract method in Python?", choices: ["@abstract", "@abstractmethod", "@interface", "@override"], correct: 1 },
+                { question: "What is a Protocol in Python?", choices: ["A formal interface", "Structural subtyping — no explicit inheritance needed", "An abstract class", "A concrete class"], correct: 1 }
             ],
-            assignment: "Create interfaces 'Playable' (play(), pause(), stop()) and 'Recordable' (record()). Create a class 'Smartphone' that implements both. Write a main method demonstrating all functionalities."
+            assignment: "Create a Protocol 'Playable' (play(), pause(), stop()) using typing.Protocol. Create classes 'MusicPlayer' and 'VideoPlayer' that satisfy the protocol structurally without explicit inheritance."
         },
         f1: {
             quiz: [
-                { question: "Which keyword is used to throw an exception manually?", choices: ["try", "catch", "throw", "throws"], correct: 2 },
-                { question: "What is the purpose of the finally block?", choices: ["To catch exceptions", "To execute code regardless of exception", "To throw exceptions", "To define custom exceptions"], correct: 1 },
-                { question: "Which of these is an unchecked exception?", choices: ["IOException", "SQLException", "NullPointerException", "FileNotFoundException"], correct: 2 }
+                { question: "Which keyword is used to raise an exception manually in Python?", choices: ["try", "except", "raise", "throw"], correct: 2 },
+                { question: "What is the purpose of the else block in try-except?", choices: ["To catch exceptions", "To run code when no exception occurs", "To always run code", "To raise exceptions"], correct: 1 },
+                { question: "Which of these is a built-in Python exception?", choices: ["IOException", "SQLException", "ValueError", "FileNotFoundException"], correct: 2 }
             ],
-            assignment: "Write a Java program that asks the user for two numbers and divides them. Handle ArithmeticException and InputMismatchException. Create a custom exception 'InvalidInputException' for negative numbers."
+            assignment: "Write a Python program that asks the user for two numbers and divides them. Handle ValueError and ZeroDivisionError. Create a custom exception 'NegativeNumberError' for negative numbers."
         },
         f2: {
             quiz: [
-                { question: "Which class is used for reading text from a file efficiently?", choices: ["FileReader", "BufferedReader", "Scanner", "InputStream"], correct: 1 },
-                { question: "What does try-with-resources do?", choices: ["Catches exceptions", "Automatically closes resources", "Creates resources", "Logs errors"], correct: 1 },
-                { question: "Which method checks if a file exists?", choices: ["file.exists()", "file.isFile()", "file.check()", "file.available()"], correct: 0 }
+                { question: "Which statement ensures automatic file closing in Python?", choices: ["using", "with", "open", "close"], correct: 1 },
+                { question: "What does the 'with' statement use internally?", choices: ["Context managers", "Inheritance", "Abstract classes", "Generators"], correct: 0 },
+                { question: "Which magic methods define a context manager?", choices: ["__init__ and __exit__", "__enter__ and __exit__", "__open__ and __close__", "__start__ and __stop__"], correct: 1 }
             ],
-            assignment: "Create a program that reads a text file and counts the number of lines, words, and characters. Write the results to a new file named 'report.txt'. Handle all possible exceptions."
+            assignment: "Create a program that reads a text file and counts the number of lines, words, and characters. Write the results to a new file named 'report.txt'. Use the with statement and handle all possible exceptions."
         },
         f3: {
             quiz: [
-                { question: "Which class represents a window in Java Swing?", choices: ["JWindow", "JFrame", "JDialog", "JPanel"], correct: 1 },
-                { question: "Which method sets the size of a JFrame?", choices: ["setSize()", "setDimension()", "resize()", "size()"], correct: 0 },
-                { question: "Which interface is used for button click events?", choices: ["KeyListener", "MouseListener", "ActionListener", "WindowListener"], correct: 2 }
+                { question: "Which magic method defines string representation for print()?", choices: ["__repr__", "__str__", "__format__", "__print__"], correct: 1 },
+                { question: "What does the @ decorator syntax do?", choices: ["Creates a variable", "Modifies function behavior", "Defines a class", "Imports a module"], correct: 1 },
+                { question: "What keyword is used in generator functions?", choices: ["return", "yield", "generate", "emit"], correct: 1 }
             ],
-            assignment: "Create a simple calculator GUI using Java Swing with buttons for numbers 0-9, operators (+, -, *, /), and an equals button. Display the result in a JTextField."
+            assignment: "Create a Python module that demonstrates: (1) a class with __str__ and __repr__, (2) a decorator that logs function calls, and (3) a generator that yields Fibonacci numbers. Include docstrings and demonstrate all three features."
         }
     },
     csele1: {
@@ -9330,9 +9226,9 @@ const finalOutputs = {
         finals: "Build a student record management system in Python using classes, lists, and file handling. Features: add, display, search, update, and delete records. Submit source code and documentation."
     },
     ooprog: {
-        prelim: "Design and implement a Java class library for a library management system. Include classes for Book, Member, and Librarian with proper encapsulation, constructors, and getters/setters. Submit UML diagram and source code.",
-        midterm: "Develop a Java payroll system using inheritance, polymorphism, and interfaces. Include Employee, FullTimeEmployee, PartTimeEmployee classes. Calculate salaries and display payslips. Submit source code and sample output.",
-        finals: "Build a Java Swing GUI application for a student enrollment system. Include forms for adding students, searching, displaying the list, and saving/loading data from files. Submit source code and executable JAR."
+        prelim: "Design and implement a Python class library for a library management system. Include classes for Book, Member, and Librarian with proper encapsulation, properties, and methods. Submit UML diagram and source code.",
+        midterm: "Develop a Python payroll system using inheritance, polymorphism, and ABCs. Include Employee (ABC), FullTimeEmployee, PartTimeEmployee classes. Calculate salaries and display payslips. Submit source code and sample output.",
+        finals: "Build a Python application for a student enrollment system using context managers for file handling, custom exceptions for validation, and magic methods for data representation. Include forms for adding, searching, displaying, and saving/loading data from files."
     },
     csele1: {
         prelim: "Research and create a visual timeline infographic of the evolution of computer graphics hardware from the 1960s to today. Include key milestones such as the first GPU, programmable shaders, real-time ray tracing, and VR/AR technologies. Submit as PDF or high-resolution image.",
@@ -9925,7 +9821,7 @@ const subjectChips = {
     genel1: ['What is ICT?', 'History of computer', 'Types of hackers', 'Cybercrimes in PH'],
     adbms: ['What is normalization?', 'Explain SQL vs NoSQL', 'Database security', 'What is data warehousing?'],
     cprog1: ['What is a variable?', 'Explain control structures', 'What is a function?', 'Lists in Python'],
-    ooprog: ['What is OOP?', 'Explain inheritance', 'Polymorphism example', 'What is encapsulation?'],
+    ooprog: ['What is OOP in Python?', 'Explain inheritance & MRO', 'Duck typing example', 'Python @property decorator'],
     gened7: ['STS meaning', 'Human flourishing', 'Information age', 'Climate change'],
     inform: ['What is information management?', 'Data governance', 'CMS examples', 'Big data'],
     quanti: ['Quantitative methods', 'Data analysis', 'Scheduling optimization', 'Predictive modeling'],
