@@ -1649,7 +1649,8 @@ const subjects = {
                 { id: "m2", label: "2. Lists & Tuples" },
                 { id: "m3", label: "3. Strings" },
                 { id: "m4", label: "4. List Comprehensions & Lambda" },
-                { id: "m5", label: "5. Modules & Packages" }
+                { id: "m5", label: "5. Modules & Packages" },
+                { id: "m6", label: "6. GUI Programming with Tkinter" }
             ],
             finals: [
                 { id: "f1", label: "1. Dictionaries & Sets" },
@@ -1910,6 +1911,14 @@ const activities = {
                 { question: "What does the __name__ variable equal when a script is run directly?", choices: ["'__main__'", "'__module__'", "'__script__'", "None"], correct: 0 }
             ],
             assignment: "Create two modules: 'calculator.py' (add, subtract, multiply, divide) and 'main.py' that imports calculator. Main.py should display a menu, ask for two numbers, perform the selected operation, and display the result. Use the if __name__ == '__main__' pattern."
+        },
+        m6: {
+            quiz: [
+                { question: "Which Tkinter method starts the GUI event loop?", choices: ["root.loop()", "root.run()", "root.mainloop()", "root.start()"], correct: 2 },
+                { question: "Which geometry manager arranges widgets in a row/column grid?", choices: ["pack()", "grid()", "place()", "arrange()"], correct: 1 },
+                { question: "Which widget is used for single-line text input in Tkinter?", choices: ["Label", "Text", "Entry", "Input"], correct: 2 }
+            ],
+            assignment: "Create a Tkinter GUI application for a student grade calculator. The app should have: labels, entry fields for student name and 3 quiz scores, a button to calculate the average and grade (A/B/C/D/F), and a label to display the result. Use grid() for layout and messagebox for error handling."
         },
         f4: {
             quiz: [
@@ -3548,6 +3557,124 @@ if __name__ == "__main__":
     main()</pre>
 
         <div class="highlight-box"><strong>Key Takeaway:</strong> Modules and packages are essential for organizing Python code. Python's extensive standard library provides modules for almost every task, and creating your own modules promotes code reuse and maintainability.</div>
+    `
+};
+lessons.cprog1.m6 = {
+    title: "GUI Programming with Tkinter",
+    period: "MIDTERM",
+    content: `
+        <h2>GUI Programming with Tkinter</h2>
+        <span class="period-badge">MIDTERM</span>
+        <p><strong>Tkinter</strong> is Python's standard library for creating Graphical User Interfaces (GUIs). It comes bundled with Python, so no additional installation is needed. Tkinter provides widgets — buttons, labels, text boxes, and more — to build desktop applications.</p>
+
+        <h3>Creating a Basic Window</h3>
+        <pre>import tkinter as tk
+
+# Create the main window
+root = tk.Tk()
+root.title("My First GUI")
+root.geometry("400x300")  # width x height
+root.mainloop()  # Start the event loop</pre>
+
+        <h3>Common Tkinter Widgets</h3>
+        <table>
+            <tr><th>Widget</th><th>Description</th><th>Example</th></tr>
+            <tr><td><code>Label</code></td><td>Displays text or an image</td><td><code>tk.Label(root, text="Hello")</code></td></tr>
+            <tr><td><code>Button</code></td><td>Clickable button</td><td><code>tk.Button(root, text="Click", command=func)</code></td></tr>
+            <tr><td><code>Entry</code></td><td>Single-line text input</td><td><code>tk.Entry(root, width=20)</code></td></tr>
+            <tr><td><code>Text</code></td><td>Multi-line text area</td><td><code>tk.Text(root, height=5, width=30)</code></td></tr>
+            <tr><td><code>Frame</code></td><td>Container for other widgets</td><td><code>tk.Frame(root)</code></td></tr>
+            <tr><td><code>Listbox</code></td><td>Displays a list of items</td><td><code>tk.Listbox(root)</code></td></tr>
+            <tr><td><code>Canvas</code></td><td>Drawing area (shapes, images)</td><td><code>tk.Canvas(root, width=200, height=200)</code></td></tr>
+        </table>
+
+        <h3>Event Handling</h3>
+        <p>GUI programs respond to events (button clicks, key presses, mouse movements) using callback functions:</p>
+        <pre>def on_click():
+    label.config(text="Button clicked!")
+
+button = tk.Button(root, text="Click Me", command=on_click)
+button.pack()
+
+label = tk.Label(root, text="Waiting...")
+label.pack()</pre>
+
+        <h3>Geometry Managers</h3>
+        <p>Geometry managers control how widgets are arranged in the window:</p>
+        <ul>
+            <li><strong>pack():</strong> Stacks widgets vertically or horizontally. Simple and automatic.</li>
+            <li><strong>grid():</strong> Places widgets in a row/column grid. Most flexible for forms.</li>
+            <li><strong>place():</strong> Positions widgets at exact x,y coordinates.</li>
+        </ul>
+
+        <h4>Example: Using grid()</h4>
+        <pre>tk.Label(root, text="Name:").grid(row=0, column=0)
+entry = tk.Entry(root)
+entry.grid(row=0, column=1)
+
+def show_name():
+    name = entry.get()
+    tk.Label(root, text=f"Hello, {name}!").grid(row=2, column=0, columnspan=2)
+
+tk.Button(root, text="Greet", command=show_name).grid(row=1, column=0, columnspan=2)</pre>
+
+        <h3>Building a Simple Calculator</h3>
+        <pre>def add():
+    a = float(entry1.get())
+    b = float(entry2.get())
+    result.config(text=f"Result: {a + b}")
+
+root = tk.Tk()
+root.title("Simple Calculator")
+
+tk.Label(root, text="Number 1:").grid(row=0, column=0)
+entry1 = tk.Entry(root)
+entry1.grid(row=0, column=1)
+
+tk.Label(root, text="Number 2:").grid(row=1, column=0)
+entry2 = tk.Entry(root)
+entry2.grid(row=1, column=1)
+
+tk.Button(root, text="Add", command=add).grid(row=2, column=0, columnspan=2)
+result = tk.Label(root, text="Result: ")
+result.grid(row=3, column=0, columnspan=2)
+
+root.mainloop()</pre>
+
+        <h3>Dialog Boxes</h3>
+        <p>Tkinter provides built-in dialog boxes for common interactions:</p>
+        <pre>from tkinter import messagebox, simpledialog, filedialog
+
+messagebox.showinfo("Info", "Operation completed!")
+messagebox.showerror("Error", "Something went wrong!")
+name = simpledialog.askstring("Input", "Enter your name:")
+file = filedialog.askopenfilename()</pre>
+
+        <h3>Example: Login Form</h3>
+        <pre>def login():
+    user = username_entry.get()
+    pwd = password_entry.get()
+    if user == "admin" and pwd == "1234":
+        messagebox.showinfo("Success", "Login successful!")
+    else:
+        messagebox.showerror("Error", "Invalid credentials.")
+
+root = tk.Tk()
+root.title("Login")
+root.geometry("300x200")
+
+tk.Label(root, text="Username:").pack()
+username_entry = tk.Entry(root)
+username_entry.pack()
+
+tk.Label(root, text="Password:").pack()
+password_entry = tk.Entry(root, show="*")
+password_entry.pack()
+
+tk.Button(root, text="Login", command=login).pack(pady=10)
+root.mainloop()</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> Tkinter makes it easy to create desktop GUI applications in Python. Master the main widgets (Label, Button, Entry, Text), geometry managers (pack, grid), and event handling patterns to build interactive user interfaces.</div>
     `
 };
 lessons.cprog1.f4 = {
