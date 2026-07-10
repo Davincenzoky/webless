@@ -1640,17 +1640,23 @@ const subjects = {
             prelim: [
                 { id: "p1", label: "1. Introduction to Python" },
                 { id: "p2", label: "2. Variables & Data Types" },
-                { id: "p3", label: "3. Control Structures" }
+                { id: "p3", label: "3. Control Structures" },
+                { id: "p4", label: "4. Operators & Expressions" },
+                { id: "p5", label: "5. Algorithms & Problem Solving" }
             ],
             midterm: [
                 { id: "m1", label: "1. Functions" },
                 { id: "m2", label: "2. Lists & Tuples" },
-                { id: "m3", label: "3. Strings" }
+                { id: "m3", label: "3. Strings" },
+                { id: "m4", label: "4. List Comprehensions & Lambda" },
+                { id: "m5", label: "5. Modules & Packages" }
             ],
             finals: [
                 { id: "f1", label: "1. Dictionaries & Sets" },
                 { id: "f2", label: "2. File Handling" },
-                { id: "f3", label: "3. Error Handling & Best Practices" }
+                { id: "f3", label: "3. Error Handling & Best Practices" },
+                { id: "f4", label: "4. Intro to OOP in Python" },
+                { id: "f5", label: "5. Useful Standard Libraries" }
             ]
         }
     },
@@ -1872,6 +1878,54 @@ const activities = {
                 { question: "What is the difference between a class and an object?", choices: ["No difference", "Class is a blueprint; object is an instance", "Class is an instance; object is a blueprint", "Class has data; object has methods"], correct: 1 }
             ],
             assignment: "Define a 'Book' class with attributes: title, author, ISBN, and price. Include a method display_info(). Create a list of 5 Book objects. Write a program that allows the user to input book details, display all books, and search for a book by title."
+        },
+        p4: {
+            quiz: [
+                { question: "What is the result of 17 % 5?", choices: ["2", "3", "3.4", "5"], correct: 0 },
+                { question: "What is the value of x after x += 5 if x was 10?", choices: ["10", "5", "15", "20"], correct: 2 },
+                { question: "Which operator has the highest precedence?", choices: ["+", "*", "()", "**"], correct: 2 }
+            ],
+            assignment: "Write a Python program that converts a temperature from Celsius to Fahrenheit using the formula F = (C * 9/5) + 32. Use operators and display the result in a formatted output. Then calculate the area and circumference of a circle given its radius."
+        },
+        p5: {
+            quiz: [
+                { question: "What is an algorithm?", choices: ["A programming language", "A step-by-step procedure to solve a problem", "A type of data structure", "A computer component"], correct: 1 },
+                { question: "Which symbol represents a decision in a flowchart?", choices: ["Rectangle", "Oval", "Diamond", "Parallelogram"], correct: 2 },
+                { question: "What does a parallelogram represent in a flowchart?", choices: ["Start/End", "Process", "Input/Output", "Decision"], correct: 2 }
+            ],
+            assignment: "Draw a flowchart and write the pseudocode for a program that: (1) asks the user for 3 numbers, (2) determines the largest, (3) checks if it's even or odd, and (4) displays the result. Then implement it in Python."
+        },
+        m4: {
+            quiz: [
+                { question: "What does [x**2 for x in range(5)] produce?", choices: ["[0,1,4,9,16]", "[1,4,9,16,25]", "[0,2,4,6,8]", "[0,1,2,3,4]"], correct: 0 },
+                { question: "Which keyword creates an anonymous function in Python?", choices: ["def", "lambda", "anon", "fn"], correct: 1 },
+                { question: "What does filter(lambda x: x > 0, [-1,0,1,2]) return?", choices: "[-1,0]", "[0,1,2]", "[1,2]", "[-1,0,1,2]", correct: 2 }
+            ],
+            assignment: "Write a program that generates a list of the first 20 Fibonacci numbers using a list comprehension. Then use lambda with sorted() to sort a list of tuples (student_name, grade) by grade in descending order."
+        },
+        m5: {
+            quiz: [
+                { question: "What is a Python module?", choices: ["A function", "A .py file containing code", "A data type", "A loop structure"], correct: 1 },
+                { question: "Which import style allows you to use sqrt() directly without math.sqrt?", choices: ["import math", "from math import sqrt", "import math as m", "from math import *"], correct: 1 },
+                { question: "What does the __name__ variable equal when a script is run directly?", choices: ["'__main__'", "'__module__'", "'__script__'", "None"], correct: 0 }
+            ],
+            assignment: "Create two modules: 'calculator.py' (add, subtract, multiply, divide) and 'main.py' that imports calculator. Main.py should display a menu, ask for two numbers, perform the selected operation, and display the result. Use the if __name__ == '__main__' pattern."
+        },
+        f4: {
+            quiz: [
+                { question: "What does the __init__ method do in Python?", choices: ["Destroys the object", "Initializes object attributes", "Prints output", "Handles errors"], correct: 1 },
+                { question: "What does 'self' represent in a Python class?", choices: ["The class itself", "The current object instance", "A special method", "A module"], correct: 1 },
+                { question: "What is inheritance in OOP?", choices: ["Creating a new class from an existing class", "Hiding data from the user", "Defining abstract methods", "Grouping functions together"], correct: 0 }
+            ],
+            assignment: "Create a class hierarchy: Animal (parent) → Dog and Cat (children). Animal has name and age. Each child implements speak() differently. Create a list of animals and loop through them calling speak() to demonstrate polymorphism."
+        },
+        f5: {
+            quiz: [
+                { question: "Which module provides the randint() function?", choices: ["math", "random", "datetime", "sys"], correct: 1 },
+                { question: "What does os.getcwd() return?", choices: ["Current working directory", "Operating system name", "CPU type", "Python version"], correct: 0 },
+                { question: "Which function converts a Python dict to a JSON string?", choices: ["json.loads()", "json.dumps()", "json.stringify()", "json.to_json()"], correct: 1 }
+            ],
+            assignment: "Write a program that uses at least 3 different standard libraries: (1) math for calculations, (2) random to generate random data, (3) datetime to timestamp outputs. The program should generate random student quiz scores, calculate statistics, and save the results to a JSON file with a timestamp."
         }
     },
     ooprog: {
@@ -2043,6 +2097,11 @@ const finalOutputs = {
         prelim: "Develop a complete Python program that functions as a student grade calculator. It must use variables, control structures, lists, and functions. Include input validation and a menu-driven interface. Submit source code and program output.",
         midterm: "Create a text-based game (e.g., Hangman, Number Guessing, Maze) in Python using functions, lists, strings, and file handling for high scores. Submit source code with comments and a user guide.",
         finals: "Build a student record management system in Python using classes, lists, and file handling. Features: add, display, search, update, and delete records. Submit source code and documentation."
+    },
+    cprog1: {
+        prelim: "Develop a complete Python application that demonstrates all prelim topics: variables, data types, operators, control structures, and algorithm design. The program should include input validation, a menu-driven interface, and proper use of operators and expressions. Submit source code and flowchart.",
+        midterm: "Build a Python application that uses functions, lists, strings, list comprehensions, lambda, and modules. The program should demonstrate functional programming concepts and code organization across multiple modules. Submit source code with documentation.",
+        finals: "Create a Python project that incorporates dictionaries, sets, file handling, error handling, OOP basics, and standard libraries (math, random, datetime, os, json). The program should be menu-driven with persistent data storage using files or JSON. Submit source code and user guide."
     },
     ooprog: {
         prelim: "Design and implement a Python class library for a library management system. Include classes for Book, Member, and Librarian with proper encapsulation, properties, and methods. Submit UML diagram and source code.",
@@ -3233,6 +3292,429 @@ finally:
         </ul>
 
         <div class="highlight-box"><strong>Key Takeaway:</strong> Error handling makes programs robust and user-friendly. Following Python best practices ensures code is maintainable, readable, and reliable.</div>
+    `
+};
+lessons.cprog1.p4 = {
+    title: "Operators & Expressions",
+    period: "PRELIM",
+    content: `
+        <h2>Operators & Expressions</h2>
+        <span class="period-badge">PRELIM</span>
+        <p>Operators are special symbols that perform operations on values (operands). Expressions are combinations of values, variables, and operators that evaluate to a single value.</p>
+
+        <h3>Arithmetic Operators</h3>
+        <table>
+            <tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+            <tr><td><code>+</code></td><td>Addition</td><td><code>10 + 3</code></td><td>13</td></tr>
+            <tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 3</code></td><td>7</td></tr>
+            <tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 3</code></td><td>30</td></tr>
+            <tr><td><code>/</code></td><td>Division</td><td><code>10 / 3</code></td><td>3.333...</td></tr>
+            <tr><td><code>//</code></td><td>Floor Division</td><td><code>10 // 3</code></td><td>3</td></tr>
+            <tr><td><code>%</code></td><td>Modulo (Remainder)</td><td><code>10 % 3</code></td><td>1</td></tr>
+            <tr><td><code>**</code></td><td>Exponentiation</td><td><code>2 ** 4</code></td><td>16</td></tr>
+        </table>
+
+        <h3>Assignment Operators</h3>
+        <p>Shorthand operators that combine assignment with an operation: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>, <code>**=</code>.</p>
+        <pre>x = 10
+x += 5   # x = x + 5 → 15
+x *= 2   # x = x * 2 → 30</pre>
+
+        <h3>Comparison Operators</h3>
+        <p>Compare values and return a boolean: <code>==</code> (equal), <code>!=</code> (not equal), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater or equal), <code>&lt;=</code> (less or equal).</p>
+
+        <h3>Logical Operators</h3>
+        <ul>
+            <li><code>and</code> — True if both operands are True</li>
+            <li><code>or</code> — True if at least one operand is True</li>
+            <li><code>not</code> — Inverts the boolean value</li>
+        </ul>
+        <pre>age = 20
+has_id = True
+if age >= 18 and has_id:
+    print("You can enter")</pre>
+
+        <h3>Operator Precedence (PEMDAS)</h3>
+        <ol>
+            <li><strong>P</strong>arentheses <code>()</code></li>
+            <li><strong>E</strong>xponentiation <code>**</code></li>
+            <li><strong>M</strong>ultiplication, <strong>D</strong>ivision, Floor Division, Modulo (<code>*</code>, <code>/</code>, <code>//</code>, <code>%</code>)</li>
+            <li><strong>A</strong>ddition, <strong>S</strong>ubtraction (<code>+</code>, <code>-</code>)</li>
+        </ol>
+        <pre>result = (5 + 3) * 2 ** 2  # (8) * 4 = 32</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> Operators are fundamental building blocks of Python expressions. Understanding precedence and the different types of operators — arithmetic, assignment, comparison, logical — allows you to write correct and efficient calculations.</div>
+    `
+};
+lessons.cprog1.p5 = {
+    title: "Algorithms & Problem Solving",
+    period: "PRELIM",
+    content: `
+        <h2>Algorithms & Problem Solving</h2>
+        <span class="period-badge">PRELIM</span>
+        <p>An <strong>algorithm</strong> is a step-by-step procedure for solving a problem. Before writing code, programmers design algorithms to plan the logic and ensure the solution is correct.</p>
+
+        <h3>What is an Algorithm?</h3>
+        <ul>
+            <li>Clear and unambiguous — each step must be well-defined</li>
+            <li>Finite — must end after a reasonable number of steps</li>
+            <li>Effective — must produce the correct result</li>
+            <li>Input/Output — takes inputs and produces outputs</li>
+        </ul>
+
+        <h3>Representing Algorithms</h3>
+        <p><strong>1. Pseudocode:</strong> A plain-language description of algorithm steps.</p>
+        <pre>BEGIN
+    INPUT number
+    IF number % 2 == 0 THEN
+        PRINT "Even"
+    ELSE
+        PRINT "Odd"
+    ENDIF
+END</pre>
+
+        <p><strong>2. Flowcharts:</strong> Visual diagrams using standard symbols.</p>
+        <ul>
+            <li><strong>Oval:</strong> Start/End</li>
+            <li><strong>Parallelogram:</strong> Input/Output</li>
+            <li><strong>Rectangle:</strong> Process</li>
+            <li><strong>Diamond:</strong> Decision</li>
+            <li><strong>Arrow:</strong> Flow direction</li>
+        </ul>
+
+        <h3>Common Algorithm Patterns</h3>
+        <ul>
+            <li><strong>Sequencing:</strong> Steps executed in order</li>
+            <li><strong>Selection:</strong> Decision-making (if-else)</li>
+            <li><strong>Iteration:</strong> Repetition (loops)</li>
+            <li><strong>Accumulation:</strong> Summing values in a loop</li>
+            <li><strong>Searching:</strong> Finding a specific element</li>
+            <li><strong>Counting:</strong> Tracking occurrences</li>
+        </ul>
+
+        <h3>Example: Find the Largest Number</h3>
+        <pre># Algorithm: Find max of three numbers
+# 1. Input a, b, c
+# 2. Set max = a
+# 3. If b > max, set max = b
+# 4. If c > max, set max = c
+# 5. Output max</pre>
+        <pre>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+max_num = a
+if b > max_num:
+    max_num = b
+if c > max_num:
+    max_num = c
+print(f"The largest number is {max_num}")</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> Algorithm design is a critical skill in programming. Planning with pseudocode or flowcharts before coding leads to clearer logic and fewer errors. Practice breaking problems into step-by-step sequences, decisions, and loops.</div>
+    `
+};
+lessons.cprog1.m4 = {
+    title: "List Comprehensions & Lambda",
+    period: "MIDTERM",
+    content: `
+        <h2>List Comprehensions & Lambda</h2>
+        <span class="period-badge">MIDTERM</span>
+        <p>List comprehensions provide a concise way to create lists. Lambda functions are small anonymous functions defined inline. Both are powerful Python features that make code more readable and expressive.</p>
+
+        <h3>List Comprehensions</h3>
+        <p>Syntax: <code>[expression for item in iterable if condition]</code></p>
+        <pre># Traditional approach
+squares = []
+for i in range(10):
+    squares.append(i ** 2)
+
+# List comprehension
+squares = [i ** 2 for i in range(10)]
+
+# With condition — even numbers only
+evens = [x for x in range(20) if x % 2 == 0]
+
+# Nested loops
+pairs = [(x, y) for x in range(3) for y in range(3)]</pre>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>More concise and readable</li>
+            <li>Often faster than traditional loops</li>
+            <li>Can include conditional filtering</li>
+        </ul>
+
+        <h3>Dictionary & Set Comprehensions</h3>
+        <pre># Dictionary comprehension
+squares_dict = {x: x ** 2 for x in range(5)}
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# Set comprehension
+unique_lengths = {len(word) for word in ["apple", "banana", "cherry"]}</pre>
+
+        <h3>Lambda Functions</h3>
+        <p>A lambda is a small anonymous function defined with the <code>lambda</code> keyword:</p>
+        <pre>lambda arguments: expression</pre>
+        <pre># Regular function
+def double(x):
+    return x * 2
+
+# Lambda equivalent
+double = lambda x: x * 2
+
+# Common use: sorting with custom key
+students = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
+students.sort(key=lambda s: s[1])  # Sort by grade
+
+# Using with map(), filter(), sorted()
+nums = [1, 2, 3, 4, 5]
+doubled = list(map(lambda x: x * 2, nums))
+evens = list(filter(lambda x: x % 2 == 0, nums))</pre>
+
+        <h3>When to Use Lambda vs Regular Functions</h3>
+        <ul>
+            <li>Use lambda for simple, one-line operations</li>
+            <li>Use regular <code>def</code> for complex logic or reusable functions</li>
+            <li>Lambda is ideal as an argument to functions like <code>map()</code>, <code>filter()</code>, <code>sorted()</code></li>
+        </ul>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> List comprehensions and lambda functions are Pythonic tools that enable concise, functional-style programming. They reduce boilerplate code and make common operations — mapping, filtering, sorting — more expressive.</div>
+    `
+};
+lessons.cprog1.m5 = {
+    title: "Modules & Packages",
+    period: "MIDTERM",
+    content: `
+        <h2>Modules & Packages</h2>
+        <span class="period-badge">MIDTERM</span>
+        <p>A <strong>module</strong> is a Python file containing functions, classes, and variables. A <strong>package</strong> is a collection of modules organized in directories. Modules help organize code into reusable, maintainable components.</p>
+
+        <h3>Importing Modules</h3>
+        <pre># Import entire module
+import math
+print(math.sqrt(16))  # 4.0
+
+# Import specific items
+from math import sqrt, pi
+print(sqrt(25))  # 5.0
+print(pi)        # 3.14159...
+
+# Import with alias
+import math as m
+print(m.floor(3.7))  # 3
+
+# Import all (not recommended)
+from math import *</pre>
+
+        <h3>Creating Your Own Module</h3>
+        <p>Save a file as <code>my_utils.py</code>:</p>
+        <pre># my_utils.py
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b
+
+PI = 3.14159</pre>
+        <p>Then import it in another script:</p>
+        <pre>import my_utils
+print(my_utils.greet("Alice"))
+print(my_utils.add(5, 3))</pre>
+
+        <h3>Built-in Modules Overview</h3>
+        <table>
+            <tr><th>Module</th><th>Purpose</th><th>Common Functions</th></tr>
+            <tr><td><code>math</code></td><td>Mathematical operations</td><td><code>sqrt()</code>, <code>ceil()</code>, <code>floor()</code>, <code>sin()</code>, <code>cos()</code></td></tr>
+            <tr><td><code>random</code></td><td>Random number generation</td><td><code>randint()</code>, <code>choice()</code>, <code>shuffle()</code></td></tr>
+            <tr><td><code>datetime</code></td><td>Date and time handling</td><td><code>datetime.now()</code>, <code>timedelta()</code></td></tr>
+            <tr><td><code>os</code></td><td>Operating system interface</td><td><code>getcwd()</code>, <code>listdir()</code>, <code>mkdir()</code></td></tr>
+            <tr><td><code>sys</code></td><td>System-specific parameters</td><td><code>argv</code>, <code>exit()</code>, <code>path</code></td></tr>
+        </table>
+
+        <h3>Packages</h3>
+        <p>A package is a directory containing an <code>__init__.py</code> file and one or more module files:</p>
+        <pre>my_package/
+    __init__.py
+    module_a.py
+    module_b.py</pre>
+        <pre>from my_package import module_a
+module_a.some_function()</pre>
+
+        <h3>The <code>if __name__ == "__main__"</code> Pattern</h3>
+        <p>This pattern allows a module to be both run as a script and imported:</p>
+        <pre>def main():
+    print("Running as a script")
+
+if __name__ == "__main__":
+    main()</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> Modules and packages are essential for organizing Python code. Python's extensive standard library provides modules for almost every task, and creating your own modules promotes code reuse and maintainability.</div>
+    `
+};
+lessons.cprog1.f4 = {
+    title: "Intro to OOP in Python",
+    period: "FINALS",
+    content: `
+        <h2>Intro to OOP in Python</h2>
+        <span class="period-badge">FINALS</span>
+        <p>Object-Oriented Programming (OOP) is a paradigm that organizes code into objects that contain both data (attributes) and behavior (methods). Python supports OOP with classes, objects, and the four pillars: encapsulation, inheritance, polymorphism, and abstraction.</p>
+
+        <h3>Classes and Objects</h3>
+        <p>A <strong>class</strong> is a blueprint. An <strong>object</strong> is an instance of a class.</p>
+        <pre>class Student:
+    # Constructor — initializes attributes
+    def __init__(self, name, age, course):
+        self.name = name
+        self.age = age
+        self.course = course
+
+    # Method
+    def introduce(self):
+        return f"I am {self.name}, {self.age} years old, taking {self.course}."
+
+# Creating objects
+alice = Student("Alice", 20, "BSIT")
+print(alice.introduce())</pre>
+
+        <h3>The <code>self</code> Parameter</h3>
+        <p><code>self</code> refers to the current instance of the class. It must be the first parameter of any method in the class. Python automatically passes the object reference when calling a method.</p>
+
+        <h3>Instance vs Class Attributes</h3>
+        <pre>class Dog:
+    species = "Canis familiaris"  # Class attribute (shared by all instances)
+
+    def __init__(self, name, age):
+        self.name = name          # Instance attribute (unique per instance)
+        self.age = age
+
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+print(dog1.species)  # Access class attribute</pre>
+
+        <h3>Encapsulation with Properties</h3>
+        <p>Use <code>@property</code> decorator for getter and setter methods to control access:</p>
+        <pre>class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self._balance = balance  # Protected attribute
+
+    @property
+    def balance(self):
+        return self._balance
+
+    @balance.setter
+    def balance(self, amount):
+        if amount < 0:
+            raise ValueError("Balance cannot be negative")
+        self._balance = amount
+
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount</pre>
+
+        <h3>Simple Inheritance</h3>
+        <pre>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        return f"{self.name}, {self.age}"
+
+class Employee(Person):
+    def __init__(self, name, age, employee_id):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+
+    def display_info(self):
+        return f"{super().display_info()}, ID: {self.employee_id}"</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> OOP in Python provides a powerful way to structure code. Classes bundle data and behavior together, making code more modular and reusable. Understanding class definitions, <code>__init__</code>, <code>self</code>, and inheritance is the foundation.</div>
+    `
+};
+lessons.cprog1.f5 = {
+    title: "Useful Standard Libraries",
+    period: "FINALS",
+    content: `
+        <h2>Useful Standard Libraries</h2>
+        <span class="period-badge">FINALS</span>
+        <p>Python's standard library includes hundreds of modules for everyday programming tasks. Mastering a few key libraries will significantly boost your productivity.</p>
+
+        <h3><code>math</code> — Advanced Math Operations</h3>
+        <pre>import math
+
+print(math.sqrt(144))        # 12.0
+print(math.ceil(4.2))        # 5
+print(math.floor(4.8))       # 4
+print(math.factorial(5))     # 120
+print(math.gcd(48, 18))      # 6
+print(math.pi)               # 3.14159...
+print(math.sin(math.radians(90)))  # 1.0</pre>
+
+        <h3><code>random</code> — Randomness & Probability</h3>
+        <pre>import random
+
+print(random.randint(1, 10))        # Random int between 1 and 10
+print(random.choice(["heads", "tails"]))  # Random choice
+cards = ["Ace", "King", "Queen", "Jack"]
+random.shuffle(cards)               # Shuffle in place
+print(random.sample(range(100), 5)) # 5 unique random numbers</pre>
+
+        <h3><code>datetime</code> — Working with Dates & Times</h3>
+        <pre>from datetime import datetime, timedelta, date
+
+now = datetime.now()
+print(now.strftime("%Y-%m-%d %H:%M:%S"))  # Format as string
+
+today = date.today()
+future = today + timedelta(days=30)
+print(f"30 days from now: {future}")
+
+# Calculate age
+birth = date(2000, 5, 15)
+age = today.year - birth.year
+print(f"Age: {age}")</pre>
+
+        <h3><code>os</code> — File & Directory Operations</h3>
+        <pre>import os
+
+print(os.getcwd())           # Current working directory
+print(os.listdir("."))       # List files in current dir
+os.mkdir("new_folder")       # Create directory
+os.rename("old.txt", "new.txt")  # Rename file
+print(os.path.exists("data.txt"))  # Check if file exists
+print(os.path.getsize("data.txt")) # File size in bytes</pre>
+
+        <h3><code>sys</code> — System & Command-Line Args</h3>
+        <pre>import sys
+
+# Command-line arguments
+# Run: python script.py Alice 25
+print(f"Script name: {sys.argv[0]}")
+print(f"Arguments: {sys.argv[1:]}")
+
+print(sys.version)       # Python version
+sys.exit(0)              # Exit program</pre>
+
+        <h3><code>json</code> — Working with JSON Data</h3>
+        <pre>import json
+
+# Python dict to JSON string
+data = {"name": "Alice", "age": 20, "grades": [90, 85, 92]}
+json_str = json.dumps(data, indent=2)
+print(json_str)
+
+# JSON string back to Python dict
+parsed = json.loads(json_str)
+print(parsed["name"])</pre>
+
+        <h3><code>re</code> — Regular Expressions (Pattern Matching)</h3>
+        <pre>import re
+
+text = "My email is alice@email.com and bob@test.org"
+emails = re.findall(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", text)
+print(emails)  # ["alice@email.com", "bob@test.org"]</pre>
+
+        <div class="highlight-box"><strong>Key Takeaway:</strong> Python's standard library is vast and powerful. Learning <code>math</code>, <code>random</code>, <code>datetime</code>, <code>os</code>, <code>sys</code>, <code>json</code>, and other built-in modules allows you to solve real-world problems without installing third-party packages.</div>
     `
 };
 
